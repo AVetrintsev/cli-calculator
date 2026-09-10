@@ -67,6 +67,34 @@
       "location": "Immediately after the complete square-root signature in the same suggestion row, separated by a gap. The description uses the same font size, lighter weight and reduced opacity, with no shared-column or right-edge alignment.",
       "elementType": "description"
     },
+    "completion.unit.squareMetre.description": {
+      "text": "square metre",
+      "meaning": "Identifies a square metre as a unit of area.",
+      "context": "Shown for a square-metre completion. The candidate displays and inserts a superscript 2; an equivalent caret spelling is not a separate candidate. Conversion targets are filtered by dimensional compatibility.",
+      "location": "Immediately after the unit spelling in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
+      "elementType": "description"
+    },
+    "completion.unit.cubicMetre.description": {
+      "text": "cubic metre",
+      "meaning": "Identifies a cubic metre as a unit of volume.",
+      "context": "Shown for a cubic-metre completion. The candidate displays and inserts a superscript 3; an equivalent caret spelling is not a separate candidate. Conversion targets are filtered by dimensional compatibility.",
+      "location": "Immediately after the unit spelling in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
+      "elementType": "description"
+    },
+    "completion.unit.squareCentimetre.description": {
+      "text": "square centimetre",
+      "meaning": "Identifies a square centimetre as a unit of area.",
+      "context": "Shown for a square-centimetre completion. The candidate displays and inserts a superscript 2; an equivalent caret spelling is not a separate candidate. Conversion targets are filtered by dimensional compatibility.",
+      "location": "Immediately after the unit spelling in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
+      "elementType": "description"
+    },
+    "completion.unit.cubicCentimetre.description": {
+      "text": "cubic centimetre",
+      "meaning": "Identifies a cubic centimetre as a unit of volume.",
+      "context": "Shown for a cubic-centimetre completion. The candidate displays and inserts a superscript 3; an equivalent caret spelling is not a separate candidate. Conversion targets are filtered by dimensional compatibility.",
+      "location": "Immediately after the unit spelling in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
+      "elementType": "description"
+    },
     "quick.history.show": {
       "text": "Show history",
       "meaning": "Expands the calculation history.",
