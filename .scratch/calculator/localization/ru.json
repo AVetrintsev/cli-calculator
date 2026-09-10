@@ -5,6 +5,7 @@
   "result.boolean.true": "Да",
   "result.boolean.false": "Нет",
   "completion.list.accessibleName": "Подсказки",
+  "completion.showDescription": "Показать описание",
   "completion.function.sin.description": "Синус. Угол без единицы — в градусах.",
   "completion.function.sqrt.description": "Квадратный корень неотрицательного числа.",
   "quick.history.show": "Показать историю",

@@ -46,6 +46,13 @@
       "location": "Accessible name of the suggestion list aligned beneath the currently typed word. One frame surrounds the list, which overlays following text without shifting it and may cross the input area's lower boundary. A visible heading is not required.",
       "elementType": "accessible_name"
     },
+    "completion.showDescription": {
+      "text": "Show description",
+      "meaning": "Opens the complete description of the selected suggestion when the inline text is shortened.",
+      "context": "Available for a selected suggestion with a description. The complete text must be accessible by keyboard as well as pointer hover; the exact shortcut and presentation are still being specified. User-authored descriptions remain in their original language.",
+      "location": "Command or keyboard help associated with the selected suggestion. The exact control placement belongs to the full interface prototype.",
+      "elementType": "command_label"
+    },
     "completion.function.sin.description": {
       "text": "Sine. Angles without a unit are in degrees.",
       "meaning": "Explains the sine function and the default interpretation of an unmarked angle.",

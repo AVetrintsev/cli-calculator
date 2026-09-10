@@ -5,6 +5,7 @@
   "result.boolean.true": "Yes",
   "result.boolean.false": "No",
   "completion.list.accessibleName": "Suggestions",
+  "completion.showDescription": "Show description",
   "completion.function.sin.description": "Sine. Angles without a unit are in degrees.",
   "completion.function.sqrt.description": "Square root of a nonnegative number.",
   "quick.history.show": "Show history",
