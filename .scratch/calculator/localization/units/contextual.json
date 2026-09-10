@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "sourceLanguage": "en",
+  "status": "draft",
+  "symbols": {
+    "unit.metreOrMinute": {
+      "text": "M",
+      "meaning": "The user-requested ambiguous notation for a metre or a minute. Candidate meanings are known; the expression determines which one applies.",
+      "context": "The behavior of resolving a unit from the whole formula, including outer operations, is requested. The displayed M quotes the user's notation; exact case and locale aliases and retention of explicit spellings are pending. Behavior with multiple interpretations is not yet selected.",
+      "location": "Unit positions inside expressions, including nested quantities. Completion and unresolved-result presentation remain to be chosen.",
+      "elementType": "unit_symbol",
+      "candidateUnitIds": [
+        "length.metre",
+        "time.minute"
+      ],
+      "resolutionScope": "whole_expression",
+      "exactSpellingsStatus": "pending",
+      "ambiguityPolicy": "pending"
+    }
+  }
+}

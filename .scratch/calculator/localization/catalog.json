@@ -70,28 +70,28 @@
     "completion.unit.squareMetre.description": {
       "text": "square metre",
       "meaning": "Identifies a square metre as a unit of area.",
-      "context": "Shown for a square-metre completion. The candidate displays and inserts a superscript 2; an equivalent caret spelling is not a separate candidate. Conversion targets are filtered by dimensional compatibility.",
+      "context": "Shown when the square-metre unit is identified and offered as a completion. The candidate displays and inserts a superscript unit symbol. A caret expression applies exponentiation to a quantity and must not be treated as an equivalent completion spelling. Contextual M inference and the exact scope of shorthand autoformatting are defined separately.",
       "location": "Immediately after the unit spelling in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
       "elementType": "description"
     },
     "completion.unit.cubicMetre.description": {
       "text": "cubic metre",
       "meaning": "Identifies a cubic metre as a unit of volume.",
-      "context": "Shown for a cubic-metre completion. The candidate displays and inserts a superscript 3; an equivalent caret spelling is not a separate candidate. Conversion targets are filtered by dimensional compatibility.",
+      "context": "Shown when the cubic-metre unit is identified and offered as a completion. The candidate displays and inserts a superscript unit symbol. A caret expression applies exponentiation to a quantity and must not be treated as an equivalent completion spelling. Contextual M inference and the exact scope of shorthand autoformatting are defined separately.",
       "location": "Immediately after the unit spelling in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
       "elementType": "description"
     },
     "completion.unit.squareCentimetre.description": {
       "text": "square centimetre",
       "meaning": "Identifies a square centimetre as a unit of area.",
-      "context": "Shown for a square-centimetre completion. The candidate displays and inserts a superscript 2; an equivalent caret spelling is not a separate candidate. Conversion targets are filtered by dimensional compatibility.",
+      "context": "Shown when the square-centimetre unit is identified and offered as a completion. The candidate displays and inserts a superscript unit symbol. A caret expression applies exponentiation to a quantity and must not be treated as an equivalent completion spelling. Contextual M inference and the exact scope of shorthand autoformatting are defined separately.",
       "location": "Immediately after the unit spelling in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
       "elementType": "description"
     },
     "completion.unit.cubicCentimetre.description": {
       "text": "cubic centimetre",
       "meaning": "Identifies a cubic centimetre as a unit of volume.",
-      "context": "Shown for a cubic-centimetre completion. The candidate displays and inserts a superscript 3; an equivalent caret spelling is not a separate candidate. Conversion targets are filtered by dimensional compatibility.",
+      "context": "Shown when the cubic-centimetre unit is identified and offered as a completion. The candidate displays and inserts a superscript unit symbol. A caret expression applies exponentiation to a quantity and must not be treated as an equivalent completion spelling. Contextual M inference and the exact scope of shorthand autoformatting are defined separately.",
       "location": "Immediately after the unit spelling in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
       "elementType": "description"
     },
@@ -1272,6 +1272,41 @@
       "meaning": "Keeps name definition distinct from comparison and the numeric operator table.",
       "context": "Operator-help content reflecting the conversion, whitespace and precedence decisions accepted through expression-language round 20. The application help entry point remains to be chosen; separate language contracts remain open.",
       "location": "Operator-precedence help page, fragment definitionRule. Markdown formatting, formula spelling and table delimiters must be preserved while translating explanatory text.",
+      "elementType": "help_paragraph"
+    },
+    "completion.unit.length.metre.description": {
+      "text": "metre",
+      "meaning": "Identifies the metre unit, which is one of the candidate meanings of contextual M.",
+      "context": "Used when a completion or a resolved-unit explanation identifies this unit. The label is translated; it does not settle the spelling of contextual M or approve a selection interface for an unresolved expression.",
+      "location": "Description beside a unit suggestion or unit-meaning explanation; final unresolved-state presentation remains under discussion.",
+      "elementType": "description"
+    },
+    "completion.unit.time.minute.description": {
+      "text": "minute",
+      "meaning": "Identifies the minute unit, which is one of the candidate meanings of contextual M.",
+      "context": "Used when a completion or a resolved-unit explanation identifies this unit. The label is translated; it does not settle the spelling of contextual M or approve a selection interface for an unresolved expression.",
+      "location": "Description beside a unit suggestion or unit-meaning explanation; final unresolved-state presentation remains under discussion.",
+      "elementType": "description"
+    },
+    "help.precedence.unitPowersHeading": {
+      "text": "## Unit powers and quantity powers",
+      "meaning": "Introduces the distinction between a superscript unit and exponentiation of a complete quantity.",
+      "context": "Operator-help material incorporating the accepted changes in expression-language round 21. Contextual-unit spelling and unresolved-state policies remain open in the linked contextual-unit decision.",
+      "location": "Operator-precedence help page, fragment unitPowersHeading. Preserve mathematical notation when translating prose.",
+      "elementType": "help_heading"
+    },
+    "help.precedence.unitPowersRule": {
+      "text": "Typing `M2` automatically displays `M²` as a unit symbol. The caret `^` instead raises the entire quantity to a power. In a length context, `2 M2` denotes two square metres, while `2 M^2` squares two metres and denotes four square metres. Exact letter variants, interpretation of unresolved M² and extensions of automatic replacement are still being specified.",
+      "meaning": "Explains the accepted new square-unit input and ordinary caret behavior, without deciding unresolved contextual aliases.",
+      "context": "Operator-help material incorporating the accepted changes in expression-language round 21. Contextual-unit spelling and unresolved-state policies remain open in the linked contextual-unit decision.",
+      "location": "Operator-precedence help page, fragment unitPowersRule. Preserve mathematical notation when translating prose.",
+      "elementType": "help_paragraph"
+    },
+    "help.precedence.comparisonChains": {
+      "text": "A chain such as `1 < x < 10` compares neighboring values and requires every comparison to hold. It means `1 < x and x < 10`. Stop at the first false comparison; do not compare a Boolean intermediate result with the next number.",
+      "meaning": "Explains the accepted pairwise comparison-chain semantics and short-circuit behavior.",
+      "context": "Operator-help material incorporating the accepted changes in expression-language round 21. Contextual-unit spelling and unresolved-state policies remain open in the linked contextual-unit decision.",
+      "location": "Operator-precedence help page, fragment comparisonChains. Preserve mathematical notation when translating prose.",
       "elementType": "help_paragraph"
     }
   }

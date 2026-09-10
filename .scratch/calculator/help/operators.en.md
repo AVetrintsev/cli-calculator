@@ -39,7 +39,13 @@ Higher rows bind first. Operators within an expression use this order unless par
 
 Already agreed: powers associate left to right, so `2^3^2 = (2^3)^2 = 64`. Power precedes unary minus: `-2^2 = -4`. Multiplication, implicit multiplication and division have equal priority and run left to right: `6/2(1+2) = 9`.
 
+A chain such as `1 < x < 10` compares neighboring values and requires every comparison to hold. It means `1 < x and x < 10`. Stop at the first false comparison; do not compare a Boolean intermediate result with the next number.
+
 Power and unary signs bind before `::`: `2^3::bin = 0b1000` and `-10::hex = -0xA`.
+
+## Unit powers and quantity powers
+
+Typing `M2` automatically displays `M²` as a unit symbol. The caret `^` instead raises the entire quantity to a power. In a length context, `2 M2` denotes two square metres, while `2 M^2` squares two metres and denotes four square metres. Exact letter variants, interpretation of unresolved M² and extensions of automatic replacement are still being specified.
 
 ## Spaces around operators
 

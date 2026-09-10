@@ -29,10 +29,13 @@
     "help.precedence.table.or",
     "help.precedence.table.looseConversion",
     "help.precedence.existingAssociativity",
+    "help.precedence.comparisonChains",
     "help.precedence.newOrderingExamples",
+    "help.precedence.unitPowersHeading",
+    "help.precedence.unitPowersRule",
     "help.precedence.spacingHeading",
     "help.precedence.spacingRule",
     "help.precedence.definitionRule"
   ],
-  "acceptedThrough": "expression-language round 20"
+  "acceptedThrough": "expression-language round 21; contextual-unit details remain open"
 }

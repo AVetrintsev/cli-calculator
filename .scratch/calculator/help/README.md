@@ -1,10 +1,11 @@
 # Operator help specification
 
-These help materials record the conversion examples, complete precedence table and whitespace rule accepted through expression-language round 20. They are documentation assets; the calculator has not been implemented, and separate contracts for operand types and boundary cases remain open in the language decision.
+These help materials record the conversion examples, complete precedence table, whitespace rule, comparison chains and distinction between unit powers and quantity powers accepted through expression-language round 21. They are documentation assets; the calculator has not been implemented. Separate contracts for operand types and boundary cases remain open, including whole-expression resolution of contextual M and the boundaries of automatic M2-to-M² display.
 
 - [Russian preview](operators.ru.md)
 - [English preview](operators.en.md)
 - [Expression language and calculation rules](../issues/04-expression-language.md)
+- [Contextual unit resolution and automatic unit powers](../issues/16-contextual-units.md)
 - [Fragment order](operator-help.json)
 - [English text and translation guidance](../localization/catalog.json)
 - [English locale](../localization/en.json) and [Russian locale](../localization/ru.json)

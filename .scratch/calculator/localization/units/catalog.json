@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "sourceLanguage": "en",
   "status": "draft",
-  "coverage": "Fifty-two approved units: eleven length units, six fixed-duration units, seven mass units, two area units, four volume units, three temperature scales, the radian, and eighteen information units. This is not the complete product unit registry. Physical definitions and conversion factors are specified separately.",
+  "coverage": "Fifty-two direct unit identities, with metre and minute spellings under revision. Contextual M is specified separately in contextual.json. The full language, inference policy and conversion factors are not implemented by these files.",
   "units": {
     "length.nanometre": {
       "text": "nm",
@@ -42,9 +42,10 @@
     "length.metre": {
       "text": "m",
       "meaning": "The metre, a unit of length.",
-      "context": "The Latin symbol is always accepted as a unit token. Its localized counterpart is accepted only when that locale matches the interface language.",
+      "context": "This record retains the previously selected direct spelling for traceability. The user now requires contextual M, resolved as a metre or minute from constraints across the whole expression. Exact letter variants and retention of this explicit spelling remain under discussion in the contextual-unit decision. Do not treat this record as finalizing that policy.",
       "location": "Unit positions in mathematical expressions, including the target of a unit conversion. An explicit conversion preserves the user's target symbol; otherwise the interface-language symbol is used.",
-      "elementType": "unit_symbol"
+      "elementType": "unit_symbol",
+      "notationStatus": "under_revision"
     },
     "length.kilometre": {
       "text": "km",
@@ -84,9 +85,10 @@
     "time.minute": {
       "text": "min",
       "meaning": "The minute, a unit of fixed duration. Its symbol is distinct in meaning from a function call to min.",
-      "context": "The Latin symbol is always accepted as a unit token. Its localized counterpart is accepted only when that locale matches the interface language. Fixed-duration notation was approved in expression-language round 12.",
+      "context": "This record retains the previously selected direct spelling for traceability. The user now requires contextual M, resolved as a metre or minute from constraints across the whole expression. Exact letter variants and retention of this explicit spelling remain under discussion in the contextual-unit decision. Do not treat this record as finalizing that policy.",
       "location": "Unit positions in mathematical expressions and conversion targets. An explicit conversion preserves the user's target symbol; otherwise the interface-language symbol is used.",
-      "elementType": "unit_symbol"
+      "elementType": "unit_symbol",
+      "notationStatus": "under_revision"
     },
     "time.day": {
       "text": "d",
