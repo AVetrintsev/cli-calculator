@@ -42,7 +42,7 @@
     "quick.history.hide": {
       "text": "Hide history",
       "meaning": "Collapses history while retaining the quick input.",
-      "context": "Available when history is expanded.",
+      "context": "Available when history is expanded. Returning with Arrow Down to the empty new input also collapses history automatically.",
       "location": "Command menu or keyboard hint associated with expanded history.",
       "elementType": "command_label"
     },
@@ -192,7 +192,7 @@
     "history.reuse": {
       "text": "Use this expression",
       "meaning": "Recalls a previous expression for further input.",
-      "context": "Used for a selected history entry; recalculation semantics are undecided.",
+      "context": "Used for a selected history entry. The recalled expression is edited as a copy; the original history entry stays unchanged. Recording the new calculation is specified separately.",
       "location": "Actions associated with a history entry.",
       "elementType": "command_label"
     },
