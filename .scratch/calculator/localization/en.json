@@ -100,5 +100,13 @@
   "common.cancel": "Cancel",
   "common.delete": "Delete",
   "common.close": "Close",
-  "common.retry": "Try again"
+  "common.retry": "Try again",
+  "completion.unit.area.hectare.description": "hectare",
+  "completion.unit.area.acre.description": "acre",
+  "completion.unit.volume.litre.description": "litre",
+  "completion.unit.volume.millilitre.description": "millilitre",
+  "completion.unit.mass.microgram.description": "microgram",
+  "completion.unit.mass.milligram.description": "milligram",
+  "completion.unit.mass.gram.description": "gram",
+  "completion.unit.mass.tonne.description": "metric tonne"
 }

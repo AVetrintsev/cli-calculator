@@ -12,5 +12,13 @@
   "time.millisecond": "ms",
   "time.minute": "min",
   "time.day": "d",
-  "time.week": "wk"
+  "time.week": "wk",
+  "area.hectare": "ha",
+  "area.acre": "acre",
+  "volume.litre": "L",
+  "volume.millilitre": "mL",
+  "mass.microgram": "ug",
+  "mass.milligram": "mg",
+  "mass.gram": "g",
+  "mass.tonne": "t"
 }

@@ -12,5 +12,13 @@
   "time.millisecond": "мс",
   "time.minute": "мин",
   "time.day": "сут",
-  "time.week": "нед"
+  "time.week": "нед",
+  "area.hectare": "га",
+  "area.acre": "акр",
+  "volume.litre": "л",
+  "volume.millilitre": "мл",
+  "mass.microgram": "мкг",
+  "mass.milligram": "мг",
+  "mass.gram": "г",
+  "mass.tonne": "т"
 }

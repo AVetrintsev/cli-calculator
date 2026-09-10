@@ -730,6 +730,62 @@
       "context": "Available next to a recoverable error when retry is supported.",
       "location": "Action in an error feedback region.",
       "elementType": "button"
+    },
+    "completion.unit.area.hectare.description": {
+      "text": "hectare",
+      "meaning": "The hectare, a unit of area.",
+      "context": "Shown when this unit is offered as a completion in quick input or the extended editor. The description follows the interface language even when the suggested unit spelling is Latin. Conversion targets are filtered by dimensional compatibility.",
+      "location": "Immediately after the unit spelling in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
+      "elementType": "description"
+    },
+    "completion.unit.area.acre.description": {
+      "text": "acre",
+      "meaning": "The international acre, a unit of area. Historical survey variants are outside the selected scope.",
+      "context": "Shown when this unit is offered as a completion in quick input or the extended editor. The description follows the interface language even when the suggested unit spelling is Latin. Conversion targets are filtered by dimensional compatibility.",
+      "location": "Immediately after the unit spelling in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
+      "elementType": "description"
+    },
+    "completion.unit.volume.litre.description": {
+      "text": "litre",
+      "meaning": "The litre, a unit of volume. The Latin spelling uses an uppercase L; lowercase alternatives have not been approved.",
+      "context": "Shown when this unit is offered as a completion in quick input or the extended editor. The description follows the interface language even when the suggested unit spelling is Latin. Conversion targets are filtered by dimensional compatibility.",
+      "location": "Immediately after the unit spelling in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
+      "elementType": "description"
+    },
+    "completion.unit.volume.millilitre.description": {
+      "text": "millilitre",
+      "meaning": "The millilitre, a unit of volume. The Latin spelling uses an uppercase L; lowercase alternatives have not been approved.",
+      "context": "Shown when this unit is offered as a completion in quick input or the extended editor. The description follows the interface language even when the suggested unit spelling is Latin. Conversion targets are filtered by dimensional compatibility.",
+      "location": "Immediately after the unit spelling in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
+      "elementType": "description"
+    },
+    "completion.unit.mass.microgram.description": {
+      "text": "microgram",
+      "meaning": "The microgram, a unit of mass. The product uses the keyboard-friendly Latin spelling ug; alternative spellings containing a micro sign have not been approved.",
+      "context": "Shown when this unit is offered as a completion in quick input or the extended editor. The description follows the interface language even when the suggested unit spelling is Latin. Conversion targets are filtered by dimensional compatibility.",
+      "location": "Immediately after the unit spelling in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
+      "elementType": "description"
+    },
+    "completion.unit.mass.milligram.description": {
+      "text": "milligram",
+      "meaning": "The milligram, a unit of mass.",
+      "context": "Shown when this unit is offered as a completion in quick input or the extended editor. The description follows the interface language even when the suggested unit spelling is Latin. Conversion targets are filtered by dimensional compatibility.",
+      "location": "Immediately after the unit spelling in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
+      "elementType": "description"
+    },
+    "completion.unit.mass.gram.description": {
+      "text": "gram",
+      "meaning": "The gram, a unit of mass.",
+      "context": "Shown when this unit is offered as a completion in quick input or the extended editor. The description follows the interface language even when the suggested unit spelling is Latin. Conversion targets are filtered by dimensional compatibility.",
+      "location": "Immediately after the unit spelling in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
+      "elementType": "description"
+    },
+    "completion.unit.mass.tonne.description": {
+      "text": "metric tonne",
+      "meaning": "The metric tonne, a unit of mass. Short and long tons are outside the selected scope.",
+      "context": "Shown when this unit is offered as a completion in quick input or the extended editor. The description follows the interface language even when the suggested unit spelling is Latin. Conversion targets are filtered by dimensional compatibility.",
+      "location": "Immediately after the unit spelling in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
+      "elementType": "description"
     }
   }
 }

@@ -100,5 +100,13 @@
   "common.cancel": "Отмена",
   "common.delete": "Удалить",
   "common.close": "Закрыть",
-  "common.retry": "Попробовать снова"
+  "common.retry": "Попробовать снова",
+  "completion.unit.area.hectare.description": "гектар",
+  "completion.unit.area.acre.description": "акр",
+  "completion.unit.volume.litre.description": "литр",
+  "completion.unit.volume.millilitre.description": "миллилитр",
+  "completion.unit.mass.microgram.description": "микрограмм",
+  "completion.unit.mass.milligram.description": "миллиграмм",
+  "completion.unit.mass.gram.description": "грамм",
+  "completion.unit.mass.tonne.description": "метрическая тонна"
 }

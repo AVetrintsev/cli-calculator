@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "sourceLanguage": "en",
   "status": "draft",
-  "coverage": "Seven approved metric length units, six fixed-duration units, and the previously approved kilogram. This is not the complete product unit registry. Physical definitions and conversion factors are specified separately.",
+  "coverage": "Twenty-two approved units: seven metric length units, six fixed-duration units, five metric mass units, two area units, and two litre-based volume units. This is not the complete product unit registry. Physical definitions and conversion factors are specified separately.",
   "units": {
     "length.nanometre": {
       "text": "nm",
@@ -99,6 +99,62 @@
       "text": "wk",
       "meaning": "A fixed week of seven 24-hour days, not a calendar-period operation.",
       "context": "The Latin symbol is always accepted as a unit token. Its localized counterpart is accepted only when that locale matches the interface language. Fixed-duration notation was approved in expression-language round 12.",
+      "location": "Unit positions in mathematical expressions and conversion targets. An explicit conversion preserves the user's target symbol; otherwise the interface-language symbol is used.",
+      "elementType": "unit_symbol"
+    },
+    "area.hectare": {
+      "text": "ha",
+      "meaning": "The hectare, a unit of area.",
+      "context": "The Latin symbol is always accepted as a unit token. Its localized counterpart is accepted only when that locale matches the interface language. This notation was approved in expression-language round 13.",
+      "location": "Unit positions in mathematical expressions and conversion targets. An explicit conversion preserves the user's target symbol; otherwise the interface-language symbol is used.",
+      "elementType": "unit_symbol"
+    },
+    "area.acre": {
+      "text": "acre",
+      "meaning": "The international acre, a unit of area. Historical survey variants are outside the selected scope.",
+      "context": "The Latin symbol is always accepted as a unit token. Its localized counterpart is accepted only when that locale matches the interface language. This notation was approved in expression-language round 13.",
+      "location": "Unit positions in mathematical expressions and conversion targets. An explicit conversion preserves the user's target symbol; otherwise the interface-language symbol is used.",
+      "elementType": "unit_symbol"
+    },
+    "volume.litre": {
+      "text": "L",
+      "meaning": "The litre, a unit of volume. The Latin spelling uses an uppercase L; lowercase alternatives have not been approved.",
+      "context": "The Latin symbol is always accepted as a unit token. Its localized counterpart is accepted only when that locale matches the interface language. This notation was approved in expression-language round 13.",
+      "location": "Unit positions in mathematical expressions and conversion targets. An explicit conversion preserves the user's target symbol; otherwise the interface-language symbol is used.",
+      "elementType": "unit_symbol"
+    },
+    "volume.millilitre": {
+      "text": "mL",
+      "meaning": "The millilitre, a unit of volume. The Latin spelling uses an uppercase L; lowercase alternatives have not been approved.",
+      "context": "The Latin symbol is always accepted as a unit token. Its localized counterpart is accepted only when that locale matches the interface language. This notation was approved in expression-language round 13.",
+      "location": "Unit positions in mathematical expressions and conversion targets. An explicit conversion preserves the user's target symbol; otherwise the interface-language symbol is used.",
+      "elementType": "unit_symbol"
+    },
+    "mass.microgram": {
+      "text": "ug",
+      "meaning": "The microgram, a unit of mass. The product uses the keyboard-friendly Latin spelling ug; alternative spellings containing a micro sign have not been approved.",
+      "context": "The Latin symbol is always accepted as a unit token. Its localized counterpart is accepted only when that locale matches the interface language. This notation was approved in expression-language round 13.",
+      "location": "Unit positions in mathematical expressions and conversion targets. An explicit conversion preserves the user's target symbol; otherwise the interface-language symbol is used.",
+      "elementType": "unit_symbol"
+    },
+    "mass.milligram": {
+      "text": "mg",
+      "meaning": "The milligram, a unit of mass.",
+      "context": "The Latin symbol is always accepted as a unit token. Its localized counterpart is accepted only when that locale matches the interface language. This notation was approved in expression-language round 13.",
+      "location": "Unit positions in mathematical expressions and conversion targets. An explicit conversion preserves the user's target symbol; otherwise the interface-language symbol is used.",
+      "elementType": "unit_symbol"
+    },
+    "mass.gram": {
+      "text": "g",
+      "meaning": "The gram, a unit of mass.",
+      "context": "The Latin symbol is always accepted as a unit token. Its localized counterpart is accepted only when that locale matches the interface language. This notation was approved in expression-language round 13.",
+      "location": "Unit positions in mathematical expressions and conversion targets. An explicit conversion preserves the user's target symbol; otherwise the interface-language symbol is used.",
+      "elementType": "unit_symbol"
+    },
+    "mass.tonne": {
+      "text": "t",
+      "meaning": "The metric tonne, a unit of mass. Short and long tons are outside the selected scope.",
+      "context": "The Latin symbol is always accepted as a unit token. Its localized counterpart is accepted only when that locale matches the interface language. This notation was approved in expression-language round 13.",
       "location": "Unit positions in mathematical expressions and conversion targets. An explicit conversion preserves the user's target symbol; otherwise the interface-language symbol is used.",
       "elementType": "unit_symbol"
     }
