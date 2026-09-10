@@ -39,6 +39,27 @@
       "location": "The active calculation result, directly below quick input or in the result area associated with an expression in a calculation sheet.",
       "elementType": "result_value"
     },
+    "completion.list.accessibleName": {
+      "text": "Suggestions",
+      "meaning": "Names the list of suggested expression completions for assistive technology.",
+      "context": "Used when a suggestion menu is available during letter input. Exact keyboard behavior and the candidate inventory are still being specified.",
+      "location": "Accessible name of the dropdown suggestion list associated with the expression editor; a visible heading is not required.",
+      "elementType": "accessible_name"
+    },
+    "completion.function.sin.description": {
+      "text": "Sine. Angles without a unit are in degrees.",
+      "meaning": "Explains the sine function and the default interpretation of an unmarked angle.",
+      "context": "Candidate description shown when the sine function is suggested. An explicitly marked radian argument remains supported. The completion inventory is still being specified.",
+      "location": "Short explanatory text associated with the sine option in the suggestion menu; exact layout remains to be prototyped.",
+      "elementType": "description"
+    },
+    "completion.function.sqrt.description": {
+      "text": "Square root of a nonnegative number.",
+      "meaning": "Explains the square root function within the calculator's real-number domain.",
+      "context": "Candidate description shown when the square root function is suggested. Negative real arguments are outside the accepted numeric domain. The completion inventory is still being specified.",
+      "location": "Short explanatory text associated with the square root option in the suggestion menu; exact layout remains to be prototyped.",
+      "elementType": "description"
+    },
     "quick.history.show": {
       "text": "Show history",
       "meaning": "Expands the calculation history.",
