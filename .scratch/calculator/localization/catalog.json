@@ -870,6 +870,132 @@
       "context": "Shown when the radian unit is offered as a completion. Unmarked trigonometric arguments use degrees; an explicit rad suffix selects radians. The description follows the interface language while the symbol remains rad.",
       "location": "Immediately after the unit spelling in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
       "elementType": "description"
+    },
+    "completion.unit.information.bit.description": {
+      "text": "bit",
+      "meaning": "The bit, a unit of information.",
+      "context": "Shown when this information unit is offered as a completion. The symbol stays Latin in every language; this explanatory description follows the interface language. Conversion targets are filtered by dimensional compatibility.",
+      "location": "Immediately after the unit spelling in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
+      "elementType": "description"
+    },
+    "completion.unit.information.byte.description": {
+      "text": "byte",
+      "meaning": "The byte, a unit of information.",
+      "context": "Shown when this information unit is offered as a completion. The symbol stays Latin in every language; this explanatory description follows the interface language. Conversion targets are filtered by dimensional compatibility.",
+      "location": "Immediately after the unit spelling in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
+      "elementType": "description"
+    },
+    "completion.unit.information.kilobit.description": {
+      "text": "kilobit",
+      "meaning": "The kilobit, a unit of information. This unit uses a decimal prefix; its meaning never changes with a preference or locale.",
+      "context": "Shown when this information unit is offered as a completion. The symbol stays Latin in every language; this explanatory description follows the interface language. Conversion targets are filtered by dimensional compatibility.",
+      "location": "Immediately after the unit spelling in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
+      "elementType": "description"
+    },
+    "completion.unit.information.kilobyte.description": {
+      "text": "kilobyte",
+      "meaning": "The kilobyte, a unit of information. This unit uses a decimal prefix; its meaning never changes with a preference or locale.",
+      "context": "Shown when this information unit is offered as a completion. The symbol stays Latin in every language; this explanatory description follows the interface language. Conversion targets are filtered by dimensional compatibility.",
+      "location": "Immediately after the unit spelling in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
+      "elementType": "description"
+    },
+    "completion.unit.information.megabit.description": {
+      "text": "megabit",
+      "meaning": "The megabit, a unit of information. This unit uses a decimal prefix; its meaning never changes with a preference or locale.",
+      "context": "Shown when this information unit is offered as a completion. The symbol stays Latin in every language; this explanatory description follows the interface language. Conversion targets are filtered by dimensional compatibility.",
+      "location": "Immediately after the unit spelling in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
+      "elementType": "description"
+    },
+    "completion.unit.information.megabyte.description": {
+      "text": "megabyte",
+      "meaning": "The megabyte, a unit of information. This unit uses a decimal prefix; its meaning never changes with a preference or locale.",
+      "context": "Shown when this information unit is offered as a completion. The symbol stays Latin in every language; this explanatory description follows the interface language. Conversion targets are filtered by dimensional compatibility.",
+      "location": "Immediately after the unit spelling in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
+      "elementType": "description"
+    },
+    "completion.unit.information.gigabit.description": {
+      "text": "gigabit",
+      "meaning": "The gigabit, a unit of information. This unit uses a decimal prefix; its meaning never changes with a preference or locale.",
+      "context": "Shown when this information unit is offered as a completion. The symbol stays Latin in every language; this explanatory description follows the interface language. Conversion targets are filtered by dimensional compatibility.",
+      "location": "Immediately after the unit spelling in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
+      "elementType": "description"
+    },
+    "completion.unit.information.gigabyte.description": {
+      "text": "gigabyte",
+      "meaning": "The gigabyte, a unit of information. This unit uses a decimal prefix; its meaning never changes with a preference or locale.",
+      "context": "Shown when this information unit is offered as a completion. The symbol stays Latin in every language; this explanatory description follows the interface language. Conversion targets are filtered by dimensional compatibility.",
+      "location": "Immediately after the unit spelling in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
+      "elementType": "description"
+    },
+    "completion.unit.information.terabit.description": {
+      "text": "terabit",
+      "meaning": "The terabit, a unit of information. This unit uses a decimal prefix; its meaning never changes with a preference or locale.",
+      "context": "Shown when this information unit is offered as a completion. The symbol stays Latin in every language; this explanatory description follows the interface language. Conversion targets are filtered by dimensional compatibility.",
+      "location": "Immediately after the unit spelling in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
+      "elementType": "description"
+    },
+    "completion.unit.information.terabyte.description": {
+      "text": "terabyte",
+      "meaning": "The terabyte, a unit of information. This unit uses a decimal prefix; its meaning never changes with a preference or locale.",
+      "context": "Shown when this information unit is offered as a completion. The symbol stays Latin in every language; this explanatory description follows the interface language. Conversion targets are filtered by dimensional compatibility.",
+      "location": "Immediately after the unit spelling in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
+      "elementType": "description"
+    },
+    "completion.unit.information.kibibit.description": {
+      "text": "kibibit",
+      "meaning": "The kibibit, a unit of information. This unit uses a binary prefix; its meaning never changes with a preference or locale.",
+      "context": "Shown when this information unit is offered as a completion. The symbol stays Latin in every language; this explanatory description follows the interface language. Conversion targets are filtered by dimensional compatibility.",
+      "location": "Immediately after the unit spelling in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
+      "elementType": "description"
+    },
+    "completion.unit.information.kibibyte.description": {
+      "text": "kibibyte",
+      "meaning": "The kibibyte, a unit of information. This unit uses a binary prefix; its meaning never changes with a preference or locale.",
+      "context": "Shown when this information unit is offered as a completion. The symbol stays Latin in every language; this explanatory description follows the interface language. Conversion targets are filtered by dimensional compatibility.",
+      "location": "Immediately after the unit spelling in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
+      "elementType": "description"
+    },
+    "completion.unit.information.mebibit.description": {
+      "text": "mebibit",
+      "meaning": "The mebibit, a unit of information. This unit uses a binary prefix; its meaning never changes with a preference or locale.",
+      "context": "Shown when this information unit is offered as a completion. The symbol stays Latin in every language; this explanatory description follows the interface language. Conversion targets are filtered by dimensional compatibility.",
+      "location": "Immediately after the unit spelling in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
+      "elementType": "description"
+    },
+    "completion.unit.information.mebibyte.description": {
+      "text": "mebibyte",
+      "meaning": "The mebibyte, a unit of information. This unit uses a binary prefix; its meaning never changes with a preference or locale.",
+      "context": "Shown when this information unit is offered as a completion. The symbol stays Latin in every language; this explanatory description follows the interface language. Conversion targets are filtered by dimensional compatibility.",
+      "location": "Immediately after the unit spelling in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
+      "elementType": "description"
+    },
+    "completion.unit.information.gibibit.description": {
+      "text": "gibibit",
+      "meaning": "The gibibit, a unit of information. This unit uses a binary prefix; its meaning never changes with a preference or locale.",
+      "context": "Shown when this information unit is offered as a completion. The symbol stays Latin in every language; this explanatory description follows the interface language. Conversion targets are filtered by dimensional compatibility.",
+      "location": "Immediately after the unit spelling in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
+      "elementType": "description"
+    },
+    "completion.unit.information.gibibyte.description": {
+      "text": "gibibyte",
+      "meaning": "The gibibyte, a unit of information. This unit uses a binary prefix; its meaning never changes with a preference or locale.",
+      "context": "Shown when this information unit is offered as a completion. The symbol stays Latin in every language; this explanatory description follows the interface language. Conversion targets are filtered by dimensional compatibility.",
+      "location": "Immediately after the unit spelling in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
+      "elementType": "description"
+    },
+    "completion.unit.information.tebibit.description": {
+      "text": "tebibit",
+      "meaning": "The tebibit, a unit of information. This unit uses a binary prefix; its meaning never changes with a preference or locale.",
+      "context": "Shown when this information unit is offered as a completion. The symbol stays Latin in every language; this explanatory description follows the interface language. Conversion targets are filtered by dimensional compatibility.",
+      "location": "Immediately after the unit spelling in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
+      "elementType": "description"
+    },
+    "completion.unit.information.tebibyte.description": {
+      "text": "tebibyte",
+      "meaning": "The tebibyte, a unit of information. This unit uses a binary prefix; its meaning never changes with a preference or locale.",
+      "context": "Shown when this information unit is offered as a completion. The symbol stays Latin in every language; this explanatory description follows the interface language. Conversion targets are filtered by dimensional compatibility.",
+      "location": "Immediately after the unit spelling in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
+      "elementType": "description"
     }
   }
 }

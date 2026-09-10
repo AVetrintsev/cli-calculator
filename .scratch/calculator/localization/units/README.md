@@ -1,6 +1,6 @@
 # Localized unit symbols
 
-These files are specification assets for localized unit notation. The current subset contains thirty-four units: eleven length units, six fixed-duration units, seven mass units, two area units, four volume units, three temperature scales, and the radian approved through expression-language round 15. The complete product unit inventory remains to be specified.
+These files are specification assets for localized unit notation. The current subset contains fifty-two units: eleven length units, six fixed-duration units, seven mass units, two area units, four volume units, three temperature scales, the radian, and eighteen information units approved through expression-language round 16. The complete product unit inventory remains to be verified as language decisions are refined.
 
 The approved metric length symbols are nm/нм, um/мкм, mm/мм, cm/см, dm/дм, m/м, and km/км. The Latin spelling um is the product's keyboard-friendly notation; this approval does not add alternative spellings containing a micro sign.
 
@@ -8,7 +8,9 @@ Round 13 also approved hectare ha/га, international acre acre/акр, litre L/
 
 Round 14 approved international inch in/дюйм, foot ft/фут, yard yd/ярд, mile mi/миля, ordinary ounce of mass oz/унц, pound lb/фунт, US liquid gallon gal_us/гал_сша, and British imperial gallon gal_uk/гал_брит. Gallon descriptions explicitly identify the system. Additional inflections and abbreviations are not included.
 
-In round 15 the user selected the same uppercase Latin temperature symbols C, F, and K for both en and ru. Only the explanatory descriptions are translated. Proposed degC/degF and Russian word or Cyrillic-letter alternatives were not accepted. Current temperature examples use 20 C::F. Ordinary trigonometric input uses degrees without a suffix, such as sin(30). The user separately reconfirmed explicit radian input, such as sin(pi/2 rad). The Latin spelling rad is supplied in both locales; its descriptive label is translated. The proposed Russian angle symbols and standalone degree sign were not added to these dictionaries. Bit and byte spellings proposed in round 16 remain under review.
+In round 15 the user selected the same uppercase Latin temperature symbols C, F, and K for both en and ru. Only the explanatory descriptions are translated. Proposed degC/degF and Russian word or Cyrillic-letter alternatives were not accepted. Current temperature examples use 20 C::F. Ordinary trigonometric input uses degrees without a suffix, such as sin(30). The user separately reconfirmed explicit radian input, such as sin(pi/2 rad). The Latin spelling rad is supplied in both locales; its descriptive label is translated. The proposed Russian angle symbols and standalone degree sign were not added to these dictionaries.
+
+Round 16 selected b for bits and B for bytes in every language. Decimal multiples are kb/Mb/Gb/Tb and kB/MB/GB/TB; binary multiples are Kib/Mib/Gib/Tib and KiB/MiB/GiB/TiB. Every symbol retains its exact Latin spelling and case in all present and future locales. The earlier bit/бит and Russian-prefixed spellings were replaced by this decision. Descriptive labels remain translatable.
 
 Expression-language round 13 approved square and cubic unit completions with superscript digits, such as m² and см³. Tab inserts the displayed spelling. Equivalent manually typed forms such as m^2 and см^3 remain valid without automatic rewriting; the menu does not add duplicate rows for caret spellings. Completion behavior after a user has already typed a caret remains to be specified. This decision does not select the result clipboard format. Powered spellings compose a base unit with a power; these dictionaries still contain base symbols only. The corresponding user-visible descriptions belong to the parent interface-text catalog and its locale files.
 
@@ -19,6 +21,8 @@ The user requested a separate review of abbreviations by unit group. Fixed durat
 - [ru.json](ru.json) maps the same IDs to Russian symbols.
 
 Each locale file supplies one local symbol per unit ID. A unit keeps its identity across all spellings. These files contain no conversion factors, dimensional definitions, or translated function names. They are stored alongside the interface translations in their own directory because a unit symbol participates in expression parsing.
+
+An optional catalog field `localizationPolicy: "invariant"` marks a symbol that must be copied verbatim from `text` into every locale. It is set on all information units following the user's explicit all-language decision. Entries without this marker follow the individual approved notation and the active-locale rules below. This field constrains symbol translation, not the translation of the associated completion description.
 
 ## Accepted language sets
 
@@ -31,7 +35,7 @@ After an explicit conversion with `::` or `to`, the result uses the target symbo
 ## Adding a locale
 
 1. Read the English metadata for every unit and create a sibling locale file with the same stable IDs.
-2. Translate the local symbol value only. Keep the catalog's Latin baseline and stable IDs unchanged.
+2. Translate the local symbol value only. Keep the catalog's Latin baseline and stable IDs unchanged. If the catalog entry has `localizationPolicy: "invariant"`, copy `text` exactly instead of translating the symbol; verify this equality for every locale.
 3. Check that values are nonempty and that the active locale plus the Latin baseline does not map the same exact symbol to two different unit IDs. Such a conflict must be resolved in the configuration rather than guessed while evaluating a formula.
 4. Check examples containing simple and compound units. A structural check does not certify a full conversion table or a complete parser.
 

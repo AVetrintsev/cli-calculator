@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "sourceLanguage": "en",
   "status": "draft",
-  "coverage": "Thirty-four approved units: eleven length units, six fixed-duration units, seven mass units, two area units, four volume units, three temperature scales, and the radian. This is not the complete product unit registry. Physical definitions and conversion factors are specified separately.",
+  "coverage": "Fifty-two approved units: eleven length units, six fixed-duration units, seven mass units, two area units, four volume units, three temperature scales, the radian, and eighteen information units. This is not the complete product unit registry. Physical definitions and conversion factors are specified separately.",
   "units": {
     "length.nanometre": {
       "text": "nm",
@@ -240,6 +240,150 @@
       "meaning": "The radian, a unit of plane angle. An explicit radian suffix overrides the degree interpretation of an unmarked trigonometric argument.",
       "context": "Used for explicitly marked radian calculations such as sin(pi/2 rad). The user reconfirmed this additional scenario in expression-language round 15. The Latin symbol remains available in both English and Russian; no separate Russian spelling was approved.",
       "location": "Explicit angle unit positions in expressions and compatible conversion targets. Ordinary degree-based trigonometric calls do not require a suffix.",
+      "elementType": "unit_symbol"
+    },
+    "information.bit": {
+      "text": "b",
+      "localizationPolicy": "invariant",
+      "meaning": "The bit, a unit of information.",
+      "context": "The user selected Latin-only information symbols in every language in expression-language round 16. Lowercase b denotes bits and uppercase B denotes bytes; prefix case is significant. Every locale must retain the exact catalog spelling. Descriptions remain translatable.",
+      "location": "Information unit positions in expressions, conversion targets, results and unit completions.",
+      "elementType": "unit_symbol"
+    },
+    "information.byte": {
+      "text": "B",
+      "localizationPolicy": "invariant",
+      "meaning": "The byte, a unit of information.",
+      "context": "The user selected Latin-only information symbols in every language in expression-language round 16. Lowercase b denotes bits and uppercase B denotes bytes; prefix case is significant. Every locale must retain the exact catalog spelling. Descriptions remain translatable.",
+      "location": "Information unit positions in expressions, conversion targets, results and unit completions.",
+      "elementType": "unit_symbol"
+    },
+    "information.kilobit": {
+      "text": "kb",
+      "localizationPolicy": "invariant",
+      "meaning": "The kilobit, a unit of information. This unit uses a decimal prefix; its meaning never changes with a preference or locale.",
+      "context": "The user selected Latin-only information symbols in every language in expression-language round 16. Lowercase b denotes bits and uppercase B denotes bytes; prefix case is significant. Every locale must retain the exact catalog spelling. Descriptions remain translatable.",
+      "location": "Information unit positions in expressions, conversion targets, results and unit completions.",
+      "elementType": "unit_symbol"
+    },
+    "information.kilobyte": {
+      "text": "kB",
+      "localizationPolicy": "invariant",
+      "meaning": "The kilobyte, a unit of information. This unit uses a decimal prefix; its meaning never changes with a preference or locale.",
+      "context": "The user selected Latin-only information symbols in every language in expression-language round 16. Lowercase b denotes bits and uppercase B denotes bytes; prefix case is significant. Every locale must retain the exact catalog spelling. Descriptions remain translatable.",
+      "location": "Information unit positions in expressions, conversion targets, results and unit completions.",
+      "elementType": "unit_symbol"
+    },
+    "information.megabit": {
+      "text": "Mb",
+      "localizationPolicy": "invariant",
+      "meaning": "The megabit, a unit of information. This unit uses a decimal prefix; its meaning never changes with a preference or locale.",
+      "context": "The user selected Latin-only information symbols in every language in expression-language round 16. Lowercase b denotes bits and uppercase B denotes bytes; prefix case is significant. Every locale must retain the exact catalog spelling. Descriptions remain translatable.",
+      "location": "Information unit positions in expressions, conversion targets, results and unit completions.",
+      "elementType": "unit_symbol"
+    },
+    "information.megabyte": {
+      "text": "MB",
+      "localizationPolicy": "invariant",
+      "meaning": "The megabyte, a unit of information. This unit uses a decimal prefix; its meaning never changes with a preference or locale.",
+      "context": "The user selected Latin-only information symbols in every language in expression-language round 16. Lowercase b denotes bits and uppercase B denotes bytes; prefix case is significant. Every locale must retain the exact catalog spelling. Descriptions remain translatable.",
+      "location": "Information unit positions in expressions, conversion targets, results and unit completions.",
+      "elementType": "unit_symbol"
+    },
+    "information.gigabit": {
+      "text": "Gb",
+      "localizationPolicy": "invariant",
+      "meaning": "The gigabit, a unit of information. This unit uses a decimal prefix; its meaning never changes with a preference or locale.",
+      "context": "The user selected Latin-only information symbols in every language in expression-language round 16. Lowercase b denotes bits and uppercase B denotes bytes; prefix case is significant. Every locale must retain the exact catalog spelling. Descriptions remain translatable.",
+      "location": "Information unit positions in expressions, conversion targets, results and unit completions.",
+      "elementType": "unit_symbol"
+    },
+    "information.gigabyte": {
+      "text": "GB",
+      "localizationPolicy": "invariant",
+      "meaning": "The gigabyte, a unit of information. This unit uses a decimal prefix; its meaning never changes with a preference or locale.",
+      "context": "The user selected Latin-only information symbols in every language in expression-language round 16. Lowercase b denotes bits and uppercase B denotes bytes; prefix case is significant. Every locale must retain the exact catalog spelling. Descriptions remain translatable.",
+      "location": "Information unit positions in expressions, conversion targets, results and unit completions.",
+      "elementType": "unit_symbol"
+    },
+    "information.terabit": {
+      "text": "Tb",
+      "localizationPolicy": "invariant",
+      "meaning": "The terabit, a unit of information. This unit uses a decimal prefix; its meaning never changes with a preference or locale.",
+      "context": "The user selected Latin-only information symbols in every language in expression-language round 16. Lowercase b denotes bits and uppercase B denotes bytes; prefix case is significant. Every locale must retain the exact catalog spelling. Descriptions remain translatable.",
+      "location": "Information unit positions in expressions, conversion targets, results and unit completions.",
+      "elementType": "unit_symbol"
+    },
+    "information.terabyte": {
+      "text": "TB",
+      "localizationPolicy": "invariant",
+      "meaning": "The terabyte, a unit of information. This unit uses a decimal prefix; its meaning never changes with a preference or locale.",
+      "context": "The user selected Latin-only information symbols in every language in expression-language round 16. Lowercase b denotes bits and uppercase B denotes bytes; prefix case is significant. Every locale must retain the exact catalog spelling. Descriptions remain translatable.",
+      "location": "Information unit positions in expressions, conversion targets, results and unit completions.",
+      "elementType": "unit_symbol"
+    },
+    "information.kibibit": {
+      "text": "Kib",
+      "localizationPolicy": "invariant",
+      "meaning": "The kibibit, a unit of information. This unit uses a binary prefix; its meaning never changes with a preference or locale.",
+      "context": "The user selected Latin-only information symbols in every language in expression-language round 16. Lowercase b denotes bits and uppercase B denotes bytes; prefix case is significant. Every locale must retain the exact catalog spelling. Descriptions remain translatable.",
+      "location": "Information unit positions in expressions, conversion targets, results and unit completions.",
+      "elementType": "unit_symbol"
+    },
+    "information.kibibyte": {
+      "text": "KiB",
+      "localizationPolicy": "invariant",
+      "meaning": "The kibibyte, a unit of information. This unit uses a binary prefix; its meaning never changes with a preference or locale.",
+      "context": "The user selected Latin-only information symbols in every language in expression-language round 16. Lowercase b denotes bits and uppercase B denotes bytes; prefix case is significant. Every locale must retain the exact catalog spelling. Descriptions remain translatable.",
+      "location": "Information unit positions in expressions, conversion targets, results and unit completions.",
+      "elementType": "unit_symbol"
+    },
+    "information.mebibit": {
+      "text": "Mib",
+      "localizationPolicy": "invariant",
+      "meaning": "The mebibit, a unit of information. This unit uses a binary prefix; its meaning never changes with a preference or locale.",
+      "context": "The user selected Latin-only information symbols in every language in expression-language round 16. Lowercase b denotes bits and uppercase B denotes bytes; prefix case is significant. Every locale must retain the exact catalog spelling. Descriptions remain translatable.",
+      "location": "Information unit positions in expressions, conversion targets, results and unit completions.",
+      "elementType": "unit_symbol"
+    },
+    "information.mebibyte": {
+      "text": "MiB",
+      "localizationPolicy": "invariant",
+      "meaning": "The mebibyte, a unit of information. This unit uses a binary prefix; its meaning never changes with a preference or locale.",
+      "context": "The user selected Latin-only information symbols in every language in expression-language round 16. Lowercase b denotes bits and uppercase B denotes bytes; prefix case is significant. Every locale must retain the exact catalog spelling. Descriptions remain translatable.",
+      "location": "Information unit positions in expressions, conversion targets, results and unit completions.",
+      "elementType": "unit_symbol"
+    },
+    "information.gibibit": {
+      "text": "Gib",
+      "localizationPolicy": "invariant",
+      "meaning": "The gibibit, a unit of information. This unit uses a binary prefix; its meaning never changes with a preference or locale.",
+      "context": "The user selected Latin-only information symbols in every language in expression-language round 16. Lowercase b denotes bits and uppercase B denotes bytes; prefix case is significant. Every locale must retain the exact catalog spelling. Descriptions remain translatable.",
+      "location": "Information unit positions in expressions, conversion targets, results and unit completions.",
+      "elementType": "unit_symbol"
+    },
+    "information.gibibyte": {
+      "text": "GiB",
+      "localizationPolicy": "invariant",
+      "meaning": "The gibibyte, a unit of information. This unit uses a binary prefix; its meaning never changes with a preference or locale.",
+      "context": "The user selected Latin-only information symbols in every language in expression-language round 16. Lowercase b denotes bits and uppercase B denotes bytes; prefix case is significant. Every locale must retain the exact catalog spelling. Descriptions remain translatable.",
+      "location": "Information unit positions in expressions, conversion targets, results and unit completions.",
+      "elementType": "unit_symbol"
+    },
+    "information.tebibit": {
+      "text": "Tib",
+      "localizationPolicy": "invariant",
+      "meaning": "The tebibit, a unit of information. This unit uses a binary prefix; its meaning never changes with a preference or locale.",
+      "context": "The user selected Latin-only information symbols in every language in expression-language round 16. Lowercase b denotes bits and uppercase B denotes bytes; prefix case is significant. Every locale must retain the exact catalog spelling. Descriptions remain translatable.",
+      "location": "Information unit positions in expressions, conversion targets, results and unit completions.",
+      "elementType": "unit_symbol"
+    },
+    "information.tebibyte": {
+      "text": "TiB",
+      "localizationPolicy": "invariant",
+      "meaning": "The tebibyte, a unit of information. This unit uses a binary prefix; its meaning never changes with a preference or locale.",
+      "context": "The user selected Latin-only information symbols in every language in expression-language round 16. Lowercase b denotes bits and uppercase B denotes bytes; prefix case is significant. Every locale must retain the exact catalog spelling. Descriptions remain translatable.",
+      "location": "Information unit positions in expressions, conversion targets, results and unit completions.",
       "elementType": "unit_symbol"
     }
   }
