@@ -1,0 +1,658 @@
+{
+  "schemaVersion": 1,
+  "sourceLanguage": "en",
+  "status": "draft",
+  "coverage": "Candidate text for the currently identified calculator surfaces. Final wording, placement, and inclusion follow the open product decisions; this catalog does not approve new behavior.",
+  "messages": {
+    "quick.expression.placeholder": {
+      "text": "Type a calculation",
+      "meaning": "Invites the user to enter a mathematical expression.",
+      "context": "Shown only while the quick input is empty.",
+      "location": "Inside the centered quick calculation input.",
+      "elementType": "input_placeholder"
+    },
+    "quick.expression.accessibleName": {
+      "text": "Calculation",
+      "meaning": "Names the mathematical input for assistive technology.",
+      "context": "Read when the quick input receives focus, including when a value is present.",
+      "location": "Accessible name of the quick input; not an extra visible label.",
+      "elementType": "accessible_name"
+    },
+    "quick.result.label": {
+      "text": "Result",
+      "meaning": "Identifies the value produced by the current expression.",
+      "context": "Used when a valid live result is available.",
+      "location": "Result area adjacent to the quick input; exact side is undecided.",
+      "elementType": "field_label"
+    },
+    "quick.result.pending": {
+      "text": "Calculating…",
+      "meaning": "Indicates that evaluation has not finished.",
+      "context": "Available for a calculation that takes long enough to need feedback; display timing is undecided.",
+      "location": "Live result area.",
+      "elementType": "status_message"
+    },
+    "quick.history.show": {
+      "text": "Show history",
+      "meaning": "Expands the calculation history.",
+      "context": "Available when history is collapsed.",
+      "location": "Command menu or keyboard hint associated with quick input.",
+      "elementType": "command_label"
+    },
+    "quick.history.hide": {
+      "text": "Hide history",
+      "meaning": "Collapses history while retaining the quick input.",
+      "context": "Available when history is expanded.",
+      "location": "Command menu or keyboard hint associated with expanded history.",
+      "elementType": "command_label"
+    },
+    "quick.sheet.open": {
+      "text": "Open calculation sheet",
+      "meaning": "Switches to a calculation with variables and multiple expressions.",
+      "context": "Used when entering the extended mode; draft transfer rules are undecided.",
+      "location": "Quick input command menu.",
+      "elementType": "command_label"
+    },
+    "quick.hide": {
+      "text": "Hide calculator",
+      "meaning": "Dismisses the visible calculator without naming a full application exit.",
+      "context": "Used by a hide command; draft preservation rules are undecided.",
+      "location": "Command menu or keyboard help; not standard window chrome.",
+      "elementType": "command_label"
+    },
+    "copy.result": {
+      "text": "Copy result",
+      "meaning": "Copies the selected valid calculation result.",
+      "context": "Available when a result can be copied.",
+      "location": "Result actions in quick input, history, or a calculation sheet.",
+      "elementType": "command_label"
+    },
+    "copy.success": {
+      "text": "Result copied",
+      "meaning": "Confirms that the clipboard write succeeded.",
+      "context": "Shown or announced only after successful copying.",
+      "location": "Brief feedback near the active result; live region for assistive technology.",
+      "elementType": "status_message"
+    },
+    "copy.error": {
+      "text": "Could not copy the result. Try again.",
+      "meaning": "Reports that writing the result to the clipboard failed.",
+      "context": "Shown when copying fails; it must not claim success.",
+      "location": "Feedback area near the active result.",
+      "elementType": "error_message"
+    },
+    "expression.incomplete": {
+      "text": "Finish the expression",
+      "meaning": "Explains that more mathematical input is needed.",
+      "context": "Available for unfinished input; whether visible or only announced remains undecided.",
+      "location": "Diagnostic area associated with the current expression.",
+      "elementType": "input_hint"
+    },
+    "expression.invalid": {
+      "text": "Check the expression",
+      "meaning": "Reports an expression that cannot be parsed.",
+      "context": "Shown for a syntax error after the agreed validation trigger.",
+      "location": "Diagnostic area associated with the current expression.",
+      "elementType": "error_message"
+    },
+    "expression.divisionByZero": {
+      "text": "Cannot divide by zero",
+      "meaning": "Explains why division cannot produce a result.",
+      "context": "Shown when evaluation attempts division by zero.",
+      "location": "Diagnostic area for the affected expression or sheet line.",
+      "elementType": "error_message"
+    },
+    "expression.unknownName": {
+      "text": "Unknown name: {name}",
+      "meaning": "Reports an identifier that the calculation cannot resolve.",
+      "context": "Shown when an expression refers to an undefined name.",
+      "location": "Diagnostic area for the affected expression or sheet line.",
+      "elementType": "error_message",
+      "placeholders": {
+        "name": "An identifier exactly as written by the user in the calculation. Preserve its spelling and do not translate the inserted value."
+      }
+    },
+    "expression.domainError": {
+      "text": "This operation is not defined for these values",
+      "meaning": "Reports values outside the supported mathematical domain.",
+      "context": "Shown when a supported operation cannot accept the supplied values.",
+      "location": "Diagnostic area for the affected expression or sheet line.",
+      "elementType": "error_message"
+    },
+    "expression.incompatibleUnits": {
+      "text": "These units cannot be converted",
+      "meaning": "Reports a conversion between incompatible measurement dimensions.",
+      "context": "Shown when the requested unit conversion is invalid.",
+      "location": "Diagnostic area associated with the conversion expression.",
+      "elementType": "error_message"
+    },
+    "expression.unknownUnit": {
+      "text": "Unknown unit: {unit}",
+      "meaning": "Reports a measurement unit that the calculator does not recognize.",
+      "context": "Shown when a conversion uses an unsupported unit token.",
+      "location": "Diagnostic area associated with the conversion expression.",
+      "elementType": "error_message",
+      "placeholders": {
+        "unit": "A unit token exactly as written in the expression. Preserve the token; accepted unit spellings are defined by the expression language."
+      }
+    },
+    "expression.limit": {
+      "text": "This calculation exceeds the supported limits",
+      "meaning": "Explains that evaluation stopped at a configured computational limit.",
+      "context": "Used only for an implemented limit; the limit policy is undecided.",
+      "location": "Diagnostic area for the affected calculation.",
+      "elementType": "error_message"
+    },
+    "history.title": {
+      "text": "History",
+      "meaning": "Names the list of past calculations.",
+      "context": "Shown when the history view is expanded.",
+      "location": "Heading of the history region above or below quick input; direction is undecided.",
+      "elementType": "section_heading"
+    },
+    "history.empty": {
+      "text": "No calculations yet",
+      "meaning": "Explains an empty calculation history.",
+      "context": "Shown when history contains no saved entries.",
+      "location": "Empty history region.",
+      "elementType": "empty_state"
+    },
+    "history.search.placeholder": {
+      "text": "Search history",
+      "meaning": "Invites a search among past calculations.",
+      "context": "Available if history search is included in the final interaction design.",
+      "location": "Search input inside the history region.",
+      "elementType": "input_placeholder"
+    },
+    "history.search.accessibleName": {
+      "text": "Search calculation history",
+      "meaning": "Names the history search input.",
+      "context": "Read when the history search field receives focus.",
+      "location": "Accessible name of the history search input.",
+      "elementType": "accessible_name"
+    },
+    "history.noMatches": {
+      "text": "No matching calculations",
+      "meaning": "Explains why a nonempty history search displays no entries.",
+      "context": "Shown when the search returns no matches.",
+      "location": "History results region.",
+      "elementType": "empty_state"
+    },
+    "history.entry.accessibleName": {
+      "text": "{expression} equals {result}",
+      "meaning": "Announces a historical expression together with its recorded result.",
+      "context": "Read when an existing history entry is selected.",
+      "location": "Accessible name of a calculation history entry.",
+      "elementType": "accessible_name",
+      "placeholders": {
+        "expression": "A mathematical expression taken from calculation history. Do not translate, reorder, or modify the inserted expression.",
+        "result": "The formatted value recorded for a calculation. Preserve the inserted value; numeric formatting is handled separately."
+      }
+    },
+    "history.reuse": {
+      "text": "Use this expression",
+      "meaning": "Recalls a previous expression for further input.",
+      "context": "Used for a selected history entry; recalculation semantics are undecided.",
+      "location": "Actions associated with a history entry.",
+      "elementType": "command_label"
+    },
+    "history.delete": {
+      "text": "Delete calculation",
+      "meaning": "Removes one selected history entry.",
+      "context": "Available in history management; undo behavior is undecided.",
+      "location": "Actions associated with a history entry.",
+      "elementType": "command_label"
+    },
+    "history.clear": {
+      "text": "Clear history",
+      "meaning": "Starts clearing past calculation entries.",
+      "context": "Available in history management.",
+      "location": "History actions menu.",
+      "elementType": "command_label"
+    },
+    "history.clear.title": {
+      "text": "Clear calculation history?",
+      "meaning": "Identifies a proposed confirmation for clearing history.",
+      "context": "Draft text for a confirmation if that flow is selected.",
+      "location": "Title of the history clearing dialog.",
+      "elementType": "dialog_title"
+    },
+    "sheet.title": {
+      "text": "Calculation sheet",
+      "meaning": "Names a multi-expression calculation with variables.",
+      "context": "Used as the generic extended-mode heading.",
+      "location": "Heading of the extended calculation view.",
+      "elementType": "section_heading"
+    },
+    "sheet.name.label": {
+      "text": "Sheet name",
+      "meaning": "Labels the user-defined name of a calculation sheet.",
+      "context": "Shown when creating or renaming a saved sheet.",
+      "location": "Label next to the sheet name field.",
+      "elementType": "field_label"
+    },
+    "sheet.name.placeholder": {
+      "text": "Name this calculation",
+      "meaning": "Invites a name for a calculation sheet.",
+      "context": "Shown while a sheet name field is empty.",
+      "location": "Inside the sheet name input.",
+      "elementType": "input_placeholder"
+    },
+    "sheet.editor.accessibleName": {
+      "text": "Calculation sheet editor",
+      "meaning": "Names the editor for variables and expressions.",
+      "context": "Read when the extended editor receives focus.",
+      "location": "Accessible name of the sheet editor.",
+      "elementType": "accessible_name"
+    },
+    "sheet.new": {
+      "text": "New sheet",
+      "meaning": "Creates a separate calculation sheet.",
+      "context": "Used from sheet management; the current draft policy is undecided.",
+      "location": "Sheet command menu.",
+      "elementType": "command_label"
+    },
+    "sheet.save": {
+      "text": "Save sheet",
+      "meaning": "Saves the current sheet as a reusable local calculation.",
+      "context": "Available if explicit saving is part of the agreed persistence flow.",
+      "location": "Sheet command menu.",
+      "elementType": "command_label"
+    },
+    "sheet.rename": {
+      "text": "Rename sheet",
+      "meaning": "Changes the saved name of a sheet.",
+      "context": "Available for a named calculation sheet.",
+      "location": "Sheet actions menu.",
+      "elementType": "command_label"
+    },
+    "sheet.duplicate": {
+      "text": "Duplicate sheet",
+      "meaning": "Creates a separate copy of a calculation sheet.",
+      "context": "Available if sheet duplication is included in the final design.",
+      "location": "Sheet actions menu.",
+      "elementType": "command_label"
+    },
+    "sheet.delete": {
+      "text": "Delete sheet",
+      "meaning": "Removes a saved calculation sheet.",
+      "context": "Available in sheet management; confirmation and recovery are undecided.",
+      "location": "Sheet actions menu.",
+      "elementType": "command_label"
+    },
+    "sheet.saveAsTemplate": {
+      "text": "Save as template",
+      "meaning": "Creates a reusable calculation template from a sheet.",
+      "context": "Used when saving a calculation as a template; parameter rules are undecided.",
+      "location": "Sheet actions menu.",
+      "elementType": "command_label"
+    },
+    "sheet.saved": {
+      "text": "Sheet saved",
+      "meaning": "Confirms that the sheet was persisted successfully.",
+      "context": "Shown or announced after a successful save.",
+      "location": "Sheet feedback area.",
+      "elementType": "status_message"
+    },
+    "sheet.saveError": {
+      "text": "Could not save the sheet",
+      "meaning": "Reports failure to persist the calculation sheet.",
+      "context": "Shown when a save attempt fails.",
+      "location": "Sheet feedback area.",
+      "elementType": "error_message"
+    },
+    "sheet.cycle": {
+      "text": "These expressions depend on each other",
+      "meaning": "Explains a circular dependency that prevents automatic recalculation.",
+      "context": "Available for cyclic dependencies if the final sheet model allows references requiring this check.",
+      "location": "Diagnostics for the affected sheet expressions.",
+      "elementType": "error_message"
+    },
+    "templates.title": {
+      "text": "Templates",
+      "meaning": "Names saved calculation templates.",
+      "context": "Shown when browsing reusable templates.",
+      "location": "Heading of the template browser.",
+      "elementType": "section_heading"
+    },
+    "templates.empty": {
+      "text": "No templates yet",
+      "meaning": "Explains an empty template collection.",
+      "context": "Shown when no templates have been saved.",
+      "location": "Empty template browser.",
+      "elementType": "empty_state"
+    },
+    "templates.search.placeholder": {
+      "text": "Search templates",
+      "meaning": "Invites a search by template name.",
+      "context": "Shown while the template search field is empty.",
+      "location": "Search input in the template browser.",
+      "elementType": "input_placeholder"
+    },
+    "templates.search.accessibleName": {
+      "text": "Search calculation templates",
+      "meaning": "Names the template search input for assistive technology.",
+      "context": "Read when the template search field receives focus.",
+      "location": "Accessible name of the template search input.",
+      "elementType": "accessible_name"
+    },
+    "templates.noMatches": {
+      "text": "No matching templates",
+      "meaning": "Explains that a template search has no matches.",
+      "context": "Shown for a search returning no templates.",
+      "location": "Template search results region.",
+      "elementType": "empty_state"
+    },
+    "templates.name.label": {
+      "text": "Template name",
+      "meaning": "Labels the name of a saved calculation template.",
+      "context": "Shown when saving or renaming a template.",
+      "location": "Label next to the template name field.",
+      "elementType": "field_label"
+    },
+    "templates.name.placeholder": {
+      "text": "Name this template",
+      "meaning": "Invites a descriptive template name.",
+      "context": "Shown while the template name field is empty.",
+      "location": "Inside the template name input.",
+      "elementType": "input_placeholder"
+    },
+    "templates.use": {
+      "text": "Use template",
+      "meaning": "Starts a calculation using the selected template.",
+      "context": "Used after choosing a template; instance and parameter behavior is undecided.",
+      "location": "Actions for the selected template.",
+      "elementType": "command_label"
+    },
+    "templates.rename": {
+      "text": "Rename template",
+      "meaning": "Changes the user-defined template name.",
+      "context": "Available in template management.",
+      "location": "Template actions menu.",
+      "elementType": "command_label"
+    },
+    "templates.duplicate": {
+      "text": "Duplicate template",
+      "meaning": "Creates a separate reusable template copy.",
+      "context": "Available if template duplication is selected in the final design.",
+      "location": "Template actions menu.",
+      "elementType": "command_label"
+    },
+    "templates.delete": {
+      "text": "Delete template",
+      "meaning": "Removes a saved template.",
+      "context": "Available in template management; confirmation and recovery are undecided.",
+      "location": "Template actions menu.",
+      "elementType": "command_label"
+    },
+    "templates.saved": {
+      "text": "Template saved",
+      "meaning": "Confirms successful template persistence.",
+      "context": "Shown or announced after a template is saved.",
+      "location": "Template feedback area.",
+      "elementType": "status_message"
+    },
+    "templates.saveError": {
+      "text": "Could not save the template",
+      "meaning": "Reports failure to persist a template.",
+      "context": "Shown when saving a template fails.",
+      "location": "Template feedback area.",
+      "elementType": "error_message"
+    },
+    "settings.open": {
+      "text": "Open settings",
+      "meaning": "Opens application preferences.",
+      "context": "Available through the application command menu or tray/menu bar entry.",
+      "location": "Application actions menu; not permanent quick-input chrome.",
+      "elementType": "command_label"
+    },
+    "settings.title": {
+      "text": "Settings",
+      "meaning": "Names the application preferences view.",
+      "context": "Shown when preferences are open.",
+      "location": "Heading of the settings view.",
+      "elementType": "section_heading"
+    },
+    "settings.theme.label": {
+      "text": "Theme",
+      "meaning": "Labels the interface appearance setting.",
+      "context": "Shown in appearance preferences.",
+      "location": "Label next to the theme control.",
+      "elementType": "field_label"
+    },
+    "settings.theme.light": {
+      "text": "Light",
+      "meaning": "Selects the light interface appearance.",
+      "context": "Shown as a theme choice.",
+      "location": "Option in the theme control.",
+      "elementType": "select_option"
+    },
+    "settings.theme.dark": {
+      "text": "Dark",
+      "meaning": "Selects the dark interface appearance.",
+      "context": "Shown as a theme choice.",
+      "location": "Option in the theme control.",
+      "elementType": "select_option"
+    },
+    "settings.theme.system": {
+      "text": "Follow system",
+      "meaning": "Makes appearance follow the operating system preference.",
+      "context": "Draft option pending agreement on system-theme support.",
+      "location": "Option in the theme control.",
+      "elementType": "select_option"
+    },
+    "settings.language.label": {
+      "text": "Interface language",
+      "meaning": "Labels the language used for application text.",
+      "context": "Shown in language preferences; it does not label mathematical syntax.",
+      "location": "Label next to the interface language control.",
+      "elementType": "field_label"
+    },
+    "settings.language.en": {
+      "text": "English",
+      "meaning": "Names the English interface translation.",
+      "context": "Shown among the available interface languages.",
+      "location": "Option in the interface language control.",
+      "elementType": "select_option"
+    },
+    "settings.language.ru": {
+      "text": "Russian",
+      "meaning": "Names the Russian interface translation.",
+      "context": "Shown among the available interface languages.",
+      "location": "Option in the interface language control.",
+      "elementType": "select_option"
+    },
+    "settings.shortcuts.title": {
+      "text": "Keyboard shortcuts",
+      "meaning": "Groups configurable keyboard commands.",
+      "context": "Shown in preferences for keyboard behavior.",
+      "location": "Heading of the shortcut settings section.",
+      "elementType": "section_heading"
+    },
+    "settings.shortcuts.open": {
+      "text": "Open calculator",
+      "meaning": "Labels the global combination used to summon the calculator.",
+      "context": "Shown while configuring the global shortcut.",
+      "location": "Label next to the global shortcut recorder.",
+      "elementType": "field_label"
+    },
+    "settings.shortcuts.copy": {
+      "text": "Copy result",
+      "meaning": "Labels the combination used to copy a result.",
+      "context": "Shown while configuring calculation confirmation and copying.",
+      "location": "Label next to the copy shortcut control.",
+      "elementType": "field_label"
+    },
+    "settings.shortcuts.capture": {
+      "text": "Press a shortcut",
+      "meaning": "Invites the user to record a keyboard combination.",
+      "context": "Shown while a shortcut recorder is awaiting input.",
+      "location": "Inside the active shortcut recorder.",
+      "elementType": "input_hint"
+    },
+    "settings.shortcuts.unavailable": {
+      "text": "This shortcut is unavailable. Choose another.",
+      "meaning": "Reports that the proposed keyboard combination could not be accepted.",
+      "context": "Shown after failed registration or validation; the exact cause may be unknown.",
+      "location": "Feedback below the shortcut recorder.",
+      "elementType": "error_message"
+    },
+    "settings.shortcuts.current": {
+      "text": "Current shortcut: {shortcut}",
+      "meaning": "Describes the currently configured keyboard combination.",
+      "context": "Shown or announced when reviewing a shortcut setting.",
+      "location": "Shortcut recorder summary.",
+      "elementType": "status_message",
+      "placeholders": {
+        "shortcut": "A keyboard combination formatted for the current operating system. Do not translate modifier symbols or hard-code Control or Command."
+      }
+    },
+    "settings.copyBehavior.label": {
+      "text": "After copying",
+      "meaning": "Labels the preferred window behavior after a successful copy.",
+      "context": "Draft setting pending agreement on the copying flow.",
+      "location": "Label next to the post-copy behavior control.",
+      "elementType": "field_label"
+    },
+    "settings.copyBehavior.keep": {
+      "text": "Keep calculator open",
+      "meaning": "Leaves the calculator visible after copying.",
+      "context": "Draft choice if post-copy window behavior is configurable.",
+      "location": "Option in the post-copy behavior control.",
+      "elementType": "select_option"
+    },
+    "settings.copyBehavior.hide": {
+      "text": "Hide calculator",
+      "meaning": "Dismisses the calculator after copying succeeds.",
+      "context": "Draft choice if post-copy window behavior is configurable.",
+      "location": "Option in the post-copy behavior control.",
+      "elementType": "select_option"
+    },
+    "settings.autostart.label": {
+      "text": "Start when I sign in",
+      "meaning": "Labels automatic background startup after user login.",
+      "context": "Draft setting pending agreement on application startup.",
+      "location": "Label next to the autostart control.",
+      "elementType": "field_label"
+    },
+    "settings.saveError": {
+      "text": "Could not save settings",
+      "meaning": "Reports failure to persist a preference change.",
+      "context": "Shown if saving preferences fails.",
+      "location": "Settings feedback area.",
+      "elementType": "error_message"
+    },
+    "data.title": {
+      "text": "Your data",
+      "meaning": "Groups controls for locally stored calculations and preferences.",
+      "context": "Shown in data management.",
+      "location": "Heading of the data management section.",
+      "elementType": "section_heading"
+    },
+    "data.localDescription": {
+      "text": "History, sheets, templates, and settings are stored on this device.",
+      "meaning": "Explains the accepted local storage model.",
+      "context": "Shown when the user reviews storage and transfer options.",
+      "location": "Description in the data management section.",
+      "elementType": "description"
+    },
+    "data.export": {
+      "text": "Export data",
+      "meaning": "Starts transferring local application data to a file.",
+      "context": "Used to move data between devices; export selection and format are undecided.",
+      "location": "Data management actions.",
+      "elementType": "command_label"
+    },
+    "data.import": {
+      "text": "Import data",
+      "meaning": "Starts loading previously exported application data.",
+      "context": "Used to transfer data from another installation; conflict rules are undecided.",
+      "location": "Data management actions.",
+      "elementType": "command_label"
+    },
+    "data.export.success": {
+      "text": "Data exported",
+      "meaning": "Confirms that an export file was written successfully.",
+      "context": "Shown after export completes.",
+      "location": "Data management feedback area.",
+      "elementType": "status_message"
+    },
+    "data.export.error": {
+      "text": "Could not export data",
+      "meaning": "Reports a failed data export.",
+      "context": "Shown when an export file cannot be produced.",
+      "location": "Data management feedback area.",
+      "elementType": "error_message"
+    },
+    "data.import.success": {
+      "text": "Data imported",
+      "meaning": "Confirms that imported data was accepted and saved.",
+      "context": "Shown only after import and persistence succeed.",
+      "location": "Data management feedback area.",
+      "elementType": "status_message"
+    },
+    "data.import.error": {
+      "text": "Could not import this file",
+      "meaning": "Reports that the selected file could not be imported.",
+      "context": "Shown when reading, validating, or applying an import fails; detailed diagnostics may be added later.",
+      "location": "Data management feedback area.",
+      "elementType": "error_message"
+    },
+    "data.import.unsupported": {
+      "text": "This file uses an unsupported data format",
+      "meaning": "Explains that an import format or version is unsupported.",
+      "context": "Shown when the file cannot be interpreted by the current data format reader.",
+      "location": "Import feedback area.",
+      "elementType": "error_message"
+    },
+    "app.show": {
+      "text": "Show calculator",
+      "meaning": "Opens the calculator from application management.",
+      "context": "Used as an alternative to the global keyboard shortcut.",
+      "location": "Tray or menu bar application menu.",
+      "elementType": "menu_item"
+    },
+    "app.quit": {
+      "text": "Quit calculator",
+      "meaning": "Ends the background application rather than hiding its window.",
+      "context": "Used when the user explicitly exits the application.",
+      "location": "Tray or menu bar application menu.",
+      "elementType": "menu_item"
+    },
+    "common.save": {
+      "text": "Save",
+      "meaning": "Confirms saving the item currently being edited.",
+      "context": "Used only in a dialog whose heading names the item and whose action persists it.",
+      "location": "Primary action of a save or rename dialog.",
+      "elementType": "button"
+    },
+    "common.cancel": {
+      "text": "Cancel",
+      "meaning": "Dismisses a pending dialog action without confirming it.",
+      "context": "Used in save, rename, import, or deletion dialogs where cancellation is available.",
+      "location": "Secondary action of a dialog.",
+      "elementType": "button"
+    },
+    "common.delete": {
+      "text": "Delete",
+      "meaning": "Confirms removal of the item named by the surrounding dialog.",
+      "context": "Draft action for deletion confirmation; recovery semantics are undecided.",
+      "location": "Destructive action inside an item-specific confirmation dialog.",
+      "elementType": "button"
+    },
+    "common.close": {
+      "text": "Close",
+      "meaning": "Dismisses an auxiliary dialog or view.",
+      "context": "Used only for auxiliary views; it is not a window control on the quick calculator.",
+      "location": "Dismiss action of an auxiliary view or dialog.",
+      "elementType": "button"
+    },
+    "common.retry": {
+      "text": "Try again",
+      "meaning": "Repeats a failed user action.",
+      "context": "Available next to a recoverable error when retry is supported.",
+      "location": "Action in an error feedback region.",
+      "elementType": "button"
+    }
+  }
+}
