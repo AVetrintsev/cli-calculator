@@ -25,13 +25,6 @@
       "location": "Result line directly below the quick input.",
       "elementType": "field_label"
     },
-    "quick.result.pending": {
-      "text": "Calculating…",
-      "meaning": "Indicates that evaluation has not finished.",
-      "context": "Available for a calculation that takes long enough to need feedback; display timing is undecided.",
-      "location": "Live result area.",
-      "elementType": "status_message"
-    },
     "quick.history.show": {
       "text": "Show history",
       "meaning": "Expands the calculation history.",
@@ -58,6 +51,20 @@
       "meaning": "Dismisses the visible calculator without naming a full application exit.",
       "context": "Used by Escape, the repeated summon shortcut, or a click on another application. The unfinished input is preserved.",
       "location": "Command menu or keyboard help; not standard window chrome.",
+      "elementType": "command_label"
+    },
+    "definitions.saveConstant": {
+      "text": "Save as constant",
+      "meaning": "Saves a user-defined named value for reuse in future calculations.",
+      "context": "Invoked explicitly for a constant definition. Assigning a local sheet variable alone does not save a reusable constant. Selection rules remain to be specified.",
+      "location": "Definition actions associated with the calculation editor; the exact menu placement is not yet specified.",
+      "elementType": "command_label"
+    },
+    "definitions.saveFunction": {
+      "text": "Save function",
+      "meaning": "Saves a user-defined calculation rule for future calls by name.",
+      "context": "Invoked explicitly for a function definition, which may use the short form or a multiline body. Detailed save flow remains to be specified.",
+      "location": "Definition actions associated with the calculation editor; the exact menu placement is not yet specified.",
       "elementType": "command_label"
     },
     "copy.result": {
@@ -136,10 +143,17 @@
         "unit": "A unit token exactly as written in the expression. Preserve the token; accepted unit spellings are defined by the expression language."
       }
     },
+    "expression.precisionLimit": {
+      "text": "Use at most 30 significant digits",
+      "meaning": "Explains that an entered number exceeds the supported numeric precision.",
+      "context": "Shown when an input number contains more than 30 significant digits. The input must not be silently truncated. Exact validation timing remains to be specified.",
+      "location": "Diagnostic area for the affected expression or sheet line.",
+      "elementType": "error_message"
+    },
     "expression.limit": {
       "text": "This calculation exceeds the supported limits",
       "meaning": "Explains that evaluation stopped at a configured computational limit.",
-      "context": "Used only for an implemented limit; the limit policy is undecided.",
+      "context": "Shown when an expression is rejected for exceeding the supported complexity or evaluation budget. Long-running calculation mode is excluded; exact resource thresholds remain to be specified.",
       "location": "Diagnostic area for the affected calculation.",
       "elementType": "error_message"
     },

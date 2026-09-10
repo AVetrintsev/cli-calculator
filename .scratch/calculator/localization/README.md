@@ -32,7 +32,7 @@ Current element types: `input_placeholder`, `accessible_name`, `field_label`, `s
 2. Each `en.json` value must equal its catalog entry's `text` exactly. Update them together; the catalog is the authoring reference for English wording and translation context.
 3. Each translation must be a nonempty string and retain the same named placeholders. A translator can reorder complete placeholders to fit the target language.
 4. A translated sentence must be stored as a whole. Do not assemble user-facing sentences from independently translated fragments or add hard-coded English punctuation at call sites.
-5. User-entered expressions, variable names, template names, file contents, and calculated values are data, not interface text. Do not translate or rewrite them through this catalog.
+5. User-entered expressions, variable names, saved constant and function names or bodies, template names, file contents, and calculated values are data, not interface text. Do not translate or rewrite them through this catalog. Numeric formatting and the reduced opacity of fractional digits belong to result presentation, not translation strings.
 6. Keyboard combinations are supplied in their platform-specific form through `{shortcut}`. Do not bake a Windows modifier into wording shared with macOS.
 7. Use separate keys when identical English words have different meanings or translation requirements. Reuse a key only when its meaning and context are also shared.
 8. A new label, placeholder, error, hint, menu item, dialog message, or accessible name must be added to the catalog and both initial language files before that application text is implemented.
@@ -49,7 +49,7 @@ Generation from the catalog provides a translation draft. Structural validation 
 
 ## Coverage and remaining decisions
 
-The initial catalog covers quick input, live results and diagnostics, history, calculation sheets, templates, settings, local data transfer, application menu commands, and shared dialog actions. Candidate text for optional interactions is marked as such in each message's context. There are no visible standard window controls added to the quick calculator by this catalog.
+The initial catalog covers quick input, live results and diagnostics, history, calculation sheets, commands for saving user constants and functions, templates, settings, local data transfer, application menu commands, and shared dialog actions. Candidate text for optional interactions is marked as such in each message's context. There are no visible standard window controls added to the quick calculator by this catalog. The former calculation-wait message was removed after the long-running calculation flow was excluded.
 
 Installer and updater wording, additional mathematical diagnostics, new built-in templates, and the final texts for unresolved interaction flows must be added as those parts of the specification become concrete. System-owned dialog text is supplied by the operating system; application-supplied titles or messages still belong in the catalog.
 
