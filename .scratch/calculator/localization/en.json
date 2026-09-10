@@ -187,6 +187,6 @@
   "help.precedence.lazyUnitsRule": "Lowercase m can mean a metre or a minute; the active Russian spelling м follows the same rule. Lazy resolution uses the whole formula, including outer parentheses. If multiple interpretations remain valid, show all possible answers: 10m / 2s gives 5m/s for metres and the unitless 300 for minutes. Explicit metre and min select a meaning directly; the Russian equivalents are метр and мин. Grouping identical-looking answers, their order and copy selection are still being specified.",
   "help.precedence.durationNotation": "Short duration symbols are w, d, h, m, s and ms. Russian symbols are н, д, ч, м, с and мс. Days remain 24 hours and weeks remain seven days. Adjacent duration components are added: 1h 30m = 90min. Use an explicit * for multiplication. This is a special duration rule, not a general rule for adjacent quantities. Token boundaries without spaces and repeated components remain open.",
   "result.alternatives.label": "Possible results",
-  "result.alternative.interpretation": "{symbol}: {unit}",
+  "result.alternative.interpretation": "{symbol} → {unit}",
   "error.unsupportedUnit": "This unit is not supported"
 }

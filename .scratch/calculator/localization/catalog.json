@@ -1333,15 +1333,15 @@
     "result.alternatives.label": {
       "text": "Possible results",
       "meaning": "Names the collection of valid answers for different interpretations of one expression.",
-      "context": "Candidate copy for the accepted alternative-result feature and limited unit scope. Layout, result selection and partial failures remain open; the catalog does not approve those behaviors.",
-      "location": "Result region below the quick input or a calculation-sheet expression.",
+      "context": "Accessible label for alternative answers in the approved variant A layout. Reading order, focus behavior, grouping and copy selection remain to be specified.",
+      "location": "Shared horizontal result row below the fixed input, containing values, unit symbols and interpretation captions.",
       "elementType": "accessible_name"
     },
     "result.alternative.interpretation": {
-      "text": "{symbol}: {unit}",
+      "text": "{symbol} → {unit}",
       "meaning": "Explains the meaning assigned to an ambiguous input symbol in one possible answer.",
-      "context": "Candidate copy for the accepted alternative-result feature and limited unit scope. Layout, result selection and partial failures remain open; the catalog does not approve those behaviors.",
-      "location": "Caption associated with one possible result; its exact layout is being prototyped.",
+      "context": "Shown under each possible answer in the approved variant A layout. The caption explains the ambiguous symbol using an arrow and a localized unit name. Grouping identical-looking answers, explaining several ambiguous occurrences and copy selection remain open.",
+      "location": "Short subdued caption directly below its corresponding answer in the shared horizontal result row, with a thin vertical divider between neighboring answers.",
       "elementType": "description",
       "placeholders": {
         "symbol": "The original ambiguous symbol from the expression, kept as user data.",
