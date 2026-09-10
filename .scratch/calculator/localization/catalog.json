@@ -1000,28 +1000,28 @@
     "completion.base.bin.description": {
       "text": "binary",
       "meaning": "Identifies the base-2 representation of a number, not a physical unit of measurement.",
-      "context": "Description for conversion target bin, identical in all interface languages. After a complete :: or to operator, suggestions open immediately without waiting for a target letter. Integer values without a unit are offered bin, oct, dec and hex; quantities with units are offered compatible units instead. Nondecimal targets are not offered for fractional values. Further input filters the list.",
+      "context": "Description for conversion target bin, identical in all interface languages. After a complete :: or to operator, suggestions open immediately without waiting for a target letter. Integer values without a unit are offered bin, oct, dec and hex; quantities with units are offered compatible units instead. Nondecimal targets are not offered for fractional values. Further input filters the list. Determine the source operand using operator precedence: :: binds above multiplication and addition, while to applies after arithmetic.",
       "location": "Immediately after the conversion target in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
       "elementType": "description"
     },
     "completion.base.oct.description": {
       "text": "octal",
       "meaning": "Identifies the base-8 representation of a number, not a physical unit of measurement.",
-      "context": "Description for conversion target oct, identical in all interface languages. After a complete :: or to operator, suggestions open immediately without waiting for a target letter. Integer values without a unit are offered bin, oct, dec and hex; quantities with units are offered compatible units instead. Nondecimal targets are not offered for fractional values. Further input filters the list.",
+      "context": "Description for conversion target oct, identical in all interface languages. After a complete :: or to operator, suggestions open immediately without waiting for a target letter. Integer values without a unit are offered bin, oct, dec and hex; quantities with units are offered compatible units instead. Nondecimal targets are not offered for fractional values. Further input filters the list. Determine the source operand using operator precedence: :: binds above multiplication and addition, while to applies after arithmetic.",
       "location": "Immediately after the conversion target in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
       "elementType": "description"
     },
     "completion.base.dec.description": {
       "text": "decimal",
       "meaning": "Identifies the base-10 representation of a number, not a physical unit of measurement.",
-      "context": "Description for conversion target dec, identical in all interface languages. After a complete :: or to operator, suggestions open immediately without waiting for a target letter. Integer values without a unit are offered bin, oct, dec and hex; quantities with units are offered compatible units instead. Nondecimal targets are not offered for fractional values. Further input filters the list.",
+      "context": "Description for conversion target dec, identical in all interface languages. After a complete :: or to operator, suggestions open immediately without waiting for a target letter. Integer values without a unit are offered bin, oct, dec and hex; quantities with units are offered compatible units instead. Nondecimal targets are not offered for fractional values. Further input filters the list. Determine the source operand using operator precedence: :: binds above multiplication and addition, while to applies after arithmetic.",
       "location": "Immediately after the conversion target in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
       "elementType": "description"
     },
     "completion.base.hex.description": {
       "text": "hexadecimal",
       "meaning": "Identifies the base-16 representation of a number, not a physical unit of measurement.",
-      "context": "Description for conversion target hex, identical in all interface languages. After a complete :: or to operator, suggestions open immediately without waiting for a target letter. Integer values without a unit are offered bin, oct, dec and hex; quantities with units are offered compatible units instead. Nondecimal targets are not offered for fractional values. Further input filters the list.",
+      "context": "Description for conversion target hex, identical in all interface languages. After a complete :: or to operator, suggestions open immediately without waiting for a target letter. Integer values without a unit are offered bin, oct, dec and hex; quantities with units are offered compatible units instead. Nondecimal targets are not offered for fractional values. Further input filters the list. Determine the source operand using operator precedence: :: binds above multiplication and addition, while to applies after arithmetic.",
       "location": "Immediately after the conversion target in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
       "elementType": "description"
     },
@@ -1056,6 +1056,223 @@
       "context": "Shown when a quantity with a unit is given a numeral-system conversion target, such as 5 kg::hex or 5 kg to hex. Unit-bearing quantities use compatible unit conversions instead.",
       "location": "Diagnostic associated with the incompatible conversion target; no valid result is available to copy.",
       "elementType": "error_message"
+    },
+    "help.precedence.title": {
+      "text": "# Operator precedence",
+      "meaning": "Names the operator-precedence help page.",
+      "context": "Operator-help content reflecting decisions accepted through expression-language round 19. This is a specification preview; the application help entry point is not yet chosen.",
+      "location": "Operator-precedence help page, fragment title. Markdown formatting, formula spelling and table delimiters must be preserved while translating explanatory text.",
+      "elementType": "help_heading"
+    },
+    "help.precedence.status": {
+      "text": "Draft for review. Conversion examples are agreed; the complete table and the whitespace rule below are proposals awaiting confirmation.",
+      "meaning": "Distinguishes accepted examples from pending decisions in this specification preview.",
+      "context": "Specification help preview: this fragment presents a proposal awaiting the user's confirmation in expression-language round 20.",
+      "location": "Operator-precedence help page, fragment status. Markdown formatting, formula spelling and table delimiters must be preserved while translating explanatory text.",
+      "elementType": "help_paragraph"
+    },
+    "help.precedence.conversionHeading": {
+      "text": "## Two conversion operators",
+      "meaning": "Introduces the two conversion operators.",
+      "context": "Operator-help content reflecting decisions accepted through expression-language round 19. This is a specification preview; the application help entry point is not yet chosen.",
+      "location": "Operator-precedence help page, fragment conversionHeading. Markdown formatting, formula spelling and table delimiters must be preserved while translating explanatory text.",
+      "elementType": "help_heading"
+    },
+    "help.precedence.conversionRule": {
+      "text": "`::` and `to` support the same conversions but apply to different parts of an expression. `::` binds before multiplication and addition. `to` applies after the arithmetic expression to its left.",
+      "meaning": "Explains the agreed difference in arithmetic binding, replacing the former synonym-only rule.",
+      "context": "Operator-help content reflecting decisions accepted through expression-language round 19. This is a specification preview; the application help entry point is not yet chosen.",
+      "location": "Operator-precedence help page, fragment conversionRule. Markdown formatting, formula spelling and table delimiters must be preserved while translating explanatory text.",
+      "elementType": "help_paragraph"
+    },
+    "help.precedence.examplesHeader": {
+      "text": "| Input | Grouping | Result |\n| --- | --- | --- |",
+      "meaning": "Labels the columns of the accepted conversion examples.",
+      "context": "Operator-help content reflecting decisions accepted through expression-language round 19. This is a specification preview; the application help entry point is not yet chosen.",
+      "location": "Operator-precedence help page, fragment examplesHeader. Markdown formatting, formula spelling and table delimiters must be preserved while translating explanatory text.",
+      "elementType": "help_table_row"
+    },
+    "help.precedence.exampleTight": {
+      "text": "| `2+3::hex` | `2+(3::hex)` | `5` |",
+      "meaning": "Shows that converting only an operand does not set the final sum display format.",
+      "context": "Operator-help content reflecting decisions accepted through expression-language round 19. This is a specification preview; the application help entry point is not yet chosen.",
+      "location": "Operator-precedence help page, fragment exampleTight. Markdown formatting, formula spelling and table delimiters must be preserved while translating explanatory text.",
+      "elementType": "help_table_row"
+    },
+    "help.precedence.exampleLoose": {
+      "text": "| `2+3 to hex` | `(2+3) to hex` | `0x5` |",
+      "meaning": "Shows low-precedence conversion of the entire sum.",
+      "context": "Operator-help content reflecting decisions accepted through expression-language round 19. This is a specification preview; the application help entry point is not yet chosen.",
+      "location": "Operator-precedence help page, fragment exampleLoose. Markdown formatting, formula spelling and table delimiters must be preserved while translating explanatory text.",
+      "elementType": "help_table_row"
+    },
+    "help.precedence.exampleParentheses": {
+      "text": "| `(2+3)::hex` | Convert the parenthesized sum | `0x5` |",
+      "meaning": "Shows how parentheses explicitly select the source expression.",
+      "context": "Operator-help content reflecting decisions accepted through expression-language round 19. This is a specification preview; the application help entry point is not yet chosen.",
+      "location": "Operator-precedence help page, fragment exampleParentheses. Markdown formatting, formula spelling and table delimiters must be preserved while translating explanatory text.",
+      "elementType": "help_table_row"
+    },
+    "help.precedence.continuedArithmetic": {
+      "text": "To continue arithmetic after `to`, use parentheses: `(2 to hex) + 3 = 5`. The intermediate representation does not change the number. `2 to hex + 3` asks for parentheses; `2::hex+3` is valid and produces `5`.",
+      "meaning": "Explains continued arithmetic under the agreed parentheses rule and the new tight conversion operator.",
+      "context": "Operator-help content reflecting decisions accepted through expression-language round 19. This is a specification preview; the application help entry point is not yet chosen.",
+      "location": "Operator-precedence help page, fragment continuedArithmetic. Markdown formatting, formula spelling and table delimiters must be preserved while translating explanatory text.",
+      "elementType": "help_paragraph"
+    },
+    "help.precedence.chainsHeading": {
+      "text": "## Conversion chains",
+      "meaning": "Introduces sequential conversions.",
+      "context": "Operator-help content reflecting decisions accepted through expression-language round 19. This is a specification preview; the application help entry point is not yet chosen.",
+      "location": "Operator-precedence help page, fragment chainsHeading. Markdown formatting, formula spelling and table delimiters must be preserved while translating explanatory text.",
+      "elementType": "help_heading"
+    },
+    "help.precedence.chainsRule": {
+      "text": "Consecutive conversions run from left to right, including mixed operators: `255 to hex::bin = 0b11111111`; `1 km to m::cm = 100 000 cm`. Each target names a conversion destination. The next conversion uses the preceding value, not the target name. The last target sets the final representation or unit. Rounded intermediate display text is never reused for calculation.",
+      "meaning": "Explains the accepted chain rule and why precedence does not convert a target keyword itself.",
+      "context": "Operator-help content reflecting decisions accepted through expression-language round 19. This is a specification preview; the application help entry point is not yet chosen.",
+      "location": "Operator-precedence help page, fragment chainsRule. Markdown formatting, formula spelling and table delimiters must be preserved while translating explanatory text.",
+      "elementType": "help_paragraph"
+    },
+    "help.precedence.tableHeading": {
+      "text": "## Proposed complete order",
+      "meaning": "Marks the complete precedence table as a proposal.",
+      "context": "Specification help preview: this fragment presents a proposal awaiting the user's confirmation in expression-language round 20.",
+      "location": "Operator-precedence help page, fragment tableHeading. Markdown formatting, formula spelling and table delimiters must be preserved while translating explanatory text.",
+      "elementType": "help_heading"
+    },
+    "help.precedence.tableIntro": {
+      "text": "Higher rows bind first. The complete order below still requires confirmation; agreed examples above remain the reference for conversion behavior.",
+      "meaning": "Prevents the candidate ordering from being read as a finalized language contract.",
+      "context": "Specification help preview: this fragment presents a proposal awaiting the user's confirmation in expression-language round 20.",
+      "location": "Operator-precedence help page, fragment tableIntro. Markdown formatting, formula spelling and table delimiters must be preserved while translating explanatory text.",
+      "elementType": "help_paragraph"
+    },
+    "help.precedence.tableHeader": {
+      "text": "| Priority | Operation |\n| ---: | --- |",
+      "meaning": "Labels the candidate precedence table.",
+      "context": "Specification help preview: this fragment presents a proposal awaiting the user's confirmation in expression-language round 20.",
+      "location": "Operator-precedence help page, fragment tableHeader. Markdown formatting, formula spelling and table delimiters must be preserved while translating explanatory text.",
+      "elementType": "help_table_row"
+    },
+    "help.precedence.table.primary": {
+      "text": "| 1 | Parentheses, function calls, `√`, values with units |",
+      "meaning": "Places primary at rank 1 in the proposed complete order, with one as the highest priority.",
+      "context": "Specification help preview: this fragment presents a proposal awaiting the user's confirmation in expression-language round 20.",
+      "location": "Operator-precedence help page, fragment table.primary. Markdown formatting, formula spelling and table delimiters must be preserved while translating explanatory text.",
+      "elementType": "help_table_row"
+    },
+    "help.precedence.table.percent": {
+      "text": "| 2 | Postfix percent `%` |",
+      "meaning": "Places percent at rank 2 in the proposed complete order, with one as the highest priority.",
+      "context": "Specification help preview: this fragment presents a proposal awaiting the user's confirmation in expression-language round 20.",
+      "location": "Operator-precedence help page, fragment table.percent. Markdown formatting, formula spelling and table delimiters must be preserved while translating explanatory text.",
+      "elementType": "help_table_row"
+    },
+    "help.precedence.table.power": {
+      "text": "| 3 | Power `^` |",
+      "meaning": "Places power at rank 3 in the proposed complete order, with one as the highest priority.",
+      "context": "Specification help preview: this fragment presents a proposal awaiting the user's confirmation in expression-language round 20.",
+      "location": "Operator-precedence help page, fragment table.power. Markdown formatting, formula spelling and table delimiters must be preserved while translating explanatory text.",
+      "elementType": "help_table_row"
+    },
+    "help.precedence.table.unary": {
+      "text": "| 4 | Unary signs `+` and `-` |",
+      "meaning": "Places unary at rank 4 in the proposed complete order, with one as the highest priority.",
+      "context": "Specification help preview: this fragment presents a proposal awaiting the user's confirmation in expression-language round 20.",
+      "location": "Operator-precedence help page, fragment table.unary. Markdown formatting, formula spelling and table delimiters must be preserved while translating explanatory text.",
+      "elementType": "help_table_row"
+    },
+    "help.precedence.table.tightConversion": {
+      "text": "| 5 | Conversion `::` |",
+      "meaning": "Places tightConversion at rank 5 in the proposed complete order, with one as the highest priority.",
+      "context": "Specification help preview: this fragment presents a proposal awaiting the user's confirmation in expression-language round 20.",
+      "location": "Operator-precedence help page, fragment table.tightConversion. Markdown formatting, formula spelling and table delimiters must be preserved while translating explanatory text.",
+      "elementType": "help_table_row"
+    },
+    "help.precedence.table.multiplication": {
+      "text": "| 6 | Multiplication (including implicit multiplication) and division |",
+      "meaning": "Places multiplication at rank 6 in the proposed complete order, with one as the highest priority.",
+      "context": "Specification help preview: this fragment presents a proposal awaiting the user's confirmation in expression-language round 20.",
+      "location": "Operator-precedence help page, fragment table.multiplication. Markdown formatting, formula spelling and table delimiters must be preserved while translating explanatory text.",
+      "elementType": "help_table_row"
+    },
+    "help.precedence.table.addition": {
+      "text": "| 7 | Addition and subtraction |",
+      "meaning": "Places addition at rank 7 in the proposed complete order, with one as the highest priority.",
+      "context": "Specification help preview: this fragment presents a proposal awaiting the user's confirmation in expression-language round 20.",
+      "location": "Operator-precedence help page, fragment table.addition. Markdown formatting, formula spelling and table delimiters must be preserved while translating explanatory text.",
+      "elementType": "help_table_row"
+    },
+    "help.precedence.table.comparison": {
+      "text": "| 8 | Comparisons `==`, `!=`, `<`, `<=`, `>`, `>=` |",
+      "meaning": "Places comparison at rank 8 in the proposed complete order, with one as the highest priority.",
+      "context": "Specification help preview: this fragment presents a proposal awaiting the user's confirmation in expression-language round 20.",
+      "location": "Operator-precedence help page, fragment table.comparison. Markdown formatting, formula spelling and table delimiters must be preserved while translating explanatory text.",
+      "elementType": "help_table_row"
+    },
+    "help.precedence.table.not": {
+      "text": "| 9 | Logical `not` |",
+      "meaning": "Places not at rank 9 in the proposed complete order, with one as the highest priority.",
+      "context": "Specification help preview: this fragment presents a proposal awaiting the user's confirmation in expression-language round 20.",
+      "location": "Operator-precedence help page, fragment table.not. Markdown formatting, formula spelling and table delimiters must be preserved while translating explanatory text.",
+      "elementType": "help_table_row"
+    },
+    "help.precedence.table.and": {
+      "text": "| 10 | Logical `and` |",
+      "meaning": "Places and at rank 10 in the proposed complete order, with one as the highest priority.",
+      "context": "Specification help preview: this fragment presents a proposal awaiting the user's confirmation in expression-language round 20.",
+      "location": "Operator-precedence help page, fragment table.and. Markdown formatting, formula spelling and table delimiters must be preserved while translating explanatory text.",
+      "elementType": "help_table_row"
+    },
+    "help.precedence.table.or": {
+      "text": "| 11 | Logical `or` |",
+      "meaning": "Places or at rank 11 in the proposed complete order, with one as the highest priority.",
+      "context": "Specification help preview: this fragment presents a proposal awaiting the user's confirmation in expression-language round 20.",
+      "location": "Operator-precedence help page, fragment table.or. Markdown formatting, formula spelling and table delimiters must be preserved while translating explanatory text.",
+      "elementType": "help_table_row"
+    },
+    "help.precedence.table.looseConversion": {
+      "text": "| 12 | Conversion `to` |",
+      "meaning": "Places looseConversion at rank 12 in the proposed complete order, with one as the highest priority.",
+      "context": "Specification help preview: this fragment presents a proposal awaiting the user's confirmation in expression-language round 20.",
+      "location": "Operator-precedence help page, fragment table.looseConversion. Markdown formatting, formula spelling and table delimiters must be preserved while translating explanatory text.",
+      "elementType": "help_table_row"
+    },
+    "help.precedence.existingAssociativity": {
+      "text": "Already agreed: powers associate left to right, so `2^3^2 = (2^3)^2 = 64`. Power precedes unary minus: `-2^2 = -4`. Multiplication, implicit multiplication and division have equal priority and run left to right: `6/2(1+2) = 9`.",
+      "meaning": "Separates established associativity from the new positions awaiting confirmation.",
+      "context": "Operator-help content reflecting decisions accepted through expression-language round 19. This is a specification preview; the application help entry point is not yet chosen.",
+      "location": "Operator-precedence help page, fragment existingAssociativity. Markdown formatting, formula spelling and table delimiters must be preserved while translating explanatory text.",
+      "elementType": "help_paragraph"
+    },
+    "help.precedence.newOrderingExamples": {
+      "text": "Examples of the proposed placement of `::` after power and unary signs: `2^3::bin = 0b1000` and `-10::hex = -0xA`.",
+      "meaning": "Makes the unapproved placement of conversion versus power and unary minus concrete.",
+      "context": "Specification help preview: this fragment presents a proposal awaiting the user's confirmation in expression-language round 20.",
+      "location": "Operator-precedence help page, fragment newOrderingExamples. Markdown formatting, formula spelling and table delimiters must be preserved while translating explanatory text.",
+      "elementType": "help_paragraph"
+    },
+    "help.precedence.spacingHeading": {
+      "text": "## Proposed whitespace rule",
+      "meaning": "Marks the whitespace rule as awaiting confirmation.",
+      "context": "Specification help preview: this fragment presents a proposal awaiting the user's confirmation in expression-language round 20.",
+      "location": "Operator-precedence help page, fragment spacingHeading. Markdown formatting, formula spelling and table delimiters must be preserved while translating explanatory text.",
+      "elementType": "help_heading"
+    },
+    "help.precedence.spacingRule": {
+      "text": "Proposed: the operator token determines precedence, regardless of spaces around it. `2+3::hex` and `2 + 3 :: hex` both produce `5`; `2+3 to hex` produces `0x5`. Spaces can still separate tokens or group decimal digits; this is not a rule that all spaces everywhere may be removed.",
+      "meaning": "Clarifies the unresolved whitespace ambiguity without approving whitespace-sensitive precedence.",
+      "context": "Specification help preview: this fragment presents a proposal awaiting the user's confirmation in expression-language round 20.",
+      "location": "Operator-precedence help page, fragment spacingRule. Markdown formatting, formula spelling and table delimiters must be preserved while translating explanatory text.",
+      "elementType": "help_paragraph"
+    },
+    "help.precedence.definitionRule": {
+      "text": "`=` defines a name; it is not an equality comparison. Evaluate its right-hand expression using the operator order. Use `==` for equality checks.",
+      "meaning": "Keeps name definition distinct from comparison and the numeric operator table.",
+      "context": "Operator-help content reflecting decisions accepted through expression-language round 19. This is a specification preview; the application help entry point is not yet chosen.",
+      "location": "Operator-precedence help page, fragment definitionRule. Markdown formatting, formula spelling and table delimiters must be preserved while translating explanatory text.",
+      "elementType": "help_paragraph"
     }
   }
 }
