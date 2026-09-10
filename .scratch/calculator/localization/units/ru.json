@@ -3,5 +3,9 @@
   "length.kilometre": "км",
   "mass.kilogram": "кг",
   "time.second": "с",
-  "time.hour": "ч"
+  "time.hour": "ч",
+  "time.millisecond": "мс",
+  "time.minute": "мин",
+  "time.day": "сут",
+  "time.week": "нед"
 }

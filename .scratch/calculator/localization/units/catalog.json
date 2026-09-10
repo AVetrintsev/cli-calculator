@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "sourceLanguage": "en",
   "status": "draft",
-  "coverage": "Initial subset of units already used in agreed examples. This is not the complete product unit registry. Physical definitions and conversion factors are specified separately.",
+  "coverage": "Initial discussed examples plus the approved fixed-duration notation. This is not the complete product unit registry. Physical definitions and conversion factors are specified separately.",
   "units": {
     "length.metre": {
       "text": "m",
@@ -37,6 +37,34 @@
       "meaning": "The hour, a unit of time.",
       "context": "The Latin symbol is always accepted as a unit token. Its localized counterpart is accepted only when that locale matches the interface language.",
       "location": "Unit positions in mathematical expressions, including the denominator of speed units. An explicit conversion preserves the user's target symbol; otherwise the interface-language symbol is used.",
+      "elementType": "unit_symbol"
+    },
+    "time.millisecond": {
+      "text": "ms",
+      "meaning": "The millisecond, a unit of fixed duration.",
+      "context": "The Latin symbol is always accepted as a unit token. Its localized counterpart is accepted only when that locale matches the interface language. Fixed-duration notation was approved in expression-language round 12.",
+      "location": "Unit positions in mathematical expressions and conversion targets. An explicit conversion preserves the user's target symbol; otherwise the interface-language symbol is used.",
+      "elementType": "unit_symbol"
+    },
+    "time.minute": {
+      "text": "min",
+      "meaning": "The minute, a unit of fixed duration. Its symbol is distinct in meaning from a function call to min.",
+      "context": "The Latin symbol is always accepted as a unit token. Its localized counterpart is accepted only when that locale matches the interface language. Fixed-duration notation was approved in expression-language round 12.",
+      "location": "Unit positions in mathematical expressions and conversion targets. An explicit conversion preserves the user's target symbol; otherwise the interface-language symbol is used.",
+      "elementType": "unit_symbol"
+    },
+    "time.day": {
+      "text": "d",
+      "meaning": "A fixed day of 24 hours, not a date-dependent calendar day.",
+      "context": "The Latin symbol is always accepted as a unit token. Its localized counterpart is accepted only when that locale matches the interface language. Fixed-duration notation was approved in expression-language round 12.",
+      "location": "Unit positions in mathematical expressions and conversion targets. An explicit conversion preserves the user's target symbol; otherwise the interface-language symbol is used.",
+      "elementType": "unit_symbol"
+    },
+    "time.week": {
+      "text": "wk",
+      "meaning": "A fixed week of seven 24-hour days, not a calendar-period operation.",
+      "context": "The Latin symbol is always accepted as a unit token. Its localized counterpart is accepted only when that locale matches the interface language. Fixed-duration notation was approved in expression-language round 12.",
+      "location": "Unit positions in mathematical expressions and conversion targets. An explicit conversion preserves the user's target symbol; otherwise the interface-language symbol is used.",
       "elementType": "unit_symbol"
     }
   }

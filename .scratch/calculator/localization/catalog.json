@@ -42,28 +42,28 @@
     "completion.list.accessibleName": {
       "text": "Suggestions",
       "meaning": "Names the list of suggested expression completions for assistive technology.",
-      "context": "Used when a suggestion menu is available during letter input. Exact keyboard behavior and the candidate inventory are still being specified.",
-      "location": "Accessible name of the dropdown suggestion list associated with the expression editor; a visible heading is not required.",
+      "context": "Used when suggestions open from the first letter in quick or multiline input. While open, Up and Down select, Tab accepts, and Escape closes only the suggestions. Compatible target units are suggested after a conversion operator; comments do not open suggestions. Search ordering is still being specified.",
+      "location": "Accessible name of the suggestion list aligned beneath the currently typed word. The suggestion surface may cross the input area's lower boundary; a visible heading is not required.",
       "elementType": "accessible_name"
     },
     "completion.function.sin.description": {
       "text": "Sine. Angles without a unit are in degrees.",
       "meaning": "Explains the sine function and the default interpretation of an unmarked angle.",
-      "context": "Candidate description shown when the sine function is suggested. An explicitly marked radian argument remains supported. The completion inventory is still being specified.",
-      "location": "Short explanatory text associated with the sine option in the suggestion menu; exact layout remains to be prototyped.",
+      "context": "Description shown when the sine function is suggested. An explicitly marked radian argument remains supported. The typed matching prefix is visually reduced in opacity; the proposed continuation is fully opaque.",
+      "location": "Explanatory text associated with the sine option in the word-aligned suggestion surface. The placement of descriptions is being compared in a prototype.",
       "elementType": "description"
     },
     "completion.function.sqrt.description": {
       "text": "Square root of a nonnegative number.",
       "meaning": "Explains the square root function within the calculator's real-number domain.",
-      "context": "Candidate description shown when the square root function is suggested. Negative real arguments are outside the accepted numeric domain. The completion inventory is still being specified.",
-      "location": "Short explanatory text associated with the square root option in the suggestion menu; exact layout remains to be prototyped.",
+      "context": "Description shown when the square root function is suggested. Negative real arguments are outside the accepted numeric domain. The typed matching prefix is visually reduced in opacity; the proposed continuation is fully opaque.",
+      "location": "Explanatory text associated with the square root option in the word-aligned suggestion surface. The placement of descriptions is being compared in a prototype.",
       "elementType": "description"
     },
     "quick.history.show": {
       "text": "Show history",
       "meaning": "Expands the calculation history.",
-      "context": "Available when history is collapsed. Arrow Up in quick mode also opens history automatically and starts history navigation.",
+      "context": "Available when history is collapsed. Arrow Up in quick mode opens history automatically and starts history navigation only when the suggestion menu is closed; an open suggestion menu uses the arrows to select a completion.",
       "location": "Command menu or keyboard hint associated with quick input.",
       "elementType": "command_label"
     },
@@ -84,7 +84,7 @@
     "quick.hide": {
       "text": "Hide calculator",
       "meaning": "Dismisses the visible calculator without naming a full application exit.",
-      "context": "Used by Escape, the repeated summon shortcut, or a click on another application. The unfinished input is preserved.",
+      "context": "Used by Escape when suggestions are closed, the repeated summon shortcut, or a click on another application. If suggestions are open, the first Escape closes only the suggestions. The unfinished input is preserved when the calculator hides.",
       "location": "Command menu or keyboard help; not standard window chrome.",
       "elementType": "command_label"
     },

@@ -3,5 +3,9 @@
   "length.kilometre": "km",
   "mass.kilogram": "kg",
   "time.second": "s",
-  "time.hour": "h"
+  "time.hour": "h",
+  "time.millisecond": "ms",
+  "time.minute": "min",
+  "time.day": "d",
+  "time.week": "wk"
 }

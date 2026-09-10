@@ -1,8 +1,8 @@
 # Localized unit symbols
 
-These files are specification assets for localized unit notation. The initial five units come from expressions already discussed with the user; the complete unit inventory remains to be specified.
+These files are specification assets for localized unit notation. The current subset contains nine units: the original discussed examples plus all six fixed-duration units agreed in expression-language round 12. The complete product unit inventory remains to be specified.
 
-The user requested a separate review of abbreviations by unit group, starting with durations. Proposed spellings are recorded in the expression-language decision before being added here. Approval of a unit category alone does not approve every abbreviation or alias for it.
+The user requested a separate review of abbreviations by unit group. Fixed durations are now approved: ms/мс, s/с, min/мин, h/ч, d/сут, wk/нед. Other proposed spellings are recorded in the expression-language decision before being added here. Approval of a unit category alone does not approve every abbreviation or alias for it. The minute symbol min and the built-in function min still require an explicit syntax-disambiguation rule; this dictionary does not implement one.
 
 - [catalog.json](catalog.json) maps stable unit IDs to the always-available Latin symbol in `text` and English descriptions of its meaning, execution context, location, and element type. `unit_symbol` identifies a mathematical token rather than an interface command or sentence.
 - [en.json](en.json) maps the same IDs to English symbols, currently identical to the Latin symbols in the catalog.
