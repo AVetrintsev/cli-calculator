@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "sourceLanguage": "en",
   "status": "draft",
-  "coverage": "Twenty-two approved units: seven metric length units, six fixed-duration units, five metric mass units, two area units, and two litre-based volume units. This is not the complete product unit registry. Physical definitions and conversion factors are specified separately.",
+  "coverage": "Thirty approved units: eleven length units, six fixed-duration units, seven mass units, two area units, and four volume units. This is not the complete product unit registry. Physical definitions and conversion factors are specified separately.",
   "units": {
     "length.nanometre": {
       "text": "nm",
@@ -155,6 +155,62 @@
       "text": "t",
       "meaning": "The metric tonne, a unit of mass. Short and long tons are outside the selected scope.",
       "context": "The Latin symbol is always accepted as a unit token. Its localized counterpart is accepted only when that locale matches the interface language. This notation was approved in expression-language round 13.",
+      "location": "Unit positions in mathematical expressions and conversion targets. An explicit conversion preserves the user's target symbol; otherwise the interface-language symbol is used.",
+      "elementType": "unit_symbol"
+    },
+    "length.inch": {
+      "text": "in",
+      "meaning": "The international inch, a unit of length.",
+      "context": "The Latin symbol is always accepted as a unit token. Its localized counterpart is accepted only when that locale matches the interface language. These Latin and Russian spellings were confirmed in expression-language round 14.",
+      "location": "Unit positions in mathematical expressions and conversion targets. An explicit conversion preserves the user's target symbol; otherwise the interface-language symbol is used.",
+      "elementType": "unit_symbol"
+    },
+    "length.foot": {
+      "text": "ft",
+      "meaning": "The international foot, a unit of length. Historical survey variants are outside the selected scope.",
+      "context": "The Latin symbol is always accepted as a unit token. Its localized counterpart is accepted only when that locale matches the interface language. These Latin and Russian spellings were confirmed in expression-language round 14.",
+      "location": "Unit positions in mathematical expressions and conversion targets. An explicit conversion preserves the user's target symbol; otherwise the interface-language symbol is used.",
+      "elementType": "unit_symbol"
+    },
+    "length.yard": {
+      "text": "yd",
+      "meaning": "The international yard, a unit of length.",
+      "context": "The Latin symbol is always accepted as a unit token. Its localized counterpart is accepted only when that locale matches the interface language. These Latin and Russian spellings were confirmed in expression-language round 14.",
+      "location": "Unit positions in mathematical expressions and conversion targets. An explicit conversion preserves the user's target symbol; otherwise the interface-language symbol is used.",
+      "elementType": "unit_symbol"
+    },
+    "length.mile": {
+      "text": "mi",
+      "meaning": "The international mile, a unit of length. Nautical and historical survey variants are outside the selected scope.",
+      "context": "The Latin symbol is always accepted as a unit token. Its localized counterpart is accepted only when that locale matches the interface language. These Latin and Russian spellings were confirmed in expression-language round 14.",
+      "location": "Unit positions in mathematical expressions and conversion targets. An explicit conversion preserves the user's target symbol; otherwise the interface-language symbol is used.",
+      "elementType": "unit_symbol"
+    },
+    "mass.ounce": {
+      "text": "oz",
+      "meaning": "The avoirdupois ounce, a unit of mass. This is neither a fluid ounce nor a troy ounce.",
+      "context": "The Latin symbol is always accepted as a unit token. Its localized counterpart is accepted only when that locale matches the interface language. These Latin and Russian spellings were confirmed in expression-language round 14.",
+      "location": "Unit positions in mathematical expressions and conversion targets. An explicit conversion preserves the user's target symbol; otherwise the interface-language symbol is used.",
+      "elementType": "unit_symbol"
+    },
+    "mass.pound": {
+      "text": "lb",
+      "meaning": "The avoirdupois pound, a unit of mass. This symbol does not denote currency.",
+      "context": "The Latin symbol is always accepted as a unit token. Its localized counterpart is accepted only when that locale matches the interface language. These Latin and Russian spellings were confirmed in expression-language round 14.",
+      "location": "Unit positions in mathematical expressions and conversion targets. An explicit conversion preserves the user's target symbol; otherwise the interface-language symbol is used.",
+      "elementType": "unit_symbol"
+    },
+    "volume.gallon_us": {
+      "text": "gal_us",
+      "meaning": "The US liquid gallon, a unit of volume. It is distinct from the imperial gallon; the interface language never selects a gallon system implicitly.",
+      "context": "The Latin symbol is always accepted as a unit token. Its localized counterpart is accepted only when that locale matches the interface language. These Latin and Russian spellings were confirmed in expression-language round 14.",
+      "location": "Unit positions in mathematical expressions and conversion targets. An explicit conversion preserves the user's target symbol; otherwise the interface-language symbol is used.",
+      "elementType": "unit_symbol"
+    },
+    "volume.gallon_uk": {
+      "text": "gal_uk",
+      "meaning": "The British imperial gallon, a unit of volume. It is distinct from the US liquid gallon; the interface language never selects a gallon system implicitly.",
+      "context": "The Latin symbol is always accepted as a unit token. Its localized counterpart is accepted only when that locale matches the interface language. These Latin and Russian spellings were confirmed in expression-language round 14.",
       "location": "Unit positions in mathematical expressions and conversion targets. An explicit conversion preserves the user's target symbol; otherwise the interface-language symbol is used.",
       "elementType": "unit_symbol"
     }

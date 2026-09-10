@@ -20,5 +20,13 @@
   "mass.microgram": "мкг",
   "mass.milligram": "мг",
   "mass.gram": "г",
-  "mass.tonne": "т"
+  "mass.tonne": "т",
+  "length.inch": "дюйм",
+  "length.foot": "фут",
+  "length.yard": "ярд",
+  "length.mile": "миля",
+  "mass.ounce": "унц",
+  "mass.pound": "фунт",
+  "volume.gallon_us": "гал_сша",
+  "volume.gallon_uk": "гал_брит"
 }

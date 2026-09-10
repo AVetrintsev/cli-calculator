@@ -1,10 +1,12 @@
 # Localized unit symbols
 
-These files are specification assets for localized unit notation. The current subset contains twenty-two units: seven metric length units, six fixed-duration units, five metric mass units, two area units, and two litre-based volume units approved through expression-language round 13. The complete product unit inventory remains to be specified.
+These files are specification assets for localized unit notation. The current subset contains thirty units: eleven length units, six fixed-duration units, seven mass units, two area units, and four volume units approved through expression-language round 14. The complete product unit inventory remains to be specified.
 
 The approved metric length symbols are nm/нм, um/мкм, mm/мм, cm/см, dm/дм, m/м, and km/км. The Latin spelling um is the product's keyboard-friendly notation; this approval does not add alternative spellings containing a micro sign.
 
-Round 13 also approved hectare ha/га, international acre acre/акр, litre L/л, millilitre mL/мл, microgram ug/мкг, milligram mg/мг, gram g/г, kilogram kg/кг, and metric tonne t/т. The Latin L is uppercase; lowercase litre alternatives are not included. The Latin spelling ug is the selected keyboard-friendly notation, with no additional micro-sign spelling. Ordinary ounces, pounds and other nonmetric units are in scope, but their proposed spellings remain under review in round 14.
+Round 13 also approved hectare ha/га, international acre acre/акр, litre L/л, millilitre mL/мл, microgram ug/мкг, milligram mg/мг, gram g/г, kilogram kg/кг, and metric tonne t/т. The Latin L is uppercase; lowercase litre alternatives are not included. The Latin spelling ug is the selected keyboard-friendly notation, with no additional micro-sign spelling.
+
+Round 14 approved international inch in/дюйм, foot ft/фут, yard yd/ярд, mile mi/миля, ordinary ounce of mass oz/унц, pound lb/фунт, US liquid gallon gal_us/гал_сша, and British imperial gallon gal_uk/гал_брит. Gallon descriptions explicitly identify the system. Additional inflections and abbreviations are not included. The temperature and angle keyboard spellings proposed in round 15 have not yet been added.
 
 Expression-language round 13 approved square and cubic unit completions with superscript digits, such as m² and см³. Tab inserts the displayed spelling. Equivalent manually typed forms such as m^2 and см^3 remain valid without automatic rewriting; the menu does not add duplicate rows for caret spellings. Completion behavior after a user has already typed a caret remains to be specified. This decision does not select the result clipboard format. Powered spellings compose a base unit with a power; these dictionaries still contain base symbols only. The corresponding user-visible descriptions belong to the parent interface-text catalog and its locale files.
 

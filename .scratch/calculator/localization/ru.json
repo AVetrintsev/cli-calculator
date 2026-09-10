@@ -108,5 +108,13 @@
   "completion.unit.mass.microgram.description": "микрограмм",
   "completion.unit.mass.milligram.description": "миллиграмм",
   "completion.unit.mass.gram.description": "грамм",
-  "completion.unit.mass.tonne.description": "метрическая тонна"
+  "completion.unit.mass.tonne.description": "метрическая тонна",
+  "completion.unit.length.inch.description": "дюйм",
+  "completion.unit.length.foot.description": "фут",
+  "completion.unit.length.yard.description": "ярд",
+  "completion.unit.length.mile.description": "миля",
+  "completion.unit.mass.ounce.description": "унция массы",
+  "completion.unit.mass.pound.description": "фунт",
+  "completion.unit.volume.gallon_us.description": "американский жидкостный галлон",
+  "completion.unit.volume.gallon_uk.description": "британский имперский галлон"
 }

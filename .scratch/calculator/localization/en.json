@@ -108,5 +108,13 @@
   "completion.unit.mass.microgram.description": "microgram",
   "completion.unit.mass.milligram.description": "milligram",
   "completion.unit.mass.gram.description": "gram",
-  "completion.unit.mass.tonne.description": "metric tonne"
+  "completion.unit.mass.tonne.description": "metric tonne",
+  "completion.unit.length.inch.description": "inch",
+  "completion.unit.length.foot.description": "foot",
+  "completion.unit.length.yard.description": "yard",
+  "completion.unit.length.mile.description": "mile",
+  "completion.unit.mass.ounce.description": "ounce of mass",
+  "completion.unit.mass.pound.description": "pound",
+  "completion.unit.volume.gallon_us.description": "US liquid gallon",
+  "completion.unit.volume.gallon_uk.description": "British imperial gallon"
 }

@@ -786,6 +786,62 @@
       "context": "Shown when this unit is offered as a completion in quick input or the extended editor. The description follows the interface language even when the suggested unit spelling is Latin. Conversion targets are filtered by dimensional compatibility.",
       "location": "Immediately after the unit spelling in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
       "elementType": "description"
+    },
+    "completion.unit.length.inch.description": {
+      "text": "inch",
+      "meaning": "The international inch, a unit of length.",
+      "context": "Shown when this unit is offered as a completion in quick input or the extended editor. The description follows the interface language even when the suggested unit spelling is Latin. Conversion targets are filtered by dimensional compatibility.",
+      "location": "Immediately after the unit spelling in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
+      "elementType": "description"
+    },
+    "completion.unit.length.foot.description": {
+      "text": "foot",
+      "meaning": "The international foot, a unit of length. Historical survey variants are outside the selected scope.",
+      "context": "Shown when this unit is offered as a completion in quick input or the extended editor. The description follows the interface language even when the suggested unit spelling is Latin. Conversion targets are filtered by dimensional compatibility.",
+      "location": "Immediately after the unit spelling in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
+      "elementType": "description"
+    },
+    "completion.unit.length.yard.description": {
+      "text": "yard",
+      "meaning": "The international yard, a unit of length.",
+      "context": "Shown when this unit is offered as a completion in quick input or the extended editor. The description follows the interface language even when the suggested unit spelling is Latin. Conversion targets are filtered by dimensional compatibility.",
+      "location": "Immediately after the unit spelling in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
+      "elementType": "description"
+    },
+    "completion.unit.length.mile.description": {
+      "text": "mile",
+      "meaning": "The international mile, a unit of length. Nautical and historical survey variants are outside the selected scope.",
+      "context": "Shown when this unit is offered as a completion in quick input or the extended editor. The description follows the interface language even when the suggested unit spelling is Latin. Conversion targets are filtered by dimensional compatibility.",
+      "location": "Immediately after the unit spelling in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
+      "elementType": "description"
+    },
+    "completion.unit.mass.ounce.description": {
+      "text": "ounce of mass",
+      "meaning": "The avoirdupois ounce, a unit of mass. This is neither a fluid ounce nor a troy ounce.",
+      "context": "Shown when this unit is offered as a completion in quick input or the extended editor. The description follows the interface language even when the suggested unit spelling is Latin. Conversion targets are filtered by dimensional compatibility.",
+      "location": "Immediately after the unit spelling in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
+      "elementType": "description"
+    },
+    "completion.unit.mass.pound.description": {
+      "text": "pound",
+      "meaning": "The avoirdupois pound, a unit of mass. This symbol does not denote currency.",
+      "context": "Shown when this unit is offered as a completion in quick input or the extended editor. The description follows the interface language even when the suggested unit spelling is Latin. Conversion targets are filtered by dimensional compatibility.",
+      "location": "Immediately after the unit spelling in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
+      "elementType": "description"
+    },
+    "completion.unit.volume.gallon_us.description": {
+      "text": "US liquid gallon",
+      "meaning": "The US liquid gallon, a unit of volume. It is distinct from the imperial gallon; the interface language never selects a gallon system implicitly.",
+      "context": "Shown when this unit is offered as a completion in quick input or the extended editor. The description follows the interface language even when the suggested unit spelling is Latin. Conversion targets are filtered by dimensional compatibility.",
+      "location": "Immediately after the unit spelling in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
+      "elementType": "description"
+    },
+    "completion.unit.volume.gallon_uk.description": {
+      "text": "British imperial gallon",
+      "meaning": "The British imperial gallon, a unit of volume. It is distinct from the US liquid gallon; the interface language never selects a gallon system implicitly.",
+      "context": "Shown when this unit is offered as a completion in quick input or the extended editor. The description follows the interface language even when the suggested unit spelling is Latin. Conversion targets are filtered by dimensional compatibility.",
+      "location": "Immediately after the unit spelling in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
+      "elementType": "description"
     }
   }
 }

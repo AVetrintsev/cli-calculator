@@ -20,5 +20,13 @@
   "mass.microgram": "ug",
   "mass.milligram": "mg",
   "mass.gram": "g",
-  "mass.tonne": "t"
+  "mass.tonne": "t",
+  "length.inch": "in",
+  "length.foot": "ft",
+  "length.yard": "yd",
+  "length.mile": "mi",
+  "mass.ounce": "oz",
+  "mass.pound": "lb",
+  "volume.gallon_us": "gal_us",
+  "volume.gallon_uk": "gal_uk"
 }
