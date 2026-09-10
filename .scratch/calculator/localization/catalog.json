@@ -42,22 +42,22 @@
     "completion.list.accessibleName": {
       "text": "Suggestions",
       "meaning": "Names the list of suggested expression completions for assistive technology.",
-      "context": "Used when suggestions open from the first letter in quick or multiline input. While open, Up and Down select, Tab accepts, and Escape closes only the suggestions. Compatible target units are suggested after a conversion operator; comments do not open suggestions. Search ordering is still being specified.",
-      "location": "Accessible name of the suggestion list aligned beneath the currently typed word. The suggestion surface may cross the input area's lower boundary; a visible heading is not required.",
+      "context": "Used when suggestions open from the first letter in quick or multiline input. Up to seven rows are visible; arrow selection scrolls to keep the active option visible. While open, Up and Down select, Tab accepts, and Escape closes only the suggestions. Compatible target units are suggested after a conversion operator; comments do not open suggestions. Search ordering is still being specified.",
+      "location": "Accessible name of the suggestion list aligned beneath the currently typed word. One frame surrounds the list, which overlays following text without shifting it and may cross the input area's lower boundary. A visible heading is not required.",
       "elementType": "accessible_name"
     },
     "completion.function.sin.description": {
       "text": "Sine. Angles without a unit are in degrees.",
       "meaning": "Explains the sine function and the default interpretation of an unmarked angle.",
       "context": "Description shown when the sine function is suggested. An explicitly marked radian argument remains supported. The typed matching prefix is visually reduced in opacity; the proposed continuation is fully opaque.",
-      "location": "Explanatory text associated with the sine option in the word-aligned suggestion surface. The placement of descriptions is being compared in a prototype.",
+      "location": "Immediately after the complete sine signature in the same suggestion row, separated by a gap. The description uses the same font size, lighter weight and reduced opacity, with no shared-column or right-edge alignment.",
       "elementType": "description"
     },
     "completion.function.sqrt.description": {
       "text": "Square root of a nonnegative number.",
       "meaning": "Explains the square root function within the calculator's real-number domain.",
       "context": "Description shown when the square root function is suggested. Negative real arguments are outside the accepted numeric domain. The typed matching prefix is visually reduced in opacity; the proposed continuation is fully opaque.",
-      "location": "Explanatory text associated with the square root option in the word-aligned suggestion surface. The placement of descriptions is being compared in a prototype.",
+      "location": "Immediately after the complete square-root signature in the same suggestion row, separated by a gap. The description uses the same font size, lighter weight and reduced opacity, with no shared-column or right-edge alignment.",
       "elementType": "description"
     },
     "quick.history.show": {
