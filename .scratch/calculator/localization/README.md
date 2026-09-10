@@ -8,6 +8,8 @@ The catalog and both language files are siblings:
 - [en.json](en.json): the English message values, indexed by stable message keys.
 - [ru.json](ru.json): the Russian message values, indexed by the same keys.
 
+Localized mathematical unit symbols have their own sibling [unit-symbol catalog and locale files](units/README.md). Their active vocabulary contains only the Latin baseline plus one selected local language. They are parsed tokens with stable unit identities; ordinary interface messages remain in the files above.
+
 ## Catalog structure
 
 The catalog has a schema version, a source language, a draft status, a coverage note, and a `messages` object. Each property in `messages` is a stable, descriptive key such as `copy.success`.

@@ -1,0 +1,28 @@
+# Localized unit symbols
+
+These files are specification assets for localized unit notation. The initial five units come from expressions already discussed with the user; the complete unit inventory remains to be specified.
+
+- [catalog.json](catalog.json) maps stable unit IDs to the always-available Latin symbol in `text` and English descriptions of its meaning, execution context, location, and element type. `unit_symbol` identifies a mathematical token rather than an interface command or sentence.
+- [en.json](en.json) maps the same IDs to English symbols, currently identical to the Latin symbols in the catalog.
+- [ru.json](ru.json) maps the same IDs to Russian symbols.
+
+Each locale file supplies one local symbol per unit ID. A unit keeps its identity across all spellings. These files contain no conversion factors, dimensional definitions, or translated function names. They are stored alongside the interface translations in their own directory because a unit symbol participates in expression parsing.
+
+## Accepted language sets
+
+The recognized unit vocabulary combines the catalog's Latin symbols with exactly one active locale's symbols. Do not combine all installed locale files. An identical Latin and local spelling for the same unit represents one token, not a collision or a third language variant.
+
+For example, with the Russian unit locale active, `m` and `м` both refer to `length.metre`. With the English unit locale active, `м` is not supplied as a unit token by this configuration. This does not define how an independently declared user identifier with the same spelling is handled; identifier conflicts remain a separate language and data-lifecycle decision.
+
+The active locale's relationship to the interface language, the spelling shown in results, and the presentation of saved expressions after a language change are currently proposed product decisions, not implemented behavior. Never silently enable an unrelated locale to resolve an unknown symbol.
+
+## Adding a locale
+
+1. Read the English metadata for every unit and create a sibling locale file with the same stable IDs.
+2. Translate the local symbol value only. Keep the catalog's Latin baseline and stable IDs unchanged.
+3. Check that values are nonempty and that the active locale plus the Latin baseline does not map the same exact symbol to two different unit IDs. Such a conflict must be resolved in the configuration rather than guessed while evaluating a formula.
+4. Check examples containing simple and compound units. A structural check does not certify a full conversion table or a complete parser.
+
+Extend the catalog and all complete locale files together when more units are selected. Interface messages continue to use the separate parent-directory catalog and language files. User-defined names and comments are not translated through the unit-symbol dictionaries.
+
+Product decision: [Expression language and calculation rules](../../issues/04-expression-language.md).
