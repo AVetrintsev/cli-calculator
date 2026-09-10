@@ -144,5 +144,7 @@
   "completion.base.dec.description": "десятичная система",
   "completion.base.hex.description": "шестнадцатеричная система",
   "error.baseRequiresInteger": "Для этого преобразования нужно целое число",
-  "error.invalidBaseDigit": "Символ {character} недопустим в системе с основанием {base}"
+  "error.invalidBaseDigit": "Символ {character} недопустим в системе с основанием {base}",
+  "error.integerLimit": "Целое число превышает предел в 30 десятичных разрядов",
+  "error.baseRequiresUnitlessValue": "Для величины с единицей такое преобразование системы счисления недоступно"
 }

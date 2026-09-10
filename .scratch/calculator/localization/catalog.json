@@ -42,7 +42,7 @@
     "completion.list.accessibleName": {
       "text": "Suggestions",
       "meaning": "Names the list of suggested expression completions for assistive technology.",
-      "context": "Used when suggestions open from the first letter in quick or multiline input. Up to seven rows are visible; arrow selection scrolls to keep the active option visible. While open, Up and Down select, Tab accepts, and Escape closes only the suggestions. Compatible target units are suggested after a conversion operator; comments do not open suggestions. Search ordering is still being specified.",
+      "context": "Used when suggestions open from the first letter in quick or multiline input, or immediately after a complete :: or to conversion operator. Up to seven rows are visible; arrow selection scrolls to keep the active option visible. While open, Up and Down select, Tab accepts, and Escape closes only the suggestions. Compatible target units are suggested after a conversion operator; comments do not open suggestions. Search ordering is still being specified.",
       "location": "Accessible name of the suggestion list aligned beneath the currently typed word. One frame surrounds the list, which overlays following text without shifting it and may cross the input area's lower boundary. A visible heading is not required.",
       "elementType": "accessible_name"
     },
@@ -209,7 +209,7 @@
     "expression.precisionLimit": {
       "text": "Use at most 30 significant digits",
       "meaning": "Explains that an entered number exceeds the supported numeric precision.",
-      "context": "Shown when an input number contains more than 30 significant digits. The input must not be silently truncated. Exact validation timing remains to be specified.",
+      "context": "Shown for decimal input exceeding the supported 30-significant-digit precision. The input must not be silently truncated. Integer magnitude is checked independently of the number of written digits in the selected base and uses the dedicated integer-limit diagnostic. Exact rounding at the working-precision boundary remains under discussion.",
       "location": "Diagnostic area for the affected expression or sheet line.",
       "elementType": "error_message"
     },
@@ -1000,28 +1000,28 @@
     "completion.base.bin.description": {
       "text": "binary",
       "meaning": "Identifies the base-2 representation of a number, not a physical unit of measurement.",
-      "context": "Description for the approved conversion target bin, which is identical in all interface languages and can follow either :: or to. Exact completion eligibility and opening behavior remain under discussion; this text does not approve that behavior.",
+      "context": "Description for conversion target bin, identical in all interface languages. After a complete :: or to operator, suggestions open immediately without waiting for a target letter. Integer values without a unit are offered bin, oct, dec and hex; quantities with units are offered compatible units instead. Nondecimal targets are not offered for fractional values. Further input filters the list.",
       "location": "Immediately after the conversion target in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
       "elementType": "description"
     },
     "completion.base.oct.description": {
       "text": "octal",
       "meaning": "Identifies the base-8 representation of a number, not a physical unit of measurement.",
-      "context": "Description for the approved conversion target oct, which is identical in all interface languages and can follow either :: or to. Exact completion eligibility and opening behavior remain under discussion; this text does not approve that behavior.",
+      "context": "Description for conversion target oct, identical in all interface languages. After a complete :: or to operator, suggestions open immediately without waiting for a target letter. Integer values without a unit are offered bin, oct, dec and hex; quantities with units are offered compatible units instead. Nondecimal targets are not offered for fractional values. Further input filters the list.",
       "location": "Immediately after the conversion target in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
       "elementType": "description"
     },
     "completion.base.dec.description": {
       "text": "decimal",
       "meaning": "Identifies the base-10 representation of a number, not a physical unit of measurement.",
-      "context": "Description for the approved conversion target dec, which is identical in all interface languages and can follow either :: or to. Exact completion eligibility and opening behavior remain under discussion; this text does not approve that behavior.",
+      "context": "Description for conversion target dec, identical in all interface languages. After a complete :: or to operator, suggestions open immediately without waiting for a target letter. Integer values without a unit are offered bin, oct, dec and hex; quantities with units are offered compatible units instead. Nondecimal targets are not offered for fractional values. Further input filters the list.",
       "location": "Immediately after the conversion target in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
       "elementType": "description"
     },
     "completion.base.hex.description": {
       "text": "hexadecimal",
       "meaning": "Identifies the base-16 representation of a number, not a physical unit of measurement.",
-      "context": "Description for the approved conversion target hex, which is identical in all interface languages and can follow either :: or to. Exact completion eligibility and opening behavior remain under discussion; this text does not approve that behavior.",
+      "context": "Description for conversion target hex, identical in all interface languages. After a complete :: or to operator, suggestions open immediately without waiting for a target letter. Integer values without a unit are offered bin, oct, dec and hex; quantities with units are offered compatible units instead. Nondecimal targets are not offered for fractional values. Further input filters the list.",
       "location": "Immediately after the conversion target in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
       "elementType": "description"
     },
@@ -1042,6 +1042,20 @@
         "character": "The offending character from the user input; preserve it as data.",
         "base": "The numeric radix of the literal, such as 2, 8 or 16."
       }
+    },
+    "error.integerLimit": {
+      "text": "This integer exceeds the 30-decimal-digit limit",
+      "meaning": "Explains that an integer magnitude exceeds the same allowed maximum in every numeral system.",
+      "context": "Shown when the absolute integer value is greater than 10^30 - 1. The check uses numeric magnitude, not written binary, octal or hexadecimal digit count; allowed values can need up to 100 binary digits. Never truncate, round or wrap the integer to fit.",
+      "location": "Diagnostic associated with the offending literal or calculation result; no valid result is available to copy.",
+      "elementType": "error_message"
+    },
+    "error.baseRequiresUnitlessValue": {
+      "text": "A value with a unit cannot use this numeral-system conversion",
+      "meaning": "Explains that numeral-system conversion does not implicitly strip a physical unit or reformat its coefficient.",
+      "context": "Shown when a quantity with a unit is given a numeral-system conversion target, such as 5 kg::hex or 5 kg to hex. Unit-bearing quantities use compatible unit conversions instead.",
+      "location": "Diagnostic associated with the incompatible conversion target; no valid result is available to copy.",
+      "elementType": "error_message"
     }
   }
 }

@@ -144,5 +144,7 @@
   "completion.base.dec.description": "decimal",
   "completion.base.hex.description": "hexadecimal",
   "error.baseRequiresInteger": "This conversion requires an integer",
-  "error.invalidBaseDigit": "Character {character} is not valid in base {base}"
+  "error.invalidBaseDigit": "Character {character} is not valid in base {base}",
+  "error.integerLimit": "This integer exceeds the 30-decimal-digit limit",
+  "error.baseRequiresUnitlessValue": "A value with a unit cannot use this numeral-system conversion"
 }
