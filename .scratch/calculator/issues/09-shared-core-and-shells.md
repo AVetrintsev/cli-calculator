@@ -4,7 +4,7 @@ Status: open
 Type: grilling
 Label: wayfinder:grilling
 Parent: ../map.md
-Blocked by: 02, 03, 04, 05, 07, 08, 11
+Blocked by: 02, 03, 04, 05, 07, 08, 11, 12
 
 ## Question
 
