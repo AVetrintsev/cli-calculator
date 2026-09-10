@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "sourceLanguage": "en",
   "status": "draft",
-  "coverage": "Thirty approved units: eleven length units, six fixed-duration units, seven mass units, two area units, and four volume units. This is not the complete product unit registry. Physical definitions and conversion factors are specified separately.",
+  "coverage": "Thirty-three approved units: eleven length units, six fixed-duration units, seven mass units, two area units, four volume units, and three temperature scales. This is not the complete product unit registry. Physical definitions and conversion factors are specified separately.",
   "units": {
     "length.nanometre": {
       "text": "nm",
@@ -212,6 +212,27 @@
       "meaning": "The British imperial gallon, a unit of volume. It is distinct from the US liquid gallon; the interface language never selects a gallon system implicitly.",
       "context": "The Latin symbol is always accepted as a unit token. Its localized counterpart is accepted only when that locale matches the interface language. These Latin and Russian spellings were confirmed in expression-language round 14.",
       "location": "Unit positions in mathematical expressions and conversion targets. An explicit conversion preserves the user's target symbol; otherwise the interface-language symbol is used.",
+      "elementType": "unit_symbol"
+    },
+    "temperature.celsius": {
+      "text": "C",
+      "meaning": "A temperature reading on the Celsius scale, not a temperature interval.",
+      "context": "Used to attach a temperature scale to a numeric reading or select a conversion target. The user selected the same uppercase Latin symbol for English and Russian in expression-language round 15. Translations must retain this symbol in both locale files. The selected scope supports conversion of readings, not arithmetic between temperature quantities.",
+      "location": "Temperature unit positions in expressions and conversion targets. The selected spelling is also used in unit completions and results.",
+      "elementType": "unit_symbol"
+    },
+    "temperature.fahrenheit": {
+      "text": "F",
+      "meaning": "A temperature reading on the Fahrenheit scale, not a temperature interval.",
+      "context": "Used to attach a temperature scale to a numeric reading or select a conversion target. The user selected the same uppercase Latin symbol for English and Russian in expression-language round 15. Translations must retain this symbol in both locale files. The selected scope supports conversion of readings, not arithmetic between temperature quantities.",
+      "location": "Temperature unit positions in expressions and conversion targets. The selected spelling is also used in unit completions and results.",
+      "elementType": "unit_symbol"
+    },
+    "temperature.kelvin": {
+      "text": "K",
+      "meaning": "A temperature reading on the Kelvin scale, not a temperature interval.",
+      "context": "Used to attach a temperature scale to a numeric reading or select a conversion target. The user selected the same uppercase Latin symbol for English and Russian in expression-language round 15. Translations must retain this symbol in both locale files. The selected scope supports conversion of readings, not arithmetic between temperature quantities.",
+      "location": "Temperature unit positions in expressions and conversion targets. The selected spelling is also used in unit completions and results.",
       "elementType": "unit_symbol"
     }
   }

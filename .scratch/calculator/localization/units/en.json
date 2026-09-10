@@ -28,5 +28,8 @@
   "mass.ounce": "oz",
   "mass.pound": "lb",
   "volume.gallon_us": "gal_us",
-  "volume.gallon_uk": "gal_uk"
+  "volume.gallon_uk": "gal_uk",
+  "temperature.celsius": "C",
+  "temperature.fahrenheit": "F",
+  "temperature.kelvin": "K"
 }

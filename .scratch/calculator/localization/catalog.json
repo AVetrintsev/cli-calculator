@@ -54,9 +54,9 @@
       "elementType": "command_label"
     },
     "completion.function.sin.description": {
-      "text": "Sine. Angles without a unit are in degrees.",
-      "meaning": "Explains the sine function and the default interpretation of an unmarked angle.",
-      "context": "Description shown when the sine function is suggested. An explicitly marked radian argument remains supported. The typed matching prefix is visually reduced in opacity; the proposed continuation is fully opaque.",
+      "text": "Sine. Enter the angle in degrees.",
+      "meaning": "Explains that the ordinary sine call takes its unmarked numeric argument in degrees.",
+      "context": "Shown when the sine function is suggested. Expression-language round 15 reaffirmed ordinary input such as sin(30) without a unit suffix. Whether previously agreed explicit radian input should remain is being clarified. The typed matching prefix is visually reduced in opacity; the proposed continuation is fully opaque.",
       "location": "Immediately after the complete sine signature in the same suggestion row, separated by a gap. The description uses the same font size, lighter weight and reduced opacity, with no shared-column or right-edge alignment.",
       "elementType": "description"
     },
@@ -840,6 +840,27 @@
       "text": "British imperial gallon",
       "meaning": "The British imperial gallon, a unit of volume. It is distinct from the US liquid gallon; the interface language never selects a gallon system implicitly.",
       "context": "Shown when this unit is offered as a completion in quick input or the extended editor. The description follows the interface language even when the suggested unit spelling is Latin. Conversion targets are filtered by dimensional compatibility.",
+      "location": "Immediately after the unit spelling in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
+      "elementType": "description"
+    },
+    "completion.unit.temperature.celsius.description": {
+      "text": "degrees Celsius",
+      "meaning": "A temperature reading on the Celsius scale, not a temperature interval.",
+      "context": "Shown when the temperature scale is offered as a completion. The unit symbol remains the same in English and Russian; this explanatory description follows the interface language. Conversion targets are limited to compatible temperature scales.",
+      "location": "Immediately after the unit spelling in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
+      "elementType": "description"
+    },
+    "completion.unit.temperature.fahrenheit.description": {
+      "text": "degrees Fahrenheit",
+      "meaning": "A temperature reading on the Fahrenheit scale, not a temperature interval.",
+      "context": "Shown when the temperature scale is offered as a completion. The unit symbol remains the same in English and Russian; this explanatory description follows the interface language. Conversion targets are limited to compatible temperature scales.",
+      "location": "Immediately after the unit spelling in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
+      "elementType": "description"
+    },
+    "completion.unit.temperature.kelvin.description": {
+      "text": "kelvin",
+      "meaning": "A temperature reading on the Kelvin scale, not a temperature interval.",
+      "context": "Shown when the temperature scale is offered as a completion. The unit symbol remains the same in English and Russian; this explanatory description follows the interface language. Conversion targets are limited to compatible temperature scales.",
       "location": "Immediately after the unit spelling in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
       "elementType": "description"
     }

@@ -6,7 +6,7 @@
   "result.boolean.false": "No",
   "completion.list.accessibleName": "Suggestions",
   "completion.showDescription": "Show description",
-  "completion.function.sin.description": "Sine. Angles without a unit are in degrees.",
+  "completion.function.sin.description": "Sine. Enter the angle in degrees.",
   "completion.function.sqrt.description": "Square root of a nonnegative number.",
   "completion.unit.squareMetre.description": "square metre",
   "completion.unit.cubicMetre.description": "cubic metre",
@@ -116,5 +116,8 @@
   "completion.unit.mass.ounce.description": "ounce of mass",
   "completion.unit.mass.pound.description": "pound",
   "completion.unit.volume.gallon_us.description": "US liquid gallon",
-  "completion.unit.volume.gallon_uk.description": "British imperial gallon"
+  "completion.unit.volume.gallon_uk.description": "British imperial gallon",
+  "completion.unit.temperature.celsius.description": "degrees Celsius",
+  "completion.unit.temperature.fahrenheit.description": "degrees Fahrenheit",
+  "completion.unit.temperature.kelvin.description": "kelvin"
 }

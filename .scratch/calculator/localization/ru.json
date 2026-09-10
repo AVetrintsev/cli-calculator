@@ -6,7 +6,7 @@
   "result.boolean.false": "Нет",
   "completion.list.accessibleName": "Подсказки",
   "completion.showDescription": "Показать описание",
-  "completion.function.sin.description": "Синус. Угол без единицы — в градусах.",
+  "completion.function.sin.description": "Синус. Введите угол в градусах.",
   "completion.function.sqrt.description": "Квадратный корень неотрицательного числа.",
   "completion.unit.squareMetre.description": "квадратный метр",
   "completion.unit.cubicMetre.description": "кубический метр",
@@ -116,5 +116,8 @@
   "completion.unit.mass.ounce.description": "унция массы",
   "completion.unit.mass.pound.description": "фунт",
   "completion.unit.volume.gallon_us.description": "американский жидкостный галлон",
-  "completion.unit.volume.gallon_uk.description": "британский имперский галлон"
+  "completion.unit.volume.gallon_uk.description": "британский имперский галлон",
+  "completion.unit.temperature.celsius.description": "градусы Цельсия",
+  "completion.unit.temperature.fahrenheit.description": "градусы Фаренгейта",
+  "completion.unit.temperature.kelvin.description": "кельвин"
 }
