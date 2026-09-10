@@ -2,8 +2,43 @@
   "schemaVersion": 1,
   "sourceLanguage": "en",
   "status": "draft",
-  "coverage": "Initial discussed examples plus the approved fixed-duration notation. This is not the complete product unit registry. Physical definitions and conversion factors are specified separately.",
+  "coverage": "Seven approved metric length units, six fixed-duration units, and the previously approved kilogram. This is not the complete product unit registry. Physical definitions and conversion factors are specified separately.",
   "units": {
+    "length.nanometre": {
+      "text": "nm",
+      "meaning": "The nanometre, a unit of length.",
+      "context": "The Latin symbol is always accepted as a unit token. Its localized counterpart is accepted only when that locale matches the interface language. This notation was approved in expression-language round 13.",
+      "location": "Unit positions in mathematical expressions and conversion targets. An explicit conversion preserves the user's target symbol; otherwise the interface-language symbol is used.",
+      "elementType": "unit_symbol"
+    },
+    "length.micrometre": {
+      "text": "um",
+      "meaning": "The micrometre, a unit of length. The product uses the keyboard-friendly Latin spelling um; alternative spellings containing a micro sign have not been approved.",
+      "context": "The Latin symbol is always accepted as a unit token. Its localized counterpart is accepted only when that locale matches the interface language. This notation was approved in expression-language round 13.",
+      "location": "Unit positions in mathematical expressions and conversion targets. An explicit conversion preserves the user's target symbol; otherwise the interface-language symbol is used.",
+      "elementType": "unit_symbol"
+    },
+    "length.millimetre": {
+      "text": "mm",
+      "meaning": "The millimetre, a unit of length.",
+      "context": "The Latin symbol is always accepted as a unit token. Its localized counterpart is accepted only when that locale matches the interface language. This notation was approved in expression-language round 13.",
+      "location": "Unit positions in mathematical expressions and conversion targets. An explicit conversion preserves the user's target symbol; otherwise the interface-language symbol is used.",
+      "elementType": "unit_symbol"
+    },
+    "length.centimetre": {
+      "text": "cm",
+      "meaning": "The centimetre, a unit of length.",
+      "context": "The Latin symbol is always accepted as a unit token. Its localized counterpart is accepted only when that locale matches the interface language. This notation was approved in expression-language round 13.",
+      "location": "Unit positions in mathematical expressions and conversion targets. An explicit conversion preserves the user's target symbol; otherwise the interface-language symbol is used.",
+      "elementType": "unit_symbol"
+    },
+    "length.decimetre": {
+      "text": "dm",
+      "meaning": "The decimetre, a unit of length.",
+      "context": "The Latin symbol is always accepted as a unit token. Its localized counterpart is accepted only when that locale matches the interface language. This notation was approved in expression-language round 13.",
+      "location": "Unit positions in mathematical expressions and conversion targets. An explicit conversion preserves the user's target symbol; otherwise the interface-language symbol is used.",
+      "elementType": "unit_symbol"
+    },
     "length.metre": {
       "text": "m",
       "meaning": "The metre, a unit of length.",

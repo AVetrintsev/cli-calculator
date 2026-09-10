@@ -1,6 +1,8 @@
 # Localized unit symbols
 
-These files are specification assets for localized unit notation. The current subset contains nine units: the original discussed examples plus all six fixed-duration units agreed in expression-language round 12. The complete product unit inventory remains to be specified.
+These files are specification assets for localized unit notation. The current subset contains fourteen units: seven metric length units approved through expression-language round 13, all six fixed-duration units agreed in round 12, and the previously approved kilogram. The complete product unit inventory remains to be specified.
+
+The approved metric length symbols are nm/нм, um/мкм, mm/мм, cm/см, dm/дм, m/м, and km/км. The Latin spelling um is the product's keyboard-friendly notation; this approval does not add alternative spellings containing a micro sign. Powered-unit completion display and insertion are still proposals in round 13; no display or insertion contract is implied by these symbol dictionaries.
 
 The user requested a separate review of abbreviations by unit group. Fixed durations are now approved: ms/мс, s/с, min/мин, h/ч, d/сут, wk/нед. Other proposed spellings are recorded in the expression-language decision before being added here. Approval of a unit category alone does not approve every abbreviation or alias for it. The minute symbol min and the built-in function min still require an explicit syntax-disambiguation rule; this dictionary does not implement one.
 

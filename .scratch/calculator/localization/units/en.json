@@ -1,4 +1,9 @@
 {
+  "length.nanometre": "nm",
+  "length.micrometre": "um",
+  "length.millimetre": "mm",
+  "length.centimetre": "cm",
+  "length.decimetre": "dm",
   "length.metre": "m",
   "length.kilometre": "km",
   "mass.kilogram": "kg",
