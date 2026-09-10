@@ -7,36 +7,36 @@
     "length.metre": {
       "text": "m",
       "meaning": "The metre, a unit of length.",
-      "context": "The Latin symbol is always accepted as a unit token. Its localized counterpart is accepted only when that locale is active.",
-      "location": "Unit positions in mathematical expressions, including the target of a unit conversion. The result spelling policy remains to be agreed.",
+      "context": "The Latin symbol is always accepted as a unit token. Its localized counterpart is accepted only when that locale matches the interface language.",
+      "location": "Unit positions in mathematical expressions, including the target of a unit conversion. An explicit conversion preserves the user's target symbol; otherwise the interface-language symbol is used.",
       "elementType": "unit_symbol"
     },
     "length.kilometre": {
       "text": "km",
       "meaning": "The kilometre, a unit of length.",
-      "context": "The Latin symbol is always accepted as a unit token. Its localized counterpart is accepted only when that locale is active.",
-      "location": "Unit positions in mathematical expressions, including compound speed units. The result spelling policy remains to be agreed.",
+      "context": "The Latin symbol is always accepted as a unit token. Its localized counterpart is accepted only when that locale matches the interface language.",
+      "location": "Unit positions in mathematical expressions, including compound speed units. An explicit conversion preserves the user's target symbol; otherwise the interface-language symbol is used.",
       "elementType": "unit_symbol"
     },
     "mass.kilogram": {
       "text": "kg",
       "meaning": "The kilogram, a unit of mass.",
-      "context": "The Latin symbol is always accepted as a unit token. Its localized counterpart is accepted only when that locale is active.",
-      "location": "Unit positions in mathematical expressions, including the target of a unit conversion. The result spelling policy remains to be agreed.",
+      "context": "The Latin symbol is always accepted as a unit token. Its localized counterpart is accepted only when that locale matches the interface language.",
+      "location": "Unit positions in mathematical expressions, including the target of a unit conversion. An explicit conversion preserves the user's target symbol; otherwise the interface-language symbol is used.",
       "elementType": "unit_symbol"
     },
     "time.second": {
       "text": "s",
       "meaning": "The second, a unit of time.",
-      "context": "The Latin symbol is always accepted as a unit token. Its localized counterpart is accepted only when that locale is active.",
-      "location": "Unit positions in mathematical expressions, including the denominator of speed units. The result spelling policy remains to be agreed.",
+      "context": "The Latin symbol is always accepted as a unit token. Its localized counterpart is accepted only when that locale matches the interface language.",
+      "location": "Unit positions in mathematical expressions, including the denominator of speed units. An explicit conversion preserves the user's target symbol; otherwise the interface-language symbol is used.",
       "elementType": "unit_symbol"
     },
     "time.hour": {
       "text": "h",
       "meaning": "The hour, a unit of time.",
-      "context": "The Latin symbol is always accepted as a unit token. Its localized counterpart is accepted only when that locale is active.",
-      "location": "Unit positions in mathematical expressions, including the denominator of speed units. The result spelling policy remains to be agreed.",
+      "context": "The Latin symbol is always accepted as a unit token. Its localized counterpart is accepted only when that locale matches the interface language.",
+      "location": "Unit positions in mathematical expressions, including the denominator of speed units. An explicit conversion preserves the user's target symbol; otherwise the interface-language symbol is used.",
       "elementType": "unit_symbol"
     }
   }

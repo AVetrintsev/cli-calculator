@@ -10,11 +10,11 @@ Each locale file supplies one local symbol per unit ID. A unit keeps its identit
 
 ## Accepted language sets
 
-The recognized unit vocabulary combines the catalog's Latin symbols with exactly one active locale's symbols. Do not combine all installed locale files. An identical Latin and local spelling for the same unit represents one token, not a collision or a third language variant.
+The recognized unit vocabulary combines the catalog's Latin symbols with the interface language's unit symbols. Do not combine all installed locale files. An identical Latin and local spelling for the same unit represents one token, not a collision or a third language variant.
 
 For example, with the Russian unit locale active, `m` and `м` both refer to `length.metre`. With the English unit locale active, `м` is not supplied as a unit token by this configuration. This does not define how an independently declared user identifier with the same spelling is handled; identifier conflicts remain a separate language and data-lifecycle decision.
 
-The active locale's relationship to the interface language, the spelling shown in results, and the presentation of saved expressions after a language change are currently proposed product decisions, not implemented behavior. Never silently enable an unrelated locale to resolve an unknown symbol.
+After an explicit conversion with `::` or `to`, the result uses the target symbol supplied by the user. Without an explicit target, the result uses the interface language's unit symbol. Saved expressions remain usable after an interface-language change: their previously localized unit symbols are displayed in the new language, while Latin symbols are retained. User-defined names and comments retain their original text. The persistence format and treatment of unfinished input are still open decisions; these files do not implement those behaviors. Never silently enable an unrelated locale to resolve an unknown symbol.
 
 ## Adding a locale
 
