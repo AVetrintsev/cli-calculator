@@ -119,5 +119,6 @@
   "completion.unit.volume.gallon_uk.description": "британский имперский галлон",
   "completion.unit.temperature.celsius.description": "градусы Цельсия",
   "completion.unit.temperature.fahrenheit.description": "градусы Фаренгейта",
-  "completion.unit.temperature.kelvin.description": "кельвин"
+  "completion.unit.temperature.kelvin.description": "кельвин",
+  "completion.unit.angle.radian.description": "радиан"
 }

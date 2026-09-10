@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "sourceLanguage": "en",
   "status": "draft",
-  "coverage": "Thirty-three approved units: eleven length units, six fixed-duration units, seven mass units, two area units, four volume units, and three temperature scales. This is not the complete product unit registry. Physical definitions and conversion factors are specified separately.",
+  "coverage": "Thirty-four approved units: eleven length units, six fixed-duration units, seven mass units, two area units, four volume units, three temperature scales, and the radian. This is not the complete product unit registry. Physical definitions and conversion factors are specified separately.",
   "units": {
     "length.nanometre": {
       "text": "nm",
@@ -233,6 +233,13 @@
       "meaning": "A temperature reading on the Kelvin scale, not a temperature interval.",
       "context": "Used to attach a temperature scale to a numeric reading or select a conversion target. The user selected the same uppercase Latin symbol for English and Russian in expression-language round 15. Translations must retain this symbol in both locale files. The selected scope supports conversion of readings, not arithmetic between temperature quantities.",
       "location": "Temperature unit positions in expressions and conversion targets. The selected spelling is also used in unit completions and results.",
+      "elementType": "unit_symbol"
+    },
+    "angle.radian": {
+      "text": "rad",
+      "meaning": "The radian, a unit of plane angle. An explicit radian suffix overrides the degree interpretation of an unmarked trigonometric argument.",
+      "context": "Used for explicitly marked radian calculations such as sin(pi/2 rad). The user reconfirmed this additional scenario in expression-language round 15. The Latin symbol remains available in both English and Russian; no separate Russian spelling was approved.",
+      "location": "Explicit angle unit positions in expressions and compatible conversion targets. Ordinary degree-based trigonometric calls do not require a suffix.",
       "elementType": "unit_symbol"
     }
   }

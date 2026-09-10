@@ -31,5 +31,6 @@
   "volume.gallon_uk": "гал_брит",
   "temperature.celsius": "C",
   "temperature.fahrenheit": "F",
-  "temperature.kelvin": "K"
+  "temperature.kelvin": "K",
+  "angle.radian": "rad"
 }

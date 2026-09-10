@@ -56,7 +56,7 @@
     "completion.function.sin.description": {
       "text": "Sine. Enter the angle in degrees.",
       "meaning": "Explains that the ordinary sine call takes its unmarked numeric argument in degrees.",
-      "context": "Shown when the sine function is suggested. Expression-language round 15 reaffirmed ordinary input such as sin(30) without a unit suffix. Whether previously agreed explicit radian input should remain is being clarified. The typed matching prefix is visually reduced in opacity; the proposed continuation is fully opaque.",
+      "context": "Shown when the sine function is suggested. Ordinary input such as sin(30) uses degrees without a suffix; explicitly marked radian input such as sin(pi/2 rad) is also supported. Both behaviors were reconfirmed in expression-language round 15. The typed matching prefix is visually reduced in opacity; the proposed continuation is fully opaque.",
       "location": "Immediately after the complete sine signature in the same suggestion row, separated by a gap. The description uses the same font size, lighter weight and reduced opacity, with no shared-column or right-edge alignment.",
       "elementType": "description"
     },
@@ -861,6 +861,13 @@
       "text": "kelvin",
       "meaning": "A temperature reading on the Kelvin scale, not a temperature interval.",
       "context": "Shown when the temperature scale is offered as a completion. The unit symbol remains the same in English and Russian; this explanatory description follows the interface language. Conversion targets are limited to compatible temperature scales.",
+      "location": "Immediately after the unit spelling in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
+      "elementType": "description"
+    },
+    "completion.unit.angle.radian.description": {
+      "text": "radian",
+      "meaning": "Identifies the unit used to mark an angle explicitly as radians.",
+      "context": "Shown when the radian unit is offered as a completion. Unmarked trigonometric arguments use degrees; an explicit rad suffix selects radians. The description follows the interface language while the symbol remains rad.",
       "location": "Immediately after the unit spelling in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
       "elementType": "description"
     }
