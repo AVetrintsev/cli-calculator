@@ -35,7 +35,7 @@
     "quick.history.show": {
       "text": "Show history",
       "meaning": "Expands the calculation history.",
-      "context": "Available when history is collapsed.",
+      "context": "Available when history is collapsed. Arrow Up in quick mode also opens history automatically and starts history navigation.",
       "location": "Command menu or keyboard hint associated with quick input.",
       "elementType": "command_label"
     },
@@ -49,7 +49,7 @@
     "quick.sheet.open": {
       "text": "Open calculation sheet",
       "meaning": "Switches to a calculation with variables and multiple expressions.",
-      "context": "Used when entering extended mode. The current expression becomes the first sheet line and keeps its screen position while the editor expands downward.",
+      "context": "Used by a separate mode-entry command with a modifier; its exact shortcut is undecided. A new sheet starts with the current expression at the same screen position and expands downward. A previously hidden sheet remains available without losing its contents.",
       "location": "Quick input command menu.",
       "elementType": "command_label"
     },
@@ -147,7 +147,7 @@
       "text": "History",
       "meaning": "Names the list of past calculations.",
       "context": "Shown when the history view is expanded.",
-      "location": "Heading of the history region above the stationary quick input, with the newest entry closest to the input.",
+      "location": "Heading of the history region above the stationary quick input. Initially the newest entry is closest to the input; Arrow Up shifts the list downward into the console and Arrow Down shifts it upward.",
       "elementType": "section_heading"
     },
     "history.empty": {
