@@ -1,5 +1,5 @@
 {
-  "status": "draft",
+  "status": "accepted",
   "source": "../localization/catalog.json",
   "fragments": [
     "help.precedence.title",
@@ -33,5 +33,6 @@
     "help.precedence.spacingHeading",
     "help.precedence.spacingRule",
     "help.precedence.definitionRule"
-  ]
+  ],
+  "acceptedThrough": "expression-language round 20"
 }

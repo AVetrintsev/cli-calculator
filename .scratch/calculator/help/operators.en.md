@@ -1,6 +1,6 @@
 # Operator precedence
 
-Draft for review. Conversion examples are agreed; the complete table and the whitespace rule below are proposals awaiting confirmation.
+The order below applies to mathematical expressions. Use parentheses to group a calculation explicitly.
 
 ## Two conversion operators
 
@@ -18,9 +18,9 @@ To continue arithmetic after `to`, use parentheses: `(2 to hex) + 3 = 5`. The in
 
 Consecutive conversions run from left to right, including mixed operators: `255 to hex::bin = 0b11111111`; `1 km to m::cm = 100 000 cm`. Each target names a conversion destination. The next conversion uses the preceding value, not the target name. The last target sets the final representation or unit. Rounded intermediate display text is never reused for calculation.
 
-## Proposed complete order
+## Order of operations
 
-Higher rows bind first. The complete order below still requires confirmation; agreed examples above remain the reference for conversion behavior.
+Higher rows bind first. Operators within an expression use this order unless parentheses explicitly change the grouping.
 
 | Priority | Operation |
 | ---: | --- |
@@ -39,10 +39,10 @@ Higher rows bind first. The complete order below still requires confirmation; ag
 
 Already agreed: powers associate left to right, so `2^3^2 = (2^3)^2 = 64`. Power precedes unary minus: `-2^2 = -4`. Multiplication, implicit multiplication and division have equal priority and run left to right: `6/2(1+2) = 9`.
 
-Examples of the proposed placement of `::` after power and unary signs: `2^3::bin = 0b1000` and `-10::hex = -0xA`.
+Power and unary signs bind before `::`: `2^3::bin = 0b1000` and `-10::hex = -0xA`.
 
-## Proposed whitespace rule
+## Spaces around operators
 
-Proposed: the operator token determines precedence, regardless of spaces around it. `2+3::hex` and `2 + 3 :: hex` both produce `5`; `2+3 to hex` produces `0x5`. Spaces can still separate tokens or group decimal digits; this is not a rule that all spaces everywhere may be removed.
+The operator determines precedence, regardless of spaces around it. `2+3::hex` and `2 + 3 :: hex` both produce `5`; `2+3 to hex` produces `0x5`. Spaces can still separate tokens or group decimal digits; they cannot be removed arbitrarily from every expression.
 
 `=` defines a name; it is not an equality comparison. Evaluate its right-hand expression using the operator order. Use `==` for equality checks.
