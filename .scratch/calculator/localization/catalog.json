@@ -22,7 +22,7 @@
       "text": "Result",
       "meaning": "Identifies the value produced by the current expression.",
       "context": "Used when a valid live result is available.",
-      "location": "Result area adjacent to the quick input; exact side is undecided.",
+      "location": "Result line directly below the quick input.",
       "elementType": "field_label"
     },
     "quick.result.pending": {
@@ -49,14 +49,14 @@
     "quick.sheet.open": {
       "text": "Open calculation sheet",
       "meaning": "Switches to a calculation with variables and multiple expressions.",
-      "context": "Used when entering the extended mode; draft transfer rules are undecided.",
+      "context": "Used when entering extended mode. The current expression becomes the first sheet line and keeps its screen position while the editor expands downward.",
       "location": "Quick input command menu.",
       "elementType": "command_label"
     },
     "quick.hide": {
       "text": "Hide calculator",
       "meaning": "Dismisses the visible calculator without naming a full application exit.",
-      "context": "Used by a hide command; draft preservation rules are undecided.",
+      "context": "Used by Escape, the repeated summon shortcut, or a click on another application. The unfinished input is preserved.",
       "location": "Command menu or keyboard help; not standard window chrome.",
       "elementType": "command_label"
     },
@@ -147,7 +147,7 @@
       "text": "History",
       "meaning": "Names the list of past calculations.",
       "context": "Shown when the history view is expanded.",
-      "location": "Heading of the history region above or below quick input; direction is undecided.",
+      "location": "Heading of the history region above the stationary quick input, with the newest entry closest to the input.",
       "elementType": "section_heading"
     },
     "history.empty": {
