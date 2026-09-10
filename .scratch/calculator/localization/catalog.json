@@ -21,7 +21,7 @@
     "quick.result.label": {
       "text": "Result",
       "meaning": "Identifies the value produced by the current expression.",
-      "context": "Used when a valid live result is available.",
+      "context": "Used only when a valid result for the current expression is available. The result line is empty for unfinished input, and an earlier result must not stand in for the current one. Decimal formatting and reduced opacity of trailing digits are handled separately from this label.",
       "location": "Result line directly below the quick input.",
       "elementType": "field_label"
     },
@@ -63,7 +63,7 @@
     "definitions.saveFunction": {
       "text": "Save function",
       "meaning": "Saves a user-defined calculation rule for future calls by name.",
-      "context": "Invoked explicitly for a function definition, which may use the short form or a multiline body. Detailed save flow remains to be specified.",
+      "context": "Invoked explicitly for a function definition, which may use the short form or a multiline body with local intermediate values and a final result expression. Detailed save flow remains to be specified.",
       "location": "Definition actions associated with the calculation editor; the exact menu placement is not yet specified.",
       "elementType": "command_label"
     },
@@ -88,13 +88,6 @@
       "location": "Feedback area near the active result.",
       "elementType": "error_message"
     },
-    "expression.incomplete": {
-      "text": "Finish the expression",
-      "meaning": "Explains that more mathematical input is needed.",
-      "context": "Available for unfinished input; whether visible or only announced remains undecided.",
-      "location": "Diagnostic area associated with the current expression.",
-      "elementType": "input_hint"
-    },
     "expression.invalid": {
       "text": "Check the expression",
       "meaning": "Reports an expression that cannot be parsed.",
@@ -105,7 +98,7 @@
     "expression.divisionByZero": {
       "text": "Cannot divide by zero",
       "meaning": "Explains why division cannot produce a result.",
-      "context": "Shown when evaluation attempts division by zero.",
+      "context": "Shown when the current expression attempts division by zero during evaluation. The expression has no copyable result. An unselected conditional branch is not evaluated and must not trigger this message.",
       "location": "Diagnostic area for the affected expression or sheet line.",
       "elementType": "error_message"
     },

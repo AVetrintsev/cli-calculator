@@ -11,7 +11,6 @@
   "copy.result": "Скопировать результат",
   "copy.success": "Результат скопирован",
   "copy.error": "Не удалось скопировать результат. Попробуйте ещё раз.",
-  "expression.incomplete": "Допишите выражение",
   "expression.invalid": "Проверьте выражение",
   "expression.divisionByZero": "Нельзя делить на ноль",
   "expression.unknownName": "Неизвестное имя: {name}",
