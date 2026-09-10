@@ -40,5 +40,5 @@
     "help.precedence.spacingRule",
     "help.precedence.definitionRule"
   ],
-  "acceptedThrough": "expression-language round 21 and contextual-units round 1; compound duration and lazy operation rules remain open"
+  "acceptedThrough": "expression-language round 21 and contextual-units round 2; alternative-result layout, grouping and simple compound-unit boundaries remain open"
 }

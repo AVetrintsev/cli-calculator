@@ -45,13 +45,13 @@ Power and unary signs bind before `::`: `2^3::bin = 0b1000` and `-10::hex = -0xA
 
 ## Lazy unit resolution
 
-Lowercase m can mean a metre or a minute; the active Russian spelling м follows the same rule. Determine its meaning from the expression, including outer parentheses. When context is insufficient, preserve the symbol: 2m * 2 = 4m. Different occurrences can have different meanings. The constraints supplied by multiplication, division and other operations are still being specified.
+Lowercase m can mean a metre or a minute; the active Russian spelling м follows the same rule. Lazy resolution uses the whole formula, including outer parentheses. If multiple interpretations remain valid, show all possible answers: 10m / 2s gives 5m/s for metres and the unitless 300 for minutes. Explicit metre and min select a meaning directly; the Russian equivalents are метр and мин. Grouping identical-looking answers, their order and copy selection are still being specified.
 
-Short duration symbols are w, d, h, m, s and ms. Russian symbols are н, д, ч, м, с and мс; the existing hour symbol ч is retained. Days remain 24 hours and weeks remain seven days. The minute symbols m and м are contextual. Grammar for adjacent duration components is still being agreed.
+Short duration symbols are w, d, h, m, s and ms. Russian symbols are н, д, ч, м, с and мс. Days remain 24 hours and weeks remain seven days. Adjacent duration components are added: 1h 30m = 90min. Use an explicit * for multiplication. This is a special duration rule, not a general rule for adjacent quantities. Token boundaries without spaces and repeated components remain open.
 
 ## Unit powers and quantity powers
 
-Typing m2 or m3 automatically displays m² or m³; the active Russian equivalents are м2/м3 and м²/м³. These symbols always mean square or cubic metres, never minutes. The caret ^ instead raises the entire quantity to a power: 2m2 denotes two square metres; 2m^2 denotes four square metres if m has been resolved as a metre. Powers of resolved durations and automatic replacement for other units are still being specified.
+Typing m2 or m3 automatically displays m² or m³; the active Russian equivalents are м2/м3 and м²/м³. These symbols always mean square or cubic metres, never minutes. The caret ^ raises the entire quantity to a power: 2m2 denotes two square metres; 2m^2 denotes four square metres if m has been resolved as a metre. Complex units such as squared seconds and acceleration are excluded. The precise limited compound-unit inventory and editing boundaries are still being specified.
 
 ## Spaces around operators
 

@@ -5,8 +5,8 @@
   "symbols": {
     "unit.metreOrMinute": {
       "text": "m",
-      "meaning": "The intentionally shared lowercase notation for a metre or a minute. Candidate meanings are known; a particular occurrence can remain unresolved in a calculated result.",
-      "context": "The user selected lazy resolution from inner expressions outward, including constraints from outer operations. Preserve unresolved symbols rather than force a choice: 2m * 2 = 4m. Different occurrences can resolve independently. Which operations provide sufficient constraints is still under discussion. A known neighboring unit must not be treated as an already approved universal inference rule.",
+      "meaning": "The intentionally shared lowercase notation for a metre or a minute. Multiple valid interpretations can produce multiple answers to one expression.",
+      "context": "The user selected lazy resolution using inner and outer expression constraints. If several interpretations remain possible, calculate and display all valid answers: 10m / 2s gives 5m/s or the unitless 300. Independent occurrences may resolve differently. Identical-looking answers, unsupported alternatives, ordering and copy selection remain open. Do not silently choose one interpretation or return only a subset as if complete.",
       "location": "Unit positions in expressions and results, including nested quantities. Detailed completion presentation, resolved-meaning feedback and persistence are still being selected.",
       "elementType": "unit_symbol",
       "candidateUnitIds": [
@@ -15,12 +15,13 @@
       ],
       "resolutionScope": "whole_expression",
       "exactSpellingsStatus": "accepted_lowercase",
-      "ambiguityPolicy": "preserve_symbol",
+      "ambiguityPolicy": "all_valid_results",
       "localeSymbolsFromUnitId": "length.metre",
       "resolutionName": "lazy",
       "resolutionDirection": "inside_out_with_outer_constraints",
       "unitPowerShorthandPolicy": "square_and_cube_shorthands_always_denote_metres",
-      "optionalExplicitAliasesStatus": "pending"
+      "optionalExplicitAliasesStatus": "accepted",
+      "explicitAliasesCatalog": "aliases.catalog.json"
     }
   }
 }

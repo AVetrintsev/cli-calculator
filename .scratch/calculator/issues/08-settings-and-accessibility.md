@@ -4,7 +4,7 @@ Status: open
 Type: prototype
 Label: wayfinder:prototype
 Parent: ../map.md
-Blocked by: 01, 03, 05, 06, 07, 15
+Blocked by: 01, 03, 05, 06, 07, 15, 17
 
 ## Question
 

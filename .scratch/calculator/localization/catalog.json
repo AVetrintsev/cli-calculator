@@ -1277,14 +1277,14 @@
     "completion.unit.length.metre.description": {
       "text": "metre",
       "meaning": "Identifies the metre unit, which is one of the candidate meanings of contextual lowercase m.",
-      "context": "Used when a completion or resolved-unit explanation identifies this candidate of lowercase m. The label is translated. If context is insufficient, the user selected keeping the symbol in a calculated result rather than requiring a choice. This description does not approve a particular ambiguity indicator or additional alias.",
+      "context": "Identifies this unit in a completion or interpretation caption. Lowercase m is shared by metre and minute. If multiple meanings remain valid, show all possible answers; a unique meaning is not forced. The explicit metre/min aliases and their selected locale equivalents are approved. Detailed caption layout and identical-looking answer grouping are still being evaluated.",
       "location": "Description beside a unit suggestion or unit-meaning explanation; final unresolved-state presentation remains under discussion.",
       "elementType": "description"
     },
     "completion.unit.time.minute.description": {
       "text": "minute",
       "meaning": "Identifies the minute unit, which is one of the candidate meanings of contextual lowercase m.",
-      "context": "Used when a completion or resolved-unit explanation identifies this candidate of lowercase m. The label is translated. If context is insufficient, the user selected keeping the symbol in a calculated result rather than requiring a choice. This description does not approve a particular ambiguity indicator or additional alias.",
+      "context": "Identifies this unit in a completion or interpretation caption. Lowercase m is shared by metre and minute. If multiple meanings remain valid, show all possible answers; a unique meaning is not forced. The explicit metre/min aliases and their selected locale equivalents are approved. Detailed caption layout and identical-looking answer grouping are still being evaluated.",
       "location": "Description beside a unit suggestion or unit-meaning explanation; final unresolved-state presentation remains under discussion.",
       "elementType": "description"
     },
@@ -1296,9 +1296,9 @@
       "elementType": "help_heading"
     },
     "help.precedence.unitPowersRule": {
-      "text": "Typing m2 or m3 automatically displays m² or m³; the active Russian equivalents are м2/м3 and м²/м³. These symbols always mean square or cubic metres, never minutes. The caret ^ instead raises the entire quantity to a power: 2m2 denotes two square metres; 2m^2 denotes four square metres if m has been resolved as a metre. Powers of resolved durations and automatic replacement for other units are still being specified.",
+      "text": "Typing m2 or m3 automatically displays m² or m³; the active Russian equivalents are м2/м3 and м²/м³. These symbols always mean square or cubic metres, never minutes. The caret ^ raises the entire quantity to a power: 2m2 denotes two square metres; 2m^2 denotes four square metres if m has been resolved as a metre. Complex units such as squared seconds and acceleration are excluded. The precise limited compound-unit inventory and editing boundaries are still being specified.",
       "meaning": "Explains the accepted new square-unit input and ordinary caret behavior, without deciding unresolved contextual aliases.",
-      "context": "Accepted unit shorthand decision from contextual-units round 1. Lowercase square/cube metre shorthand is unambiguous; general duration powers and editor behavior remain open. Keep the caret distinct from a superscript unit suffix.",
+      "context": "Documentation of accepted contextual-units round 2 decisions: duration sums, all valid alternative answers, explicit aliases and exclusion of complex time-power units. Clauses explicitly marked open do not approve additional grammar, grouping, copy behavior or compound units.",
       "location": "Operator-precedence help page, fragment unitPowersRule. Preserve mathematical notation when translating prose.",
       "elementType": "help_paragraph"
     },
@@ -1317,18 +1317,43 @@
       "elementType": "help_heading"
     },
     "help.precedence.lazyUnitsRule": {
-      "text": "Lowercase m can mean a metre or a minute; the active Russian spelling м follows the same rule. Determine its meaning from the expression, including outer parentheses. When context is insufficient, preserve the symbol: 2m * 2 = 4m. Different occurrences can have different meanings. The constraints supplied by multiplication, division and other operations are still being specified.",
+      "text": "Lowercase m can mean a metre or a minute; the active Russian spelling м follows the same rule. Lazy resolution uses the whole formula, including outer parentheses. If multiple interpretations remain valid, show all possible answers: 10m / 2s gives 5m/s for metres and the unitless 300 for minutes. Explicit metre and min select a meaning directly; the Russian equivalents are метр and мин. Grouping identical-looking answers, their order and copy selection are still being specified.",
       "meaning": "Explains that a visible calculated result may retain an unresolved unit symbol instead of forcing a choice.",
-      "context": "Documentation of accepted contextual-units round 1 decisions. Examples describe selected behavior; explicitly pending operation and duration grammar must not be inferred from the heading or notation list.",
+      "context": "Documentation of accepted contextual-units round 2 decisions: duration sums, all valid alternative answers, explicit aliases and exclusion of complex time-power units. Clauses explicitly marked open do not approve additional grammar, grouping, copy behavior or compound units.",
       "location": "Unit interpretation section in the in-app operator help and its generated documentation previews.",
       "elementType": "help_paragraph"
     },
     "help.precedence.durationNotation": {
-      "text": "Short duration symbols are w, d, h, m, s and ms. Russian symbols are н, д, ч, м, с and мс; the existing hour symbol ч is retained. Days remain 24 hours and weeks remain seven days. The minute symbols m and м are contextual. Grammar for adjacent duration components is still being agreed.",
+      "text": "Short duration symbols are w, d, h, m, s and ms. Russian symbols are н, д, ч, м, с and мс. Days remain 24 hours and weeks remain seven days. Adjacent duration components are added: 1h 30m = 90min. Use an explicit * for multiplication. This is a special duration rule, not a general rule for adjacent quantities. Token boundaries without spaces and repeated components remain open.",
       "meaning": "Lists the selected short duration notation while separating it from pending duration-chain grammar.",
-      "context": "Documentation of accepted contextual-units round 1 decisions. Examples describe selected behavior; explicitly pending operation and duration grammar must not be inferred from the heading or notation list.",
+      "context": "Documentation of accepted contextual-units round 2 decisions: duration sums, all valid alternative answers, explicit aliases and exclusion of complex time-power units. Clauses explicitly marked open do not approve additional grammar, grouping, copy behavior or compound units.",
       "location": "Unit interpretation section in the in-app operator help and its generated documentation previews.",
       "elementType": "help_paragraph"
+    },
+    "result.alternatives.label": {
+      "text": "Possible results",
+      "meaning": "Names the collection of valid answers for different interpretations of one expression.",
+      "context": "Candidate copy for the accepted alternative-result feature and limited unit scope. Layout, result selection and partial failures remain open; the catalog does not approve those behaviors.",
+      "location": "Result region below the quick input or a calculation-sheet expression.",
+      "elementType": "accessible_name"
+    },
+    "result.alternative.interpretation": {
+      "text": "{symbol}: {unit}",
+      "meaning": "Explains the meaning assigned to an ambiguous input symbol in one possible answer.",
+      "context": "Candidate copy for the accepted alternative-result feature and limited unit scope. Layout, result selection and partial failures remain open; the catalog does not approve those behaviors.",
+      "location": "Caption associated with one possible result; its exact layout is being prototyped.",
+      "elementType": "description",
+      "placeholders": {
+        "symbol": "The original ambiguous symbol from the expression, kept as user data.",
+        "unit": "The localized name of the unit selected by this interpretation."
+      }
+    },
+    "error.unsupportedUnit": {
+      "text": "This unit is not supported",
+      "meaning": "Explains that the calculation requires a unit outside the selected product scope.",
+      "context": "Candidate copy for the accepted alternative-result feature and limited unit scope. Layout, result selection and partial failures remain open; the catalog does not approve those behaviors.",
+      "location": "Calculation diagnostic region when a result requires an excluded unit. Behavior when only one of multiple interpretations is unsupported remains open.",
+      "elementType": "error_message"
     }
   }
 }

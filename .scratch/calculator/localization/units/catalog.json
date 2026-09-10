@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "sourceLanguage": "en",
   "status": "draft",
-  "coverage": "Fifty-two unit identities. Metre and minute intentionally share contextual lowercase m, with localized spelling supplied by en.json and ru.json. Their declared candidates are in contextual.json. Other symbol collisions remain invalid. Inference and compound-duration grammar are still being specified.",
+  "coverage": "Fifty-two unit identities; metre and minute intentionally share lowercase m through contextual.json. Two approved explicit aliases have their own catalog and locale files. Adjacent duration components add. Alternative-result grouping and the limited set of compound units remain under discussion.",
   "units": {
     "length.nanometre": {
       "text": "nm",
@@ -42,8 +42,8 @@
     "length.metre": {
       "text": "m",
       "meaning": "The metre, a unit of length.",
-      "context": "Lowercase m is intentionally shared by the metre and minute. Combine the Latin spelling with only the active locale spelling. Lazy unit resolution may determine an occurrence from constraints elsewhere in the expression; if context remains insufficient, preserve its symbol, as in 2m * 2 = 4m. Independent occurrences may resolve differently. Exact operation constraints and optional unambiguous aliases remain under discussion. This is an explicitly declared contextual spelling, not an accidental dictionary collision.",
-      "location": "Unit positions in expressions, results and conversion targets. The symbol alone does not guarantee that its meaning has been resolved. Superscript square/cube metre shorthand is specified separately and never denotes minutes.",
+      "context": "Lowercase m is intentionally shared by the metre and minute. Combine the Latin spelling with only the active locale spelling. Lazy resolution uses constraints across the whole expression. If several interpretations remain valid, compute and show all possible answers: 10m / 2s gives 5m/s or the unitless 300. Independent occurrences may resolve differently. Grouping identical-looking results, ordering and selection remain open. Explicit metre and min aliases are declared in aliases.catalog.json.",
+      "location": "Unit positions in expressions, alternative results and conversion targets. Preserve the meaning of each result independently of its displayed spelling. Square/cube metre shorthand never denotes minutes.",
       "elementType": "unit_symbol",
       "notationPolicy": "contextual",
       "contextualSymbolId": "unit.metreOrMinute"
@@ -86,8 +86,8 @@
     "time.minute": {
       "text": "m",
       "meaning": "The minute, a unit of fixed duration. Its primary lowercase notation is shared with the metre; this does not change the identity or duration of the unit.",
-      "context": "Lowercase m is intentionally shared by the metre and minute. Combine the Latin spelling with only the active locale spelling. Lazy unit resolution may determine an occurrence from constraints elsewhere in the expression; if context remains insufficient, preserve its symbol, as in 2m * 2 = 4m. Independent occurrences may resolve differently. Exact operation constraints and optional unambiguous aliases remain under discussion. This is an explicitly declared contextual spelling, not an accidental dictionary collision.",
-      "location": "Unit positions in expressions, results and conversion targets. The symbol alone does not guarantee that its meaning has been resolved. Superscript square/cube metre shorthand is specified separately and never denotes minutes.",
+      "context": "Lowercase m is intentionally shared by the metre and minute. Combine the Latin spelling with only the active locale spelling. Lazy resolution uses constraints across the whole expression. If several interpretations remain valid, compute and show all possible answers: 10m / 2s gives 5m/s or the unitless 300. Independent occurrences may resolve differently. Grouping identical-looking results, ordering and selection remain open. Explicit metre and min aliases are declared in aliases.catalog.json.",
+      "location": "Unit positions in expressions, alternative results and conversion targets. Preserve the meaning of each result independently of its displayed spelling. Square/cube metre shorthand never denotes minutes.",
       "elementType": "unit_symbol",
       "notationPolicy": "contextual",
       "contextualSymbolId": "unit.metreOrMinute"
@@ -95,14 +95,14 @@
     "time.day": {
       "text": "d",
       "meaning": "A fixed day of 24 hours, not a date-dependent calendar day.",
-      "context": "Short duration notation selected in contextual-units round 1. The Latin symbol and one active locale spelling are recognized; older abbreviations are not added automatically as aliases. Jira-like input refers to notation only: a day remains 24 hours and a week remains seven days. Grammar for adjacent duration components is being clarified.",
+      "context": "Short duration notation selected in contextual-units round 1. The Latin symbol and one active locale spelling are recognized; older abbreviations are not added automatically as aliases. Jira-like input refers to notation only: a day remains 24 hours and a week remains seven days. Adjacent duration components are added, as in 1h 30m = 90min; an explicit * is required for multiplication. Remaining token boundaries and repetitions are being clarified.",
       "location": "Unit positions in mathematical expressions and conversion targets. An explicit conversion preserves the user's target symbol; otherwise the interface-language symbol is used.",
       "elementType": "unit_symbol"
     },
     "time.week": {
       "text": "w",
       "meaning": "A fixed week of seven 24-hour days, not a calendar-period operation.",
-      "context": "Short duration notation selected in contextual-units round 1. The Latin symbol and one active locale spelling are recognized; older abbreviations are not added automatically as aliases. Jira-like input refers to notation only: a day remains 24 hours and a week remains seven days. Grammar for adjacent duration components is being clarified.",
+      "context": "Short duration notation selected in contextual-units round 1. The Latin symbol and one active locale spelling are recognized; older abbreviations are not added automatically as aliases. Jira-like input refers to notation only: a day remains 24 hours and a week remains seven days. Adjacent duration components are added, as in 1h 30m = 90min; an explicit * is required for multiplication. Remaining token boundaries and repetitions are being clarified.",
       "location": "Unit positions in mathematical expressions and conversion targets. An explicit conversion preserves the user's target symbol; otherwise the interface-language symbol is used.",
       "elementType": "unit_symbol"
     },

@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "sourceLanguage": "en",
+  "status": "accepted_notation",
+  "aliases": {
+    "unit.metre.explicit": {
+      "unitId": "length.metre",
+      "text": "metre",
+      "meaning": "An unambiguous explicit spelling of the metre, alongside contextual m.",
+      "context": "Approved in contextual-units round 2 for explicit unit input. The Latin form and the active locale form are available simultaneously. These aliases do not change the primary contextual spelling or unit identity. The min function also exists; precise function-call versus unit-token boundaries are a separate open grammar decision.",
+      "location": "Unit positions in expressions, conversion targets and unit completions. An explicit conversion retains the chosen target spelling.",
+      "elementType": "unit_symbol"
+    },
+    "unit.minute.explicit": {
+      "unitId": "time.minute",
+      "text": "min",
+      "meaning": "An unambiguous explicit spelling of the minute, alongside contextual m.",
+      "context": "Approved in contextual-units round 2 for explicit unit input. The Latin form and the active locale form are available simultaneously. These aliases do not change the primary contextual spelling or unit identity. The min function also exists; precise function-call versus unit-token boundaries are a separate open grammar decision.",
+      "location": "Unit positions in expressions, conversion targets and unit completions. An explicit conversion retains the chosen target spelling.",
+      "elementType": "unit_symbol"
+    }
+  }
+}
