@@ -138,5 +138,11 @@
   "completion.unit.information.gibibit.description": "gibibit",
   "completion.unit.information.gibibyte.description": "gibibyte",
   "completion.unit.information.tebibit.description": "tebibit",
-  "completion.unit.information.tebibyte.description": "tebibyte"
+  "completion.unit.information.tebibyte.description": "tebibyte",
+  "completion.base.bin.description": "binary",
+  "completion.base.oct.description": "octal",
+  "completion.base.dec.description": "decimal",
+  "completion.base.hex.description": "hexadecimal",
+  "error.baseRequiresInteger": "This conversion requires an integer",
+  "error.invalidBaseDigit": "Character {character} is not valid in base {base}"
 }

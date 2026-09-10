@@ -138,5 +138,11 @@
   "completion.unit.information.gibibit.description": "гибибит",
   "completion.unit.information.gibibyte.description": "гибибайт",
   "completion.unit.information.tebibit.description": "тебибит",
-  "completion.unit.information.tebibyte.description": "тебибайт"
+  "completion.unit.information.tebibyte.description": "тебибайт",
+  "completion.base.bin.description": "двоичная система",
+  "completion.base.oct.description": "восьмеричная система",
+  "completion.base.dec.description": "десятичная система",
+  "completion.base.hex.description": "шестнадцатеричная система",
+  "error.baseRequiresInteger": "Для этого преобразования нужно целое число",
+  "error.invalidBaseDigit": "Символ {character} недопустим в системе с основанием {base}"
 }

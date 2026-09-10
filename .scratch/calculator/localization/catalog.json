@@ -996,6 +996,52 @@
       "context": "Shown when this information unit is offered as a completion. The symbol stays Latin in every language; this explanatory description follows the interface language. Conversion targets are filtered by dimensional compatibility.",
       "location": "Immediately after the unit spelling in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
       "elementType": "description"
+    },
+    "completion.base.bin.description": {
+      "text": "binary",
+      "meaning": "Identifies the base-2 representation of a number, not a physical unit of measurement.",
+      "context": "Description for the approved conversion target bin, which is identical in all interface languages and can follow either :: or to. Exact completion eligibility and opening behavior remain under discussion; this text does not approve that behavior.",
+      "location": "Immediately after the conversion target in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
+      "elementType": "description"
+    },
+    "completion.base.oct.description": {
+      "text": "octal",
+      "meaning": "Identifies the base-8 representation of a number, not a physical unit of measurement.",
+      "context": "Description for the approved conversion target oct, which is identical in all interface languages and can follow either :: or to. Exact completion eligibility and opening behavior remain under discussion; this text does not approve that behavior.",
+      "location": "Immediately after the conversion target in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
+      "elementType": "description"
+    },
+    "completion.base.dec.description": {
+      "text": "decimal",
+      "meaning": "Identifies the base-10 representation of a number, not a physical unit of measurement.",
+      "context": "Description for the approved conversion target dec, which is identical in all interface languages and can follow either :: or to. Exact completion eligibility and opening behavior remain under discussion; this text does not approve that behavior.",
+      "location": "Immediately after the conversion target in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
+      "elementType": "description"
+    },
+    "completion.base.hex.description": {
+      "text": "hexadecimal",
+      "meaning": "Identifies the base-16 representation of a number, not a physical unit of measurement.",
+      "context": "Description for the approved conversion target hex, which is identical in all interface languages and can follow either :: or to. Exact completion eligibility and opening behavior remain under discussion; this text does not approve that behavior.",
+      "location": "Immediately after the conversion target in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
+      "elementType": "description"
+    },
+    "error.baseRequiresInteger": {
+      "text": "This conversion requires an integer",
+      "meaning": "Explains why a fractional result cannot be represented in one of the supported nondecimal formats.",
+      "context": "Shown for a completed expression requesting a binary, octal or hexadecimal result when the numeric value is not an integer, such as 10.5::hex. The value must not be rounded or truncated to make the conversion succeed.",
+      "location": "Calculation diagnostic associated with the conversion expression; no valid result is available to copy.",
+      "elementType": "error_message"
+    },
+    "error.invalidBaseDigit": {
+      "text": "Character {character} is not valid in base {base}",
+      "meaning": "Identifies a character that cannot be a digit in the explicitly prefixed number.",
+      "context": "Shown for an invalid prefixed number such as 0b102 under the existing completed-expression error rule. A prefix with no digits, such as 0b, is incomplete input and must not trigger this error.",
+      "location": "Calculation diagnostic associated with the invalid numeric literal; no valid result is available to copy.",
+      "elementType": "error_message",
+      "placeholders": {
+        "character": "The offending character from the user input; preserve it as data.",
+        "base": "The numeric radix of the literal, such as 2, 8 or 16."
+      }
     }
   }
 }

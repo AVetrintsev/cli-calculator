@@ -55,6 +55,8 @@ The initial catalog covers quick input, live results and diagnostics, history, c
 
 Installer and updater wording, additional mathematical diagnostics, new built-in templates, and the final texts for unresolved interaction flows must be added as those parts of the specification become concrete. System-owned dialog text is supplied by the operating system; application-supplied titles or messages still belong in the catalog.
 
+Numeral-system conversion targets bin, oct, dec and hex are invariant language tokens, not physical units or translated labels. Their completion descriptions belong to this interface catalog. The matching contexts distinguish approved syntax from still-proposed completion opening and eligibility rules. Conversions use either :: or to with the same meaning. Diagnostics for fractional nondecimal conversion and invalid prefixed digits are included; an incomplete prefix must retain the agreed empty-result behavior rather than display an error.
+
 The runtime localization library, initial language selection, fallback policy, language switching behavior, numeric/date formatting, plural handling, and right-to-left layout remain decisions for the expression-language and settings questions. `{name}` is a placeholder notation for these assets, not a choice of runtime interpolation library. Count-based messages must not be introduced with English-only plural assumptions.
 
 Product decision: [Product scope and usage model](../issues/01-product-scope.md).
