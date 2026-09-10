@@ -2,6 +2,8 @@
   "quick.expression.placeholder": "Введите выражение",
   "quick.expression.accessibleName": "Выражение",
   "quick.result.label": "Результат",
+  "result.boolean.true": "Да",
+  "result.boolean.false": "Нет",
   "quick.history.show": "Показать историю",
   "quick.history.hide": "Скрыть историю",
   "quick.sheet.open": "Открыть лист расчёта",

@@ -25,6 +25,20 @@
       "location": "Result line directly below the quick input.",
       "elementType": "field_label"
     },
+    "result.boolean.true": {
+      "text": "Yes",
+      "meaning": "Displays a logical result whose value is true.",
+      "context": "Used when the current valid calculation produces a logical value, such as 5 > 3. This is display text; accepted input literals and clipboard serialization are specified separately.",
+      "location": "The active calculation result, directly below quick input or in the result area associated with an expression in a calculation sheet.",
+      "elementType": "result_value"
+    },
+    "result.boolean.false": {
+      "text": "No",
+      "meaning": "Displays a logical result whose value is false.",
+      "context": "Used when the current valid calculation produces a logical value, such as 5 < 3. This is a valid result, not an error or a missing result. Accepted input literals and clipboard serialization are specified separately.",
+      "location": "The active calculation result, directly below quick input or in the result area associated with an expression in a calculation sheet.",
+      "elementType": "result_value"
+    },
     "quick.history.show": {
       "text": "Show history",
       "meaning": "Expands the calculation history.",

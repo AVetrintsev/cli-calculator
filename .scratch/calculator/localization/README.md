@@ -26,7 +26,7 @@ Each message has five required fields, all written in English:
 
 Messages with inserted values also have a `placeholders` object. It describes each named value in English. These descriptions are translation guidance, not text displayed to the user.
 
-Current element types: `input_placeholder`, `accessible_name`, `field_label`, `status_message`, `command_label`, `input_hint`, `error_message`, `section_heading`, `empty_state`, `dialog_title`, `select_option`, `description`, `menu_item`, and `button`.
+Current element types: `input_placeholder`, `accessible_name`, `field_label`, `result_value`, `status_message`, `command_label`, `input_hint`, `error_message`, `section_heading`, `empty_state`, `dialog_title`, `select_option`, `description`, `menu_item`, and `button`.
 
 ## Consistency rules
 

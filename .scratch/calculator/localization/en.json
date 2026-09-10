@@ -2,6 +2,8 @@
   "quick.expression.placeholder": "Type a calculation",
   "quick.expression.accessibleName": "Calculation",
   "quick.result.label": "Result",
+  "result.boolean.true": "Yes",
+  "result.boolean.false": "No",
   "quick.history.show": "Show history",
   "quick.history.hide": "Hide history",
   "quick.sheet.open": "Open calculation sheet",
