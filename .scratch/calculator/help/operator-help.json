@@ -31,11 +31,14 @@
     "help.precedence.existingAssociativity",
     "help.precedence.comparisonChains",
     "help.precedence.newOrderingExamples",
+    "help.precedence.lazyUnitsHeading",
+    "help.precedence.lazyUnitsRule",
+    "help.precedence.durationNotation",
     "help.precedence.unitPowersHeading",
     "help.precedence.unitPowersRule",
     "help.precedence.spacingHeading",
     "help.precedence.spacingRule",
     "help.precedence.definitionRule"
   ],
-  "acceptedThrough": "expression-language round 21; contextual-unit details remain open"
+  "acceptedThrough": "expression-language round 21 and contextual-units round 1; compound duration and lazy operation rules remain open"
 }

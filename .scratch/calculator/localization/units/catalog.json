@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "sourceLanguage": "en",
   "status": "draft",
-  "coverage": "Fifty-two direct unit identities, with metre and minute spellings under revision. Contextual M is specified separately in contextual.json. The full language, inference policy and conversion factors are not implemented by these files.",
+  "coverage": "Fifty-two unit identities. Metre and minute intentionally share contextual lowercase m, with localized spelling supplied by en.json and ru.json. Their declared candidates are in contextual.json. Other symbol collisions remain invalid. Inference and compound-duration grammar are still being specified.",
   "units": {
     "length.nanometre": {
       "text": "nm",
@@ -42,10 +42,11 @@
     "length.metre": {
       "text": "m",
       "meaning": "The metre, a unit of length.",
-      "context": "This record retains the previously selected direct spelling for traceability. The user now requires contextual M, resolved as a metre or minute from constraints across the whole expression. Exact letter variants and retention of this explicit spelling remain under discussion in the contextual-unit decision. Do not treat this record as finalizing that policy.",
-      "location": "Unit positions in mathematical expressions, including the target of a unit conversion. An explicit conversion preserves the user's target symbol; otherwise the interface-language symbol is used.",
+      "context": "Lowercase m is intentionally shared by the metre and minute. Combine the Latin spelling with only the active locale spelling. Lazy unit resolution may determine an occurrence from constraints elsewhere in the expression; if context remains insufficient, preserve its symbol, as in 2m * 2 = 4m. Independent occurrences may resolve differently. Exact operation constraints and optional unambiguous aliases remain under discussion. This is an explicitly declared contextual spelling, not an accidental dictionary collision.",
+      "location": "Unit positions in expressions, results and conversion targets. The symbol alone does not guarantee that its meaning has been resolved. Superscript square/cube metre shorthand is specified separately and never denotes minutes.",
       "elementType": "unit_symbol",
-      "notationStatus": "under_revision"
+      "notationPolicy": "contextual",
+      "contextualSymbolId": "unit.metreOrMinute"
     },
     "length.kilometre": {
       "text": "km",
@@ -83,24 +84,25 @@
       "elementType": "unit_symbol"
     },
     "time.minute": {
-      "text": "min",
-      "meaning": "The minute, a unit of fixed duration. Its symbol is distinct in meaning from a function call to min.",
-      "context": "This record retains the previously selected direct spelling for traceability. The user now requires contextual M, resolved as a metre or minute from constraints across the whole expression. Exact letter variants and retention of this explicit spelling remain under discussion in the contextual-unit decision. Do not treat this record as finalizing that policy.",
-      "location": "Unit positions in mathematical expressions and conversion targets. An explicit conversion preserves the user's target symbol; otherwise the interface-language symbol is used.",
+      "text": "m",
+      "meaning": "The minute, a unit of fixed duration. Its primary lowercase notation is shared with the metre; this does not change the identity or duration of the unit.",
+      "context": "Lowercase m is intentionally shared by the metre and minute. Combine the Latin spelling with only the active locale spelling. Lazy unit resolution may determine an occurrence from constraints elsewhere in the expression; if context remains insufficient, preserve its symbol, as in 2m * 2 = 4m. Independent occurrences may resolve differently. Exact operation constraints and optional unambiguous aliases remain under discussion. This is an explicitly declared contextual spelling, not an accidental dictionary collision.",
+      "location": "Unit positions in expressions, results and conversion targets. The symbol alone does not guarantee that its meaning has been resolved. Superscript square/cube metre shorthand is specified separately and never denotes minutes.",
       "elementType": "unit_symbol",
-      "notationStatus": "under_revision"
+      "notationPolicy": "contextual",
+      "contextualSymbolId": "unit.metreOrMinute"
     },
     "time.day": {
       "text": "d",
       "meaning": "A fixed day of 24 hours, not a date-dependent calendar day.",
-      "context": "The Latin symbol is always accepted as a unit token. Its localized counterpart is accepted only when that locale matches the interface language. Fixed-duration notation was approved in expression-language round 12.",
+      "context": "Short duration notation selected in contextual-units round 1. The Latin symbol and one active locale spelling are recognized; older abbreviations are not added automatically as aliases. Jira-like input refers to notation only: a day remains 24 hours and a week remains seven days. Grammar for adjacent duration components is being clarified.",
       "location": "Unit positions in mathematical expressions and conversion targets. An explicit conversion preserves the user's target symbol; otherwise the interface-language symbol is used.",
       "elementType": "unit_symbol"
     },
     "time.week": {
-      "text": "wk",
+      "text": "w",
       "meaning": "A fixed week of seven 24-hour days, not a calendar-period operation.",
-      "context": "The Latin symbol is always accepted as a unit token. Its localized counterpart is accepted only when that locale matches the interface language. Fixed-duration notation was approved in expression-language round 12.",
+      "context": "Short duration notation selected in contextual-units round 1. The Latin symbol and one active locale spelling are recognized; older abbreviations are not added automatically as aliases. Jira-like input refers to notation only: a day remains 24 hours and a week remains seven days. Grammar for adjacent duration components is being clarified.",
       "location": "Unit positions in mathematical expressions and conversion targets. An explicit conversion preserves the user's target symbol; otherwise the interface-language symbol is used.",
       "elementType": "unit_symbol"
     },

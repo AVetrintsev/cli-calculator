@@ -70,28 +70,28 @@
     "completion.unit.squareMetre.description": {
       "text": "square metre",
       "meaning": "Identifies a square metre as a unit of area.",
-      "context": "Shown when the square-metre unit is identified and offered as a completion. The candidate displays and inserts a superscript unit symbol. A caret expression applies exponentiation to a quantity and must not be treated as an equivalent completion spelling. Contextual M inference and the exact scope of shorthand autoformatting are defined separately.",
+      "context": "Shown for an unambiguous metre area or volume unit. Lowercase m2/m3 and their active-locale counterparts display as superscript metre symbols and never mean squared or cubed minutes. Tab inserts the displayed unit spelling. A caret instead raises a whole quantity to a power. Autoreplacement boundaries and behavior for other units remain under discussion.",
       "location": "Immediately after the unit spelling in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
       "elementType": "description"
     },
     "completion.unit.cubicMetre.description": {
       "text": "cubic metre",
       "meaning": "Identifies a cubic metre as a unit of volume.",
-      "context": "Shown when the cubic-metre unit is identified and offered as a completion. The candidate displays and inserts a superscript unit symbol. A caret expression applies exponentiation to a quantity and must not be treated as an equivalent completion spelling. Contextual M inference and the exact scope of shorthand autoformatting are defined separately.",
+      "context": "Shown for an unambiguous metre area or volume unit. Lowercase m2/m3 and their active-locale counterparts display as superscript metre symbols and never mean squared or cubed minutes. Tab inserts the displayed unit spelling. A caret instead raises a whole quantity to a power. Autoreplacement boundaries and behavior for other units remain under discussion.",
       "location": "Immediately after the unit spelling in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
       "elementType": "description"
     },
     "completion.unit.squareCentimetre.description": {
       "text": "square centimetre",
       "meaning": "Identifies a square centimetre as a unit of area.",
-      "context": "Shown when the square-centimetre unit is identified and offered as a completion. The candidate displays and inserts a superscript unit symbol. A caret expression applies exponentiation to a quantity and must not be treated as an equivalent completion spelling. Contextual M inference and the exact scope of shorthand autoformatting are defined separately.",
+      "context": "Shown when the square-centimetre unit is identified and offered as a completion. The candidate displays and inserts a superscript unit symbol. A caret expression applies exponentiation to a quantity and must not be treated as an equivalent completion spelling. Contextual lowercase m inference and the exact scope of shorthand autoformatting are defined separately.",
       "location": "Immediately after the unit spelling in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
       "elementType": "description"
     },
     "completion.unit.cubicCentimetre.description": {
       "text": "cubic centimetre",
       "meaning": "Identifies a cubic centimetre as a unit of volume.",
-      "context": "Shown when the cubic-centimetre unit is identified and offered as a completion. The candidate displays and inserts a superscript unit symbol. A caret expression applies exponentiation to a quantity and must not be treated as an equivalent completion spelling. Contextual M inference and the exact scope of shorthand autoformatting are defined separately.",
+      "context": "Shown when the cubic-centimetre unit is identified and offered as a completion. The candidate displays and inserts a superscript unit symbol. A caret expression applies exponentiation to a quantity and must not be treated as an equivalent completion spelling. Contextual lowercase m inference and the exact scope of shorthand autoformatting are defined separately.",
       "location": "Immediately after the unit spelling in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
       "elementType": "description"
     },
@@ -1276,15 +1276,15 @@
     },
     "completion.unit.length.metre.description": {
       "text": "metre",
-      "meaning": "Identifies the metre unit, which is one of the candidate meanings of contextual M.",
-      "context": "Used when a completion or a resolved-unit explanation identifies this unit. The label is translated; it does not settle the spelling of contextual M or approve a selection interface for an unresolved expression.",
+      "meaning": "Identifies the metre unit, which is one of the candidate meanings of contextual lowercase m.",
+      "context": "Used when a completion or resolved-unit explanation identifies this candidate of lowercase m. The label is translated. If context is insufficient, the user selected keeping the symbol in a calculated result rather than requiring a choice. This description does not approve a particular ambiguity indicator or additional alias.",
       "location": "Description beside a unit suggestion or unit-meaning explanation; final unresolved-state presentation remains under discussion.",
       "elementType": "description"
     },
     "completion.unit.time.minute.description": {
       "text": "minute",
-      "meaning": "Identifies the minute unit, which is one of the candidate meanings of contextual M.",
-      "context": "Used when a completion or a resolved-unit explanation identifies this unit. The label is translated; it does not settle the spelling of contextual M or approve a selection interface for an unresolved expression.",
+      "meaning": "Identifies the minute unit, which is one of the candidate meanings of contextual lowercase m.",
+      "context": "Used when a completion or resolved-unit explanation identifies this candidate of lowercase m. The label is translated. If context is insufficient, the user selected keeping the symbol in a calculated result rather than requiring a choice. This description does not approve a particular ambiguity indicator or additional alias.",
       "location": "Description beside a unit suggestion or unit-meaning explanation; final unresolved-state presentation remains under discussion.",
       "elementType": "description"
     },
@@ -1296,9 +1296,9 @@
       "elementType": "help_heading"
     },
     "help.precedence.unitPowersRule": {
-      "text": "Typing `M2` automatically displays `M²` as a unit symbol. The caret `^` instead raises the entire quantity to a power. In a length context, `2 M2` denotes two square metres, while `2 M^2` squares two metres and denotes four square metres. Exact letter variants, interpretation of unresolved M² and extensions of automatic replacement are still being specified.",
+      "text": "Typing m2 or m3 automatically displays m² or m³; the active Russian equivalents are м2/м3 and м²/м³. These symbols always mean square or cubic metres, never minutes. The caret ^ instead raises the entire quantity to a power: 2m2 denotes two square metres; 2m^2 denotes four square metres if m has been resolved as a metre. Powers of resolved durations and automatic replacement for other units are still being specified.",
       "meaning": "Explains the accepted new square-unit input and ordinary caret behavior, without deciding unresolved contextual aliases.",
-      "context": "Operator-help material incorporating the accepted changes in expression-language round 21. Contextual-unit spelling and unresolved-state policies remain open in the linked contextual-unit decision.",
+      "context": "Accepted unit shorthand decision from contextual-units round 1. Lowercase square/cube metre shorthand is unambiguous; general duration powers and editor behavior remain open. Keep the caret distinct from a superscript unit suffix.",
       "location": "Operator-precedence help page, fragment unitPowersRule. Preserve mathematical notation when translating prose.",
       "elementType": "help_paragraph"
     },
@@ -1307,6 +1307,27 @@
       "meaning": "Explains the accepted pairwise comparison-chain semantics and short-circuit behavior.",
       "context": "Operator-help material incorporating the accepted changes in expression-language round 21. Contextual-unit spelling and unresolved-state policies remain open in the linked contextual-unit decision.",
       "location": "Operator-precedence help page, fragment comparisonChains. Preserve mathematical notation when translating prose.",
+      "elementType": "help_paragraph"
+    },
+    "help.precedence.lazyUnitsHeading": {
+      "text": "## Lazy unit resolution",
+      "meaning": "Names the explanation of delayed unit interpretation.",
+      "context": "Documentation of accepted contextual-units round 1 decisions. Examples describe selected behavior; explicitly pending operation and duration grammar must not be inferred from the heading or notation list.",
+      "location": "Unit interpretation section in the in-app operator help and its generated documentation previews.",
+      "elementType": "help_heading"
+    },
+    "help.precedence.lazyUnitsRule": {
+      "text": "Lowercase m can mean a metre or a minute; the active Russian spelling м follows the same rule. Determine its meaning from the expression, including outer parentheses. When context is insufficient, preserve the symbol: 2m * 2 = 4m. Different occurrences can have different meanings. The constraints supplied by multiplication, division and other operations are still being specified.",
+      "meaning": "Explains that a visible calculated result may retain an unresolved unit symbol instead of forcing a choice.",
+      "context": "Documentation of accepted contextual-units round 1 decisions. Examples describe selected behavior; explicitly pending operation and duration grammar must not be inferred from the heading or notation list.",
+      "location": "Unit interpretation section in the in-app operator help and its generated documentation previews.",
+      "elementType": "help_paragraph"
+    },
+    "help.precedence.durationNotation": {
+      "text": "Short duration symbols are w, d, h, m, s and ms. Russian symbols are н, д, ч, м, с and мс; the existing hour symbol ч is retained. Days remain 24 hours and weeks remain seven days. The minute symbols m and м are contextual. Grammar for adjacent duration components is still being agreed.",
+      "meaning": "Lists the selected short duration notation while separating it from pending duration-chain grammar.",
+      "context": "Documentation of accepted contextual-units round 1 decisions. Examples describe selected behavior; explicitly pending operation and duration grammar must not be inferred from the heading or notation list.",
+      "location": "Unit interpretation section in the in-app operator help and its generated documentation previews.",
       "elementType": "help_paragraph"
     }
   }

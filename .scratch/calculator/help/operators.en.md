@@ -43,9 +43,15 @@ A chain such as `1 < x < 10` compares neighboring values and requires every comp
 
 Power and unary signs bind before `::`: `2^3::bin = 0b1000` and `-10::hex = -0xA`.
 
+## Lazy unit resolution
+
+Lowercase m can mean a metre or a minute; the active Russian spelling м follows the same rule. Determine its meaning from the expression, including outer parentheses. When context is insufficient, preserve the symbol: 2m * 2 = 4m. Different occurrences can have different meanings. The constraints supplied by multiplication, division and other operations are still being specified.
+
+Short duration symbols are w, d, h, m, s and ms. Russian symbols are н, д, ч, м, с and мс; the existing hour symbol ч is retained. Days remain 24 hours and weeks remain seven days. The minute symbols m and м are contextual. Grammar for adjacent duration components is still being agreed.
+
 ## Unit powers and quantity powers
 
-Typing `M2` automatically displays `M²` as a unit symbol. The caret `^` instead raises the entire quantity to a power. In a length context, `2 M2` denotes two square metres, while `2 M^2` squares two metres and denotes four square metres. Exact letter variants, interpretation of unresolved M² and extensions of automatic replacement are still being specified.
+Typing m2 or m3 automatically displays m² or m³; the active Russian equivalents are м2/м3 and м²/м³. These symbols always mean square or cubic metres, never minutes. The caret ^ instead raises the entire quantity to a power: 2m2 denotes two square metres; 2m^2 denotes four square metres if m has been resolved as a metre. Powers of resolved durations and automatic replacement for other units are still being specified.
 
 ## Spaces around operators
 

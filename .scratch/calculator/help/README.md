@@ -1,6 +1,6 @@
 # Operator help specification
 
-These help materials record the conversion examples, complete precedence table, whitespace rule, comparison chains and distinction between unit powers and quantity powers accepted through expression-language round 21. They are documentation assets; the calculator has not been implemented. Separate contracts for operand types and boundary cases remain open, including whole-expression resolution of contextual M and the boundaries of automatic M2-to-M² display.
+These help materials record the conversion examples, complete precedence table, whitespace rule, comparison chains and distinction between unit powers and quantity powers accepted through expression-language round 21, with lowercase lazy units, unresolved-symbol results and metre square/cube notation from contextual-units round 1. They are documentation assets; the calculator has not been implemented. Separate contracts for operand types and boundary cases remain open, including operation constraints for lazy m/м, adjacent duration components and editor boundaries for automatic metre square/cube display.
 
 - [Russian preview](operators.ru.md)
 - [English preview](operators.en.md)
