@@ -34,6 +34,8 @@
     "help.precedence.lazyUnitsHeading",
     "help.precedence.lazyUnitsRule",
     "help.precedence.durationNotation",
+    "help.precedence.minHeading",
+    "help.precedence.minRule",
     "help.precedence.unitPowersHeading",
     "help.precedence.unitPowersRule",
     "help.precedence.simpleCompoundUnits",
@@ -41,5 +43,5 @@
     "help.precedence.spacingRule",
     "help.precedence.definitionRule"
   ],
-  "acceptedThrough": "expression-language round 21 and contextual-units round 3; partial alternatives, intermediate dimensions, copy selection and remaining grammar are open"
+  "acceptedThrough": "expression-language round 21 and contextual-units round 4; unsupported final units are filtered after cancellation; other errors, copy selection and remaining grammar are open"
 }

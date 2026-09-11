@@ -1291,14 +1291,14 @@
     "help.precedence.unitPowersHeading": {
       "text": "## Unit powers and quantity powers",
       "meaning": "Introduces the distinction between a superscript unit and exponentiation of a complete quantity.",
-      "context": "Operator-help material incorporating the accepted changes in expression-language round 21. Contextual-unit spelling and unresolved-state policies remain open in the linked contextual-unit decision.",
+      "context": "Operator-help heading for accepted unit shorthand, quantity powers and final-unit filtering through contextual-units round 4. Automatic-editing boundaries remain open.",
       "location": "Operator-precedence help page, fragment unitPowersHeading. Preserve mathematical notation when translating prose.",
       "elementType": "help_heading"
     },
     "help.precedence.unitPowersRule": {
-      "text": "Typing m2 or m3 automatically displays m² or m³; the active Russian equivalents are м2/м3 and м²/м³. These symbols always mean square or cubic metres, never minutes. The caret ^ raises the entire quantity to a power: 2m2 denotes two square metres; 2m^2 denotes four square metres if m has been resolved as a metre. Complex units such as squared seconds and acceleration are excluded. Intermediate dimensions before cancellation, unsupported alternatives and editing boundaries are still being specified.",
-      "meaning": "Explains the accepted new square-unit input and ordinary caret behavior, without deciding unresolved contextual aliases.",
-      "context": "Documentation of accepted contextual-units round 2 decisions: duration sums, all valid alternative answers, explicit aliases and exclusion of complex time-power units. Clauses explicitly marked open do not approve additional grammar, grouping, copy behavior or compound units.",
+      "text": "Typing m2 or m3 automatically displays m² or m³; the active Russian equivalents are м2/м3 and м²/м³. These symbols always mean square or cubic metres, never minutes. The caret ^ raises the entire quantity to a power: 2m2 denotes two square metres; 2m^2 leaves the supported answer 4m², discarding the squared-minutes interpretation. Unit support is checked after final cancellation. Editing boundaries for automatic superscripts are still being specified.",
+      "meaning": "Distinguishes square/cube metre shorthand from exponentiation of a complete quantity and explains filtering the unsupported time-power interpretation.",
+      "context": "Accepted in contextual-units round 4. Final unit support is checked after cancellation; only interpretations with unsupported final units are discarded. Policies for other errors, result ordering and copying remain open.",
       "location": "Operator-precedence help page, fragment unitPowersRule. Preserve mathematical notation when translating prose.",
       "elementType": "help_paragraph"
     },
@@ -1324,9 +1324,9 @@
       "elementType": "help_paragraph"
     },
     "help.precedence.durationNotation": {
-      "text": "Short duration symbols are w, d, h, m, s and ms. Russian symbols are н, д, ч, м, с and мс. Days remain 24 hours and weeks remain seven days. Adjacent duration components are added: 1h 30m = 90min. Use an explicit * for multiplication. This is a special duration rule, not a general rule for adjacent quantities. Token boundaries without spaces and repeated components remain open.",
-      "meaning": "Lists the selected short duration notation while separating it from pending duration-chain grammar.",
-      "context": "Documentation of accepted contextual-units round 2 decisions: duration sums, all valid alternative answers, explicit aliases and exclusion of complex time-power units. Clauses explicitly marked open do not approve additional grammar, grouping, copy behavior or compound units.",
+      "text": "Short duration symbols are w, d, h, m, s and ms. Russian symbols are н, д, ч, м, с and мс. Days remain 24 hours and weeks remain seven days. Adjacent duration components are added: 1h30m and 1h 30m both equal 90min. Use an explicit * to multiply adjacent duration quantities. This is a special duration rule, not a general rule for adjacent quantities. Component order, repetitions and chains consisting only of ambiguous symbols remain open.",
+      "meaning": "Explains short duration symbols and addition of adjacent duration components with or without spaces.",
+      "context": "Duration sums were accepted in contextual-units round 2; compact notation without spaces was accepted in round 4. The explicit multiplication requirement applies to adjacent duration quantities, not to a duration followed by a parenthesized scalar expression.",
       "location": "Unit interpretation section in the in-app operator help and its generated documentation previews.",
       "elementType": "help_paragraph"
     },
@@ -1339,17 +1339,38 @@
     },
     "error.unsupportedUnit": {
       "text": "This unit is not supported",
-      "meaning": "Explains that the calculation requires a unit outside the selected product scope.",
-      "context": "Approved concise diagnostic for an unsupported final unit, such as kg*m, squared seconds or acceleration. Simple compound units are limited to speed, pace and information-transfer rate; area and volume remain supported. Whether to discard one unsupported alternative and when to check intermediate dimensions remain open.",
-      "location": "Calculation diagnostic region when a result requires an excluded unit. Behavior when only one of multiple interpretations is unsupported remains open.",
+      "meaning": "Explains that no valid answer with a supported final unit remains.",
+      "context": "Accepted in contextual-units round 4. Final unit support is checked after cancellation; only interpretations with unsupported final units are discarded. Policies for other errors, result ordering and copying remain open. Supported compound families are speed, pace and information-transfer rate; area and volume remain supported. Examples of excluded final units are kg*m, s² and m/s². Diagnostic precedence when other errors also occur is still undecided.",
+      "location": "Calculation diagnostic region when no valid supported-unit answer remains after final cancellation and interpretation filtering.",
       "elementType": "error_message"
     },
     "help.precedence.simpleCompoundUnits": {
-      "text": "Supported compound units are speed (length/time, for example km/h), pace (time/length, min/km) and information-transfer rate (information/time, MB/s). Area and volume remain supported. Final units such as kg*m, s² and m/s² are excluded and produce a short unsupported-unit diagnostic. Intermediate dimensions and partly valid sets of interpretations are still being specified. Temperature retains its separate conversion-only rule.",
+      "text": "Supported compound units are speed (length/time, for example km/h), pace (time/length, min/km) and information-transfer rate (information/time, MB/s). Area and volume remain supported. Check support after final cancellation: (2s * 3s) / 1s = 6s is valid. Final units such as kg*m, s² and m/s² are excluded. Discard interpretations with unsupported final units and show the remaining valid answers; show the short unsupported-unit diagnostic only if no valid supported answer remains. Policies for other errors are still being specified. Temperature retains its separate conversion-only rule.",
       "meaning": "Defines the limited supported compound-unit families while retaining area and volume.",
-      "context": "Accepted in contextual-units round 3. Do not infer support for arbitrary products or scientific derived units. Intermediate cancellation and filtering of unsupported alternatives remain undecided.",
+      "context": "Accepted in contextual-units round 4. Final unit support is checked after cancellation; only interpretations with unsupported final units are discarded. Policies for other errors, result ordering and copying remain open. Temperature arithmetic is not added by intermediate-unit cancellation.",
       "location": "Unit powers and compound-unit scope section of operator help and generated documentation previews.",
       "elementType": "help_paragraph"
+    },
+    "help.precedence.minHeading": {
+      "text": "## Minutes and the min function",
+      "meaning": "Introduces the shared spelling of the minute alias and the minimum function.",
+      "context": "Help for argument-count disambiguation accepted in contextual-units round 4.",
+      "location": "After duration notation and before unit powers in operator help.",
+      "elementType": "help_heading"
+    },
+    "help.precedence.minRule": {
+      "text": "The min function takes at least two arguments separated by semicolons. With a numeric coefficient, one complete expression in the following parentheses denotes minutes multiplied by that expression: 2min(2+4) equals 12 minutes. Two or more arguments denote the function: 2 min(2;4) = 2 * min(2;4) = 4, without a unit. Spaces before min do not change the meaning. Count arguments at the current parentheses level: 2min(max(2;4)) has one outer argument and equals 8 minutes. Bare min(...) without a coefficient and incomplete or malformed argument lists are still being specified. The minimum argument count for max has not changed.",
+      "meaning": "Explains how complete coefficient-prefixed min expressions distinguish the minute unit from the minimum function by their outer argument count.",
+      "context": "Accepted in contextual-units round 4, superseding one-argument function min. Nested-call separators do not count as outer arguments. Do not automatically reinterpret an incomplete function list as a complete minute product. Minute result examples express value and dimension, not a new default output spelling. Bare expressions and max arity are separate pending questions.",
+      "location": "Minutes and min function section of operator help and generated previews.",
+      "elementType": "help_paragraph"
+    },
+    "completion.function.min.description": {
+      "text": "Smallest of two or more values.",
+      "meaning": "Describes the minimum function and its required minimum argument count.",
+      "context": "Shown when suggesting the min function, whose arguments are separated by semicolons. Contextual-units round 4 changes its minimum arity to two. Unit-alias min is a separate interpretation; this entry describes the function.",
+      "location": "Immediately after the complete min signature in the same suggestion row, separated by a gap. Use the same font size, lighter weight and reduced opacity, without right-edge alignment.",
+      "elementType": "description"
     }
   }
 }

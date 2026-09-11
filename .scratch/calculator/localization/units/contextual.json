@@ -6,7 +6,7 @@
     "unit.metreOrMinute": {
       "text": "m",
       "meaning": "The intentionally shared lowercase notation for a metre or a minute. Multiple valid interpretations can produce multiple answers to one expression.",
-      "context": "Lazy resolution uses constraints across the expression. Multiple valid interpretations produce possible answers. Display identical-looking formatted answers once, without captions, while preserving every underlying interpretation and exact value. For example, 2m * 2 displays one 4m; 10m / 2s displays 5m/s and 300. Independent occurrences may resolve differently. Filtering unsupported alternatives, ordering and copy selection remain open. Do not silently truncate the set of distinct visible answers.",
+      "context": "Lazy resolution uses constraints across the expression. Multiple valid interpretations produce possible answers. Display identical-looking formatted answers once, without captions, while preserving every underlying interpretation and exact value. For example, 2m * 2 displays one 4m; 10m / 2s displays 5m/s and 300. Independent occurrences may resolve differently. Check the supported-unit families after final cancellation: (2s * 3s) / 1s can produce 6s despite an intermediate time square. Discard interpretations with an unsupported final unit and show the remaining valid answers; show an unsupported-unit error only when no supported interpretation remains. Other branch errors, ordering and copy selection remain open. Do not silently truncate the set of distinct visible answers.",
       "location": "Unit positions in expressions and results, including nested quantities. The chosen result layout is a horizontally scrolling row without interpretation captions. Completion descriptions are retained separately.",
       "elementType": "unit_symbol",
       "candidateUnitIds": [
@@ -24,7 +24,10 @@
       "explicitAliasesCatalog": "aliases.catalog.json",
       "displayGrouping": "identical_formatted_answer",
       "preserveGroupedInterpretations": true,
-      "unsupportedAlternativePolicy": "pending"
+      "unsupportedAlternativePolicy": "discard_unsupported_final_unit_branches",
+      "unitSupportCheckStage": "final_result_after_cancellation",
+      "noSupportedAlternativePolicy": "unsupported_unit_error",
+      "otherBranchErrorsPolicy": "pending"
     }
   }
 }
