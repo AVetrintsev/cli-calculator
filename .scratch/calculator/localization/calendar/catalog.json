@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "sourceLanguage": "en",
   "status": "specification",
-  "coverage": "Approved numeric date input patterns from round 24. This is specification data, not a runtime locale parser. Time syntax is common across locales and described by language/calendar.json.",
+  "coverage": "Approved date patterns, calendar month/year names and invariant fixed-offset notation from rounds 24–25. Specification data, not an implemented parser or fixed physical-unit catalog.",
   "patterns": {
     "calendar.dateInputFormat": {
       "text": "YYYY-MM-DD",
@@ -10,6 +10,50 @@
       "context": "Round 24 accepts this Latin-baseline numeric date form in all interface languages. The active locale may add its explicitly approved pattern: Russian adds DD.MM.YYYY. Y, M and D are invariant pattern metacharacters, not literal input letters or words to translate. Future patterns require notation validation; adding a translation must not silently enable unrelated ambiguous date forms. Output is always YYYY-MM-DD, independently of the local input pattern.",
       "location": "Date-token recognition for the baseline and active locale, illustrated in calendar input help. The pattern itself is specification metadata rather than a new permanent interface label.",
       "elementType": "date_input_pattern"
+    },
+    "calendar.offsetInputFormat": {
+      "text": "±HH:mm",
+      "meaning": "A signed fixed-offset suffix for a clock time or date-time.",
+      "context": "Round 25. This pattern is invariant, not translated prose. ± means a literal + or - sign; HH and mm mean exactly two decimal digits, hours 00–23 and minutes 00–59. UTC stays uppercase. An input suffix may follow the time directly or after a space. The entire suffix/target is one construct, so its sign is not an arithmetic operator. Examples: +03:00, UTC-05:30. No regional-zone rules or general RFC compatibility is implied.",
+      "location": "Pattern metadata for calendar recognition, conversion-target completion and calendar help; pattern metacharacters are not literal text to paste.",
+      "elementType": "fixed_offset_input_pattern"
+    },
+    "calendar.offsetTargetFormat": {
+      "text": "UTC±HH:mm",
+      "meaning": "A signed fixed-offset conversion target following :: or to.",
+      "context": "Round 25. This pattern is invariant, not translated prose. ± means a literal + or - sign; HH and mm mean exactly two decimal digits, hours 00–23 and minutes 00–59. UTC stays uppercase. An input suffix may follow the time directly or after a space. The entire suffix/target is one construct, so its sign is not an arithmetic operator. Examples: +03:00, UTC-05:30. No regional-zone rules or general RFC compatibility is implied.",
+      "location": "Pattern metadata for calendar recognition, conversion-target completion and calendar help; pattern metacharacters are not literal text to paste.",
+      "elementType": "fixed_offset_target_pattern"
+    }
+  },
+  "symbols": {
+    "calendar.unit.month": {
+      "text": "mo",
+      "meaning": "A calendar month, whose day length depends on a starting date.",
+      "context": "Round 25. Latin baseline always active, with only the active interface locale adding a spelling. Protected unit names. These are calendar units, not fixed seconds factors. m/м remain metre/minute and г remains gram. No additional declensions or aliases. Store stable semantic identities when changing locale.",
+      "location": "Calendar-period unit positions in formulas, conversion targets, inline completion and result formatting. Names use the common completion alignment and description style.",
+      "elementType": "calendar_unit_symbol"
+    },
+    "calendar.unit.year": {
+      "text": "y",
+      "meaning": "A calendar year represented by twelve calendar months.",
+      "context": "Round 25. Latin baseline always active, with only the active interface locale adding a spelling. Protected unit names. These are calendar units, not fixed seconds factors. m/м remain metre/minute and г remains gram. No additional declensions or aliases. Store stable semantic identities when changing locale.",
+      "location": "Calendar-period unit positions in formulas, conversion targets, inline completion and result formatting. Names use the common completion alignment and description style.",
+      "elementType": "calendar_unit_symbol"
+    },
+    "calendar.offset.utcSuffix": {
+      "text": "Z",
+      "meaning": "The zero fixed-offset suffix on a time or date-time.",
+      "context": "Round 25. Invariant uppercase spelling in every locale; do not translate or add lowercase aliases. The suffix is used on clock/date-time literals and displayed explicit zero offsets. The target follows :: or to. Positive and negative numeric zero offsets both display Z. Date alone has no offset.",
+      "location": "Calendar literal suffixes or conversion targets and related help/completion; not a new constant or permanent widget label.",
+      "elementType": "invariant_calendar_symbol"
+    },
+    "calendar.offset.utcTarget": {
+      "text": "UTC",
+      "meaning": "The zero fixed-offset conversion target.",
+      "context": "Round 25. Invariant uppercase spelling in every locale; do not translate or add lowercase aliases. The suffix is used on clock/date-time literals and displayed explicit zero offsets. The target follows :: or to. Positive and negative numeric zero offsets both display Z. Date alone has no offset.",
+      "location": "Calendar literal suffixes or conversion targets and related help/completion; not a new constant or permanent widget label.",
+      "elementType": "invariant_calendar_symbol"
     }
   }
 }

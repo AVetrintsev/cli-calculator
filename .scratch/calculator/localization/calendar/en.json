@@ -1,3 +1,9 @@
 {
-  "calendar.dateInputFormat": "YYYY-MM-DD"
+  "calendar.dateInputFormat": "YYYY-MM-DD",
+  "calendar.unit.month": "mo",
+  "calendar.unit.year": "y",
+  "calendar.offset.utcSuffix": "Z",
+  "calendar.offset.utcTarget": "UTC",
+  "calendar.offsetInputFormat": "±HH:mm",
+  "calendar.offsetTargetFormat": "UTC±HH:mm"
 }

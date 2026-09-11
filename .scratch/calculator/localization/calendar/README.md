@@ -1,7 +1,13 @@
-# Calendar locale patterns
+# Calendar names and patterns
 
-[catalog.json](catalog.json) supplies English text, meaning, execution context, location and element type. [en.json](en.json) is the always-active YYYY-MM-DD input baseline. [ru.json](ru.json) adds DD.MM.YYYY only when ru is active; it does not remove the baseline.
+[catalog.json](catalog.json) supplies English text, meaning, execution context, location and element type. It separates `patterns` from `symbols`; the adjacent [en.json](en.json) and [ru.json](ru.json) contain the combined flat key set. These are specification materials from accepted rounds 24–25, not a runtime parser.
 
-Y/M/D are fixed pattern metacharacters, not characters typed into a date and not freely translated words. Four year digits and two month/day digits are required. Future locale patterns must be validated against the expression grammar before registration. Output remains YYYY-MM-DD for every locale. These files specify formats; they do not implement recognition or recovery from partial input.
+The English baseline is always active. Russian adds DD.MM.YYYY, мес and год only when ru is active. Calendar months are mo/мес and years y/год. They are separate from the fixed physical-unit catalog: one year is twelve months, but a month has no constant factor in seconds. m/м remain metre/minute and г remains gram. Do not generate extra declensions or aliases. Future locale names must pass the same collision checks as other built-in symbols.
 
-Time input uses common 24-hour notation, optional seconds and one to three fractional-second digits after either decimal separator. Date-time accepts a space or T. Those rules are in the [calendar contract](../../language/calendar.json). Dynamic value names are in the [value catalog](../values/README.md); explanatory text and diagnostics are in the [main catalog](../catalog.json) and adjacent en/ru files. Calendar month/year and fixed-offset spellings remain pending in the [calendar decision](../../issues/19-calendar-and-clock.md).
+YYYY-MM-DD and DD.MM.YYYY contain fixed Y/M/D pattern metacharacters, with four year digits and two month/day digits. Output remains YYYY-MM-DD in every locale; years are 0001–9999. Future patterns require grammar validation.
+
+Z and UTC are invariant uppercase symbols in every locale. ±HH:mm and UTC±HH:mm are invariant patterns: ± means + or -, and each field has exactly two digits (hours 00–23, minutes 00–59). Explicit zero offsets display Z, including negative zero. These suffixes/targets are whole constructs, so their internal signs do not change arithmetic precedence. A suffix may follow a clock/date-time directly or after a space. A date alone has no offset.
+
+Time uses common 24-hour notation, optional seconds and one to three input fractional-second digits after a point or comma. Date-time accepts a space or T. Computed calendar time displays at most three fractional digits through a point, with rounding only at final display. A carried time such as 01:30Z (+1d) can be entered again; its day symbol comes from the existing duration-unit catalog.
+
+The [calendar contract](../../language/calendar.json) specifies compound periods, fixed offsets, day carry, working precision and copy behavior. Dynamic names are in the [value catalog](../values/README.md); English help/diagnostics and ru/en translations are in the [main catalog](../catalog.json). Calendar-period comparison remains an explicit question in the [language decision](../../issues/04-expression-language.md).

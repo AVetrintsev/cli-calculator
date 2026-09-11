@@ -1,3 +1,9 @@
 {
-  "calendar.dateInputFormat": "DD.MM.YYYY"
+  "calendar.dateInputFormat": "DD.MM.YYYY",
+  "calendar.unit.month": "мес",
+  "calendar.unit.year": "год",
+  "calendar.offset.utcSuffix": "Z",
+  "calendar.offset.utcTarget": "UTC",
+  "calendar.offsetInputFormat": "±HH:mm",
+  "calendar.offsetTargetFormat": "UTC±HH:mm"
 }

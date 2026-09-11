@@ -13,7 +13,12 @@
     "dayDigits": 2,
     "completeDateBeforeSubtraction": true,
     "invalidCompleteDateFallsBackToSubtraction": false,
-    "incompleteResult": "absent"
+    "incompleteResult": "absent",
+    "yearRange": {
+      "min": 1,
+      "max": 9999,
+      "outsideRange": "diagnostic; no wrap or saturation"
+    }
   },
   "timeInput": {
     "hourFormat": 24,
@@ -38,7 +43,15 @@
       "T"
     ],
     "accept24HourMidnight": false,
-    "acceptAmPm": false
+    "acceptAmPm": false,
+    "dayCarry": {
+      "form": "HH:mm[:ss[.fraction]][offset] (+Nd)",
+      "example": "01:30Z (+1d)",
+      "signedIntegerDays": true,
+      "daySymbols": "Latin d and the active locale day unit",
+      "wholeLiteralBeforeImplicitMultiplication": true,
+      "zeroCarryDisplayed": false
+    }
   },
   "dynamicValues": {
     "today": {
@@ -74,7 +87,18 @@
     "hiddenSheets": "recalculate on open",
     "storedFormulas": "remain dynamic",
     "history": "saved values remain fixed",
-    "copyAndConfirmation": "coherent already displayed ready result set"
+    "copyAndConfirmation": "coherent already displayed ready result set",
+    "partialQuickConfirmation": {
+      "freeze": "already displayed calculation and clock snapshot after partial failure",
+      "retry": "finish same pending confirmation; do not duplicate an already saved history entry",
+      "escape": "cancel pending confirmation, keep window open, recalculate with current clock",
+      "edit": "cancel pending confirmation and recalculate",
+      "cancelDeletesSavedHistory": false,
+      "hideAndReopen": "preserve pending snapshot within session",
+      "fullRestart": "recalculate saved input with current clock",
+      "differentChosenAnswer": "existing separate-history-entry rule still applies",
+      "ordinaryCopyOrSheetCopyFreezes": false
+    }
   },
   "arithmetic": {
     "wholeDaysPlusDate": "date",
@@ -85,7 +109,11 @@
     "dateTimeDifference": "account for fixed offsets without seasonal changes",
     "calendarMonthOverflow": "last existing day of target month",
     "explicitSequentialAdditions": "apply in expression order",
-    "monthToFixedDays": "requires a starting date"
+    "monthToFixedDays": "requires a starting date",
+    "datePlusClockTime": "either order; combine including signed day carry; explicit clock offset wins, otherwise shared system offset",
+    "dateVsDateTime": "for subtraction and comparison promote date to 00:00 at shared current system offset",
+    "clockVsDatedValue": "requires a supplied date; do not guess",
+    "absoluteMomentAddition": "unsupported except the explicit date-plus-clock composition"
   },
   "output": {
     "datePattern": "YYYY-MM-DD",
@@ -93,14 +121,106 @@
     "dateTimeSeparator": " ",
     "omitUnnecessaryZeros": true,
     "copy": "whole displayed answer, including any displayed offset and day carry",
-    "numericTimestampConversion": false
+    "numericTimestampConversion": false,
+    "calendarPeriodCopy": "whole displayed compound period; ordinary fixed duration still copies its numeric coefficient only",
+    "fractionalSecondDigits": 3,
+    "fractionalSecondSeparator": ".",
+    "workingSubmillisecondParts": "retain using shared working numerical precision",
+    "calendarTimeDisplayRounding": "nearest millisecond; exact ties toward later time",
+    "roundingStage": "final calendar-time display and copy only; not each arithmetic step or ordinary duration results",
+    "roundingCarry": "propagate through seconds, midnight, date and clock day carry; validate year range",
+    "numericRoundFunctionChanged": false
   },
-  "unresolved": [
-    "Calendar interval abbreviations and fixed-offset literal/target syntax.",
-    "Mixed calendar-component aggregation, fractional month counts and interval arithmetic.",
-    "Date plus clock time, mixed date/date-time comparison and reentry of carried time.",
-    "Standalone compound-calendar-period display and copy.",
-    "Submillisecond computed-result precision and date range.",
-    "Partial confirmation retry while dynamic values change."
-  ]
+  "unresolved": [],
+  "acceptedRounds": [
+    24,
+    25
+  ],
+  "fixedOffsets": {
+    "catalog": "../localization/calendar/catalog.json",
+    "suffixKeys": [
+      "calendar.offset.utcSuffix",
+      "calendar.offsetInputFormat"
+    ],
+    "targetKeys": [
+      "calendar.offset.utcTarget",
+      "calendar.offsetTargetFormat"
+    ],
+    "suffixOptionalLeadingSpace": true,
+    "appliesTo": [
+      "clockTime",
+      "dateTime"
+    ],
+    "pureDateHasOffset": false,
+    "hoursRange": [
+      0,
+      23
+    ],
+    "minutesRange": [
+      0,
+      59
+    ],
+    "zeroOffsetOutput": "Z",
+    "positiveAndNegativeZeroAreUtc": true,
+    "conversionOperators": [
+      "::",
+      "to"
+    ],
+    "unchangedOperatorPrecedence": true,
+    "offsetSignsInsideLiteralOrTargetAreNotArithmetic": true,
+    "explicitOffsetDisplay": "retain through arithmetic, names and copying; explicit conversion shows target offset",
+    "implicitSystemOffsetDisplay": "omit suffix",
+    "clockConversionPreservesDayCarry": true,
+    "regionalZones": false
+  },
+  "calendarPeriod": {
+    "unitNames": {
+      "month": "calendar.unit.month",
+      "year": "calendar.unit.year"
+    },
+    "catalog": "../localization/calendar/catalog.json",
+    "monthsPerYear": 12,
+    "fixedSecondsPerMonth": null,
+    "components": [
+      "year",
+      "month",
+      "week",
+      "day",
+      "hour",
+      "minute",
+      "second",
+      "millisecond"
+    ],
+    "adjacentComponentsFormOneValue": true,
+    "repeatedOrReorderedComponents": "aggregate within the same period",
+    "normalForm": [
+      "total calendar months",
+      "fixed duration"
+    ],
+    "applyOrder": [
+      "combine all years and months",
+      "apply one month shift with last-day clamp",
+      "apply combined fixed duration"
+    ],
+    "separateAdditionOperators": "apply sequentially; do not reorder AST operations",
+    "operations": [
+      "store and pass by name",
+      "add or subtract compatible components",
+      "multiply or divide entire period by scalar"
+    ],
+    "zeroAndNegativeComponents": true,
+    "fractionalMonths": "allowed in intermediates; total must be integral when applied to a date",
+    "fractionalMonthToFixedDays": "never guessed or rounded",
+    "zeroMonthComponent": "normalize to ordinary fixed duration, including ordinary numeric-only copy",
+    "financialPeriodCounts": "remain numerical counts; no implicit calendar-period conversion",
+    "periodDividedByPeriod": "not introduced by the scalar arithmetic contract",
+    "display": "descending components; group complete 12 months into years; omit zeros; explicit signs for opposing parts",
+    "copy": "whole displayed calendar period including units and both components",
+    "explicitTargetFormat": "retain supported target by the existing conversion rule",
+    "conversionToFixedDuration": "requires a reference date"
+  },
+  "relatedOpenDecisions": {
+    "generalValueOrderingAndNumericPrecision": "../issues/04-expression-language.md",
+    "parserStorageAndPlatformClockImplementation": "../issues/09-shared-core-and-shells.md"
+  }
 }
