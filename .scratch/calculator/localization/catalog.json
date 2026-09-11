@@ -70,28 +70,28 @@
     "completion.unit.squareMetre.description": {
       "text": "square metre",
       "meaning": "Identifies a square metre as a unit of area.",
-      "context": "Shown when this area or volume unit is offered as a completion. Tab inserts the displayed superscript unit symbol. Contextual-units round 8 extends shorthand 2/3 formatting to every known length symbol, including explicit length aliases, but only to whole symbols; a longer name prefix must not be rewritten. Backspace deletes the exponent and formatting adds no separate undo step. m2/m3 never denote minutes. A caret raises a whole quantity and is not an equivalent completion spelling. Pasted formula text follows the same formatting and has one undo for the entire paste; selected formula text is copied with visible ²/³ characters. Quick numeric result copy omits the unit and its superscript but preserves displayed numeric rounding; other copy commands remain open.",
+      "context": "Shown when this area or volume unit is offered as a completion. Tab inserts the displayed superscript unit symbol. Contextual-units round 8 extends shorthand 2/3 formatting to every known length symbol, including explicit length aliases, but only to whole symbols; a longer name prefix must not be rewritten. Backspace deletes the exponent and formatting adds no separate undo step. m2/m3 never denote minutes. A caret raises a whole quantity and is not an equivalent completion spelling. Pasted formula text follows the same formatting and has one undo for the entire paste; selected formula text is copied with visible ²/³ characters. Numeric result copy omits the unit and its superscript but preserves displayed numeric rounding in quick mode, history and sheets. See the context-specific copy help for targeting and focus.",
       "location": "Immediately after the unit spelling in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
       "elementType": "description"
     },
     "completion.unit.cubicMetre.description": {
       "text": "cubic metre",
       "meaning": "Identifies a cubic metre as a unit of volume.",
-      "context": "Shown when this area or volume unit is offered as a completion. Tab inserts the displayed superscript unit symbol. Contextual-units round 8 extends shorthand 2/3 formatting to every known length symbol, including explicit length aliases, but only to whole symbols; a longer name prefix must not be rewritten. Backspace deletes the exponent and formatting adds no separate undo step. m2/m3 never denote minutes. A caret raises a whole quantity and is not an equivalent completion spelling. Pasted formula text follows the same formatting and has one undo for the entire paste; selected formula text is copied with visible ²/³ characters. Quick numeric result copy omits the unit and its superscript but preserves displayed numeric rounding; other copy commands remain open.",
+      "context": "Shown when this area or volume unit is offered as a completion. Tab inserts the displayed superscript unit symbol. Contextual-units round 8 extends shorthand 2/3 formatting to every known length symbol, including explicit length aliases, but only to whole symbols; a longer name prefix must not be rewritten. Backspace deletes the exponent and formatting adds no separate undo step. m2/m3 never denote minutes. A caret raises a whole quantity and is not an equivalent completion spelling. Pasted formula text follows the same formatting and has one undo for the entire paste; selected formula text is copied with visible ²/³ characters. Numeric result copy omits the unit and its superscript but preserves displayed numeric rounding in quick mode, history and sheets. See the context-specific copy help for targeting and focus.",
       "location": "Immediately after the unit spelling in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
       "elementType": "description"
     },
     "completion.unit.squareCentimetre.description": {
       "text": "square centimetre",
       "meaning": "Identifies a square centimetre as a unit of area.",
-      "context": "Shown when this area or volume unit is offered as a completion. Tab inserts the displayed superscript unit symbol. Contextual-units round 8 extends shorthand 2/3 formatting to every known length symbol, including explicit length aliases, but only to whole symbols; a longer name prefix must not be rewritten. Backspace deletes the exponent and formatting adds no separate undo step. m2/m3 never denote minutes. A caret raises a whole quantity and is not an equivalent completion spelling. Pasted formula text follows the same formatting and has one undo for the entire paste; selected formula text is copied with visible ²/³ characters. Quick numeric result copy omits the unit and its superscript but preserves displayed numeric rounding; other copy commands remain open.",
+      "context": "Shown when this area or volume unit is offered as a completion. Tab inserts the displayed superscript unit symbol. Contextual-units round 8 extends shorthand 2/3 formatting to every known length symbol, including explicit length aliases, but only to whole symbols; a longer name prefix must not be rewritten. Backspace deletes the exponent and formatting adds no separate undo step. m2/m3 never denote minutes. A caret raises a whole quantity and is not an equivalent completion spelling. Pasted formula text follows the same formatting and has one undo for the entire paste; selected formula text is copied with visible ²/³ characters. Numeric result copy omits the unit and its superscript but preserves displayed numeric rounding in quick mode, history and sheets. See the context-specific copy help for targeting and focus.",
       "location": "Immediately after the unit spelling in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
       "elementType": "description"
     },
     "completion.unit.cubicCentimetre.description": {
       "text": "cubic centimetre",
       "meaning": "Identifies a cubic centimetre as a unit of volume.",
-      "context": "Shown when this area or volume unit is offered as a completion. Tab inserts the displayed superscript unit symbol. Contextual-units round 8 extends shorthand 2/3 formatting to every known length symbol, including explicit length aliases, but only to whole symbols; a longer name prefix must not be rewritten. Backspace deletes the exponent and formatting adds no separate undo step. m2/m3 never denote minutes. A caret raises a whole quantity and is not an equivalent completion spelling. Pasted formula text follows the same formatting and has one undo for the entire paste; selected formula text is copied with visible ²/³ characters. Quick numeric result copy omits the unit and its superscript but preserves displayed numeric rounding; other copy commands remain open.",
+      "context": "Shown when this area or volume unit is offered as a completion. Tab inserts the displayed superscript unit symbol. Contextual-units round 8 extends shorthand 2/3 formatting to every known length symbol, including explicit length aliases, but only to whole symbols; a longer name prefix must not be rewritten. Backspace deletes the exponent and formatting adds no separate undo step. m2/m3 never denote minutes. A caret raises a whole quantity and is not an equivalent completion spelling. Pasted formula text follows the same formatting and has one undo for the entire paste; selected formula text is copied with visible ²/³ characters. Numeric result copy omits the unit and its superscript but preserves displayed numeric rounding in quick mode, history and sheets. See the context-specific copy help for targeting and focus.",
       "location": "Immediately after the unit spelling in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
       "elementType": "description"
     },
@@ -125,15 +125,15 @@
     },
     "definitions.saveConstant": {
       "text": "Save as constant",
-      "meaning": "Saves a user-defined named value for reuse in future calculations.",
-      "context": "Invoked explicitly for a constant definition. Assigning a local sheet variable alone does not save a reusable constant. Selection rules remain to be specified.",
+      "meaning": "Publishes a user-defined named formula for reuse, retaining its dependencies on other saved constants.",
+      "context": "Explicit publication under round 18. A draft does not change the working definition before Save. Correct publication recalculates current quick input and open dependent sheets; invalid syntax, unknown references or forbidden cycles preserve the working version and the editable draft. Assigning or autosaving a local sheet variable does not publish it globally. New definitions must not silently overwrite an existing global name. The header comment description is published with the definition. Exact action access and storage-failure handling remain separate design work.",
       "location": "Definition actions associated with the calculation editor; the exact menu placement is not yet specified.",
       "elementType": "command_label"
     },
     "definitions.saveFunction": {
       "text": "Save function",
       "meaning": "Saves a user-defined calculation rule for future calls by name.",
-      "context": "Invoked explicitly for a function definition, which may use the short form or a multiline body with local intermediate values and a final result expression. Detailed save flow remains to be specified.",
+      "context": "Explicit publication under round 18 for short or multiline functions with sequential local intermediates and a final result expression. Parameters and own locals resolve alongside saved global definitions, without implicit caller-sheet capture. Invalid syntax, unknown references, recursion or cycles preserve the working version and draft. Validation is not a guarantee of success for every numerical argument. Header descriptions publish with the definition. Current dependent calculations recalculate; saved history answers do not. Exact action access and storage-failure handling remain separate design work.",
       "location": "Definition actions associated with the calculation editor; the exact menu placement is not yet specified.",
       "elementType": "command_label"
     },
@@ -1394,9 +1394,9 @@
       "elementType": "error_message"
     },
     "help.copy.quickRule": {
-      "text": "In the formula editor with no text selected, press {shortcut} to copy the only displayed current result. Numeric results copy the displayed number without its unit: 4m copies 4. Rounding, all shown digits, grouping and numeral-system prefixes are preserved. With text selected, the shortcut copies that selection, including its unit text. Click a result to copy it. When several results are displayed, the editor has focus and no text is selected, the shortcut leaves the clipboard unchanged and prompts you to choose a result. The calculator stays open, your formula and cursor are preserved, and focus returns to input after a click. Quick copy does not add a history entry.",
+      "text": "In the quick-mode formula editor with no text selected, press {shortcut} to copy the only displayed current result. Numeric results copy the displayed number without its unit: 4m copies 4. Rounding, all shown digits, grouping and numeral-system prefixes are preserved. With text selected, the shortcut copies that selection, including its unit text. Click a result to copy it. When several results are displayed, the editor has focus and no text is selected, the shortcut leaves the clipboard unchanged and prompts you to choose a result. The calculator stays open, your formula and cursor are preserved, and focus returns to input after a click. Quick copy does not add a history entry.",
       "meaning": "Explains numeric-only result copying, text-selection precedence, the single-entry shortcut condition and choosing among several displayed results.",
-      "context": "Accepted through copying round 2. Supply Ctrl+C on Windows and Cmd+C on macOS. A result must be ready and current. A single displayed entry can group several hidden meanings or rounded working values; copying its displayed number does not choose a hidden interpretation. Count the entire grouped result row, including entries outside the horizontal viewport. With editor focus and multiple entries without text selection, preserve the clipboard and show copy.chooseResult. Unit omission applies to numeric quick-copy results, not selected formula text. Numeric prefixes are not units; localized logical results retain their previously approved displayed text. Keyboard selection for confirmation is described in help.confirm.multipleRule. Round 14 accepts copying the highlighted answer while focus is already in the current result row; see help.copy.focusedResultRule. Text-selection precedence in this paragraph applies only while the editor has focus. Known metre/minute result ordering is accepted in round 16; see help.results.orderRule. Feedback geometry remains to be verified. This fragment does not add interpretation captions.",
+      "context": "Accepted through copying round 2. Supply Ctrl+C on Windows and Cmd+C on macOS. A result must be ready and current. A single displayed entry can group several hidden meanings or rounded working values; copying its displayed number does not choose a hidden interpretation. Count the entire grouped result row, including entries outside the horizontal viewport. With editor focus and multiple entries without text selection, preserve the clipboard and show copy.chooseResult. Unit omission applies to numeric quick-copy results, not selected formula text. Numeric prefixes are not units; localized logical results retain their previously approved displayed text. Keyboard selection for confirmation is described in help.confirm.multipleRule. Round 14 accepts copying the highlighted answer while focus is already in the current result row; see help.copy.focusedResultRule. Text-selection precedence in this paragraph applies only while the editor has focus. Known metre/minute result ordering is accepted in round 16; see help.results.orderRule. Feedback geometry remains to be verified. This fragment does not add interpretation captions. This paragraph is scoped to quick-mode editor focus. Round 18 accepts the separate current-expression target and result-row commands in expanded sheets; see help.sheet.copyRule.",
       "location": "Copying section of application help. The help entry point and any compact in-editor hint remain separate interface decisions.",
       "elementType": "help_paragraph",
       "placeholders": {
@@ -1406,7 +1406,7 @@
     "copy.chooseResult": {
       "text": "Choose a result",
       "meaning": "Asks the user to identify which displayed result should be copied.",
-      "context": "Approved in copying round 2. Shown briefly when Ctrl+C on Windows or Cmd+C on macOS is pressed in the editor without text selection while more than one current displayed result entry exists. The clipboard is unchanged; no first answer is chosen automatically. A click on a result copies that entry. This is a normal choice state, not a mathematical error. Do not show it for selected formula text or to reinterpret a missing/stale result as a valid answer. Keyboard confirmation selection is now specified in help.confirm.multipleRule. This feedback does not itself enter that selection state or change the accepted editor copy shortcut. Do not show this hint when the current result row already has focus and Ctrl+C/Cmd+C targets its highlighted ready answer; that copy keeps focus in the row.",
+      "context": "Approved in copying round 2. Shown briefly when Ctrl+C on Windows or Cmd+C on macOS is pressed in the editor without text selection while more than one current displayed result entry exists. The clipboard is unchanged; no first answer is chosen automatically. A click on a result copies that entry. This is a normal choice state, not a mathematical error. Do not show it for selected formula text or to reinterpret a missing/stale result as a valid answer. Keyboard confirmation selection is now specified in help.confirm.multipleRule. This feedback does not itself enter that selection state or change the accepted editor copy shortcut. Do not show this hint when the current result row already has focus and Ctrl+C/Cmd+C targets its highlighted ready answer; that copy keeps focus in the row. Round 18 also accepts this hint for sheet-editor copy without text selection when the expression containing the cursor has multiple displayed answers, counting the full row including horizontal overflow. Other sheet expressions do not affect that count. See help.sheet.copyRule; the hint does not focus a row by itself.",
       "location": "Brief copy feedback associated with the result row; exact placement and keyboard announcement are to be verified without moving the input or adding interpretation captions.",
       "elementType": "status_message"
     },
@@ -1456,9 +1456,9 @@
       }
     },
     "help.history.recordRule": {
-      "text": "History keeps the formula, all its results and the answer chosen when you confirmed the calculation. Copying one answer does not remove the others. Saved results do not change when you edit a constant or function. When you bring a formula back into input, it is calculated again using the current definitions; the original history entry stays unchanged. Bringing a formula back into input does not itself add a new history entry. Each new successful confirmation adds a separate history entry, even for an identical calculation. Retrying an unfinished confirmation after an error does not duplicate its saved entry.",
+      "text": "History keeps the formula, all its results and the answer chosen when you confirmed the calculation. Copying one answer does not remove the others. Saved results do not change when you edit a constant or function. When you bring a formula back into input, it is calculated again using the current definitions; the original history entry stays unchanged. Bringing a formula back into input does not itself add a new history entry. Each new successful confirmation adds a separate history entry, even for an identical calculation. Retrying an unfinished confirmation after an error does not duplicate its saved entry. If a saved definition was renamed, recalling its formula uses the current name of that same definition; the original history text and answers remain unchanged. After a definition is deleted, recalculation may require restoring it or correcting the formula.",
       "meaning": "Explains what a history record retains and distinguishes viewing saved results from recalculating a recalled formula.",
-      "context": "Accepted in copying round 7. Records retain working values and hidden interpretations as well as the displayed answer chosen at confirmation, not merely the rounded unitless clipboard text. Historical values are not recalculated when definitions change; recalling a formula into input uses current definitions. Locale changes may redraw local unit symbols under the existing language rule without changing historical values. Copying round 8 accepts a row containing the formula and all saved displayed results, with the confirmation choice in bold and horizontal overflow; see help.history.displayRule. Every new successful confirmation creates a separate entry even for identical content; retrying an unfinished confirmation after failure must not duplicate its entry. This does not approve a new badge or button, automatic restoration of old definitions, or a serialization format. Under round 16, an unchanged retry also requires the same chosen displayed answer. Confirming a different answer after partial failure creates a new entry and preserves any entry already saved with the previous choice.",
+      "context": "Accepted in copying round 7. Records retain working values and hidden interpretations as well as the displayed answer chosen at confirmation, not merely the rounded unitless clipboard text. Historical values are not recalculated when definitions change; recalling a formula into input uses current definitions. Locale changes may redraw local unit symbols under the existing language rule without changing historical values. Copying round 8 accepts a row containing the formula and all saved displayed results, with the confirmation choice in bold and horizontal overflow; see help.history.displayRule. Every new successful confirmation creates a separate entry even for identical content; retrying an unfinished confirmation after failure must not duplicate its entry. This does not approve a new badge or button, automatic restoration of old definitions, or a serialization format. Under round 16, an unchanged retry also requires the same chosen displayed answer. Confirming a different answer after partial failure creates a new entry and preserves any entry already saved with the previous choice. Round 18 accepts semantic rename handling on structured recall into quick input or a sheet: preserve the historical source text and values, but adapt references to the current name of the same definition. Reusing its former name for another definition must not hijack that binding. Ordinary selected-text copying retains visible original text. History alone does not block deletion of a global definition; no automatic substitution of an unrelated same-named replacement is approved.",
       "location": "History section of application help, alongside the explanation of recalling calculations. Documentation text; the history row and its accessible presentation are specified separately.",
       "elementType": "help_paragraph"
     },
@@ -1570,9 +1570,9 @@
       "elementType": "help_paragraph"
     },
     "help.input.undoRule": {
-      "text": "Each formula recalled from history and each Down Arrow return to your original input is one text-undo step. Press {shortcut} to restore the previous text and cursor; the formula is recalculated with the current definitions. This also applies when you use a search result or Use formula. A new empty input after successful confirmation starts a separate undo chain. Undo does not remove saved calculations or undo a clipboard copy. Hiding the window keeps text undo available; fully quitting ends that chain.",
+      "text": "Each formula recalled from history and each Down Arrow return to your original input is one text-undo step. Press {shortcut} to restore the previous text and cursor; the formula is recalculated with the current definitions. This also applies when you use a search result or Use formula. A new empty input after successful confirmation starts a separate undo chain. Undo does not remove saved calculations or undo a clipboard copy. Hiding the window keeps text undo available; fully quitting ends that chain. Copying a sheet result does not start a new text-undo chain.",
       "meaning": "Explains text undo for history recall and its boundary between confirmed quick calculations and application sessions.",
-      "context": "Accepted in copying round 16, points 1-3, with the direct original-input return correction from point 5 taking precedence over the old unconditional empty return. Use Ctrl+Z on Windows and Cmd+Z on macOS. Restore the prior text and cursor/selection as one undo step for each recall or actual original-input return. Merely selecting a search result does not mutate input. Revisiting a history entry recalls its saved formula; unsaved edits can be recovered through text undo. This does not alter the separate undo of history deletions. Only full successful confirmation starts the next calculation and new undo chain; a partial failure does not. Extended-sheet editing and crash recovery are separate decisions. Round 17 separately accepts inserting a historical formula into an expanded sheet as one ordinary editing action; see help.history.extendedShortcutRule. This does not apply quick-mode confirmation resets to sheet editing.",
+      "context": "Accepted in copying round 16, points 1-3, with the direct original-input return correction from point 5 taking precedence over the old unconditional empty return. Use Ctrl+Z on Windows and Cmd+Z on macOS. Restore the prior text and cursor/selection as one undo step for each recall or actual original-input return. Merely selecting a search result does not mutate input. Revisiting a history entry recalls its saved formula; unsaved edits can be recovered through text undo. This does not alter the separate undo of history deletions. Only full successful confirmation starts the next calculation and new undo chain; a partial failure does not. Extended-sheet editing and crash recovery are separate decisions. Round 17 separately accepts inserting a historical formula into an expanded sheet as one ordinary editing action; see help.history.extendedShortcutRule. This does not apply quick-mode confirmation resets to sheet editing. Round 18 explicitly keeps the sheet text-undo chain when copying results. Recalled formulas adapt semantically bound renamed global references under help.definitions.renameRule. Definition deletion Undo remains distinct from both text undo and history deletion Undo.",
       "location": "Text editing and history navigation sections of application help; no new action label or button is introduced.",
       "elementType": "help_paragraph",
       "placeholders": {
@@ -1594,9 +1594,9 @@
       "elementType": "help_paragraph"
     },
     "help.history.extendedShortcutRule": {
-      "text": "In expanded mode, press {shortcut} with either modifier key to open history while keeping your sheet unchanged. Up Arrow and Down Arrow choose a record; Left Arrow and Right Arrow choose its saved answer. Start at the latest record and its answer chosen at confirmation; when you change records, select that record’s confirmation choice. Navigation stops at the ends and scrolls the selected item into view. Press {copyShortcut} to copy the saved answer without recalculation and keep focus in history. Enter closes history and inserts the formula at your previous cursor, replacing selected text, as one ordinary edit. The sheet recalculates without confirming or adding history. Escape or {shortcut} again closes history without insertion and restores the previous cursor. Empty history provides nothing to select or insert. Ordinary arrows retain text-editor behavior while editing.",
+      "text": "In expanded mode, press {shortcut} with either modifier key to open history while keeping your sheet unchanged. Up Arrow and Down Arrow choose a record; Left Arrow and Right Arrow choose its saved answer. Start at the latest record and its answer chosen at confirmation; when you change records, select that record’s confirmation choice. Navigation stops at the ends and scrolls the selected item into view. Press {copyShortcut} to copy the saved answer without recalculation and keep focus in history. Enter closes history and inserts the formula at your previous cursor, replacing selected text, as one ordinary edit. The sheet recalculates without confirming or adding history. Escape or {shortcut} again closes history without insertion and restores the previous cursor. Empty history provides nothing to select or insert. Ordinary arrows retain text-editor behavior while editing. References to renamed saved definitions use their current names in the inserted formula; the history record stays unchanged.",
       "meaning": "Explains opening, navigating, copying and inserting from history while preserving the expanded sheet until insertion.",
-      "context": "Alt+Up with either physical modifier was accepted in round 16; the complete interaction was accepted in round 17, point 2. Use platform Alt/Option naming and Ctrl+C on Windows or Cmd+C on macOS. Opening transfers focus to history while retaining sheet text and cursor/selection. Preserve saved record values and confirmation choices; navigation focus is not a stored-choice mutation. Use the existing numeric displayed text without units and localized logical text for clipboard copy; copying retains history focus and does not recalculate. Enter inserts the saved formula text at the retained cursor or replaces the retained selection in one ordinary edit, closes history, returns editor focus and triggers normal sheet recalculation without confirming or recording. An insertion producing incomplete or invalid input follows ordinary evaluation rules and does not reuse stale answers. Escape or repeated Alt+Up closes without insertion. Empty history cannot target a nonexistent record. This is a separate context from quick console recall, history search and completion navigation. Native focus, placement and accessibility remain to be verified. Per-line results, sheet autosave and local shadowing of global constants were accepted separately in points 4-6; see the sheet help fragments. Copying a newly calculated sheet result is still a separate round-18 proposal.",
+      "context": "Alt+Up with either physical modifier was accepted in round 16; the complete interaction was accepted in round 17, point 2. Use platform Alt/Option naming and Ctrl+C on Windows or Cmd+C on macOS. Opening transfers focus to history while retaining sheet text and cursor/selection. Preserve saved record values and confirmation choices; navigation focus is not a stored-choice mutation. Use the existing numeric displayed text without units and localized logical text for clipboard copy; copying retains history focus and does not recalculate. Enter inserts the saved formula text at the retained cursor or replaces the retained selection in one ordinary edit, closes history, returns editor focus and triggers normal sheet recalculation without confirming or recording. An insertion producing incomplete or invalid input follows ordinary evaluation rules and does not reuse stale answers. Escape or repeated Alt+Up closes without insertion. Empty history cannot target a nonexistent record. This is a separate context from quick console recall, history search and completion navigation. Native focus, placement and accessibility remain to be verified. Per-line results, sheet autosave and local shadowing of global constants were accepted separately in points 4-6; see the sheet help fragments. Copying a newly calculated sheet result was accepted in round 18; see help.sheet.copyRule. Structured history insertion adapts references to renamed saved definitions to their current names while preserving the original history record, under help.definitions.renameRule.",
       "location": "Expanded-mode keyboard help, alongside the history-opening action. The final help entry point and history placement remain interface work.",
       "elementType": "help_paragraph",
       "placeholders": {
@@ -1614,7 +1614,7 @@
     "sheet.duplicateVariable": {
       "text": "Variable {name} is defined more than once in this sheet.",
       "meaning": "Reports a duplicate local variable definition in a calculation sheet.",
-      "context": "Editorial wording for the duplicate-definition error accepted in round 17, point 3. Use when a sheet contains more than one local definition of the same name under the accepted case-sensitive naming rules. Do not reinterpret the duplicate as a sequential reassignment. This is not a rule rejecting a same-named global constant; point 5 now accepts sheet-local shadowing of a saved constant without changing that constant. Conflicts with function names remain a separate pending decision. It does not govern editing or saving a global definition or assignment inside a sequential function body.",
+      "context": "Editorial wording for the duplicate-definition error accepted in round 17, point 3. Use when a sheet contains more than one local definition of the same name under the accepted case-sensitive naming rules. Do not reinterpret the duplicate as a sequential reassignment. This is not a rule rejecting a same-named global constant; point 5 now accepts sheet-local shadowing of a saved constant without changing that constant. Round 18 separately rejects sheet-local names matching saved user functions; use sheet.functionNameConflict for that case. It does not govern editing or saving a global definition or assignment inside a sequential function body.",
       "location": "Diagnostic associated with duplicate definitions in the calculation-sheet editor; exact highlighting and accessible announcement remain interface work.",
       "elementType": "error_message",
       "placeholders": {
@@ -1624,21 +1624,21 @@
     "sheet.dependencyError": {
       "text": "A required value could not be calculated.",
       "meaning": "Explains why a sheet expression cannot calculate when a required dependency is blocked.",
-      "context": "Editorial wording for an expression downstream of a cyclic sheet definition under the model accepted in round 17, point 3. The expression is blocked but need not itself participate in the cycle; do not falsely identify it as a cycle participant. Independent expressions continue calculating. This entry does not decide propagation for every other mathematical or parsing error, layout for per-line results, or global-function dependency semantics.",
-      "location": "Diagnostic associated with a sheet expression blocked by a required cyclic dependency; exact presentation remains interface work.",
+      "context": "Editorial wording for an expression blocked by a required dependency under rounds 17 and 18. A dependency with an error or incomplete input has no ready value; do not show a stale value as current. A downstream expression need not itself participate in a cycle. Independent expressions continue calculating. Do not present transient incomplete input itself as a mathematical error; the affected incomplete expression has no ready answer. Preserve lazy if/and/or behavior for unused branches. Recovery of expression boundaries after malformed syntax and conditional-cycle analysis remain technical language work.",
+      "location": "Diagnostic associated with a sheet expression that cannot obtain a required dependency; exact presentation remains interface work.",
       "elementType": "error_message"
     },
     "help.sheet.resultsRule": {
       "text": "Each completed expression or assignment in a calculation sheet shows its own result. For example, price = 100 shows 100 and price * 3 shows 300. Blank lines and comments have no result. If an expression has several valid answers, show them all using the existing grouping, ordering and horizontal-scrolling rules.",
       "meaning": "Explains results for each calculable sheet expression or assignment.",
-      "context": "Accepted in round 17, point 4 after scope clarification. This applies to expanded sheets, not intermediate statements inside a saved function body. Preserve all underlying meanings and working values when displayed answers are grouped. A completed but invalid expression must not expose a stale ready answer. Exact placement, font treatment and copy commands for sheet results remain interface decisions or round-18 proposals; this paragraph does not silently approve a right-hand result column or a copy shortcut.",
+      "context": "Accepted in round 17, point 4 after scope clarification. This applies to expanded sheets, not intermediate statements inside a saved function body. Preserve all underlying meanings and working values when displayed answers are grouped. A completed but invalid expression must not expose a stale ready answer. Copy commands were accepted in round 18; see help.sheet.copyRule. Exact placement and font treatment remain interface work; this paragraph does not approve a right-hand result column.",
       "location": "Expanded-sheet result section of application help, near the sheet dependency explanation. The visual placement of per-expression results still requires prototype review.",
       "elementType": "help_paragraph"
     },
     "help.sheet.scopeRule": {
-      "text": "Local variables belong to their calculation sheet. They do not become saved definitions in quick mode or other sheets. A local variable takes precedence over a saved constant with the same name inside that sheet without changing the saved constant. If the global price is 50 and a sheet defines price = 100, that sheet uses 100 while quick mode still uses 50. Built-in names remain protected.",
+      "text": "Local variables belong to their calculation sheet. They do not become saved definitions in quick mode or other sheets. A local variable takes precedence over a saved constant with the same name inside that sheet without changing the saved constant. If the global price is 50 and a sheet defines price = 100, that sheet uses 100 while quick mode still uses 50. Built-in names remain protected. A sheet-local name cannot match a saved function name. Saved functions do not implicitly use the calling sheet’s local variables.",
       "meaning": "Explains sheet-local variable scope and shadowing of a saved user constant.",
-      "context": "Accepted in round 17, point 5 after scope clarification. Global saved constants are not overwritten by sheet editing or autosave. Existing built-in identifier protection remains unchanged. Example names may be localized in help prose without changing users’ identifiers. This does not decide which environment a called saved function uses, collisions with saved function names, or global constant/function management; those questions remain explicit in round 18.",
+      "context": "Accepted in round 17, point 5 after scope clarification. Global saved constants are not overwritten by sheet editing or autosave. Existing built-in identifier protection remains unchanged. Example names may be localized in help prose without changing users’ identifiers. Round 18 accepts an error for sheet-local names matching saved functions and the saved-function environment of parameters, own sequential local intermediates and saved global definitions. Arguments evaluate in the caller context before binding. See help.definitions.functionScopeRule and help.definitions.namesRule. This does not impose global uniqueness on every function parameter or local intermediate.",
       "location": "Expanded-sheet variable section of application help, distinct from the saved-definition library help.",
       "elementType": "help_paragraph"
     },
@@ -1648,6 +1648,134 @@
       "context": "Accepted in round 17, point 6 after scope clarification. Save sheet text independently of calculation success; the data model must distinguish a persisted erroneous draft from a failed persistence operation. Reopening does not present an old cached answer as a newly evaluated result. This behavior does not autosave or publish global definition edits and does not choose template update semantics. Exact storage format, management controls, persistence timing, retry and crash recovery remain architecture or product decisions; do not imply verified durability guarantees from this help paragraph.",
       "location": "Sheet persistence section of application help, alongside named-sheet management. This explains automatic saving and does not introduce a manual Save sheet button.",
       "elementType": "help_paragraph"
+    },
+    "help.sheet.copyRule": {
+      "text": "In the sheet editor, Enter inserts a new line. With text selected, {copyShortcut} copies the selection. Without a selection, it copies the only ready displayed answer of the expression containing the cursor. If that expression has several answers, the clipboard stays unchanged and you are prompted to choose a result. Click an answer to copy it. Press {resultShortcut} to copy the current expression’s single answer or focus its result row to choose with Left and Right. In that row, Enter or {resultShortcut} copies the chosen answer and returns to the previous editor cursor; {copyShortcut} copies it while keeping row focus. Escape returns without copying. Typing, paste, Backspace or Delete resumes normal editing at the previous cursor or selection. Numeric answers copy the displayed number without units, preserving shown rounding, digits, sign, grouping and base prefix and case. Logical answers copy their visible localized text. Missing, invalid or stale answers cannot be copied. The sheet stays open and is not cleared. Copying, recalculation and autosave do not add history entries or reset text undo.",
+      "meaning": "Explains current-expression copying and result-row focus in an expanded calculation sheet.",
+      "context": "Accepted in round 18, point 1. Supply Ctrl+C and Ctrl+Enter on Windows, Cmd+C and Cmd+Enter on macOS. Count the complete grouped displayed result set of the expression containing the editor cursor, including horizontal overflow, not all sheet results. Preserve underlying meanings when display entries group. Inactive editor selection does not override a focused answer row. The common history records quick-mode confirmations, not sheet copy or autosave. History opened by Alt+Up retains its separate Enter-for-insertion context. Do not inherit quick-mode clearing, hiding or confirmation undo resets. Other row keys, result placement and native focus still need design or verification.",
+      "location": "Expanded-sheet copying section of application help; not a new permanent control in the editor.",
+      "elementType": "help_paragraph",
+      "placeholders": {
+        "copyShortcut": "Platform copy command: Ctrl+C on Windows or Cmd+C on macOS.",
+        "resultShortcut": "Platform sheet-result command: Ctrl+Enter on Windows or Cmd+Enter on macOS."
+      }
+    },
+    "help.sheet.errorRule": {
+      "text": "An expression with an error or incomplete input has no ready result. Expressions depending on it also have no ready answer; independent expressions continue calculating. For a = 1 / 0, b = a + 1 and c = 2 + 2, a has an error, b cannot obtain its dependency and c is 4. An unknown-name message identifies the name. Previous values are never presented as current results. The sheet still saves your text. Unused branches of if, and and or are not evaluated.",
+      "meaning": "Explains how sheet errors and incomplete values affect dependents while independent calculations remain available.",
+      "context": "Accepted in round 18, point 2. Apply to distinguishable expressions and their dependencies. Incomplete input does not by itself warrant a mathematical error message; keep the ready result absent. Use expression.unknownName for unresolved names and sheet.dependencyError for a blocked required dependency. Parser recovery and conditional-cycle analysis remain technical design work.",
+      "location": "Expanded-sheet error and dependency section of application help.",
+      "elementType": "help_paragraph"
+    },
+    "help.definitions.functionScopeRule": {
+      "text": "A saved function uses its parameters, its own local intermediate names and saved global definitions. It does not implicitly use the calling sheet’s local variables. With global price = 50 and cost(x) = x * price, a sheet-local price = 100 does not change cost(2): the answer is 100. To use a sheet value inside a function, pass it as an argument. Arguments are calculated in the caller’s context before they bind to parameters. Multiline function bodies run in order.",
+      "meaning": "Explains the saved-function name environment and explicit passing of caller-local values.",
+      "context": "Accepted in round 18, point 3. Preserve sheet-local shadowing of saved constants in direct sheet expressions, sequential function bodies and the last-expression return rule. Example identifiers may be localized in documentation, not by renaming user definitions. This is name scope; exact ambiguous-value propagation remains a separate language contract.",
+      "location": "Saved-function section of application help, next to parameter and multiline examples.",
+      "elementType": "help_paragraph"
+    },
+    "help.definitions.constantRule": {
+      "text": "A saved constant retains its definition formula and its dependencies on other saved constants. With rate = 20% and factor = 1 + rate, explicitly saving rate as 10% changes factor to 1.1. Editing a draft does not change the saved definition before you save it. Cyclic definitions are not allowed.",
+      "meaning": "Explains live formula dependencies of saved constants and their explicit publication boundary.",
+      "context": "Accepted in round 18, point 4. Do not freeze a constant to a rounded or unitless clipboard snapshot. Implementation storage and caching are unchosen. This paragraph does not settle propagation of ambiguous units or result sets through definitions.",
+      "location": "Saved-constant section of application help, alongside definition examples.",
+      "elementType": "help_paragraph"
+    },
+    "help.definitions.saveRule": {
+      "text": "Edit a saved definition as a draft, then choose Save to apply it. A valid saved change updates future calculations and recalculates current quick input and open dependent sheets. Invalid syntax, unknown references, recursion or cyclic dependencies keep the previous working version; your edits remain available to correct. A valid function may still fail for particular arguments: f(x) = 1 / x fails at zero. The description from the header’s first # comment is saved with the definition. Existing history answers do not recalculate.",
+      "meaning": "Explains draft editing, explicit publication, validation failures and affected calculations.",
+      "context": "Accepted in round 18, point 5. Reuse common.save for the explicit Save command. Header descriptions remain derived from the definition text, not an independently autosaved field. Validation is not exhaustive evaluation for all arguments. Disk-failure behavior and publication atomicity still require technical design. Do not treat sheet autosave as permission to publish global definitions.",
+      "location": "Saved-definition editing section of application help.",
+      "elementType": "help_paragraph"
+    },
+    "help.definitions.namesRule": {
+      "text": "Each global name identifies one saved constant or function. Functions cannot share a name by accepting different numbers of arguments. Creating a definition does not overwrite an existing one; open it explicitly to edit. A sheet-local variable may shadow a saved constant, but it cannot use a saved function’s name. Built-in names remain protected.",
+      "meaning": "Explains global definition uniqueness, explicit editing and sheet-local name conflicts.",
+      "context": "Accepted in round 18, point 6, under the existing case-sensitive identifier rules. This does not impose global uniqueness on parameters or intermediate locals belonging to separate function bodies. Function-body local conflict details remain part of language design.",
+      "location": "Naming section of saved-definition help, with a reference from sheet-variable help.",
+      "elementType": "help_paragraph"
+    },
+    "help.definitions.renameRule": {
+      "text": "Renaming a saved definition updates references to it in other saved definitions, sheets and templates. Unrelated local names and comments are unchanged. History keeps its original formula and answers; recalling the formula for a new calculation uses the definition’s current name. Renaming price to cost leaves price * 2 in history but recalls cost * 2. Reusing the old name for another definition does not redirect those references. Name conflicts are checked before the rename; a rename cannot be partially applied.",
+      "meaning": "Explains semantic rename propagation while preserving historical source text and values.",
+      "context": "Accepted in round 18, point 7. Update references bound to the definition, not plain string matches, homonymous locals, comments or arbitrary text. Apply adapting recall through console history, history search, Use formula and sheet insertion. Ordinary copied selected historical text stays as visibly written. Validate target conflicts before mutation. Stable identifiers, partial-document bindings and atomic storage require architecture work; the help states intended behavior, not completed verification.",
+      "location": "Rename section of saved-definition management help.",
+      "elementType": "help_paragraph"
+    },
+    "help.definitions.deleteRule": {
+      "text": "A definition cannot be deleted while other saved definitions, sheets or templates use it; the calculator shows where it is used. History alone does not prevent deletion and retains its saved answers. Recalculating an old formula may require restoring the definition or correcting the formula. An unused definition is deleted without an extra confirmation dialog and can be restored with the definition library’s Undo until you fully quit. Hiding the window keeps Undo available. If a new definition now uses the same name, restoration reports the conflict and does not overwrite the new data.",
+      "meaning": "Explains deletion blockers, historical independence and session-limited library deletion Undo.",
+      "context": "Accepted in round 18, point 8. Definition deletion Undo is distinct from editor text undo and history deletion Undo. History does not keep a definition undeletable, but semantic identity must not be silently hijacked by an unrelated replacement when recalculating. Exact action access, storage and errors remain design work; do not infer additional blocker categories for unsaved quick input or global draft edits.",
+      "location": "Delete and restore section of saved-definition management help.",
+      "elementType": "help_paragraph"
+    },
+    "definitions.rename": {
+      "text": "Rename",
+      "meaning": "Names the command that renames a saved definition and its semantic references.",
+      "context": "Editorial command wording for behavior accepted in round 18. Apply the corresponding rename, usage-blocking or session-limited restore rules. This entry does not approve a new permanent editor button or extend text/history Undo.",
+      "location": "Saved-definition management actions; exact menu or control placement remains interface work.",
+      "elementType": "command_label"
+    },
+    "definitions.delete": {
+      "text": "Delete definition",
+      "meaning": "Names the deletion command for a saved constant or function.",
+      "context": "Editorial command wording for behavior accepted in round 18. Apply the corresponding rename, usage-blocking or session-limited restore rules. This entry does not approve a new permanent editor button or extend text/history Undo.",
+      "location": "Saved-definition management actions; exact menu or control placement remains interface work.",
+      "elementType": "command_label"
+    },
+    "definitions.undo": {
+      "text": "Undo deletion",
+      "meaning": "Names the separate library command that restores a deleted definition.",
+      "context": "Editorial command wording for behavior accepted in round 18. Apply the corresponding rename, usage-blocking or session-limited restore rules. This entry does not approve a new permanent editor button or extend text/history Undo.",
+      "location": "Saved-definition management actions; exact menu or control placement remains interface work.",
+      "elementType": "command_label"
+    },
+    "definitions.inUse": {
+      "text": "{name} is used by other definitions, sheets or templates.",
+      "meaning": "Explains why a saved definition cannot be deleted.",
+      "context": "Show with the actual usage locations when round-18 deletion is blocked. History alone must not trigger this message.",
+      "location": "Diagnostic beside the affected definition or sheet expression; exact visual and accessible presentation remains interface work.",
+      "elementType": "error_message",
+      "placeholders": {
+        "name": "The saved definition name; preserve its user-provided spelling and case."
+      }
+    },
+    "definitions.nameConflict": {
+      "text": "The name {name} is already used by a saved definition.",
+      "meaning": "Reports a conflict when creating or renaming a global definition.",
+      "context": "Round 18 permits one saved definition per case-sensitive global name, with no constant/function collision or overload by argument count. Do not overwrite existing data.",
+      "location": "Diagnostic beside the affected definition or sheet expression; exact visual and accessible presentation remains interface work.",
+      "elementType": "error_message",
+      "placeholders": {
+        "name": "The conflicting global definition name; preserve its spelling and case."
+      }
+    },
+    "definitions.invalid": {
+      "text": "The definition has errors. Your edits are kept; the working version is unchanged.",
+      "meaning": "Explains rejection of an invalid definition draft without losing editable text.",
+      "context": "For editing an existing definition under round 18. Show the specific syntax, unknown-name, recursion or cycle diagnostic alongside this summary. Kept edits do not imply persisted crash recovery or successful disk storage. For a new invalid definition use its specific diagnostic, not a claim of an existing working version.",
+      "location": "Diagnostic beside the affected definition or sheet expression; exact visual and accessible presentation remains interface work.",
+      "elementType": "error_message"
+    },
+    "definitions.restoreConflict": {
+      "text": "Cannot restore {name}: a new definition uses that name.",
+      "meaning": "Explains why deletion Undo cannot restore without a name conflict.",
+      "context": "Accepted round-18 restore conflict: retain the new definition and do not silently overwrite it. The exact way to resolve the conflict remains interface work.",
+      "location": "Diagnostic beside the affected definition or sheet expression; exact visual and accessible presentation remains interface work.",
+      "elementType": "error_message",
+      "placeholders": {
+        "name": "The name of the deleted definition being restored; preserve its original spelling and case."
+      }
+    },
+    "sheet.functionNameConflict": {
+      "text": "{name} is a saved function name and cannot be a sheet variable.",
+      "meaning": "Reports a sheet-local variable name colliding with a user function.",
+      "context": "Accepted in round 18, point 6. Do not use for shadowing a saved constant, which is allowed, or as a global uniqueness restriction on all function-body intermediates.",
+      "location": "Diagnostic beside the affected definition or sheet expression; exact visual and accessible presentation remains interface work.",
+      "elementType": "error_message",
+      "placeholders": {
+        "name": "The conflicting sheet-local identifier, preserving its written spelling and case."
+      }
     }
   }
 }
