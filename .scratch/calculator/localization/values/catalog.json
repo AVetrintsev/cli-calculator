@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "sourceLanguage": "en",
   "status": "specification",
-  "coverage": "Two approved logical input literals from round 23. Date/clock names are requested but their exact Latin and localized spellings remain pending in the calendar decision.",
+  "coverage": "Two logical input literals accepted in round 23 and four dynamic calendar names accepted in round 24. This is specification data. Month/year abbreviations, explicit offset spellings and additional temporal rules remain round-25 proposals.",
   "symbols": {
     "boolean.true": {
       "text": "true",
@@ -17,6 +17,34 @@
       "context": "Input literal accepted in round 23. The Latin spelling is always active; the localized spelling is active only for the current interface locale. Case-sensitive built-in names are protected. These are input symbols, distinct from the localized Yes/No result labels in the main catalog. No implicit numeric coercion or logical arithmetic is allowed.",
       "location": "Logical-value positions in expressions and inline completion. Result display uses result.boolean.false in the main catalog.",
       "elementType": "value_literal"
+    },
+    "calendar.today": {
+      "text": "today",
+      "meaning": "The date of the calculation clock snapshot in its current system calendar context.",
+      "context": "Round 24 accepts protected dynamic input names without parentheses in quick expressions, sheets, constants and functions. The Latin baseline is always active; only the active interface locale adds its local spelling. Read one system-clock snapshot per calculation. Date-dependent visible calculations refresh at a day change and current-time-dependent ones every second; reopen, wake and system time/zone changes also refresh dependent active calculations. The same snapshot fixes the current system offset. Historical or future seasonal transitions are not applied to entered dates. Saved formulas remain dynamic, while historical answers keep their saved values. Copy and confirmation use a coherent already displayed ready result set; no hidden extra clock read changes the payload.",
+      "location": "Value-name positions in formulas, inline completion, saved definitions and calculation sheets. Completion descriptions follow the name after a gap with the accepted font size and reduced weight/opacity.",
+      "elementType": "dynamic_value_name"
+    },
+    "calendar.yesterday": {
+      "text": "yesterday",
+      "meaning": "The calendar date immediately before today in the same calculation snapshot.",
+      "context": "Round 24 accepts protected dynamic input names without parentheses in quick expressions, sheets, constants and functions. The Latin baseline is always active; only the active interface locale adds its local spelling. Read one system-clock snapshot per calculation. Date-dependent visible calculations refresh at a day change and current-time-dependent ones every second; reopen, wake and system time/zone changes also refresh dependent active calculations. The same snapshot fixes the current system offset. Historical or future seasonal transitions are not applied to entered dates. Saved formulas remain dynamic, while historical answers keep their saved values. Copy and confirmation use a coherent already displayed ready result set; no hidden extra clock read changes the payload.",
+      "location": "Value-name positions in formulas, inline completion, saved definitions and calculation sheets. Completion descriptions follow the name after a gap with the accepted font size and reduced weight/opacity.",
+      "elementType": "dynamic_value_name"
+    },
+    "calendar.tomorrow": {
+      "text": "tomorrow",
+      "meaning": "The calendar date immediately after today in the same calculation snapshot.",
+      "context": "Round 24 accepts protected dynamic input names without parentheses in quick expressions, sheets, constants and functions. The Latin baseline is always active; only the active interface locale adds its local spelling. Read one system-clock snapshot per calculation. Date-dependent visible calculations refresh at a day change and current-time-dependent ones every second; reopen, wake and system time/zone changes also refresh dependent active calculations. The same snapshot fixes the current system offset. Historical or future seasonal transitions are not applied to entered dates. Saved formulas remain dynamic, while historical answers keep their saved values. Copy and confirmation use a coherent already displayed ready result set; no hidden extra clock read changes the payload.",
+      "location": "Value-name positions in formulas, inline completion, saved definitions and calculation sheets. Completion descriptions follow the name after a gap with the accepted font size and reduced weight/opacity.",
+      "elementType": "dynamic_value_name"
+    },
+    "calendar.now": {
+      "text": "now",
+      "meaning": "The current system date and time from the shared calculation clock snapshot.",
+      "context": "Round 24 accepts protected dynamic input names without parentheses in quick expressions, sheets, constants and functions. The Latin baseline is always active; only the active interface locale adds its local spelling. Read one system-clock snapshot per calculation. Date-dependent visible calculations refresh at a day change and current-time-dependent ones every second; reopen, wake and system time/zone changes also refresh dependent active calculations. The same snapshot fixes the current system offset. Historical or future seasonal transitions are not applied to entered dates. Saved formulas remain dynamic, while historical answers keep their saved values. Copy and confirmation use a coherent already displayed ready result set; no hidden extra clock read changes the payload.",
+      "location": "Value-name positions in formulas, inline completion, saved definitions and calculation sheets. Completion descriptions follow the name after a gap with the accepted font size and reduced weight/opacity.",
+      "elementType": "dynamic_value_name"
     }
   }
 }

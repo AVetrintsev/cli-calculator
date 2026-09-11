@@ -24,7 +24,7 @@ Higher rows bind first. Operators within an expression use this order unless par
 
 | Priority | Operation |
 | ---: | --- |
-| 1 | Parentheses, function calls, `√`, values with units (including compound durations) |
+| 1 | Parentheses, function calls, `√`, date/time literals, values with units (including compound durations) |
 | 2 | Postfix percent `%` |
 | 3 | Power `^` |
 | 4 | Unary signs `+` and `-` |
@@ -62,5 +62,9 @@ Supported compound units are speed (length/time, for example km/h), pace (time/l
 ## Spaces around operators
 
 The operator determines precedence, regardless of spaces around it. `2+3::hex` and `2 + 3 :: hex` both produce `5`; `2+3 to hex` produces `0x5`. Spaces can still separate tokens or group decimal digits; they cannot be removed arbitrarily from every expression.
+
+### Date and time literals
+
+A complete 2026-10-09 is one date value. Write 2026 - 10 - 09 to subtract numbers. Russian also accepts 09.10.2026 as a date. A nonexistent complete date is an error, and an incomplete date has no ready result. Time such as 14:30 and date-time such as 2026-10-09 14:30 are also whole values. These token rules do not change the priority of ::, to or arithmetic operators.
 
 `=` defines a name; it is not an equality comparison. Evaluate its right-hand expression using the operator order. Use `==` for equality checks.

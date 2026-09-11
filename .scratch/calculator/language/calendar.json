@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "status": "specification",
+  "sourceDecision": "../issues/19-calendar-and-clock.md",
+  "sourceFacts": "../research/calendar-facts.md",
+  "dateInput": {
+    "patternKey": "calendar.dateInputFormat",
+    "catalog": "../localization/calendar/catalog.json",
+    "alwaysActiveLocale": "en",
+    "alsoActiveLocale": "interface-locale",
+    "yearDigits": 4,
+    "monthDigits": 2,
+    "dayDigits": 2,
+    "completeDateBeforeSubtraction": true,
+    "invalidCompleteDateFallsBackToSubtraction": false,
+    "incompleteResult": "absent"
+  },
+  "timeInput": {
+    "hourFormat": 24,
+    "required": [
+      "hour",
+      "minute"
+    ],
+    "optional": [
+      "second",
+      "fractionalSecond"
+    ],
+    "fractionalSecondDigits": {
+      "min": 1,
+      "max": 3
+    },
+    "fractionalSeparators": [
+      ".",
+      ","
+    ],
+    "dateTimeSeparators": [
+      " ",
+      "T"
+    ],
+    "accept24HourMidnight": false,
+    "acceptAmPm": false
+  },
+  "dynamicValues": {
+    "today": {
+      "nameKey": "calendar.today",
+      "resultKind": "date"
+    },
+    "yesterday": {
+      "nameKey": "calendar.yesterday",
+      "resultKind": "date"
+    },
+    "tomorrow": {
+      "nameKey": "calendar.tomorrow",
+      "resultKind": "date"
+    },
+    "now": {
+      "nameKey": "calendar.now",
+      "resultKind": "dateTime"
+    }
+  },
+  "clockContext": {
+    "snapshot": "one shared system clock snapshot per calculation",
+    "defaultOffset": "current system offset from the same snapshot",
+    "applySeasonalTransitions": false,
+    "hoursPerDay": 24,
+    "daysPerWeek": 7,
+    "visibleDateRefresh": "day change",
+    "visibleCurrentTimeRefresh": "once per second",
+    "refreshEvents": [
+      "reopen",
+      "wake",
+      "system time or zone change"
+    ],
+    "hiddenSheets": "recalculate on open",
+    "storedFormulas": "remain dynamic",
+    "history": "saved values remain fixed",
+    "copyAndConfirmation": "coherent already displayed ready result set"
+  },
+  "arithmetic": {
+    "wholeDaysPlusDate": "date",
+    "fractionalDaysPlusDate": "dateTime starting at 00:00",
+    "dateDifference": "days",
+    "clockDifference": "same reference day; preserve explicit carried days",
+    "dayCarry": "preserve signed day count; display 01:30 (+1d) for 23:30 + 2h",
+    "dateTimeDifference": "account for fixed offsets without seasonal changes",
+    "calendarMonthOverflow": "last existing day of target month",
+    "explicitSequentialAdditions": "apply in expression order",
+    "monthToFixedDays": "requires a starting date"
+  },
+  "output": {
+    "datePattern": "YYYY-MM-DD",
+    "timeFormat": "24-hour",
+    "dateTimeSeparator": " ",
+    "omitUnnecessaryZeros": true,
+    "copy": "whole displayed answer, including any displayed offset and day carry",
+    "numericTimestampConversion": false
+  },
+  "unresolved": [
+    "Calendar interval abbreviations and fixed-offset literal/target syntax.",
+    "Mixed calendar-component aggregation, fractional month counts and interval arithmetic.",
+    "Date plus clock time, mixed date/date-time comparison and reentry of carried time.",
+    "Standalone compound-calendar-period display and copy.",
+    "Submillisecond computed-result precision and date range.",
+    "Partial confirmation retry while dynamic values change."
+  ]
+}

@@ -1,4 +1,8 @@
 {
   "boolean.true": "да",
-  "boolean.false": "нет"
+  "boolean.false": "нет",
+  "calendar.today": "сегодня",
+  "calendar.yesterday": "вчера",
+  "calendar.tomorrow": "завтра",
+  "calendar.now": "сейчас"
 }

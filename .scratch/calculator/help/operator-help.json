@@ -41,7 +41,9 @@
     "help.precedence.simpleCompoundUnits",
     "help.precedence.spacingHeading",
     "help.precedence.spacingRule",
+    "help.precedence.calendarLiteralsHeading",
+    "help.precedence.calendarLiteralsRule",
     "help.precedence.definitionRule"
   ],
-  "acceptedThrough": "expression-language round 21, contextual-units round 9 and copying round 2: selected formula text retains unit superscripts, quick numeric result copy omits units, a single displayed entry allows shortcut copy, and multiple entries prompt a choice without changing the clipboard; other boundaries remain open"
+  "acceptedThrough": "expression-language round 21, contextual-units round 9 and copying round 2: selected formula text retains unit superscripts, quick numeric result copy omits units, a single displayed entry allows shortcut copy, and multiple entries prompt a choice without changing the clipboard; other boundaries remain open; calendar round 24 adds date/time literals, the date/subtraction distinction and common date-time input, without registering pending offset or interval notation"
 }

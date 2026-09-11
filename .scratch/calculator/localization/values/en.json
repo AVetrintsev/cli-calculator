@@ -1,4 +1,8 @@
 {
   "boolean.true": "true",
-  "boolean.false": "false"
+  "boolean.false": "false",
+  "calendar.today": "today",
+  "calendar.yesterday": "yesterday",
+  "calendar.tomorrow": "tomorrow",
+  "calendar.now": "now"
 }

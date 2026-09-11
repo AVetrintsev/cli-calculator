@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "sourceLanguage": "en",
+  "status": "specification",
+  "coverage": "Approved numeric date input patterns from round 24. This is specification data, not a runtime locale parser. Time syntax is common across locales and described by language/calendar.json.",
+  "patterns": {
+    "calendar.dateInputFormat": {
+      "text": "YYYY-MM-DD",
+      "meaning": "The universally accepted four-digit-year, two-digit-month, two-digit-day input pattern.",
+      "context": "Round 24 accepts this Latin-baseline numeric date form in all interface languages. The active locale may add its explicitly approved pattern: Russian adds DD.MM.YYYY. Y, M and D are invariant pattern metacharacters, not literal input letters or words to translate. Future patterns require notation validation; adding a translation must not silently enable unrelated ambiguous date forms. Output is always YYYY-MM-DD, independently of the local input pattern.",
+      "location": "Date-token recognition for the baseline and active locale, illustrated in calendar input help. The pattern itself is specification metadata rather than a new permanent interface label.",
+      "elementType": "date_input_pattern"
+    }
+  }
+}
