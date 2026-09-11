@@ -206,8 +206,8 @@
   "history.result.chosen": "Chosen at confirmation",
   "help.history.displayRule": "Each history row shows the formula and all its saved results. With several results, the answer chosen at confirmation is bold. Long rows scroll horizontally. Moving through history does not change the saved choice.",
   "history.undo": "Undo",
-  "history.clear.description": "This will clear your calculation history. Your constants, functions, sheets and templates will be kept.",
+  "history.clear.description": "This will clear your calculation history. Your constants, functions, sheets and templates will be kept. You can undo the clearing until you fully quit the application.",
   "history.clear.confirm": "Clear history",
-  "help.history.searchRule": "In quick mode, press {shortcut} to search history by formula or saved result. Your current formula and cursor position are preserved, and the formula input stays in place. Search uses saved results without recalculating them.",
-  "help.history.manageRule": "Deleting one history entry requires no confirmation and offers Undo. Clearing the entire history requires confirmation. Both actions keep your constants, functions, sheets and templates."
+  "help.history.searchRule": "In quick mode, press {shortcut} to search history by formula or saved result. Matches update as you type. Up Arrow and Down Arrow choose a record while preserving your formula. Enter closes search and brings the chosen formula into input for recalculation without confirming or copying it. Escape closes search and restores your previous formula and cursor. With no matches, Enter recalls nothing. The formula input stays in place, and searching does not recalculate saved results.",
+  "help.history.manageRule": "Deleting one history entry requires no confirmation. Clearing the entire history requires confirmation. Undo restores deletions in reverse order; clearing the entire history counts as one operation. You can undo until you fully quit the application. Hiding and reopening the window keeps Undo available. Restoring removed entries keeps calculations added later. These actions preserve your constants, functions, sheets and templates. History Undo is separate from undoing formula text edits."
 }
