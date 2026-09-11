@@ -325,8 +325,8 @@
     "sheet.new": {
       "text": "New sheet",
       "meaning": "Creates a separate calculation sheet.",
-      "context": "Used from sheet management; the current draft policy is undecided.",
-      "location": "Sheet command menu.",
+      "context": "Accepted in round 19: create a separate locally autosaved sheet through the shared library. Closing another sheet does not delete it; this command does not publish global definition drafts. Exact navigation focus and unsaved-storage-error behavior still need design.",
+      "location": "Actions for the relevant sheet or template in the shared library or its opened document; exact menu placement remains interface work.",
       "elementType": "command_label"
     },
     "sheet.save": {
@@ -340,28 +340,28 @@
       "text": "Rename sheet",
       "meaning": "Changes the saved name of a sheet.",
       "context": "Available for a named calculation sheet.",
-      "location": "Sheet actions menu.",
+      "location": "Actions for the relevant sheet or template in the shared library or its opened document; exact menu placement remains interface work.",
       "elementType": "command_label"
     },
     "sheet.duplicate": {
       "text": "Duplicate sheet",
       "meaning": "Creates a separate copy of a calculation sheet.",
-      "context": "Available if sheet duplication is included in the final design.",
-      "location": "Sheet actions menu.",
+      "context": "Accepted in round 19: creates a sheet with its own text, without modifying the source. Global definition references retain their existing live meaning.",
+      "location": "Actions for the relevant sheet or template in the shared library or its opened document; exact menu placement remains interface work.",
       "elementType": "command_label"
     },
     "sheet.delete": {
       "text": "Delete sheet",
       "meaning": "Removes a saved calculation sheet.",
-      "context": "Available in sheet management; confirmation and recovery are undecided.",
-      "location": "Sheet actions menu.",
+      "context": "Accepted in round 19: delete this sheet without an extra confirmation dialog, with separate document deletion Undo until full application exit. Hiding keeps Undo. Other documents, history and global definitions remain; restoration must not overwrite newer data. The missing-global-dependency case is a pending round-20 proposal.",
+      "location": "Actions for the relevant sheet or template in the shared library or its opened document; exact menu placement remains interface work.",
       "elementType": "command_label"
     },
     "sheet.saveAsTemplate": {
       "text": "Save as template",
       "meaning": "Creates a reusable calculation template from a sheet.",
-      "context": "Used when saving a calculation as a template; parameter rules are undecided.",
-      "location": "Sheet actions menu.",
+      "context": "Accepted in round 19: save a copy of the sheet as a template, choosing local variables as parameters with default values. Template launch creates an independent named autosaved sheet; edits to that sheet do not change the template. Explicit template updates do not rewrite existing sheets. Detailed parameter-entry behavior remains a round-20 proposal.",
+      "location": "Actions for the relevant sheet or template in the shared library or its opened document; exact menu placement remains interface work.",
       "elementType": "command_label"
     },
     "sheet.saved": {
@@ -388,8 +388,8 @@
     "templates.title": {
       "text": "Templates",
       "meaning": "Names saved calculation templates.",
-      "context": "Shown when browsing reusable templates.",
-      "location": "Heading of the template browser.",
+      "context": "Names the template group of the shared library accepted in round 19. This does not require a second standalone template browser.",
+      "location": "Group heading for templates in the shared library.",
       "elementType": "section_heading"
     },
     "templates.empty": {
@@ -402,21 +402,21 @@
     "templates.search.placeholder": {
       "text": "Search templates",
       "meaning": "Invites a search by template name.",
-      "context": "Shown while the template search field is empty.",
+      "context": "Unassigned candidate for a template-only search surface. Round 19 accepts a shared library search across sheets, templates and saved definitions; use library.search messages there. This candidate does not approve an additional standalone template browser.",
       "location": "Search input in the template browser.",
       "elementType": "input_placeholder"
     },
     "templates.search.accessibleName": {
       "text": "Search calculation templates",
       "meaning": "Names the template search input for assistive technology.",
-      "context": "Read when the template search field receives focus.",
+      "context": "Unassigned candidate for a template-only search surface. Round 19 accepts a shared library search across sheets, templates and saved definitions; use library.search messages there. This candidate does not approve an additional standalone template browser.",
       "location": "Accessible name of the template search input.",
       "elementType": "accessible_name"
     },
     "templates.noMatches": {
       "text": "No matching templates",
       "meaning": "Explains that a template search has no matches.",
-      "context": "Shown for a search returning no templates.",
+      "context": "Unassigned candidate for a template-only search surface. Round 19 accepts a shared library search across sheets, templates and saved definitions; use library.search messages there. This candidate does not approve an additional standalone template browser.",
       "location": "Template search results region.",
       "elementType": "empty_state"
     },
@@ -437,35 +437,35 @@
     "templates.use": {
       "text": "Use template",
       "meaning": "Starts a calculation using the selected template.",
-      "context": "Used after choosing a template; instance and parameter behavior is undecided.",
-      "location": "Actions for the selected template.",
+      "context": "Accepted in round 19: launch the selected template with parameter values to create an independent named autosaved sheet. The template and earlier created sheets are unchanged. Global references remain live. Exact parameter-entry UI and invalid-entry handling are still pending in round 20.",
+      "location": "Actions for the relevant sheet or template in the shared library or its opened document; exact menu placement remains interface work.",
       "elementType": "command_label"
     },
     "templates.rename": {
       "text": "Rename template",
       "meaning": "Changes the user-defined template name.",
       "context": "Available in template management.",
-      "location": "Template actions menu.",
+      "location": "Actions for the relevant sheet or template in the shared library or its opened document; exact menu placement remains interface work.",
       "elementType": "command_label"
     },
     "templates.duplicate": {
       "text": "Duplicate template",
       "meaning": "Creates a separate reusable template copy.",
-      "context": "Available if template duplication is selected in the final design.",
-      "location": "Template actions menu.",
+      "context": "Accepted in round 19: creates a separate template copy; changes to the duplicate do not rewrite the source or previously created sheets.",
+      "location": "Actions for the relevant sheet or template in the shared library or its opened document; exact menu placement remains interface work.",
       "elementType": "command_label"
     },
     "templates.delete": {
       "text": "Delete template",
       "meaning": "Removes a saved template.",
-      "context": "Available in template management; confirmation and recovery are undecided.",
-      "location": "Template actions menu.",
+      "context": "Accepted in round 19: deletes this template without an extra dialog, with separate document deletion Undo until full application exit. Hiding preserves Undo; other documents, history and definitions remain. Restoration keeps newer data. Missing-global-dependency handling is a separate pending question.",
+      "location": "Actions for the relevant sheet or template in the shared library or its opened document; exact menu placement remains interface work.",
       "elementType": "command_label"
     },
     "templates.saved": {
       "text": "Template saved",
       "meaning": "Confirms successful template persistence.",
-      "context": "Shown or announced after a template is saved.",
+      "context": "Shown only after successful explicit persistence of a new or updated template, accepted in round 19. Updating does not rewrite sheets already created from it. Do not show for mere parameter editing during a launch or as confirmation of a calculation.",
       "location": "Template feedback area.",
       "elementType": "status_message"
     },
@@ -627,23 +627,23 @@
       "elementType": "section_heading"
     },
     "data.localDescription": {
-      "text": "History, sheets, templates, and settings are stored on this device.",
+      "text": "History, sheets, templates, definitions and settings are stored on this device.",
       "meaning": "Explains the accepted local storage model.",
-      "context": "Shown when the user reviews storage and transfer options.",
+      "context": "Describes local storage, not the contents of a transfer file. Under the user correction in round 19, exported data exclude history; the on-device history is retained. Backup contents are a separate pending decision.",
       "location": "Description in the data management section.",
       "elementType": "description"
     },
     "data.export": {
       "text": "Export data",
       "meaning": "Starts transferring local application data to a file.",
-      "context": "Used to move data between devices; export selection and format are undecided.",
+      "context": "Full portable export accepted in round 19 with the user correction excluding history: sheets, templates, saved definitions and common settings. Global invocation shortcut, autostart and window placement stay device-local. Export does not delete local history. Concrete serialization and extension are technical decisions.",
       "location": "Data management actions.",
       "elementType": "command_label"
     },
     "data.import": {
       "text": "Import data",
       "meaning": "Starts loading previously exported application data.",
-      "context": "Used to transfer data from another installation; conflict rules are undecided.",
+      "context": "Round 19 accepts preview of additions/conflicts, unchanged-object repeat-import deduplication and separate renamed copies for differing conflicts with coherent internal references. Do not overwrite current objects. Validate structure, version and reference integrity before applying as one change. The standard export has no history. Applying imported common settings is a separate pending round-20 proposal.",
       "location": "Data management actions.",
       "elementType": "command_label"
     },
@@ -671,14 +671,14 @@
     "data.import.error": {
       "text": "Could not import this file",
       "meaning": "Reports that the selected file could not be imported.",
-      "context": "Shown when reading, validating, or applying an import fails; detailed diagnostics may be added later.",
+      "context": "Shown when reading, validating or applying the round-19 import fails. A malformed or unsupported package leaves existing data unchanged, and partial application is not allowed. Incomplete sheet formula text alone is valid document content, not package corruption. Specific diagnostics and storage behavior remain technical design work.",
       "location": "Data management feedback area.",
       "elementType": "error_message"
     },
     "data.import.unsupported": {
       "text": "This file uses an unsupported data format",
       "meaning": "Explains that an import format or version is unsupported.",
-      "context": "Shown when the file cannot be interpreted by the current data format reader.",
+      "context": "Shown for a package format or version the application cannot read under the round-19 validation rule. Do not modify existing data or partially import supported fragments.",
       "location": "Import feedback area.",
       "elementType": "error_message"
     },
@@ -1712,22 +1712,22 @@
     "definitions.rename": {
       "text": "Rename",
       "meaning": "Names the command that renames a saved definition and its semantic references.",
-      "context": "Editorial command wording for behavior accepted in round 18. Apply the corresponding rename, usage-blocking or session-limited restore rules. This entry does not approve a new permanent editor button or extend text/history Undo.",
-      "location": "Saved-definition management actions; exact menu or control placement remains interface work.",
+      "context": "Editorial command wording for behavior accepted in round 18. Apply the corresponding rename, usage-blocking or session-limited restore rules. This entry does not approve a new permanent editor button or extend text/history Undo. Round 19 places access to definition management in the shared library; accepted definition usage and Undo rules remain unchanged.",
+      "location": "Saved-definition actions accessed through the shared library; exact menu/control placement remains interface work.",
       "elementType": "command_label"
     },
     "definitions.delete": {
       "text": "Delete definition",
       "meaning": "Names the deletion command for a saved constant or function.",
-      "context": "Editorial command wording for behavior accepted in round 18. Apply the corresponding rename, usage-blocking or session-limited restore rules. This entry does not approve a new permanent editor button or extend text/history Undo.",
-      "location": "Saved-definition management actions; exact menu or control placement remains interface work.",
+      "context": "Editorial command wording for behavior accepted in round 18. Apply the corresponding rename, usage-blocking or session-limited restore rules. This entry does not approve a new permanent editor button or extend text/history Undo. Round 19 places access to definition management in the shared library; accepted definition usage and Undo rules remain unchanged.",
+      "location": "Saved-definition actions accessed through the shared library; exact menu/control placement remains interface work.",
       "elementType": "command_label"
     },
     "definitions.undo": {
       "text": "Undo deletion",
       "meaning": "Names the separate library command that restores a deleted definition.",
-      "context": "Editorial command wording for behavior accepted in round 18. Apply the corresponding rename, usage-blocking or session-limited restore rules. This entry does not approve a new permanent editor button or extend text/history Undo.",
-      "location": "Saved-definition management actions; exact menu or control placement remains interface work.",
+      "context": "Editorial command wording for behavior accepted in round 18. Apply the corresponding rename, usage-blocking or session-limited restore rules. This entry does not approve a new permanent editor button or extend text/history Undo. Round 19 places access to definition management in the shared library; accepted definition usage and Undo rules remain unchanged.",
+      "location": "Saved-definition actions accessed through the shared library; exact menu/control placement remains interface work.",
       "elementType": "command_label"
     },
     "definitions.inUse": {
@@ -1776,6 +1776,212 @@
       "placeholders": {
         "name": "The conflicting sheet-local identifier, preserving its written spelling and case."
       }
+    },
+    "help.library.rule": {
+      "text": "Press {shortcut} inside the calculator to find sheets, templates and saved definitions in one library, grouped by type. Search by name; definitions can also be found by their descriptions from # comments. Enter opens a sheet, starts a template or opens a definition for editing. Creation and management actions are available here too.",
+      "meaning": "Explains shared access to saved objects through the local library command.",
+      "context": "Accepted in round 19, point 1. Use Ctrl+K on Windows and Cmd+K on macOS while the calculator is active. This is distinct from the configurable global invocation shortcut. Do not translate user names or descriptions. Exact library geometry, remaining key contexts, focus and native shortcut behavior require design or verification.",
+      "location": "Saved-object navigation section of application help.",
+      "elementType": "help_paragraph",
+      "placeholders": {
+        "shortcut": "The local library shortcut: Ctrl+K on Windows or Cmd+K on macOS."
+      }
+    },
+    "help.templates.rule": {
+      "text": "Save a copy of a sheet as a template and choose its local parameter variables and default values. Starting the template with parameter values creates an independent named sheet with autosave. Editing that sheet does not change the template. Updating the template is explicit and does not rewrite sheets already created from it. References to saved global constants and functions remain live.",
+      "meaning": "Explains templates as parameterized sources for independent calculation sheets.",
+      "context": "Accepted in round 19, point 2. Do not turn template parameters into global definitions or freeze live global references into numeric snapshots. The launch parameter interface, accepted parameter expressions and error handling are still round-20 proposals; this paragraph does not approve a new launch syntax or a fixed form layout.",
+      "location": "Template creation and reuse section of application help.",
+      "elementType": "help_paragraph"
+    },
+    "help.documents.manageRule": {
+      "text": "Create, rename, duplicate or delete sheets and templates from their management actions. Closing a sheet keeps it saved; a duplicate has its own text. Deleting one document does not require an extra confirmation dialog and can be undone until you fully quit. Hiding the window keeps document deletion Undo available. Other documents, history and definitions are preserved, and restoration does not overwrite newer data. This Undo is separate from text editing and history deletion Undo.",
+      "meaning": "Explains document management, close-versus-delete behavior and the lifetime of document deletion Undo.",
+      "context": "Accepted in round 19, point 3. Preserve global definition deletion restrictions and its separate Undo. Restoration after a needed global definition has been removed remains a pending round-20 question, not a silently approved cascade or new deletion blocker. Exact action access and naming-conflict presentation remain interface work.",
+      "location": "Sheet and template management section of application help.",
+      "elementType": "help_paragraph"
+    },
+    "help.data.exportRule": {
+      "text": "A full export puts sheets, templates, saved definitions and shared settings such as theme, language and copy behavior into one portable file. History is not included and stays on this device. The global invocation shortcut, autostart and window placement also stay device-local. The file preserves calculation references, unit meanings and your own text for transfer between Windows and macOS. No account or cloud synchronization is required.",
+      "meaning": "Explains the accepted full transfer scope with history explicitly excluded.",
+      "context": "Accepted in round 19, point 4 with the user correction. The request to remove history was interpreted in the export-scope context; it is not an instruction to erase local records or remove history as a feature. Device-local preferences are excluded from this package. Backup content and application of imported common settings are separate pending decisions. Versioned serialization is required but its format is unchosen.",
+      "location": "Export section of data-management help, alongside full export.",
+      "elementType": "help_paragraph"
+    },
+    "help.data.selectedExportRule": {
+      "text": "Export selected sheets, templates or definitions together with the saved constants and functions they need, including further dependencies. Unrelated history and other data are not included. Incomplete sheet text can still be transferred; missing definitions are not invented.",
+      "meaning": "Explains selected transfer with the necessary saved-definition dependency closure.",
+      "context": "Accepted in round 19, point 5. Include semantic dependencies, not merely text matches; preserve live definition identity and unit semantics. A document may contain incomplete or erroneous expressions without making its container invalid. Do not add unrelated history, account information or device settings to selected packages.",
+      "location": "Selected export section of data-management help.",
+      "elementType": "help_paragraph"
+    },
+    "help.data.importRule": {
+      "text": "Preview additions and conflicts before importing. Importing the same unchanged object again does not duplicate it. A differing version that conflicts with an existing object is added as a separately named copy by default, with its internal references adjusted together. Existing objects are not overwritten. The file’s structure, version and reference integrity are checked before applying the import as one change. A damaged or unsupported file leaves your data unchanged. An incomplete sheet formula alone does not make the file damaged.",
+      "meaning": "Explains import preview, repeat-import behavior, conflict copies and all-or-nothing application.",
+      "context": "Accepted in round 19, point 6, adjusted to the history-free export in point 4. Object identity and content comparison must preserve distinct objects; same-spelling names are not sufficient identity. Conflicting imported references must point to the intended imported or identical existing definition, not silently capture a different local one. Existing history remains local. Common settings cannot be treated as a second named document; their application policy is pending in round 20. Atomic storage and migration algorithms remain technical work.",
+      "location": "Import section of data-management help, linked from the import preview.",
+      "elementType": "help_paragraph"
+    },
+    "help.data.backupRule": {
+      "text": "The calculator keeps local backups when data change, at most once a day, and also before import. It retains the latest ten copies. Restoring a chosen backup is a separate explicit action with a preview of changes. Ordinary startup does not bring back deleted history. The ten-backup limit does not limit your main calculation history.",
+      "meaning": "Explains accepted local backup timing, retention and explicit restore access.",
+      "context": "Accepted in round 19, point 7. Backup composition, including whether it retains history, and replacement-versus-merge restore semantics remain pending in round 20. Do not infer them from the history-free export. Exact daily scheduling, disk failures, integrity checking and recovery are technical work. This describes the future calculator; it does not create a Codex automation or claim an existing backup service.",
+      "location": "Local backup section of data-management help.",
+      "elementType": "help_paragraph"
+    },
+    "library.title": {
+      "text": "Library",
+      "meaning": "Names the shared saved-object catalog.",
+      "context": "Editorial wording for the shared library accepted in round 19. The catalog search spans sheet, template and saved-definition names, plus definition descriptions from # comments. User names and descriptions are not translated. Geometry and remaining focus details are not fixed by this wording.",
+      "location": "Heading of the shared library.",
+      "elementType": "section_heading"
+    },
+    "library.search.placeholder": {
+      "text": "Search sheets, templates and definitions",
+      "meaning": "Invites a search across saved object types.",
+      "context": "Editorial wording for the shared library accepted in round 19. The catalog search spans sheet, template and saved-definition names, plus definition descriptions from # comments. User names and descriptions are not translated. Geometry and remaining focus details are not fixed by this wording.",
+      "location": "Inside the shared library search input.",
+      "elementType": "input_placeholder"
+    },
+    "library.search.accessibleName": {
+      "text": "Search saved calculations and definitions",
+      "meaning": "Names the shared search input for assistive technology.",
+      "context": "Editorial wording for the shared library accepted in round 19. The catalog search spans sheet, template and saved-definition names, plus definition descriptions from # comments. User names and descriptions are not translated. Geometry and remaining focus details are not fixed by this wording.",
+      "location": "Accessible name of the library search input.",
+      "elementType": "accessible_name"
+    },
+    "library.empty": {
+      "text": "No saved items yet",
+      "meaning": "Explains that all saved-object groups are empty.",
+      "context": "Editorial wording for the shared library accepted in round 19. The catalog search spans sheet, template and saved-definition names, plus definition descriptions from # comments. User names and descriptions are not translated. Geometry and remaining focus details are not fixed by this wording.",
+      "location": "Empty shared library.",
+      "elementType": "empty_state"
+    },
+    "library.noMatches": {
+      "text": "No matching items",
+      "meaning": "Explains an empty result for the current catalog query.",
+      "context": "Editorial wording for the shared library accepted in round 19. The catalog search spans sheet, template and saved-definition names, plus definition descriptions from # comments. User names and descriptions are not translated. Geometry and remaining focus details are not fixed by this wording.",
+      "location": "Library search results area.",
+      "elementType": "empty_state"
+    },
+    "library.group.sheets": {
+      "text": "Sheets",
+      "meaning": "Names the calculation-sheet result group.",
+      "context": "Editorial wording for the shared library accepted in round 19. The catalog search spans sheet, template and saved-definition names, plus definition descriptions from # comments. User names and descriptions are not translated. Geometry and remaining focus details are not fixed by this wording.",
+      "location": "Group heading in library results.",
+      "elementType": "section_heading"
+    },
+    "library.group.templates": {
+      "text": "Templates",
+      "meaning": "Names the template result group.",
+      "context": "Editorial wording for the shared library accepted in round 19. The catalog search spans sheet, template and saved-definition names, plus definition descriptions from # comments. User names and descriptions are not translated. Geometry and remaining focus details are not fixed by this wording.",
+      "location": "Group heading in library results.",
+      "elementType": "section_heading"
+    },
+    "library.group.definitions": {
+      "text": "Constants and functions",
+      "meaning": "Names the saved-definition result group.",
+      "context": "Editorial wording for the shared library accepted in round 19. The catalog search spans sheet, template and saved-definition names, plus definition descriptions from # comments. User names and descriptions are not translated. Geometry and remaining focus details are not fixed by this wording.",
+      "location": "Group heading in library results.",
+      "elementType": "section_heading"
+    },
+    "documents.undo": {
+      "text": "Undo deletion",
+      "meaning": "Names the separate action restoring a deleted sheet or template.",
+      "context": "Round 19 accepts document deletion Undo until full application exit, preserved across hiding and separate from text, history and global-definition Undo. It must preserve newer data. Dependency conflicts after deletion remain pending.",
+      "location": "Document management actions reached from the shared library; exact placement remains interface work.",
+      "elementType": "command_label"
+    },
+    "templates.save": {
+      "text": "Save template",
+      "meaning": "Names the explicit action persisting a new or edited template.",
+      "context": "Editorial wording for template creation and explicit update accepted in round 19. Local variables are selected as parameters with defaults, and launching creates an independent sheet. Exact input controls, expression-entry and validation behavior remain round-20 proposals.",
+      "location": "Template editing actions.",
+      "elementType": "command_label"
+    },
+    "templates.parameters.title": {
+      "text": "Parameters",
+      "meaning": "Names the local variables chosen as template inputs.",
+      "context": "Editorial wording for template creation and explicit update accepted in round 19. Local variables are selected as parameters with defaults, and launching creates an independent sheet. Exact input controls, expression-entry and validation behavior remain round-20 proposals.",
+      "location": "Template parameter setup area; layout is not fixed.",
+      "elementType": "section_heading"
+    },
+    "templates.parameters.defaultValue": {
+      "text": "Default value",
+      "meaning": "Labels the value initially offered for a selected template parameter.",
+      "context": "Editorial wording for template creation and explicit update accepted in round 19. Local variables are selected as parameters with defaults, and launching creates an independent sheet. Exact input controls, expression-entry and validation behavior remain round-20 proposals.",
+      "location": "Beside a chosen parameter during template setup; layout is not fixed.",
+      "elementType": "field_label"
+    },
+    "data.exportSelected": {
+      "text": "Export selected items",
+      "meaning": "Names export of selected reusable calculations and their required definitions.",
+      "context": "Accepted in round 19, point 5. Include required saved-definition dependencies; exclude unrelated history and other data. Selection control layout and file format remain design work.",
+      "location": "Data management or selected-object actions; exact placement remains interface work.",
+      "elementType": "command_label"
+    },
+    "data.export.description": {
+      "text": "Export sheets, templates, definitions and shared settings. History stays on this device.",
+      "meaning": "Summarizes full portable export without implying history is deleted.",
+      "context": "Accepted in round 19, point 4 with the user correction excluding history from transfer. Device-specific invocation, autostart and window placement are also excluded. This is not a description of backup contents.",
+      "location": "Description beside full export in data management.",
+      "elementType": "description"
+    },
+    "data.import.preview": {
+      "text": "Import preview",
+      "meaning": "Names the view of changes before applying a portable import.",
+      "context": "Editorial text for the import preview accepted in round 19. Show actual inspected package contents and object comparisons, not guesses. Validate package integrity before any change; conflicts preserve existing objects and coherent imported references. Common-settings application is still a separate pending question.",
+      "location": "Heading or group label within the import preview; precise layout remains interface work.",
+      "elementType": "section_heading"
+    },
+    "data.import.additions": {
+      "text": "To add",
+      "meaning": "Names objects proposed for addition during import.",
+      "context": "Editorial text for the import preview accepted in round 19. Show actual inspected package contents and object comparisons, not guesses. Validate package integrity before any change; conflicts preserve existing objects and coherent imported references. Common-settings application is still a separate pending question.",
+      "location": "Heading or group label within the import preview; precise layout remains interface work.",
+      "elementType": "section_heading"
+    },
+    "data.import.unchanged": {
+      "text": "Already present",
+      "meaning": "Names existing unchanged objects that repeat import will not duplicate.",
+      "context": "Editorial text for the import preview accepted in round 19. Show actual inspected package contents and object comparisons, not guesses. Validate package integrity before any change; conflicts preserve existing objects and coherent imported references. Common-settings application is still a separate pending question.",
+      "location": "Heading or group label within the import preview; precise layout remains interface work.",
+      "elementType": "section_heading"
+    },
+    "data.import.conflicts": {
+      "text": "Conflicting versions",
+      "meaning": "Names differing versions requiring separately named imported copies.",
+      "context": "Editorial text for the import preview accepted in round 19. Show actual inspected package contents and object comparisons, not guesses. Validate package integrity before any change; conflicts preserve existing objects and coherent imported references. Common-settings application is still a separate pending question.",
+      "location": "Heading or group label within the import preview; precise layout remains interface work.",
+      "elementType": "section_heading"
+    },
+    "data.import.apply": {
+      "text": "Import",
+      "meaning": "Names the explicit action applying a reviewed import.",
+      "context": "Accepted in round 19: apply validated additions and resolved conflict copies together, without partial changes or overwriting current objects. The standard portable package excludes history. Do not claim success before persistence completes.",
+      "location": "Primary action in the import preview; precise control styling remains interface work.",
+      "elementType": "command_label"
+    },
+    "data.backups": {
+      "text": "Backups",
+      "meaning": "Names local backup management.",
+      "context": "Round 19 accepts local backups and explicit restore with preview, separate from ordinary startup. Exact backup contents and restore replacement/merge behavior are pending in round 20. This label does not authorize silently restoring history, replacing data or performing a restore without the user action.",
+      "location": "Heading of local backup management.",
+      "elementType": "section_heading"
+    },
+    "data.restore": {
+      "text": "Restore backup",
+      "meaning": "Names the explicit action for restoring a selected local backup.",
+      "context": "Round 19 accepts local backups and explicit restore with preview, separate from ordinary startup. Exact backup contents and restore replacement/merge behavior are pending in round 20. This label does not authorize silently restoring history, replacing data or performing a restore without the user action.",
+      "location": "Actions for a selected local backup.",
+      "elementType": "command_label"
+    },
+    "data.restore.preview": {
+      "text": "Restore preview",
+      "meaning": "Names the view of changes before explicit backup restoration.",
+      "context": "Round 19 accepts local backups and explicit restore with preview, separate from ordinary startup. Exact backup contents and restore replacement/merge behavior are pending in round 20. This label does not authorize silently restoring history, replacing data or performing a restore without the user action.",
+      "location": "Heading of the backup restore preview.",
+      "elementType": "section_heading"
     }
   }
 }
