@@ -353,14 +353,14 @@
     "sheet.delete": {
       "text": "Delete sheet",
       "meaning": "Removes a saved calculation sheet.",
-      "context": "Accepted in round 19: delete this sheet without an extra confirmation dialog, with separate document deletion Undo until full application exit. Hiding keeps Undo. Other documents, history and global definitions remain; restoration must not overwrite newer data. The missing-global-dependency case is a pending round-20 proposal.",
+      "context": "Accepted in round 19: delete this sheet without an extra confirmation dialog, with separate document deletion Undo until full application exit. Hiding keeps Undo. Other documents, history and global definitions remain; restoration must not overwrite newer data. Round 20 accepts missing-dependency diagnostics on document restoration without rolling back the global library; see help.documents.restoreRule.",
       "location": "Actions for the relevant sheet or template in the shared library or its opened document; exact menu placement remains interface work.",
       "elementType": "command_label"
     },
     "sheet.saveAsTemplate": {
       "text": "Save as template",
       "meaning": "Creates a reusable calculation template from a sheet.",
-      "context": "Accepted in round 19: save a copy of the sheet as a template, choosing local variables as parameters with default values. Template launch creates an independent named autosaved sheet; edits to that sheet do not change the template. Explicit template updates do not rewrite existing sheets. Detailed parameter-entry behavior remains a round-20 proposal.",
+      "context": "Accepted in round 19: save a copy of the sheet as a template, choosing local variables as parameters with default values. Template launch creates an independent named autosaved sheet; edits to that sheet do not change the template. Explicit template updates do not rewrite existing sheets. Round 20 accepts compact prefilled fields, ordinary expressions and blocking incomplete or invalid parameters; see help.templates.parametersRule.",
       "location": "Actions for the relevant sheet or template in the shared library or its opened document; exact menu placement remains interface work.",
       "elementType": "command_label"
     },
@@ -374,7 +374,7 @@
     "sheet.saveError": {
       "text": "Could not save the sheet",
       "meaning": "Reports failure to persist the calculation sheet.",
-      "context": "Reports failure of a sheet persistence attempt, including accepted automatic saving. A calculation error is not a save failure: incomplete and erroneous sheet text is still eligible for autosave. Do not claim successful persistence or apply this message to saving a global definition. Exact retry, recovery and feedback presentation remain separate work.",
+      "context": "Reports failure of a sheet persistence attempt, including accepted automatic saving. A calculation error is not a save failure: incomplete and erroneous sheet text is still eligible for autosave. Do not claim successful persistence or apply this message to saving a global definition. Round 20 accepts retained editable text in the current session, a Not saved status and retry. Full exit with such unsaved edits offers separate text saving or explicit exit without saving; hiding keeps the text. After a crash, recover the last successfully persisted state. Exact storage algorithms and feedback geometry remain technical/interface work.",
       "location": "Sheet feedback area.",
       "elementType": "error_message"
     },
@@ -437,7 +437,7 @@
     "templates.use": {
       "text": "Use template",
       "meaning": "Starts a calculation using the selected template.",
-      "context": "Accepted in round 19: launch the selected template with parameter values to create an independent named autosaved sheet. The template and earlier created sheets are unchanged. Global references remain live. Exact parameter-entry UI and invalid-entry handling are still pending in round 20.",
+      "context": "Accepted in round 19: launch the selected template with parameter values to create an independent named autosaved sheet. The template and earlier created sheets are unchanged. Global references remain live. Round 20 accepts compact prefilled fields and validation that blocks completion for invalid or incomplete parameters; cancellation creates no sheet. Exact geometry remains interface work.",
       "location": "Actions for the relevant sheet or template in the shared library or its opened document; exact menu placement remains interface work.",
       "elementType": "command_label"
     },
@@ -458,7 +458,7 @@
     "templates.delete": {
       "text": "Delete template",
       "meaning": "Removes a saved template.",
-      "context": "Accepted in round 19: deletes this template without an extra dialog, with separate document deletion Undo until full application exit. Hiding preserves Undo; other documents, history and definitions remain. Restoration keeps newer data. Missing-global-dependency handling is a separate pending question.",
+      "context": "Accepted in round 19: deletes this template without an extra dialog, with separate document deletion Undo until full application exit. Hiding preserves Undo; other documents, history and definitions remain. Restoration keeps newer data. Round 20 accepts restoring the template text and references without rolling back global definitions; missing dependencies are diagnosed and unrelated same-named definitions are not substituted.",
       "location": "Actions for the relevant sheet or template in the shared library or its opened document; exact menu placement remains interface work.",
       "elementType": "command_label"
     },
@@ -629,7 +629,7 @@
     "data.localDescription": {
       "text": "History, sheets, templates, definitions and settings are stored on this device.",
       "meaning": "Explains the accepted local storage model.",
-      "context": "Describes local storage, not the contents of a transfer file. Under the user correction in round 19, exported data exclude history; the on-device history is retained. Backup contents are a separate pending decision.",
+      "context": "Describes local storage, not the contents of a transfer file. Under the user correction in round 19, exported data exclude history; the on-device history is retained. Round 20 accepts full local snapshots including history and settings; this differs from portable export.",
       "location": "Description in the data management section.",
       "elementType": "description"
     },
@@ -643,7 +643,7 @@
     "data.import": {
       "text": "Import data",
       "meaning": "Starts loading previously exported application data.",
-      "context": "Round 19 accepts preview of additions/conflicts, unchanged-object repeat-import deduplication and separate renamed copies for differing conflicts with coherent internal references. Do not overwrite current objects. Validate structure, version and reference integrity before applying as one change. The standard export has no history. Applying imported common settings is a separate pending round-20 proposal.",
+      "context": "Round 19 accepts preview of additions/conflicts, unchanged-object repeat-import deduplication and separate renamed copies for differing conflicts with coherent internal references. Do not overwrite current objects. Validate structure, version and reference integrity before applying as one change. The standard export has no history. Round 20 accepts an unchecked-by-default Apply settings option that previews and applies common-setting changes only when selected.",
       "location": "Data management actions.",
       "elementType": "command_label"
     },
@@ -727,7 +727,7 @@
     "common.retry": {
       "text": "Try again",
       "meaning": "Repeats a failed user action.",
-      "context": "Available next to a recoverable error when retry is supported.",
+      "context": "Available next to a recoverable error when retry is supported. Round 20 accepts retry after a failed sheet write, while preserving editable text and the last successfully saved state; this does not turn calculation errors into storage failures.",
       "location": "Action in an error feedback region.",
       "elementType": "button"
     },
@@ -1582,7 +1582,7 @@
     "help.quick.restoreRule": {
       "text": "After you fully quit and reopen the application, quick mode restores your last input and cursor, with history collapsed and focus in the input. The formula is calculated again using the current definitions. If your last input was empty, it stays empty. Text undo from the previous application session is not restored. Simply hiding and reopening the window keeps the current text-undo chain.",
       "meaning": "Explains normal-restart persistence of quick input separately from text undo.",
-      "context": "Accepted in copying round 16, point 3. Persist the last quick-input text and cursor/selection for normal full exit and restart. Recalculate restored input with current definitions and normal incomplete/error behavior; do not expose a stored old result as a newly ready answer. Start with history collapsed, editor focus and no restored result-selection, search or menu state. This does not decide crash recovery, persistence of the original-input navigation snapshot during interrupted browsing, or the lifecycle of calculation sheets. Ordinary window hiding is not a full application exit.",
+      "context": "Accepted in copying round 16, point 3. Persist the last quick-input text and cursor/selection for normal full exit and restart. Recalculate restored input with current definitions and normal incomplete/error behavior; do not expose a stored old result as a newly ready answer. Start with history collapsed, editor focus and no restored result-selection, search or menu state. This does not decide crash recovery, persistence of the original-input navigation snapshot during interrupted browsing, or the lifecycle of calculation sheets. Ordinary window hiding is not a full application exit. Round 20 separately accepts crash recovery of the last successfully persisted state; do not promise recovery of writes that never reached storage. See help.data.saveFailureRule. This does not automatically persist prior-session undo or choose navigation-snapshot serialization.",
       "location": "Application lifecycle and quick-input sections of help; no launch dialog or new visible control is added.",
       "elementType": "help_paragraph"
     },
@@ -1790,21 +1790,21 @@
     "help.templates.rule": {
       "text": "Save a copy of a sheet as a template and choose its local parameter variables and default values. Starting the template with parameter values creates an independent named sheet with autosave. Editing that sheet does not change the template. Updating the template is explicit and does not rewrite sheets already created from it. References to saved global constants and functions remain live.",
       "meaning": "Explains templates as parameterized sources for independent calculation sheets.",
-      "context": "Accepted in round 19, point 2. Do not turn template parameters into global definitions or freeze live global references into numeric snapshots. The launch parameter interface, accepted parameter expressions and error handling are still round-20 proposals; this paragraph does not approve a new launch syntax or a fixed form layout.",
+      "context": "Accepted in round 19, point 2. Do not turn template parameters into global definitions or freeze live global references into numeric snapshots. Round 20 accepts compact parameter fields prefilled with defaults, the ordinary expression language and validation before creating a sheet; see help.templates.parametersRule. Exact geometry remains interface work.",
       "location": "Template creation and reuse section of application help.",
       "elementType": "help_paragraph"
     },
     "help.documents.manageRule": {
       "text": "Create, rename, duplicate or delete sheets and templates from their management actions. Closing a sheet keeps it saved; a duplicate has its own text. Deleting one document does not require an extra confirmation dialog and can be undone until you fully quit. Hiding the window keeps document deletion Undo available. Other documents, history and definitions are preserved, and restoration does not overwrite newer data. This Undo is separate from text editing and history deletion Undo.",
       "meaning": "Explains document management, close-versus-delete behavior and the lifetime of document deletion Undo.",
-      "context": "Accepted in round 19, point 3. Preserve global definition deletion restrictions and its separate Undo. Restoration after a needed global definition has been removed remains a pending round-20 question, not a silently approved cascade or new deletion blocker. Exact action access and naming-conflict presentation remain interface work.",
+      "context": "Accepted in round 19, point 3. Preserve global definition deletion restrictions and its separate Undo. Round 20 accepts restoration of document text and semantic references without reverting global definitions; a missing dependency is diagnosed and an unrelated same-named definition must not replace it. See help.documents.restoreRule. Exact action access and naming-conflict presentation remain interface work.",
       "location": "Sheet and template management section of application help.",
       "elementType": "help_paragraph"
     },
     "help.data.exportRule": {
       "text": "A full export puts sheets, templates, saved definitions and shared settings such as theme, language and copy behavior into one portable file. History is not included and stays on this device. The global invocation shortcut, autostart and window placement also stay device-local. The file preserves calculation references, unit meanings and your own text for transfer between Windows and macOS. No account or cloud synchronization is required.",
       "meaning": "Explains the accepted full transfer scope with history explicitly excluded.",
-      "context": "Accepted in round 19, point 4 with the user correction. The request to remove history was interpreted in the export-scope context; it is not an instruction to erase local records or remove history as a feature. Device-local preferences are excluded from this package. Backup content and application of imported common settings are separate pending decisions. Versioned serialization is required but its format is unchosen.",
+      "context": "Accepted in round 19, point 4 with the user correction. The request to remove history was interpreted in the export-scope context; it is not an instruction to erase local records or remove history as a feature. Device-local preferences are excluded from this package. Round 20 separately accepts full local backups including history and an unchecked-by-default Apply settings option during import; see the backup and import-settings help. Versioned serialization is required but its format is unchosen.",
       "location": "Export section of data-management help, alongside full export.",
       "elementType": "help_paragraph"
     },
@@ -1816,16 +1816,16 @@
       "elementType": "help_paragraph"
     },
     "help.data.importRule": {
-      "text": "Preview additions and conflicts before importing. Importing the same unchanged object again does not duplicate it. A differing version that conflicts with an existing object is added as a separately named copy by default, with its internal references adjusted together. Existing objects are not overwritten. The file’s structure, version and reference integrity are checked before applying the import as one change. A damaged or unsupported file leaves your data unchanged. An incomplete sheet formula alone does not make the file damaged.",
+      "text": "Preview additions and conflicts before importing. Importing the same unchanged object again does not duplicate it. A differing version that conflicts with an existing object is added as a separately named copy by default, with its internal references adjusted together. Existing objects are not overwritten. The file’s structure, version and reference integrity are checked before applying the import as one change. A damaged or unsupported file leaves your data unchanged. An incomplete sheet formula alone does not make the file damaged. Shared settings change only if you select Apply settings in the preview; the option starts unchecked.",
       "meaning": "Explains import preview, repeat-import behavior, conflict copies and all-or-nothing application.",
-      "context": "Accepted in round 19, point 6, adjusted to the history-free export in point 4. Object identity and content comparison must preserve distinct objects; same-spelling names are not sufficient identity. Conflicting imported references must point to the intended imported or identical existing definition, not silently capture a different local one. Existing history remains local. Common settings cannot be treated as a second named document; their application policy is pending in round 20. Atomic storage and migration algorithms remain technical work.",
+      "context": "Accepted in round 19, point 6, adjusted to the history-free export in point 4. Object identity and content comparison must preserve distinct objects; same-spelling names are not sufficient identity. Conflicting imported references must point to the intended imported or identical existing definition, not silently capture a different local one. Existing history remains local. Round 20 accepts an unchecked-by-default Apply settings option; show and apply common-setting changes only when selected. See help.data.importSettingsRule. Atomic storage and migration algorithms remain technical work.",
       "location": "Import section of data-management help, linked from the import preview.",
       "elementType": "help_paragraph"
     },
     "help.data.backupRule": {
-      "text": "The calculator keeps local backups when data change, at most once a day, and also before import. It retains the latest ten copies. Restoring a chosen backup is a separate explicit action with a preview of changes. Ordinary startup does not bring back deleted history. The ten-backup limit does not limit your main calculation history.",
+      "text": "The calculator keeps full local snapshots of data and settings, including history, when data change at most once a day, and also before import or restore. It retains the latest ten copies. Restoring a chosen backup explicitly returns that saved state after a preview and a successful backup of your current state. Ordinary startup does not bring back deleted history. The ten-backup limit does not limit your main calculation history.",
       "meaning": "Explains accepted local backup timing, retention and explicit restore access.",
-      "context": "Accepted in round 19, point 7. Backup composition, including whether it retains history, and replacement-versus-merge restore semantics remain pending in round 20. Do not infer them from the history-free export. Exact daily scheduling, disk failures, integrity checking and recovery are technical work. This describes the future calculator; it does not create a Codex automation or claim an existing backup service.",
+      "context": "Accepted in round 19, point 7. Round 20 accepts a full local snapshot including history and settings, restored as the chosen state after preview and a successful backup of the current state. This is distinct from history-free transfer and import conflict merging. See help.data.restoreRule. Exact daily scheduling, disk failures, integrity checking and recovery are technical work. This describes the future calculator; it does not create a Codex automation or claim an existing backup service. A pre-restore backup is an additional accepted trigger under round 20; failure to save it blocks restoration. Snapshot integrity, rotation and actual restore failures still need technical design.",
       "location": "Local backup section of data-management help.",
       "elementType": "help_paragraph"
     },
@@ -1888,28 +1888,28 @@
     "documents.undo": {
       "text": "Undo deletion",
       "meaning": "Names the separate action restoring a deleted sheet or template.",
-      "context": "Round 19 accepts document deletion Undo until full application exit, preserved across hiding and separate from text, history and global-definition Undo. It must preserve newer data. Dependency conflicts after deletion remain pending.",
+      "context": "Round 19 accepts document deletion Undo until full application exit, preserved across hiding and separate from text, history and global-definition Undo. It must preserve newer data. Round 20 accepts restoring text and semantic references without reverting the global library; a missing definition is diagnosed. See help.documents.restoreRule.",
       "location": "Document management actions reached from the shared library; exact placement remains interface work.",
       "elementType": "command_label"
     },
     "templates.save": {
       "text": "Save template",
       "meaning": "Names the explicit action persisting a new or edited template.",
-      "context": "Editorial wording for template creation and explicit update accepted in round 19. Local variables are selected as parameters with defaults, and launching creates an independent sheet. Exact input controls, expression-entry and validation behavior remain round-20 proposals.",
+      "context": "Editorial wording for template creation and explicit update accepted in round 19. Local variables are selected as parameters with defaults, and launching creates an independent sheet. Round 20 accepts compact prefilled parameter fields with ordinary expressions and validation before sheet creation. See help.templates.parametersRule; exact geometry and accessibility remain interface work.",
       "location": "Template editing actions.",
       "elementType": "command_label"
     },
     "templates.parameters.title": {
       "text": "Parameters",
       "meaning": "Names the local variables chosen as template inputs.",
-      "context": "Editorial wording for template creation and explicit update accepted in round 19. Local variables are selected as parameters with defaults, and launching creates an independent sheet. Exact input controls, expression-entry and validation behavior remain round-20 proposals.",
+      "context": "Editorial wording for template creation and explicit update accepted in round 19. Local variables are selected as parameters with defaults, and launching creates an independent sheet. Round 20 accepts compact prefilled parameter fields with ordinary expressions and validation before sheet creation. See help.templates.parametersRule; exact geometry and accessibility remain interface work.",
       "location": "Template parameter setup area; layout is not fixed.",
       "elementType": "section_heading"
     },
     "templates.parameters.defaultValue": {
       "text": "Default value",
       "meaning": "Labels the value initially offered for a selected template parameter.",
-      "context": "Editorial wording for template creation and explicit update accepted in round 19. Local variables are selected as parameters with defaults, and launching creates an independent sheet. Exact input controls, expression-entry and validation behavior remain round-20 proposals.",
+      "context": "Editorial wording for template creation and explicit update accepted in round 19. Local variables are selected as parameters with defaults, and launching creates an independent sheet. Round 20 accepts compact prefilled parameter fields with ordinary expressions and validation before sheet creation. See help.templates.parametersRule; exact geometry and accessibility remain interface work.",
       "location": "Beside a chosen parameter during template setup; layout is not fixed.",
       "elementType": "field_label"
     },
@@ -1930,28 +1930,28 @@
     "data.import.preview": {
       "text": "Import preview",
       "meaning": "Names the view of changes before applying a portable import.",
-      "context": "Editorial text for the import preview accepted in round 19. Show actual inspected package contents and object comparisons, not guesses. Validate package integrity before any change; conflicts preserve existing objects and coherent imported references. Common-settings application is still a separate pending question.",
+      "context": "Editorial text for the import preview accepted in round 19. Show actual inspected package contents and object comparisons, not guesses. Validate package integrity before any change; conflicts preserve existing objects and coherent imported references. Round 20 accepts an unchecked-by-default Apply settings option for common preferences present in the package.",
       "location": "Heading or group label within the import preview; precise layout remains interface work.",
       "elementType": "section_heading"
     },
     "data.import.additions": {
       "text": "To add",
       "meaning": "Names objects proposed for addition during import.",
-      "context": "Editorial text for the import preview accepted in round 19. Show actual inspected package contents and object comparisons, not guesses. Validate package integrity before any change; conflicts preserve existing objects and coherent imported references. Common-settings application is still a separate pending question.",
+      "context": "Editorial text for the import preview accepted in round 19. Show actual inspected package contents and object comparisons, not guesses. Validate package integrity before any change; conflicts preserve existing objects and coherent imported references. Round 20 accepts an unchecked-by-default Apply settings option for common preferences present in the package.",
       "location": "Heading or group label within the import preview; precise layout remains interface work.",
       "elementType": "section_heading"
     },
     "data.import.unchanged": {
       "text": "Already present",
       "meaning": "Names existing unchanged objects that repeat import will not duplicate.",
-      "context": "Editorial text for the import preview accepted in round 19. Show actual inspected package contents and object comparisons, not guesses. Validate package integrity before any change; conflicts preserve existing objects and coherent imported references. Common-settings application is still a separate pending question.",
+      "context": "Editorial text for the import preview accepted in round 19. Show actual inspected package contents and object comparisons, not guesses. Validate package integrity before any change; conflicts preserve existing objects and coherent imported references. Round 20 accepts an unchecked-by-default Apply settings option for common preferences present in the package.",
       "location": "Heading or group label within the import preview; precise layout remains interface work.",
       "elementType": "section_heading"
     },
     "data.import.conflicts": {
       "text": "Conflicting versions",
       "meaning": "Names differing versions requiring separately named imported copies.",
-      "context": "Editorial text for the import preview accepted in round 19. Show actual inspected package contents and object comparisons, not guesses. Validate package integrity before any change; conflicts preserve existing objects and coherent imported references. Common-settings application is still a separate pending question.",
+      "context": "Editorial text for the import preview accepted in round 19. Show actual inspected package contents and object comparisons, not guesses. Validate package integrity before any change; conflicts preserve existing objects and coherent imported references. Round 20 accepts an unchecked-by-default Apply settings option for common preferences present in the package.",
       "location": "Heading or group label within the import preview; precise layout remains interface work.",
       "elementType": "section_heading"
     },
@@ -1965,23 +1965,166 @@
     "data.backups": {
       "text": "Backups",
       "meaning": "Names local backup management.",
-      "context": "Round 19 accepts local backups and explicit restore with preview, separate from ordinary startup. Exact backup contents and restore replacement/merge behavior are pending in round 20. This label does not authorize silently restoring history, replacing data or performing a restore without the user action.",
+      "context": "Round 19 accepts local backups and explicit restore with preview, separate from ordinary startup. Round 20 accepts a full local snapshot including history and settings. Explicit restore returns the chosen state after preview and only after a successful backup of the current state. This label does not authorize silently restoring history, replacing data or performing a restore without the user action.",
       "location": "Heading of local backup management.",
       "elementType": "section_heading"
     },
     "data.restore": {
       "text": "Restore backup",
       "meaning": "Names the explicit action for restoring a selected local backup.",
-      "context": "Round 19 accepts local backups and explicit restore with preview, separate from ordinary startup. Exact backup contents and restore replacement/merge behavior are pending in round 20. This label does not authorize silently restoring history, replacing data or performing a restore without the user action.",
+      "context": "Round 19 accepts local backups and explicit restore with preview, separate from ordinary startup. Round 20 accepts a full local snapshot including history and settings. Explicit restore returns the chosen state after preview and only after a successful backup of the current state. This label does not authorize silently restoring history, replacing data or performing a restore without the user action.",
       "location": "Actions for a selected local backup.",
       "elementType": "command_label"
     },
     "data.restore.preview": {
       "text": "Restore preview",
       "meaning": "Names the view of changes before explicit backup restoration.",
-      "context": "Round 19 accepts local backups and explicit restore with preview, separate from ordinary startup. Exact backup contents and restore replacement/merge behavior are pending in round 20. This label does not authorize silently restoring history, replacing data or performing a restore without the user action.",
+      "context": "Round 19 accepts local backups and explicit restore with preview, separate from ordinary startup. Round 20 accepts a full local snapshot including history and settings. Explicit restore returns the chosen state after preview and only after a successful backup of the current state. This label does not authorize silently restoring history, replacing data or performing a restore without the user action.",
       "location": "Heading of the backup restore preview.",
       "elementType": "section_heading"
+    },
+    "help.templates.parametersRule": {
+      "text": "Before creating a sheet from a template, fill in the compact parameter fields, already populated with defaults. Use the normal expression language, including numbers, units and saved constants or functions: 100000, 2 * 50000 or rate. Creating the sheet stores your entered expressions in its corresponding local definitions. An incomplete or invalid parameter is marked and prevents finishing the launch. Cancel creates no sheet and leaves the template unchanged. The new sheet keeps its usual live calculation and global dependencies.",
+      "meaning": "Explains expression-based parameter entry before creating an independent sheet.",
+      "context": "Accepted in round 20, point 1. Parameter edits belong to this launch, not an implicit template update or global definition publication. Preserve entered expressions and semantic references; do not replace them with rounded numeric snapshots. Multiple valid interpretations alone are not invalid; their propagation remains governed by the shared language. Exact field geometry, parser context and accessibility remain technical/interface work.",
+      "location": "Template launch section of application help, near the parameter entry surface.",
+      "elementType": "help_paragraph"
+    },
+    "help.data.importSettingsRule": {
+      "text": "Import adds calculations and definitions while keeping your current settings by default. Select Apply settings in the preview to see and apply changes to shared preferences such as theme, language and copy behavior. The option starts unchecked. Device-specific invocation, autostart and window placement are not in the transfer file.",
+      "meaning": "Explains explicit opt-in to applying common settings during import.",
+      "context": "Accepted in round 20, point 2. Offer the option for shared preferences actually present in the package. When unchecked, preserve existing settings; when checked, preview their changes and include them in the intended import operation. This does not add device settings or preferences to a selected export that lacks them. Import validation and all-or-nothing application remain unchanged.",
+      "location": "Import settings section of data-management help and contextual help for the preview option.",
+      "elementType": "help_paragraph"
+    },
+    "help.data.restoreRule": {
+      "text": "A local backup contains the full saved data and settings, including history. Restoring it returns the chosen state: the preview shows additions, changes and current items that will disappear. Before applying it, the calculator must successfully back up your current state. If that backup cannot be saved, restoration does not start. This explicit restore can bring back the history in the chosen snapshot; ordinary startup does not. Portable export still excludes history, and import keeps its separate conflict-copy rules.",
+      "meaning": "Explains full-state restoration and its mandatory successful current-state backup.",
+      "context": "Accepted in round 20, point 3. Keep the last-ten-copy policy with the additional pre-restore trigger. Restoration is explicitly user-selected and previewed, not automatic merging or ordinary startup recovery. Snapshot format, compatibility, integrity, handling a failure during actual restore, open editor synchronization and safe retention of the selected snapshot remain technical design work. This text states intended behavior, not completed runtime verification.",
+      "location": "Backup restore section of application help, alongside the restore preview.",
+      "elementType": "help_paragraph"
+    },
+    "help.data.saveFailureRule": {
+      "text": "If a sheet cannot be saved, its text remains available in the current session with a Not saved status and a retry action. An incomplete or erroneous formula is not itself a save failure. Hiding the window keeps your text available. Fully quitting with these unsaved edits offers saving the text separately or explicitly exiting without saving. After an application crash, recover the last successfully saved state; edits that never reached storage cannot be promised. If saving a global definition fails, its previous published version remains and the draft stays available to correct.",
+      "meaning": "Explains persistence failure feedback, explicit exit choices and the limit of crash recovery.",
+      "context": "Accepted in round 20, point 4. Retain text in memory without falsely announcing durable persistence. Reuse common.retry and data.unsaved feedback. The exit choice is for unsaved text after a failed write, not a confirmation for ordinary window hiding. Global definition draft text must not replace the published definition after a failed save. Storage frequency, atomic publication, independent text-file format and corrupted-store recovery require technical design.",
+      "location": "Saving and recovery section of application help.",
+      "elementType": "help_paragraph"
+    },
+    "help.documents.restoreRule": {
+      "text": "Undoing a sheet or template deletion restores its text and references without reverting the global library. If a required definition has since been deleted, the document shows the missing dependency. Restore that definition with its own Undo when available, or correct the formula. An unrelated new definition with the same name is not substituted automatically. Deleted documents kept only for Undo do not count as active uses that block definition deletion.",
+      "meaning": "Explains document restoration after global dependencies change or disappear.",
+      "context": "Accepted in round 20, point 5. Preserve stable semantic identity rather than rebinding an old name to a new definition. No cascading global restoration or rollback is implied. Global-library Undo retains its own session lifetime and name-conflict checks; document restoration must preserve newer data. Full backup restoration is a separate accepted operation.",
+      "location": "Document deletion Undo section of application help.",
+      "elementType": "help_paragraph"
+    },
+    "templates.createSheet": {
+      "text": "Create sheet",
+      "meaning": "Names the action completing a template launch as an independent calculation sheet.",
+      "context": "Accepted in round 20. Use after parameter entry; incomplete or invalid parameters prevent completion. Cancellation creates no sheet. This command does not save an updated template or publish global definitions.",
+      "location": "Action beside the template launch parameter fields; exact geometry remains interface work.",
+      "elementType": "command_label"
+    },
+    "templates.parameters.invalid": {
+      "text": "Complete or correct this parameter.",
+      "meaning": "Explains why a parameter prevents completing the template launch.",
+      "context": "Editorial wording for round 20 parameter validation. Pair with the relevant ordinary expression diagnostic when there is an actual error. Do not label a valid ambiguous result as invalid or invent a mathematical error for incomplete input.",
+      "location": "Feedback associated with the affected template parameter field.",
+      "elementType": "validation_message"
+    },
+    "data.import.applySettings": {
+      "text": "Apply settings",
+      "meaning": "Labels the opt-in for importing shared preferences.",
+      "context": "Accepted in round 20: unchecked by default. When selected, preview and apply available common settings such as theme, language and copy behavior; otherwise preserve current preferences. Device settings are excluded from the package.",
+      "location": "Checkbox in the import preview, next to the shared-setting changes.",
+      "elementType": "checkbox_label"
+    },
+    "data.restore.additions": {
+      "text": "To add",
+      "meaning": "Names data present in the selected snapshot that will be added by restore.",
+      "context": "Editorial headings for the full-state restore preview accepted in round 20. Show actual differences against the selected snapshot before application. These groups are distinct from import, which keeps existing objects through conflict copies.",
+      "location": "Group heading in the backup restore preview; exact geometry remains interface work.",
+      "elementType": "section_heading"
+    },
+    "data.restore.changes": {
+      "text": "To change",
+      "meaning": "Names current data or settings that the selected snapshot will change.",
+      "context": "Editorial headings for the full-state restore preview accepted in round 20. Show actual differences against the selected snapshot before application. These groups are distinct from import, which keeps existing objects through conflict copies.",
+      "location": "Group heading in the backup restore preview; exact geometry remains interface work.",
+      "elementType": "section_heading"
+    },
+    "data.restore.removals": {
+      "text": "To remove",
+      "meaning": "Names current data absent from the chosen restored state.",
+      "context": "Editorial headings for the full-state restore preview accepted in round 20. Show actual differences against the selected snapshot before application. These groups are distinct from import, which keeps existing objects through conflict copies.",
+      "location": "Group heading in the backup restore preview; exact geometry remains interface work.",
+      "elementType": "section_heading"
+    },
+    "data.restore.backupError": {
+      "text": "Could not back up the current state. Restore has not started.",
+      "meaning": "Explains why restoration is blocked when its prerequisite backup fails.",
+      "context": "Accepted in round 20, point 3: do not begin restoring the selected snapshot unless the current-state backup succeeds. Existing state must not be presented as already restored. Detailed storage diagnostics remain technical work.",
+      "location": "Error feedback associated with the backup restore action.",
+      "elementType": "error_message"
+    },
+    "data.unsaved": {
+      "text": "Not saved",
+      "meaning": "Indicates that the current text has not been persisted successfully.",
+      "context": "Accepted in round 20 for a failed sheet write. Keep the current text available and allow retry; do not confuse formula evaluation errors with save failures. Clear only when the affected state is actually saved or the user explicitly discards it.",
+      "location": "Quiet save-status feedback for the affected editor; accessible announcement and styling remain interface work.",
+      "elementType": "status_message"
+    },
+    "data.unsaved.exitTitle": {
+      "text": "Unsaved changes",
+      "meaning": "Names the exit decision when text could not be saved.",
+      "context": "Accepted in round 20 for full application exit with unsaved edits after storage failure. Ordinary hiding does not trigger this exit choice.",
+      "location": "Title of the unsaved-text exit prompt.",
+      "elementType": "dialog_title"
+    },
+    "data.unsaved.exitDescription": {
+      "text": "Save your text to a separate file, or exit without saving these changes.",
+      "meaning": "Explains the accepted choices for retaining or explicitly discarding unsaved text on exit.",
+      "context": "Accepted in round 20 after a failed write. Do not imply a successful main-store save or exit automatically while the user is choosing. The file-saving flow and failures require technical design.",
+      "location": "Body of the unsaved-text exit prompt.",
+      "elementType": "description"
+    },
+    "data.unsaved.saveText": {
+      "text": "Save text to file",
+      "meaning": "Names separate text saving offered when application storage has failed.",
+      "context": "Accepted in round 20: preserve the editable text separately before the user leaves. This action is not a successful structured export, publication of a global draft, or a guarantee that the chosen destination is writable.",
+      "location": "Action in the unsaved-text exit prompt.",
+      "elementType": "command_label"
+    },
+    "data.unsaved.exit": {
+      "text": "Exit without saving",
+      "meaning": "Names explicit exit that discards edits not saved to storage.",
+      "context": "Accepted in round 20 for the unsaved-text exit choice. Invoke only on the explicit selection; hiding the calculator keeps text and does not perform this action.",
+      "location": "Action in the unsaved-text exit prompt.",
+      "elementType": "command_label"
+    },
+    "data.recovery.restored": {
+      "text": "Restored the last saved state.",
+      "meaning": "Reports restoration of the most recent successfully persisted state after a crash.",
+      "context": "Accepted in round 20. Show only after recovering the persisted state following an application crash. Do not claim that every draft edit was recovered, that unsaved writes reached disk or that an older backup was silently restored.",
+      "location": "Brief feedback after crash recovery; exact presentation remains interface work.",
+      "elementType": "status_message"
+    },
+    "definitions.saveError": {
+      "text": "Could not save the definition",
+      "meaning": "Reports failure to persist an explicit global-definition save.",
+      "context": "Accepted in round 20: retain the prior published definition and the editable draft. This is a storage failure, distinct from syntax, name, cycle or numerical diagnostics; do not claim the new definition was published.",
+      "location": "Feedback associated with the explicit definition Save action.",
+      "elementType": "error_message"
+    },
+    "expression.missingDefinition": {
+      "text": "The referenced definition {name} is no longer available.",
+      "meaning": "Reports a missing semantic dependency rather than capturing a new definition with the same spelling.",
+      "context": "Accepted in round 20 for restored sheets/templates after a dependency is deleted, consistent with round 18 historical reference identity. Preserve the reference to the original definition. The presence of an unrelated same-named definition must not suppress this diagnostic.",
+      "location": "Diagnostic for the affected expression in a restored document or structured recalled calculation.",
+      "elementType": "error_message",
+      "placeholders": {
+        "name": "The referenced saved definition name, preserving its user-written spelling and case; the stable identity is not translated or displayed as a substitute."
+      }
     }
   }
 }
