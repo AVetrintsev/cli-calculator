@@ -140,7 +140,7 @@
     "copy.result": {
       "text": "Copy result",
       "meaning": "Copies the targeted valid calculation result.",
-      "context": "Accepted through copying round 2: Ctrl+C on Windows / Cmd+C on macOS in the editor with no text selection copies the single ready displayed result entry, even if that entry groups several interpretations. Click copy targets the clicked entry. Numeric result copy omits the unit: 4m copies 4, and 5m/s copies 5. Preserve displayed numeric rounding, all shown digits, signs, numeral-system prefix/case and grouping; do not copy hidden precision or change working values. Formula selection copies the selected visible text, including units. If multiple displayed entries exist without selection, the shortcut leaves the clipboard unchanged and shows copy.chooseResult. Count all entries after display grouping, including horizontal overflow. Quick copy keeps the window, formula and cursor, restores input focus after a click and creates no history. Missing or stale results cannot be copied; keyboard selection of a particular result remains open. Enter confirmation is a separate accepted action: in quick mode with one ready displayed result, it records history and copies with the same payload rules, then starts empty input while keeping the window open. Enter never accepts a completion suggestion.",
+      "context": "Accepted through copying round 2: Ctrl+C on Windows / Cmd+C on macOS in the editor with no text selection copies the single ready displayed result entry, even if that entry groups several interpretations. Click copy targets the clicked entry. Numeric result copy omits the unit: 4m copies 4, and 5m/s copies 5. Preserve displayed numeric rounding, all shown digits, signs, numeral-system prefix/case and grouping; do not copy hidden precision or change working values. Formula selection copies the selected visible text, including units. If multiple displayed entries exist without selection, the shortcut leaves the clipboard unchanged and shows copy.chooseResult. Count all entries after display grouping, including horizontal overflow. Quick copy keeps the window, formula and cursor, restores input focus after a click and creates no history. Missing or stale results cannot be copied. Keyboard selection for confirmation was accepted in round 6; Ctrl+C/Cmd+C while focus is already in that result row remains a proposal in round 14. The editor copy shortcut retains its accepted behavior. Enter confirmation is a separate accepted action: in quick mode with one ready displayed result, it records history and copies with the same payload rules, then starts empty input while keeping the window open. Enter never accepts a completion suggestion.",
       "location": "Copy action for the current or clicked result. Quick input is in scope; exact targeting in calculation sheets and history remains to be specified.",
       "elementType": "command_label"
     },
@@ -267,25 +267,25 @@
       }
     },
     "history.reuse": {
-      "text": "Use this expression",
-      "meaning": "Recalls a previous expression for further input.",
-      "context": "Used for a selected history entry. Accepted in copying round 7: the recalled formula is calculated anew with current user constants and functions; the original history record and its saved results remain unchanged. Navigation that recalls the formula does not itself confirm or create a new record. Successful confirmation records the new calculation under the existing Enter or modified-Enter flow. Retrying an incomplete confirmation with unchanged formula and calculation does not duplicate an already saved entry; copying round 8 accepts a separate record for every new successful confirmation, even when formula and results match an earlier record.",
-      "location": "Actions associated with a history entry.",
-      "elementType": "command_label"
+      "text": "Use formula",
+      "meaning": "Returns the targeted historical formula to input for recalculation.",
+      "context": "Used for a selected history entry. Accepted in copying round 7: the recalled formula is calculated anew with current user constants and functions; the original history record and its saved results remain unchanged. Navigation that recalls the formula does not itself confirm or create a new record. Successful confirmation records the new calculation under the existing Enter or modified-Enter flow. Retrying an incomplete confirmation with unchanged formula and calculation does not duplicate an already saved entry; copying round 8 accepts a separate record for every new successful confirmation, even when formula and results match an earlier record. Copying round 13 places this action in the shared history menu. A specific history entry is required; without one the action is unavailable. Invoking it recalls a copy for recalculation rather than confirming or copying its result.",
+      "location": "Item in the shared history menu opened by right-clicking a history record or the quick-mode history-menu shortcut.",
+      "elementType": "menu_item"
     },
     "history.delete": {
-      "text": "Delete calculation",
+      "text": "Delete entry",
       "meaning": "Removes one selected history entry.",
-      "context": "Accepted in copying round 9: an explicit history action deletes one particular record without a confirmation dialog and provides history.undo. Identical records from separate confirmations are distinct targets. Constants, functions, sheets and templates are preserved. This does not bind Delete in the formula editor to record deletion. Copying round 10 accepts undoing deletions in reverse order until the application fully exits, including whole-history clearing as one operation. Hiding and reopening the window preserve Undo. Restore full removed records in their former order without removing calculations added later. Undo from the previous session is unavailable after a full exit. This is separate from formula text undo. Control access and failure behavior remain open.",
-      "location": "Actions associated with a history entry.",
-      "elementType": "command_label"
+      "context": "Accepted in copying round 9: an explicit history action deletes one particular record without a confirmation dialog and provides history.undo. Identical records from separate confirmations are distinct targets. Constants, functions, sheets and templates are preserved. This does not bind Delete in the formula editor to record deletion. Copying round 10 accepts undoing deletions in reverse order until the application fully exits, including whole-history clearing as one operation. Hiding and reopening the window preserve Undo. Restore full removed records in their former order without removing calculations added later. Undo from the previous session is unavailable after a full exit. This is separate from formula text undo. Copying round 13 places this action in the shared history menu. It requires a specific target entry and is unavailable without one. Opening the menu is not invocation of deletion. Failure behavior and exact disabled presentation remain open.",
+      "location": "Item in the shared history menu, targeting one specific history record.",
+      "elementType": "menu_item"
     },
     "history.clear": {
       "text": "Clear history",
       "meaning": "Starts clearing past calculation entries.",
-      "context": "Accepted in copying round 9: starts a separate confirmation before clearing the complete calculation history. Opening this action is not consent to deletion. Constants, functions, sheets and templates are preserved. Copying round 10 accepts undoing deletions in reverse order until the application fully exits, including whole-history clearing as one operation. Hiding and reopening the window preserve Undo. Restore full removed records in their former order without removing calculations added later. Undo from the previous session is unavailable after a full exit. This is separate from formula text undo.",
+      "context": "Accepted in copying round 9: starts a separate confirmation before clearing the complete calculation history. Opening this action is not consent to deletion. Constants, functions, sheets and templates are preserved. Copying round 10 accepts undoing deletions in reverse order until the application fully exits, including whole-history clearing as one operation. Hiding and reopening the window preserve Undo. Restore full removed records in their former order without removing calculations added later. Undo from the previous session is unavailable after a full exit. This is separate from formula text undo. Copying round 13 includes this action in the shared history menu; a selected individual history entry is not required. Opening the menu does not start clearing.",
       "location": "History actions menu.",
-      "elementType": "command_label"
+      "elementType": "menu_item"
     },
     "history.clear.title": {
       "text": "Clear calculation history?",
@@ -1396,7 +1396,7 @@
     "help.copy.quickRule": {
       "text": "With no text selected, press {shortcut} to copy the only displayed current result. Numeric results copy the displayed number without its unit: 4m copies 4. Rounding, all shown digits, grouping and numeral-system prefixes are preserved. With text selected, the shortcut copies that selection, including its unit text. Click a result to copy it. When several results are displayed, the shortcut leaves the clipboard unchanged and prompts you to choose a result. The calculator stays open, your formula and cursor are preserved, and focus returns to input after a click. Quick copy does not add a history entry.",
       "meaning": "Explains numeric-only result copying, text-selection precedence, the single-entry shortcut condition and choosing among several displayed results.",
-      "context": "Accepted through copying round 2. Supply Ctrl+C on Windows and Cmd+C on macOS. A result must be ready and current. A single displayed entry can group several hidden meanings or rounded working values; copying its displayed number does not choose a hidden interpretation. Count the entire grouped result row, including entries outside the horizontal viewport. For multiple entries without selection, preserve the clipboard and show copy.chooseResult. Unit omission applies to numeric quick-copy results, not selected formula text. Numeric prefixes are not units; localized logical results retain their previously approved displayed text. Exact result ordering, keyboard choice and feedback geometry remain open. This fragment does not add interpretation captions.",
+      "context": "Accepted through copying round 2. Supply Ctrl+C on Windows and Cmd+C on macOS. A result must be ready and current. A single displayed entry can group several hidden meanings or rounded working values; copying its displayed number does not choose a hidden interpretation. Count the entire grouped result row, including entries outside the horizontal viewport. For multiple entries without selection, preserve the clipboard and show copy.chooseResult. Unit omission applies to numeric quick-copy results, not selected formula text. Numeric prefixes are not units; localized logical results retain their previously approved displayed text. Keyboard selection for confirmation is described in help.confirm.multipleRule. Ctrl+C/Cmd+C while focus is already in the result row remains a separate proposal in round 14. Exact result ordering and feedback geometry remain open. This fragment does not add interpretation captions.",
       "location": "Copying section of application help. The help entry point and any compact in-editor hint remain separate interface decisions.",
       "elementType": "help_paragraph",
       "placeholders": {
@@ -1479,9 +1479,9 @@
     "history.undo": {
       "text": "Undo",
       "meaning": "Restores the most recent history deletion or whole-history clearing operation that has not yet been undone.",
-      "context": "Copying round 10 accepts undoing deletions in reverse order until the application fully exits, including whole-history clearing as one operation. Hiding and reopening the window preserve Undo. Restore full removed records in their former order without removing calculations added later. Undo from the previous session is unavailable after a full exit. This is separate from formula text undo. Accepted in copying rounds 9 and 10. Undo has no short timer while the application remains running. The control placement and failure feedback are still to be verified; this label does not assign the formula editor undo shortcuts to history.",
-      "location": "History management actions or deletion feedback; final placement is pending and must preserve the fixed formula input.",
-      "elementType": "command_label"
+      "context": "Copying round 10 accepts undoing deletions in reverse order until the application fully exits, including whole-history clearing as one operation. Hiding and reopening the window preserve Undo. Restore full removed records in their former order without removing calculations added later. Undo from the previous session is unavailable after a full exit. This is separate from formula text undo. Accepted in copying rounds 9 and 10. Undo has no short timer while the application remains running. Copying round 13 places this action in the shared history menu. It requires an undoable deletion or clear from the current session and can remain available when the history is empty. Menu geometry, failure feedback and exact unavailable presentation still require verification; this does not assign formula editor undo shortcuts to history.",
+      "location": "Item in the shared history menu; applies to undoable history operations rather than the current formula text.",
+      "elementType": "menu_item"
     },
     "history.clear.description": {
       "text": "This will clear your calculation history. Your constants, functions, sheets and templates will be kept. You can undo the clearing until you fully quit the application.",
@@ -1510,7 +1510,7 @@
     "help.history.manageRule": {
       "text": "Deleting one history entry requires no confirmation. Clearing the entire history requires confirmation. Undo restores deletions in reverse order; clearing the entire history counts as one operation. You can undo until you fully quit the application. Hiding and reopening the window keeps Undo available. Restoring removed entries keeps calculations added later. These actions preserve your constants, functions, sheets and templates. History Undo is separate from undoing formula text edits.",
       "meaning": "Explains the difference between deleting a history record and clearing the complete history.",
-      "context": "Accepted in copying rounds 9 and 10. Deletion targets a specific record rather than matching content. Undo restores complete records with working values, hidden interpretations and the original chosen answer in their former order. Full-history clearing is undone as one operation without deleting newer records. Undo remains available while the application runs, without a short timer; no previous-session Undo is promised after full exit. Ctrl+Z/Cmd+Z in the formula editor continue to undo text only. Copying round 11 accepts keeping the entire history across launches until manual deletion, without age or record-count expiry. This retention is separate from session-limited Undo. Control access and error behavior remain open.",
+      "context": "Accepted in copying rounds 9 and 10. Deletion targets a specific record rather than matching content. Undo restores complete records with working values, hidden interpretations and the original chosen answer in their former order. Full-history clearing is undone as one operation without deleting newer records. Undo remains available while the application runs, without a short timer; no previous-session Undo is promised after full exit. Ctrl+Z/Cmd+Z in the formula editor continue to undo text only. Copying round 11 accepts keeping the entire history across launches until manual deletion, without age or record-count expiry. This retention is separate from session-limited Undo. Copying round 13 supplies control access through the shared history menu; see help.history.menuRule. Menu presentation and error behavior remain open.",
       "location": "History management section of application help.",
       "elementType": "help_paragraph"
     },
@@ -1527,6 +1527,23 @@
       "context": "Accepted in copying round 12. Decimal separators and digit grouping are normalized only in recognized decimal number fragments. Unit equivalents follow the existing whole-symbol length-unit shorthand rule, including explicit aliases, Latin symbols and the active locale. Do not rewrite user names or comments, normalize arbitrary word prefixes, remove nonnumeric whitespace, evaluate formulas, convert bases or convert quantities. Ordinary case-insensitive substring matches remain available. Caret distinction applies to the spelling comparison, not exclusion of a history record that independently matches a saved displayed result. Storage, values, hidden interpretations, choice and ordering stay unchanged.",
       "location": "History search section of application help, next to help.history.searchRule.",
       "elementType": "help_paragraph"
+    },
+    "history.menu.accessibleName": {
+      "text": "History actions",
+      "meaning": "Names the popup menu for working with individual records and the complete history.",
+      "context": "Editorial programmatic name for the shared menu accepted in copying round 13. The visible actions are history.reuse, history.delete, history.undo and history.clear. The menu opens by right-clicking a record or the local quick-mode shortcut, including when history is collapsed or empty. Individual actions require a target entry; general actions follow their existing eligibility rules. No new visible heading or permanent toolbar is approved. Native announcement and placement need prototype verification.",
+      "location": "Accessible name of the shared history popup menu.",
+      "elementType": "accessible_name"
+    },
+    "help.history.menuRule": {
+      "text": "In quick mode, right-click a history entry or press {shortcut} to open the history menu. Use formula and Delete entry apply to a chosen record. Undo restores the last deletion or clearing operation. Clear history asks for confirmation. The shortcut also works when history is collapsed or empty; record actions require a selected entry. Opening the menu leaves your formula unchanged. Escape closes it and restores the previous focus.",
+      "meaning": "Explains how to open the shared history menu and which commands need a particular history record.",
+      "context": "Accepted in copying round 13. The local shortcut is Ctrl+Shift+H on Windows and Cmd+Shift+H on macOS inside active quick mode. Right-click targets a record without copying, recalling or confirming it. Use formula recalls a copy for recalculation only. Undo follows session-limited reverse-order recovery and can remain available after a clear; Clear history still requires confirmation. Menu opening does not execute a command. Placement, unavailable-item appearance, native shortcuts and focus still require prototype verification. This adds no permanent toolbar.",
+      "location": "History management section of application help, next to help.history.manageRule.",
+      "elementType": "help_paragraph",
+      "placeholders": {
+        "shortcut": "The local quick-mode history-menu shortcut in platform display form; accepted defaults are Ctrl+Shift+H on Windows and Cmd+Shift+H on macOS."
+      }
     }
   }
 }
