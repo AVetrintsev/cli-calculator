@@ -147,14 +147,14 @@
     "copy.success": {
       "text": "Result copied",
       "meaning": "Confirms that the clipboard write succeeded.",
-      "context": "Feedback only after a result has actually been written to the clipboard successfully. Ctrl+C/Cmd+C and click quick copy preserve input and add no history. Successful Enter confirmation in quick mode also records the calculation and immediately starts empty input while keeping the window open. This message confirms the clipboard write only; it must not imply that a failed history write succeeded or that a formula selection was copied as a result. Exact feedback presentation and partial-failure behavior remain open.",
-      "location": "Brief copy feedback associated with the input/result region and its accessible live region. Placement after Enter resets the input is to be verified.",
+      "context": "Feedback only after a result has actually been written to the clipboard successfully. Ctrl+C/Cmd+C and click quick copy preserve input and add no history. Full quick-mode confirmation success also requires saving history: Enter then starts empty input in the open window, while Ctrl+Enter on Windows / Cmd+Enter on macOS hides the window with empty input on the next invocation. This message confirms only the clipboard write and must not imply that a failed history write succeeded or that selected formula text was copied as a result. A confirmation failure preserves the formula, result and open window. Exact feedback presentation and partial-success retry behavior remain open.",
+      "location": "Brief copy feedback associated with the input/result region and its accessible live region. Presentation when confirmation resets input or hides the window is to be verified.",
       "elementType": "status_message"
     },
     "copy.error": {
       "text": "Could not copy the result. Try again.",
       "meaning": "Reports that writing the result to the clipboard failed.",
-      "context": "Shown or announced only when writing a result to the clipboard fails, including shortcut/click quick copy and the copy step of Enter confirmation. Do not use this message for a history-save failure or claim success. Exact recovery, draft reset and partial-failure behavior are pending in copying round 4; copying a formula selection is a separate operation.",
+      "context": "Shown or announced only when writing a result to the clipboard fails, including shortcut/click quick copy and the copy step of Enter or modified-Enter confirmation. A failed quick-mode confirmation preserves the formula, result and open window and shows this brief error; it must not clear input or hide the window. Do not use this message for a history-save failure or claim success. Partial-success retry behavior remains open. Copying a formula selection is a separate operation.",
       "location": "Feedback area near the active result.",
       "elementType": "error_message"
     },
@@ -587,21 +587,21 @@
     "settings.copyBehavior.label": {
       "text": "After copying",
       "meaning": "Labels the preferred window behavior after a successful copy.",
-      "context": "Candidate setting for other confirmation/copy commands whose behavior is still open. Ctrl+C/Cmd+C and click quick copy keep the window and current input without adding history. The accepted default Enter confirmation in quick mode keeps the window open but records history and starts empty input. This draft setting must not silently override either flow; modified-Enter and configurable overrides remain undecided.",
+      "context": "Candidate setting whose configurable overrides remain open. Ctrl+C/Cmd+C and click quick copy keep the window and current input without adding history. Accepted quick-mode defaults: Enter records history and copies, then starts empty input in the open window; Ctrl+Enter on Windows / Cmd+Enter on macOS confirms the same calculation and hides the window after success, with empty input on the next invocation. Failure of either confirmation step preserves formula, result and the open window. This draft setting must not silently override the accepted flows; expanded-mode commands remain undecided.",
       "location": "Label next to the post-copy behavior control.",
       "elementType": "field_label"
     },
     "settings.copyBehavior.keep": {
       "text": "Keep calculator open",
       "meaning": "Leaves the calculator visible after copying.",
-      "context": "Candidate setting for other confirmation/copy commands whose behavior is still open. Ctrl+C/Cmd+C and click quick copy keep the window and current input without adding history. The accepted default Enter confirmation in quick mode keeps the window open but records history and starts empty input. This draft setting must not silently override either flow; modified-Enter and configurable overrides remain undecided.",
+      "context": "Candidate setting whose configurable overrides remain open. Ctrl+C/Cmd+C and click quick copy keep the window and current input without adding history. Accepted quick-mode defaults: Enter records history and copies, then starts empty input in the open window; Ctrl+Enter on Windows / Cmd+Enter on macOS confirms the same calculation and hides the window after success, with empty input on the next invocation. Failure of either confirmation step preserves formula, result and the open window. This draft setting must not silently override the accepted flows; expanded-mode commands remain undecided.",
       "location": "Option in the post-copy behavior control.",
       "elementType": "select_option"
     },
     "settings.copyBehavior.hide": {
       "text": "Hide calculator",
       "meaning": "Dismisses the calculator after copying succeeds.",
-      "context": "Candidate setting for other confirmation/copy commands whose behavior is still open. Ctrl+C/Cmd+C and click quick copy keep the window and current input without adding history. The accepted default Enter confirmation in quick mode keeps the window open but records history and starts empty input. This draft setting must not silently override either flow; modified-Enter and configurable overrides remain undecided.",
+      "context": "Candidate setting whose configurable overrides remain open. Ctrl+C/Cmd+C and click quick copy keep the window and current input without adding history. Accepted quick-mode defaults: Enter records history and copies, then starts empty input in the open window; Ctrl+Enter on Windows / Cmd+Enter on macOS confirms the same calculation and hides the window after success, with empty input on the next invocation. Failure of either confirmation step preserves formula, result and the open window. This draft setting must not silently override the accepted flows; expanded-mode commands remain undecided.",
       "location": "Option in the post-copy behavior control.",
       "elementType": "select_option"
     },
@@ -1411,13 +1411,30 @@
       "elementType": "status_message"
     },
     "help.confirm.quickRule": {
-      "text": "With one ready displayed result in quick mode, press {shortcut} to record the calculation in history, copy the result and immediately start a new empty input. The calculator stays open and the input stays in the same place. Numeric results are copied without units, using the displayed number. Ordinary quick copy keeps your current input and does not add history.",
+      "text": "With one ready displayed result in quick mode, press {shortcut} to record the calculation in history and copy the result. After both succeed, a new empty input starts in the same place and the calculator stays open. If saving history or copying fails, the formula and result remain and a brief error appears; the input is not cleared and the window stays open. Numeric results are copied without units, using the displayed number. Ordinary quick copy keeps your current input and does not add history.",
       "meaning": "Explains calculation confirmation and its immediate transition to a fresh input, distinguishing it from copying without confirmation.",
-      "context": "Accepted in copying round 3. The default shortcut is Enter in quick mode on both platforms. The user explicitly replaced keeping the old formula with immediately starting new input. The happy path adds history, copies according to existing payload rules and focuses an empty input in the fixed location. The empty draft has no ready result; do not retain or recopy the previous answer as its result. Enter does not accept completion suggestions. The order/atomicity of history and clipboard operations, failure recovery, modified-Enter, multiple-answer confirmation and expanded-mode behavior remain open.",
+      "context": "Accepted in copying rounds 3 and 4. The default shortcut is Enter in quick mode on both platforms. Full success records history, copies using the existing payload rules and focuses empty input in the fixed location; a failure preserves the current formula, result and open window and shows the appropriate brief error. Empty input has no ready result; do not retain or recopy the previous answer as its result. Enter does not accept completion suggestions. Modified-Enter confirmation is described in help.confirm.hideRule. Operation order, partial-success recovery, multiple-answer confirmation, history expansion state after Enter and expanded-mode behavior remain open.",
       "location": "Calculation confirmation section of application help. This is documentation text, not a new visible button in the quick widget; help entry point remains separate.",
       "elementType": "help_paragraph",
       "placeholders": {
         "shortcut": "The confirmation shortcut in its platform display form; the accepted default is Enter in quick mode on Windows and macOS."
+      }
+    },
+    "history.save.error": {
+      "text": "Could not save the calculation to history. Try again.",
+      "meaning": "Reports that saving a confirmed calculation to history failed.",
+      "context": "Used when the history-save step of Enter or modified-Enter confirmation in quick mode fails. Keep the formula, result and window open and do not clear input. This error must not imply that copying failed or that an already successful clipboard write has been rolled back. Exact wording is editorial; the brief error and retained input were accepted in copying round 4. Partial-success recovery and retry behavior remain open.",
+      "location": "Brief feedback near the active quick input/result and its accessible error announcement. Exact placement is to be verified without moving the input.",
+      "elementType": "error_message"
+    },
+    "help.confirm.hideRule": {
+      "text": "With one ready displayed result in quick mode, press {shortcut} to record the calculation in history, copy the result and hide the calculator after both succeed. The next invocation starts with empty input. If saving history or copying fails, the formula and result remain, a brief error appears and the window stays open.",
+      "meaning": "Explains the confirmation shortcut that hides the calculator only after successful history saving and result copying.",
+      "context": "Accepted in copying round 4. The default is Ctrl+Enter on Windows and Cmd+Enter on macOS, in quick mode only. Uses the same history action and clipboard payload as Enter; numeric results omit units. Empty input on the next invocation must not retain the previous ready result. This does not change Ctrl+C/Cmd+C or click quick copy. Partial-success retry, multiple-answer and expanded-mode behavior remain open. Native shortcut and focus behavior still require the platform prototype.",
+      "location": "Calculation confirmation section of application help, next to help.confirm.quickRule. Documentation only; this adds no visible button to the quick widget.",
+      "elementType": "help_paragraph",
+      "placeholders": {
+        "shortcut": "The confirmation-and-hide shortcut in platform display form; accepted defaults are Ctrl+Enter on Windows and Cmd+Enter on macOS, in quick mode."
       }
     }
   }
