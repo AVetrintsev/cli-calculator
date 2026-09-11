@@ -256,20 +256,20 @@
       "elementType": "empty_state"
     },
     "history.entry.accessibleName": {
-      "text": "{expression} equals {result}",
-      "meaning": "Proposes announcing a historical expression together with its recorded result.",
-      "context": "Candidate accessible name when a history entry is focused. Copying round 7 accepts storing the formula, the entire result set with working values and hidden interpretations, and the displayed answer chosen at confirmation. History uses those saved results rather than recalculating with current definitions. The final history-row presentation and announcement of multiple saved answers are still to be selected; this singular draft must not silently discard the other saved answers or announce a newly calculated result as historical.",
+      "text": "{expression}. Results: {results}",
+      "meaning": "Proposes announcing a historical formula and its complete displayed set of saved results.",
+      "context": "Editorial accessible-name draft for a focused history entry. Copying rounds 7 and 8 accept storing the complete result set and showing the formula with all saved displayed answers in one horizontal row. The answer chosen at confirmation is bold when several answers exist; use the separate history.result.chosen description to make that distinction available without relying on font weight alone. Do not add visible interpretation captions, drop saved displayed alternatives or substitute the live recalculation. Exact list announcement and native accessibility behavior require prototype verification.",
       "location": "Accessible name of a calculation history entry.",
       "elementType": "accessible_name",
       "placeholders": {
-        "expression": "A mathematical expression taken from calculation history. Do not translate, reorder, or modify the inserted expression.",
-        "result": "A formatted historical result from the saved calculation, not the live result of recalling its formula. Preserve the inserted value; numeric formatting is handled separately. Final representation of a multi-answer history entry remains to be selected."
+        "expression": "The historical mathematical formula, formatted for the active locale according to the existing unit-language rules. Do not translate or alter inserted user names or comments.",
+        "results": "The complete formatted set of saved displayed results for this history entry, including unit and numeral-system notation. Do not use the live recalculation or only the copied numeric value. List formatting and selection announcement are handled by the accessibility presentation and remain to be verified."
       }
     },
     "history.reuse": {
       "text": "Use this expression",
       "meaning": "Recalls a previous expression for further input.",
-      "context": "Used for a selected history entry. Accepted in copying round 7: the recalled formula is calculated anew with current user constants and functions; the original history record and its saved results remain unchanged. Navigation that recalls the formula does not itself confirm or create a new record. Successful confirmation records the new calculation under the existing Enter or modified-Enter flow. Retrying an incomplete confirmation with unchanged formula and calculation does not duplicate an already saved entry; duplicate policy for intentionally confirming a completed calculation again remains open.",
+      "context": "Used for a selected history entry. Accepted in copying round 7: the recalled formula is calculated anew with current user constants and functions; the original history record and its saved results remain unchanged. Navigation that recalls the formula does not itself confirm or create a new record. Successful confirmation records the new calculation under the existing Enter or modified-Enter flow. Retrying an incomplete confirmation with unchanged formula and calculation does not duplicate an already saved entry; copying round 8 accepts a separate record for every new successful confirmation, even when formula and results match an earlier record.",
       "location": "Actions associated with a history entry.",
       "elementType": "command_label"
     },
@@ -1440,7 +1440,7 @@
     "help.confirm.retryRule": {
       "text": "If confirmation fails, retry without changing the formula or result to finish the same calculation. An entry already saved to history will not be added again. After saving and copying succeed, the command used for the retry determines whether the calculator stays open with empty input or hides until the next invocation.",
       "meaning": "Explains retrying a failed calculation confirmation without adding a duplicate history entry.",
-      "context": "Accepted in copying round 5. Applies to retrying incomplete quick-mode confirmation of an unchanged formula and calculation, including when history was saved but clipboard copying failed. Changed formulas or results start a new confirmation. This does not set duplicate policy for intentionally calculating the same formula again after full success. Enter on successful retry starts empty input and collapses history; Ctrl+Enter on Windows / Cmd+Enter on macOS hides with empty input on the next invocation. No atomic transaction or rollback of the system clipboard is promised. Operation order, persistence details and recovery after restart remain architecture decisions.",
+      "context": "Accepted in copying round 5. Applies to retrying incomplete quick-mode confirmation of an unchanged formula and calculation, including when history was saved but clipboard copying failed. Changed formulas or results start a new confirmation. Copying round 8 distinguishes a new successful confirmation after full success: it creates a separate history entry even for identical formula and results. Enter on successful retry starts empty input and collapses history; Ctrl+Enter on Windows / Cmd+Enter on macOS hides with empty input on the next invocation. No atomic transaction or rollback of the system clipboard is promised. Operation order, persistence details and recovery after restart remain architecture decisions.",
       "location": "Calculation confirmation section of application help, following the normal and hide confirmation explanations. Documentation only; no new retry button in the quick widget is approved.",
       "elementType": "help_paragraph"
     },
@@ -1456,10 +1456,24 @@
       }
     },
     "help.history.recordRule": {
-      "text": "History keeps the formula, all its results and the answer chosen when you confirmed the calculation. Copying one answer does not remove the others. Saved results do not change when you edit a constant or function. When you bring a formula back into input, it is calculated again using the current definitions; the original history entry stays unchanged. Bringing a formula back into input does not itself add a new history entry.",
+      "text": "History keeps the formula, all its results and the answer chosen when you confirmed the calculation. Copying one answer does not remove the others. Saved results do not change when you edit a constant or function. When you bring a formula back into input, it is calculated again using the current definitions; the original history entry stays unchanged. Bringing a formula back into input does not itself add a new history entry. Each new successful confirmation adds a separate history entry, even for an identical calculation. Retrying an unfinished confirmation after an error does not duplicate its saved entry.",
       "meaning": "Explains what a history record retains and distinguishes viewing saved results from recalculating a recalled formula.",
-      "context": "Accepted in copying round 7. Records retain working values and hidden interpretations as well as the displayed answer chosen at confirmation, not merely the rounded unitless clipboard text. Historical values are not recalculated when definitions change; recalling a formula into input uses current definitions. Locale changes may redraw local unit symbols under the existing language rule without changing historical values. This does not approve a history-row layout, a new badge or button, automatic restoration of old definitions, a serialization format or duplicate policy for new confirmations.",
+      "context": "Accepted in copying round 7. Records retain working values and hidden interpretations as well as the displayed answer chosen at confirmation, not merely the rounded unitless clipboard text. Historical values are not recalculated when definitions change; recalling a formula into input uses current definitions. Locale changes may redraw local unit symbols under the existing language rule without changing historical values. Copying round 8 accepts a row containing the formula and all saved displayed results, with the confirmation choice in bold and horizontal overflow; see help.history.displayRule. Every new successful confirmation creates a separate entry even for identical content; retrying an unfinished confirmation after failure must not duplicate its entry. This does not approve a new badge or button, automatic restoration of old definitions, or a serialization format.",
       "location": "History section of application help, alongside the explanation of recalling calculations. Documentation text; the history row and its accessible presentation are specified separately.",
+      "elementType": "help_paragraph"
+    },
+    "history.result.chosen": {
+      "text": "Chosen at confirmation",
+      "meaning": "Identifies the historical answer selected when the calculation was confirmed.",
+      "context": "Editorial accessibility description for the saved selected answer when a history entry has several displayed answers. Copying round 8 accepts visual bold emphasis; this description communicates its meaning to assistive technology. It describes the original confirmation choice, not current keyboard focus or a later click. No visible interpretation caption or badge is added. Exact native announcement and integration with the full history entry require prototype verification.",
+      "location": "Programmatic description of the chosen historical answer inside a history row; not visible text.",
+      "elementType": "accessible_description"
+    },
+    "help.history.displayRule": {
+      "text": "Each history row shows the formula and all its saved results. With several results, the answer chosen at confirmation is bold. Long rows scroll horizontally. Moving through history does not change the saved choice.",
+      "meaning": "Explains the history row, its saved choice emphasis and access to long content.",
+      "context": "Accepted in copying round 8. All saved displayed answers are shown after the existing grouping of identical full formatted answers, retaining hidden interpretations. Interpretation captions remain absent. A single displayed answer needs no additional choice emphasis. Bold emphasis must preserve the existing dim fractional tail. Saved choice is distinct from current keyboard focus. Exact visual styling and accessibility remain subject to prototype verification.",
+      "location": "History section of application help, next to help.history.recordRule. Documentation only; no new history control is introduced.",
       "elementType": "help_paragraph"
     }
   }
