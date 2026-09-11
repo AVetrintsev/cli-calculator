@@ -223,7 +223,7 @@
     "history.title": {
       "text": "History",
       "meaning": "Names the list of past calculations.",
-      "context": "Shown when the history view is expanded. Successful Enter confirmation in quick mode with one ready displayed result adds the calculation to history, copies its result, starts empty input and collapses expanded history. Arrow Up opens it again with the newest calculation nearest to the stationary input. Failed confirmation does not collapse history. The history expansion state on the next invocation after modified-Enter hiding is not yet selected.",
+      "context": "Shown when the history view is expanded. Successful Enter confirmation in quick mode with one ready displayed result adds the calculation to history, copies its result, starts empty input and collapses expanded history. Arrow Up opens it again with the newest calculation nearest to the stationary input. Failed confirmation does not collapse history. The history expansion state on the next invocation after modified-Enter hiding is not yet selected. Copying round 7 fixes historical results at confirmation; changed constants or functions do not recalculate them. Recalling a formula into input calculates a new result with current definitions while preserving the original record.",
       "location": "Heading of the history region above the stationary quick input. Initially the newest entry is closest to the input; Arrow Up shifts the list downward into the console and Arrow Down shifts it upward.",
       "elementType": "section_heading"
     },
@@ -257,19 +257,19 @@
     },
     "history.entry.accessibleName": {
       "text": "{expression} equals {result}",
-      "meaning": "Announces a historical expression together with its recorded result.",
-      "context": "Read when a history entry is selected. Enter confirmation records a calculation before starting new input; copying only the numeric part to the clipboard does not define the history record. Copying round 6 accepts choosing a displayed answer for confirmation, without selecting a hidden interpretation. Stored result shape, retention of the selected displayed entry, grouped interpretations and replay behavior remain decisions in copying round 7.",
+      "meaning": "Proposes announcing a historical expression together with its recorded result.",
+      "context": "Candidate accessible name when a history entry is focused. Copying round 7 accepts storing the formula, the entire result set with working values and hidden interpretations, and the displayed answer chosen at confirmation. History uses those saved results rather than recalculating with current definitions. The final history-row presentation and announcement of multiple saved answers are still to be selected; this singular draft must not silently discard the other saved answers or announce a newly calculated result as historical.",
       "location": "Accessible name of a calculation history entry.",
       "elementType": "accessible_name",
       "placeholders": {
         "expression": "A mathematical expression taken from calculation history. Do not translate, reorder, or modify the inserted expression.",
-        "result": "The formatted value recorded for a calculation. Preserve the inserted value; numeric formatting is handled separately."
+        "result": "A formatted historical result from the saved calculation, not the live result of recalling its formula. Preserve the inserted value; numeric formatting is handled separately. Final representation of a multi-answer history entry remains to be selected."
       }
     },
     "history.reuse": {
       "text": "Use this expression",
       "meaning": "Recalls a previous expression for further input.",
-      "context": "Used for a selected history entry. The recalled expression is edited as a copy and the original entry stays unchanged. Successful Enter confirmation in quick mode with one ready displayed result records the current calculation, copies its result, starts new input and collapses history. Retrying an incomplete confirmation with an unchanged formula and calculation does not duplicate an already saved entry. Duplicate policy for intentionally confirming the same formula again after a completed confirmation remains open.",
+      "context": "Used for a selected history entry. Accepted in copying round 7: the recalled formula is calculated anew with current user constants and functions; the original history record and its saved results remain unchanged. Navigation that recalls the formula does not itself confirm or create a new record. Successful confirmation records the new calculation under the existing Enter or modified-Enter flow. Retrying an incomplete confirmation with unchanged formula and calculation does not duplicate an already saved entry; duplicate policy for intentionally confirming a completed calculation again remains open.",
       "location": "Actions associated with a history entry.",
       "elementType": "command_label"
     },
@@ -1447,13 +1447,20 @@
     "help.confirm.multipleRule": {
       "text": "When quick mode shows several results, press {confirmShortcut} or {hideShortcut} to focus the result row. The first answer is highlighted, but nothing is copied or saved yet. Use Left Arrow and Right Arrow to choose; the row scrolls when needed. Press {confirmShortcut} again to record the calculation and copy the chosen answer, then start empty input with history collapsed. Press {hideShortcut} instead to confirm and hide the calculator. Escape returns the cursor to its previous position in the formula without changes. Clicking an answer still only copies it and returns focus to input.",
       "meaning": "Explains choosing one displayed answer with the keyboard before confirming a calculation that has several results.",
-      "context": "Accepted in copying round 6 for quick mode. Entry into selection does not record history, copy, reset input or hide; highlighting the first answer is navigation focus only. Completion closes without accepting a suggestion. The command used on the selected answer determines the successful transition. Existing numeric copy payload, confirmation failure and unchanged-calculation retry rules still apply. Selection of a grouped displayed answer does not discard hidden interpretations. This does not change Ctrl+C/Cmd+C in the formula editor or approve result captions. History record shape, other keys in selection and focus after a result changes remain separate decisions; native focus and accessibility require prototype verification.",
+      "context": "Accepted in copying round 6 for quick mode. Entry into selection does not record history, copy, reset input or hide; highlighting the first answer is navigation focus only. Completion closes without accepting a suggestion. The command used on the selected answer determines the successful transition. Existing numeric copy payload, confirmation failure and unchanged-calculation retry rules still apply. Selection of a grouped displayed answer does not discard hidden interpretations. This does not change Ctrl+C/Cmd+C in the formula editor or approve result captions. Copying round 7 accepts saving the complete result set and the displayed answer chosen at confirmation; see help.history.recordRule. The exact storage format, other keys in selection and focus after a result changes remain separate decisions; native focus and accessibility require prototype verification.",
       "location": "Calculation confirmation section of application help, after the single-answer and hide command explanations. Describes the existing result row; no new menu or button is added.",
       "elementType": "help_paragraph",
       "placeholders": {
         "confirmShortcut": "The normal quick-mode confirmation shortcut in platform display form; the accepted default is Enter on Windows and macOS.",
         "hideShortcut": "The quick-mode confirmation-and-hide shortcut in platform display form; accepted defaults are Ctrl+Enter on Windows and Cmd+Enter on macOS."
       }
+    },
+    "help.history.recordRule": {
+      "text": "History keeps the formula, all its results and the answer chosen when you confirmed the calculation. Copying one answer does not remove the others. Saved results do not change when you edit a constant or function. When you bring a formula back into input, it is calculated again using the current definitions; the original history entry stays unchanged. Bringing a formula back into input does not itself add a new history entry.",
+      "meaning": "Explains what a history record retains and distinguishes viewing saved results from recalculating a recalled formula.",
+      "context": "Accepted in copying round 7. Records retain working values and hidden interpretations as well as the displayed answer chosen at confirmation, not merely the rounded unitless clipboard text. Historical values are not recalculated when definitions change; recalling a formula into input uses current definitions. Locale changes may redraw local unit symbols under the existing language rule without changing historical values. This does not approve a history-row layout, a new badge or button, automatic restoration of old definitions, a serialization format or duplicate policy for new confirmations.",
+      "location": "History section of application help, alongside the explanation of recalling calculations. Documentation text; the history row and its accessible presentation are specified separately.",
+      "elementType": "help_paragraph"
     }
   }
 }
