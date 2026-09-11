@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "sourceLanguage": "en",
   "status": "specification",
-  "coverage": "Sixteen approved financial function names and two finance timing symbols from round 22. This is a specification catalog, not an implemented parser registry. Future locales add one local spelling alongside the always-active Latin baseline. General timing-value behavior and long-percentage copy precision remain open.",
+  "coverage": "Sixteen approved financial function names and two finance timing symbols from round 22. This is a specification catalog, not an implemented parser registry. Future locales add one local spelling alongside the always-active Latin baseline. Round 23 accepts general timing-value behavior, percent display and copying the displayed percentage coefficient divided exactly by 100; see ../../language/value-semantics.md.",
   "symbols": {
     "finance.loanPayment.monthly": {
       "text": "payment",
@@ -119,14 +119,14 @@
     "finance.timing.end": {
       "text": "end",
       "meaning": "The end of a calculation period for payments or contributions.",
-      "context": "Timing symbol approved in round 22 as the last optional loan or savings argument. Latin is always active and the localized form is active only for that interface locale. End is the default. General typing, binding to variables and use outside the timing argument remain a round-23 proposal; numeric 0/1 aliases are not approved.",
+      "context": "Round 23 accepts timing as a distinct symbolic value. It can be stored in constants and local variables and passed through or returned by user functions. The protected Latin symbols start/end are always available alongside only the active locale. Equality and inequality between timing values are supported; ordering, arithmetic and numeric 0/1 coercion are rejected. A standalone result displays and copies the active interface-language timing symbol. Ordinary result targeting, grouping and confirmation rules apply.",
       "location": "Timing-argument positions in financial calls and the corresponding inline completion rows.",
       "elementType": "argument_value_symbol"
     },
     "finance.timing.start": {
       "text": "start",
       "meaning": "The beginning of a calculation period for payments or contributions.",
-      "context": "Timing symbol approved in round 22 as the last optional loan or savings argument. Latin is always active and the localized form is active only for that interface locale. End is the default. General typing, binding to variables and use outside the timing argument remain a round-23 proposal; numeric 0/1 aliases are not approved.",
+      "context": "Round 23 accepts timing as a distinct symbolic value. It can be stored in constants and local variables and passed through or returned by user functions. The protected Latin symbols start/end are always available alongside only the active locale. Equality and inequality between timing values are supported; ordering, arithmetic and numeric 0/1 coercion are rejected. A standalone result displays and copies the active interface-language timing symbol. Ordinary result targeting, grouping and confirmation rules apply.",
       "location": "Timing-argument positions in financial calls and the corresponding inline completion rows.",
       "elementType": "argument_value_symbol"
     }

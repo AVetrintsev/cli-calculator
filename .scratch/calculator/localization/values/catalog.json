@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "sourceLanguage": "en",
+  "status": "specification",
+  "coverage": "Two approved logical input literals from round 23. Date/clock names are requested but their exact Latin and localized spellings remain pending in the calendar decision.",
+  "symbols": {
+    "boolean.true": {
+      "text": "true",
+      "meaning": "The true logical input value.",
+      "context": "Input literal accepted in round 23. The Latin spelling is always active; the localized spelling is active only for the current interface locale. Case-sensitive built-in names are protected. These are input symbols, distinct from the localized Yes/No result labels in the main catalog. No implicit numeric coercion or logical arithmetic is allowed.",
+      "location": "Logical-value positions in expressions and inline completion. Result display uses result.boolean.true in the main catalog.",
+      "elementType": "value_literal"
+    },
+    "boolean.false": {
+      "text": "false",
+      "meaning": "The false logical input value.",
+      "context": "Input literal accepted in round 23. The Latin spelling is always active; the localized spelling is active only for the current interface locale. Case-sensitive built-in names are protected. These are input symbols, distinct from the localized Yes/No result labels in the main catalog. No implicit numeric coercion or logical arithmetic is allowed.",
+      "location": "Logical-value positions in expressions and inline completion. Result display uses result.boolean.false in the main catalog.",
+      "elementType": "value_literal"
+    }
+  }
+}

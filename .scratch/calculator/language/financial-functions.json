@@ -18,11 +18,7 @@
     "No implicit rounding of period counts or per-payment rounding to cents.",
     "A timing argument after omitted savings contribution requires an explicit zero contribution."
   ],
-  "unresolved": [
-    "General timing-value typing, variable binding and use outside a finance timing argument.",
-    "Precision source and formatting for copying long rounded percentage results.",
-    "Uniform display policy for standalone percentage literals versus financial percentage outputs."
-  ],
+  "unresolved": [],
   "timingSymbols": [
     "finance.timing.end",
     "finance.timing.start"
@@ -326,5 +322,6 @@
       "model": "nominalRate",
       "resultKind": "percentage"
     }
-  }
+  },
+  "timingValueContract": "value-semantics.md"
 }
