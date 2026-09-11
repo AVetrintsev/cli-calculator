@@ -36,9 +36,10 @@
     "help.precedence.durationNotation",
     "help.precedence.unitPowersHeading",
     "help.precedence.unitPowersRule",
+    "help.precedence.simpleCompoundUnits",
     "help.precedence.spacingHeading",
     "help.precedence.spacingRule",
     "help.precedence.definitionRule"
   ],
-  "acceptedThrough": "expression-language round 21 and contextual-units round 2; alternative-result layout, grouping and simple compound-unit boundaries remain open"
+  "acceptedThrough": "expression-language round 21 and contextual-units round 3; partial alternatives, intermediate dimensions, copy selection and remaining grammar are open"
 }

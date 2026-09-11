@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "sourceLanguage": "en",
   "status": "draft",
-  "coverage": "Fifty-two unit identities; metre and minute intentionally share lowercase m through contextual.json. Two approved explicit aliases have their own catalog and locale files. Adjacent duration components add. Alternative-result grouping and the limited set of compound units remain under discussion.",
+  "coverage": "Fifty-two unit identities; metre and minute intentionally share lowercase m through contextual.json. Two approved explicit aliases have their own catalog and locale files. Adjacent duration components add. Identical-looking answers are grouped for display; simple compound-unit families are selected. Intermediate dimensions and partly valid alternatives remain open.",
   "units": {
     "length.nanometre": {
       "text": "nm",
@@ -42,7 +42,7 @@
     "length.metre": {
       "text": "m",
       "meaning": "The metre, a unit of length.",
-      "context": "Lowercase m is intentionally shared by the metre and minute. Combine the Latin spelling with only the active locale spelling. Lazy resolution uses constraints across the whole expression. If several interpretations remain valid, compute and show all possible answers: 10m / 2s gives 5m/s or the unitless 300. Independent occurrences may resolve differently. Grouping identical-looking results, ordering and selection remain open. Explicit metre and min aliases are declared in aliases.catalog.json.",
+      "context": "Lowercase m is intentionally shared by the metre and minute. Combine the Latin spelling with only the active locale spelling. Lazy resolution uses constraints across the whole expression. If several interpretations remain valid, compute and show all possible answers: 10m / 2s gives 5m/s or the unitless 300. Independent occurrences may resolve differently. Identical-looking results are displayed once without captions while underlying meanings and exact values are retained. Ordering and selection remain open. Explicit metre and min aliases are declared in aliases.catalog.json.",
       "location": "Unit positions in expressions, alternative results and conversion targets. Preserve the meaning of each result independently of its displayed spelling. Square/cube metre shorthand never denotes minutes.",
       "elementType": "unit_symbol",
       "notationPolicy": "contextual",
@@ -86,7 +86,7 @@
     "time.minute": {
       "text": "m",
       "meaning": "The minute, a unit of fixed duration. Its primary lowercase notation is shared with the metre; this does not change the identity or duration of the unit.",
-      "context": "Lowercase m is intentionally shared by the metre and minute. Combine the Latin spelling with only the active locale spelling. Lazy resolution uses constraints across the whole expression. If several interpretations remain valid, compute and show all possible answers: 10m / 2s gives 5m/s or the unitless 300. Independent occurrences may resolve differently. Grouping identical-looking results, ordering and selection remain open. Explicit metre and min aliases are declared in aliases.catalog.json.",
+      "context": "Lowercase m is intentionally shared by the metre and minute. Combine the Latin spelling with only the active locale spelling. Lazy resolution uses constraints across the whole expression. If several interpretations remain valid, compute and show all possible answers: 10m / 2s gives 5m/s or the unitless 300. Independent occurrences may resolve differently. Identical-looking results are displayed once without captions while underlying meanings and exact values are retained. Ordering and selection remain open. Explicit metre and min aliases are declared in aliases.catalog.json.",
       "location": "Unit positions in expressions, alternative results and conversion targets. Preserve the meaning of each result independently of its displayed spelling. Square/cube metre shorthand never denotes minutes.",
       "elementType": "unit_symbol",
       "notationPolicy": "contextual",

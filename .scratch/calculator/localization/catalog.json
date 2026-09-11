@@ -1277,15 +1277,15 @@
     "completion.unit.length.metre.description": {
       "text": "metre",
       "meaning": "Identifies the metre unit, which is one of the candidate meanings of contextual lowercase m.",
-      "context": "Identifies this unit in a completion or interpretation caption. Lowercase m is shared by metre and minute. If multiple meanings remain valid, show all possible answers; a unique meaning is not forced. The explicit metre/min aliases and their selected locale equivalents are approved. Detailed caption layout and identical-looking answer grouping are still being evaluated.",
-      "location": "Description beside a unit suggestion or unit-meaning explanation; final unresolved-state presentation remains under discussion.",
+      "context": "Identifies this unit in the completion menu. Lowercase m is shared by metre and minute; metre/min and the selected locale equivalents are explicit aliases. This description belongs to autocomplete and is not a caption under calculated results. The user removed result captions while retaining descriptions in the completion menu.",
+      "location": "Description beside the unit spelling in its autocomplete suggestion row.",
       "elementType": "description"
     },
     "completion.unit.time.minute.description": {
       "text": "minute",
       "meaning": "Identifies the minute unit, which is one of the candidate meanings of contextual lowercase m.",
-      "context": "Identifies this unit in a completion or interpretation caption. Lowercase m is shared by metre and minute. If multiple meanings remain valid, show all possible answers; a unique meaning is not forced. The explicit metre/min aliases and their selected locale equivalents are approved. Detailed caption layout and identical-looking answer grouping are still being evaluated.",
-      "location": "Description beside a unit suggestion or unit-meaning explanation; final unresolved-state presentation remains under discussion.",
+      "context": "Identifies this unit in the completion menu. Lowercase m is shared by metre and minute; metre/min and the selected locale equivalents are explicit aliases. This description belongs to autocomplete and is not a caption under calculated results. The user removed result captions while retaining descriptions in the completion menu.",
+      "location": "Description beside the unit spelling in its autocomplete suggestion row.",
       "elementType": "description"
     },
     "help.precedence.unitPowersHeading": {
@@ -1296,7 +1296,7 @@
       "elementType": "help_heading"
     },
     "help.precedence.unitPowersRule": {
-      "text": "Typing m2 or m3 automatically displays m² or m³; the active Russian equivalents are м2/м3 and м²/м³. These symbols always mean square or cubic metres, never minutes. The caret ^ raises the entire quantity to a power: 2m2 denotes two square metres; 2m^2 denotes four square metres if m has been resolved as a metre. Complex units such as squared seconds and acceleration are excluded. The precise limited compound-unit inventory and editing boundaries are still being specified.",
+      "text": "Typing m2 or m3 automatically displays m² or m³; the active Russian equivalents are м2/м3 and м²/м³. These symbols always mean square or cubic metres, never minutes. The caret ^ raises the entire quantity to a power: 2m2 denotes two square metres; 2m^2 denotes four square metres if m has been resolved as a metre. Complex units such as squared seconds and acceleration are excluded. Intermediate dimensions before cancellation, unsupported alternatives and editing boundaries are still being specified.",
       "meaning": "Explains the accepted new square-unit input and ordinary caret behavior, without deciding unresolved contextual aliases.",
       "context": "Documentation of accepted contextual-units round 2 decisions: duration sums, all valid alternative answers, explicit aliases and exclusion of complex time-power units. Clauses explicitly marked open do not approve additional grammar, grouping, copy behavior or compound units.",
       "location": "Operator-precedence help page, fragment unitPowersRule. Preserve mathematical notation when translating prose.",
@@ -1317,9 +1317,9 @@
       "elementType": "help_heading"
     },
     "help.precedence.lazyUnitsRule": {
-      "text": "Lowercase m can mean a metre or a minute; the active Russian spelling м follows the same rule. Lazy resolution uses the whole formula, including outer parentheses. If multiple interpretations remain valid, show all possible answers: 10m / 2s gives 5m/s for metres and the unitless 300 for minutes. Explicit metre and min select a meaning directly; the Russian equivalents are метр and мин. Grouping identical-looking answers, their order and copy selection are still being specified.",
+      "text": "Lowercase m can mean a metre or a minute; the active Russian spelling м follows the same rule. Lazy resolution uses the whole formula, including outer parentheses. If multiple interpretations remain valid, show all distinct visible answers: 10m / 2s gives 5m/s or the unitless 300. Identical-looking answers appear once: 2m * 2 displays one 4m. Answers have no interpretation captions and remain in one row with horizontal scrolling when needed. Grouping the display does not discard original meanings or exact values. Explicit metre and min select a unit directly; the Russian equivalents are метр and мин. Ordering and copy selection remain open.",
       "meaning": "Explains that a visible calculated result may retain an unresolved unit symbol instead of forcing a choice.",
-      "context": "Documentation of accepted contextual-units round 2 decisions: duration sums, all valid alternative answers, explicit aliases and exclusion of complex time-power units. Clauses explicitly marked open do not approve additional grammar, grouping, copy behavior or compound units.",
+      "context": "Accepted contextual-units round 3 presentation: group identical-looking formatted answers, omit result captions and use horizontal overflow only. Preserve underlying interpretations and exact values; no default copy selection is approved.",
       "location": "Unit interpretation section in the in-app operator help and its generated documentation previews.",
       "elementType": "help_paragraph"
     },
@@ -1333,27 +1333,23 @@
     "result.alternatives.label": {
       "text": "Possible results",
       "meaning": "Names the collection of valid answers for different interpretations of one expression.",
-      "context": "Accessible label for alternative answers in the approved variant A layout. Reading order, focus behavior, grouping and copy selection remain to be specified.",
-      "location": "Shared horizontal result row below the fixed input, containing values, unit symbols and interpretation captions.",
+      "context": "Accessible label for the approved horizontal row of results. Identical-looking formatted answers appear once; interpretation captions are excluded. Overflow scrolls horizontally without wrapping or vertical expansion. Focus, ordering, copy selection and screen-reader details remain open.",
+      "location": "Single horizontal scrollable result row beneath the fixed input, containing values and unit symbols without interpretation captions.",
       "elementType": "accessible_name"
-    },
-    "result.alternative.interpretation": {
-      "text": "{symbol} → {unit}",
-      "meaning": "Explains the meaning assigned to an ambiguous input symbol in one possible answer.",
-      "context": "Shown under each possible answer in the approved variant A layout. The caption explains the ambiguous symbol using an arrow and a localized unit name. Grouping identical-looking answers, explaining several ambiguous occurrences and copy selection remain open.",
-      "location": "Short subdued caption directly below its corresponding answer in the shared horizontal result row, with a thin vertical divider between neighboring answers.",
-      "elementType": "description",
-      "placeholders": {
-        "symbol": "The original ambiguous symbol from the expression, kept as user data.",
-        "unit": "The localized name of the unit selected by this interpretation."
-      }
     },
     "error.unsupportedUnit": {
       "text": "This unit is not supported",
       "meaning": "Explains that the calculation requires a unit outside the selected product scope.",
-      "context": "Candidate copy for the accepted alternative-result feature and limited unit scope. Layout, result selection and partial failures remain open; the catalog does not approve those behaviors.",
+      "context": "Approved concise diagnostic for an unsupported final unit, such as kg*m, squared seconds or acceleration. Simple compound units are limited to speed, pace and information-transfer rate; area and volume remain supported. Whether to discard one unsupported alternative and when to check intermediate dimensions remain open.",
       "location": "Calculation diagnostic region when a result requires an excluded unit. Behavior when only one of multiple interpretations is unsupported remains open.",
       "elementType": "error_message"
+    },
+    "help.precedence.simpleCompoundUnits": {
+      "text": "Supported compound units are speed (length/time, for example km/h), pace (time/length, min/km) and information-transfer rate (information/time, MB/s). Area and volume remain supported. Final units such as kg*m, s² and m/s² are excluded and produce a short unsupported-unit diagnostic. Intermediate dimensions and partly valid sets of interpretations are still being specified. Temperature retains its separate conversion-only rule.",
+      "meaning": "Defines the limited supported compound-unit families while retaining area and volume.",
+      "context": "Accepted in contextual-units round 3. Do not infer support for arbitrary products or scientific derived units. Intermediate cancellation and filtering of unsupported alternatives remain undecided.",
+      "location": "Unit powers and compound-unit scope section of operator help and generated documentation previews.",
+      "elementType": "help_paragraph"
     }
   }
 }
