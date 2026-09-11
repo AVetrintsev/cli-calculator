@@ -43,5 +43,5 @@
     "help.precedence.spacingRule",
     "help.precedence.definitionRule"
   ],
-  "acceptedThrough": "expression-language round 21, contextual-units round 9 and copying round 1: quick result copy preserves displayed text and rounding; grouped-result eligibility, multiple-answer shortcut behavior and other boundaries remain open"
+  "acceptedThrough": "expression-language round 21, contextual-units round 9 and copying round 2: selected formula text retains unit superscripts, quick numeric result copy omits units, a single displayed entry allows shortcut copy, and multiple entries prompt a choice without changing the clipboard; other boundaries remain open"
 }
