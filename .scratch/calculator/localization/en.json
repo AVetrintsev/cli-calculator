@@ -196,5 +196,6 @@
   "completion.function.max.description": "Largest of two or more values.",
   "error.missingOperator": "Insert an operator here",
   "help.copy.quickRule": "With no text selected, press {shortcut} to copy the only displayed current result. Numeric results copy the displayed number without its unit: 4m copies 4. Rounding, all shown digits, grouping and numeral-system prefixes are preserved. With text selected, the shortcut copies that selection, including its unit text. Click a result to copy it. When several results are displayed, the shortcut leaves the clipboard unchanged and prompts you to choose a result. The calculator stays open, your formula and cursor are preserved, and focus returns to input after a click. Quick copy does not add a history entry.",
-  "copy.chooseResult": "Choose a result"
+  "copy.chooseResult": "Choose a result",
+  "help.confirm.quickRule": "With one ready displayed result in quick mode, press {shortcut} to record the calculation in history, copy the result and immediately start a new empty input. The calculator stays open and the input stays in the same place. Numeric results are copied without units, using the displayed number. Ordinary quick copy keeps your current input and does not add history."
 }

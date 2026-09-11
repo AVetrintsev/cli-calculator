@@ -140,21 +140,21 @@
     "copy.result": {
       "text": "Copy result",
       "meaning": "Copies the targeted valid calculation result.",
-      "context": "Accepted through copying round 2: Ctrl+C on Windows / Cmd+C on macOS in the editor with no text selection copies the single ready displayed result entry, even if that entry groups several interpretations. Click copy targets the clicked entry. Numeric result copy omits the unit: 4m copies 4, and 5m/s copies 5. Preserve displayed numeric rounding, all shown digits, signs, numeral-system prefix/case and grouping; do not copy hidden precision or change working values. Formula selection copies the selected visible text, including units. If multiple displayed entries exist without selection, the shortcut leaves the clipboard unchanged and shows copy.chooseResult. Count all entries after display grouping, including horizontal overflow. Quick copy keeps the window, formula and cursor, restores input focus after a click and creates no history. Missing or stale results cannot be copied; keyboard selection of a particular result remains open.",
+      "context": "Accepted through copying round 2: Ctrl+C on Windows / Cmd+C on macOS in the editor with no text selection copies the single ready displayed result entry, even if that entry groups several interpretations. Click copy targets the clicked entry. Numeric result copy omits the unit: 4m copies 4, and 5m/s copies 5. Preserve displayed numeric rounding, all shown digits, signs, numeral-system prefix/case and grouping; do not copy hidden precision or change working values. Formula selection copies the selected visible text, including units. If multiple displayed entries exist without selection, the shortcut leaves the clipboard unchanged and shows copy.chooseResult. Count all entries after display grouping, including horizontal overflow. Quick copy keeps the window, formula and cursor, restores input focus after a click and creates no history. Missing or stale results cannot be copied; keyboard selection of a particular result remains open. Enter confirmation is a separate accepted action: in quick mode with one ready displayed result, it records history and copies with the same payload rules, then starts empty input while keeping the window open. Enter never accepts a completion suggestion.",
       "location": "Copy action for the current or clicked result. Quick input is in scope; exact targeting in calculation sheets and history remains to be specified.",
       "elementType": "command_label"
     },
     "copy.success": {
       "text": "Result copied",
       "meaning": "Confirms that the clipboard write succeeded.",
-      "context": "Feedback only after a result has actually been written to the clipboard successfully. Quick copy leaves the calculator open, preserves input and cursor, restores input focus after a click and creates no history entry. It must not claim that a formula selection was copied as a result. Exact feedback presentation remains open.",
-      "location": "Brief feedback near the active result; live region for assistive technology.",
+      "context": "Feedback only after a result has actually been written to the clipboard successfully. Ctrl+C/Cmd+C and click quick copy preserve input and add no history. Successful Enter confirmation in quick mode also records the calculation and immediately starts empty input while keeping the window open. This message confirms the clipboard write only; it must not imply that a failed history write succeeded or that a formula selection was copied as a result. Exact feedback presentation and partial-failure behavior remain open.",
+      "location": "Brief copy feedback associated with the input/result region and its accessible live region. Placement after Enter resets the input is to be verified.",
       "elementType": "status_message"
     },
     "copy.error": {
       "text": "Could not copy the result. Try again.",
       "meaning": "Reports that writing the result to the clipboard failed.",
-      "context": "Shown or announced when writing a result to the clipboard fails, including shortcut and click copy actions. It must not claim success. Copying a text selection is a separate operation; exact post-failure interaction remains open.",
+      "context": "Shown or announced only when writing a result to the clipboard fails, including shortcut/click quick copy and the copy step of Enter confirmation. Do not use this message for a history-save failure or claim success. Exact recovery, draft reset and partial-failure behavior are pending in copying round 4; copying a formula selection is a separate operation.",
       "location": "Feedback area near the active result.",
       "elementType": "error_message"
     },
@@ -223,7 +223,7 @@
     "history.title": {
       "text": "History",
       "meaning": "Names the list of past calculations.",
-      "context": "Shown when the history view is expanded.",
+      "context": "Shown when the history view is expanded. Enter confirmation in quick mode with one ready displayed result adds the calculation to history and immediately starts empty input; whether Enter changes the expanded/collapsed history view remains open.",
       "location": "Heading of the history region above the stationary quick input. Initially the newest entry is closest to the input; Arrow Up shifts the list downward into the console and Arrow Down shifts it upward.",
       "elementType": "section_heading"
     },
@@ -258,7 +258,7 @@
     "history.entry.accessibleName": {
       "text": "{expression} equals {result}",
       "meaning": "Announces a historical expression together with its recorded result.",
-      "context": "Read when an existing history entry is selected.",
+      "context": "Read when a history entry is selected. Enter confirmation records a calculation before starting new input; copying only the numeric part to the clipboard does not define the history record. Stored result shape, grouped interpretations and replay behavior remain separate decisions.",
       "location": "Accessible name of a calculation history entry.",
       "elementType": "accessible_name",
       "placeholders": {
@@ -269,7 +269,7 @@
     "history.reuse": {
       "text": "Use this expression",
       "meaning": "Recalls a previous expression for further input.",
-      "context": "Used for a selected history entry. The recalled expression is edited as a copy; the original history entry stays unchanged. Recording the new calculation is specified separately.",
+      "context": "Used for a selected history entry. The recalled expression is edited as a copy and the original entry stays unchanged. Successful Enter confirmation in quick mode with one ready displayed result records the current calculation, copies its result and starts new input. Duplicate/repeat handling remains open.",
       "location": "Actions associated with a history entry.",
       "elementType": "command_label"
     },
@@ -587,21 +587,21 @@
     "settings.copyBehavior.label": {
       "text": "After copying",
       "meaning": "Labels the preferred window behavior after a successful copy.",
-      "context": "Candidate setting for other confirmation/copy commands whose behavior is still open. Accepted quick Ctrl+C/Cmd+C and click copy keep the calculator open and preserve input, without adding history. This draft setting must not silently override that accepted flow; configurable post-copy behavior for other commands is not yet approved.",
+      "context": "Candidate setting for other confirmation/copy commands whose behavior is still open. Ctrl+C/Cmd+C and click quick copy keep the window and current input without adding history. The accepted default Enter confirmation in quick mode keeps the window open but records history and starts empty input. This draft setting must not silently override either flow; modified-Enter and configurable overrides remain undecided.",
       "location": "Label next to the post-copy behavior control.",
       "elementType": "field_label"
     },
     "settings.copyBehavior.keep": {
       "text": "Keep calculator open",
       "meaning": "Leaves the calculator visible after copying.",
-      "context": "Candidate setting for other confirmation/copy commands whose behavior is still open. Accepted quick Ctrl+C/Cmd+C and click copy keep the calculator open and preserve input, without adding history. This draft setting must not silently override that accepted flow; configurable post-copy behavior for other commands is not yet approved.",
+      "context": "Candidate setting for other confirmation/copy commands whose behavior is still open. Ctrl+C/Cmd+C and click quick copy keep the window and current input without adding history. The accepted default Enter confirmation in quick mode keeps the window open but records history and starts empty input. This draft setting must not silently override either flow; modified-Enter and configurable overrides remain undecided.",
       "location": "Option in the post-copy behavior control.",
       "elementType": "select_option"
     },
     "settings.copyBehavior.hide": {
       "text": "Hide calculator",
       "meaning": "Dismisses the calculator after copying succeeds.",
-      "context": "Candidate setting for other confirmation/copy commands whose behavior is still open. Accepted quick Ctrl+C/Cmd+C and click copy keep the calculator open and preserve input, without adding history. This draft setting must not silently override that accepted flow; configurable post-copy behavior for other commands is not yet approved.",
+      "context": "Candidate setting for other confirmation/copy commands whose behavior is still open. Ctrl+C/Cmd+C and click quick copy keep the window and current input without adding history. The accepted default Enter confirmation in quick mode keeps the window open but records history and starts empty input. This draft setting must not silently override either flow; modified-Enter and configurable overrides remain undecided.",
       "location": "Option in the post-copy behavior control.",
       "elementType": "select_option"
     },
@@ -1409,6 +1409,16 @@
       "context": "Approved in copying round 2. Shown briefly when Ctrl+C on Windows or Cmd+C on macOS is pressed in the editor without text selection while more than one current displayed result entry exists. The clipboard is unchanged; no first answer is chosen automatically. A click on a result copies that entry. This is a normal choice state, not a mathematical error. Do not show it for selected formula text or to reinterpret a missing/stale result as a valid answer.",
       "location": "Brief copy feedback associated with the result row; exact placement and keyboard announcement are to be verified without moving the input or adding interpretation captions.",
       "elementType": "status_message"
+    },
+    "help.confirm.quickRule": {
+      "text": "With one ready displayed result in quick mode, press {shortcut} to record the calculation in history, copy the result and immediately start a new empty input. The calculator stays open and the input stays in the same place. Numeric results are copied without units, using the displayed number. Ordinary quick copy keeps your current input and does not add history.",
+      "meaning": "Explains calculation confirmation and its immediate transition to a fresh input, distinguishing it from copying without confirmation.",
+      "context": "Accepted in copying round 3. The default shortcut is Enter in quick mode on both platforms. The user explicitly replaced keeping the old formula with immediately starting new input. The happy path adds history, copies according to existing payload rules and focuses an empty input in the fixed location. The empty draft has no ready result; do not retain or recopy the previous answer as its result. Enter does not accept completion suggestions. The order/atomicity of history and clipboard operations, failure recovery, modified-Enter, multiple-answer confirmation and expanded-mode behavior remain open.",
+      "location": "Calculation confirmation section of application help. This is documentation text, not a new visible button in the quick widget; help entry point remains separate.",
+      "elementType": "help_paragraph",
+      "placeholders": {
+        "shortcut": "The confirmation shortcut in its platform display form; the accepted default is Enter in quick mode on Windows and macOS."
+      }
     }
   }
 }
