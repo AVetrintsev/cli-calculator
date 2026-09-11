@@ -140,7 +140,7 @@
     "copy.result": {
       "text": "Copy result",
       "meaning": "Copies the targeted valid calculation result.",
-      "context": "Accepted through copying round 2: Ctrl+C on Windows / Cmd+C on macOS in the editor with no text selection copies the single ready displayed result entry, even if that entry groups several interpretations. Click copy targets the clicked entry. Numeric result copy omits the unit: 4m copies 4, and 5m/s copies 5. Preserve displayed numeric rounding, all shown digits, signs, numeral-system prefix/case and grouping; do not copy hidden precision or change working values. Formula selection copies the selected visible text, including units. If multiple displayed entries exist while the editor has focus and no text is selected, the shortcut leaves the clipboard unchanged and shows copy.chooseResult. Count all entries after display grouping, including horizontal overflow. Quick copy keeps the window, formula and cursor, restores input focus after a click and creates no history. Missing or stale results of the current input cannot be copied. Round 15 accepts clicking a displayed history answer to copy its saved displayed value without recalculation. Changes to constants or functions do not make that historical answer ineligible; use the saved answer that was clicked, not the currently calculated value or the answer chosen at confirmation. Preserve the current formula and cursor, return focus to input and leave the stored record and confirmation choice unchanged. The same numeric-only and localized logical payload rules apply. Keyboard selection for confirmation was accepted in round 6. Round 14 accepts Ctrl+C/Cmd+C while focus is in the current result row: copy the highlighted ready answer and keep selection and focus there. An inactive text selection retained in the editor does not change this target. The editor copy shortcut retains its accepted behavior. Enter confirmation is a separate accepted action: in quick mode with one ready displayed result, it records history and copies with the same payload rules, then starts empty input while keeping the window open. Enter never accepts a completion suggestion. Round 17 accepts keyboard copy in history opened from an expanded sheet: Up/Down choose a record, Left/Right choose a saved answer and Ctrl+C/Cmd+C copies that answer with the same payload, preserving the sheet and history focus. This is not copying a freshly evaluated sheet expression or recalling its formula; Enter separately inserts the formula.",
+      "context": "Accepted through copying round 2: Ctrl+C on Windows / Cmd+C on macOS in the editor with no text selection copies the single ready displayed result entry, even if that entry groups several interpretations. Click copy targets the clicked entry. Numeric result copy omits the unit: 4m copies 4, and 5m/s copies 5. Preserve displayed numeric rounding, all shown digits, signs, numeral-system prefix/case and grouping; do not copy hidden precision or change working values. Formula selection copies the selected visible text, including units. If multiple displayed entries exist while the editor has focus and no text is selected, the shortcut leaves the clipboard unchanged and shows copy.chooseResult. Count all entries after display grouping, including horizontal overflow. Quick copy keeps the window, formula and cursor, restores input focus after a click and creates no history. Missing or stale results of the current input cannot be copied. Round 15 accepts clicking a displayed history answer to copy its saved displayed value without recalculation. Changes to constants or functions do not make that historical answer ineligible; use the saved answer that was clicked, not the currently calculated value or the answer chosen at confirmation. Preserve the current formula and cursor, return focus to input and leave the stored record and confirmation choice unchanged. The same numeric-only and localized logical payload rules apply. Keyboard selection for confirmation was accepted in round 6. Round 14 accepts Ctrl+C/Cmd+C while focus is in the current result row: copy the highlighted ready answer and keep selection and focus there. An inactive text selection retained in the editor does not change this target. The editor copy shortcut retains its accepted behavior. Enter confirmation is a separate accepted action: in quick mode with one ready displayed result, it records history and copies with the same payload rules, then starts empty input while keeping the window open. Enter never accepts a completion suggestion. Round 17 accepts keyboard copy in history opened from an expanded sheet: Up/Down choose a record, Left/Right choose a saved answer and Ctrl+C/Cmd+C copies that answer with the same payload, preserving the sheet and history focus. This is not copying a freshly evaluated sheet expression or recalling its formula; Enter separately inserts the formula. Round 21 introduces displayed financial ROI percentages. Their clipboard payload is a separate pending round-22 decision; existing unitless numeric-copy examples do not settle copying 30%, 30 or 0.3. No-payback and undefined ROI diagnostics are not ready answers.",
       "location": "Copy action for quick-mode results, clicked saved history answers, and the selected saved answer in history opened from an expanded sheet. Copy targets for freshly calculated sheet expressions remain to be specified.",
       "elementType": "command_label"
     },
@@ -1396,7 +1396,7 @@
     "help.copy.quickRule": {
       "text": "In the quick-mode formula editor with no text selected, press {shortcut} to copy the only displayed current result. Numeric results copy the displayed number without its unit: 4m copies 4. Rounding, all shown digits, grouping and numeral-system prefixes are preserved. With text selected, the shortcut copies that selection, including its unit text. Click a result to copy it. When several results are displayed, the editor has focus and no text is selected, the shortcut leaves the clipboard unchanged and prompts you to choose a result. The calculator stays open, your formula and cursor are preserved, and focus returns to input after a click. Quick copy does not add a history entry.",
       "meaning": "Explains numeric-only result copying, text-selection precedence, the single-entry shortcut condition and choosing among several displayed results.",
-      "context": "Accepted through copying round 2. Supply Ctrl+C on Windows and Cmd+C on macOS. A result must be ready and current. A single displayed entry can group several hidden meanings or rounded working values; copying its displayed number does not choose a hidden interpretation. Count the entire grouped result row, including entries outside the horizontal viewport. With editor focus and multiple entries without text selection, preserve the clipboard and show copy.chooseResult. Unit omission applies to numeric quick-copy results, not selected formula text. Numeric prefixes are not units; localized logical results retain their previously approved displayed text. Keyboard selection for confirmation is described in help.confirm.multipleRule. Round 14 accepts copying the highlighted answer while focus is already in the current result row; see help.copy.focusedResultRule. Text-selection precedence in this paragraph applies only while the editor has focus. Known metre/minute result ordering is accepted in round 16; see help.results.orderRule. Feedback geometry remains to be verified. This fragment does not add interpretation captions. This paragraph is scoped to quick-mode editor focus. Round 18 accepts the separate current-expression target and result-row commands in expanded sheets; see help.sheet.copyRule.",
+      "context": "Accepted through copying round 2. Supply Ctrl+C on Windows and Cmd+C on macOS. A result must be ready and current. A single displayed entry can group several hidden meanings or rounded working values; copying its displayed number does not choose a hidden interpretation. Count the entire grouped result row, including entries outside the horizontal viewport. With editor focus and multiple entries without text selection, preserve the clipboard and show copy.chooseResult. Unit omission applies to numeric quick-copy results, not selected formula text. Numeric prefixes are not units; localized logical results retain their previously approved displayed text. Keyboard selection for confirmation is described in help.confirm.multipleRule. Round 14 accepts copying the highlighted answer while focus is already in the current result row; see help.copy.focusedResultRule. Text-selection precedence in this paragraph applies only while the editor has focus. Known metre/minute result ordering is accepted in round 16; see help.results.orderRule. Feedback geometry remains to be verified. This fragment does not add interpretation captions. This paragraph is scoped to quick-mode editor focus. Round 18 accepts the separate current-expression target and result-row commands in expanded sheets; see help.sheet.copyRule. Round 21 introduces displayed financial ROI percentages. Their clipboard payload is a separate pending round-22 decision; existing unitless numeric-copy examples do not settle copying 30%, 30 or 0.3. No-payback and undefined ROI diagnostics are not ready answers.",
       "location": "Copying section of application help. The help entry point and any compact in-editor hint remain separate interface decisions.",
       "elementType": "help_paragraph",
       "placeholders": {
@@ -1652,7 +1652,7 @@
     "help.sheet.copyRule": {
       "text": "In the sheet editor, Enter inserts a new line. With text selected, {copyShortcut} copies the selection. Without a selection, it copies the only ready displayed answer of the expression containing the cursor. If that expression has several answers, the clipboard stays unchanged and you are prompted to choose a result. Click an answer to copy it. Press {resultShortcut} to copy the current expression’s single answer or focus its result row to choose with Left and Right. In that row, Enter or {resultShortcut} copies the chosen answer and returns to the previous editor cursor; {copyShortcut} copies it while keeping row focus. Escape returns without copying. Typing, paste, Backspace or Delete resumes normal editing at the previous cursor or selection. Numeric answers copy the displayed number without units, preserving shown rounding, digits, sign, grouping and base prefix and case. Logical answers copy their visible localized text. Missing, invalid or stale answers cannot be copied. The sheet stays open and is not cleared. Copying, recalculation and autosave do not add history entries or reset text undo.",
       "meaning": "Explains current-expression copying and result-row focus in an expanded calculation sheet.",
-      "context": "Accepted in round 18, point 1. Supply Ctrl+C and Ctrl+Enter on Windows, Cmd+C and Cmd+Enter on macOS. Count the complete grouped displayed result set of the expression containing the editor cursor, including horizontal overflow, not all sheet results. Preserve underlying meanings when display entries group. Inactive editor selection does not override a focused answer row. The common history records quick-mode confirmations, not sheet copy or autosave. History opened by Alt+Up retains its separate Enter-for-insertion context. Do not inherit quick-mode clearing, hiding or confirmation undo resets. Other row keys, result placement and native focus still need design or verification.",
+      "context": "Accepted in round 18, point 1. Supply Ctrl+C and Ctrl+Enter on Windows, Cmd+C and Cmd+Enter on macOS. Count the complete grouped displayed result set of the expression containing the editor cursor, including horizontal overflow, not all sheet results. Preserve underlying meanings when display entries group. Inactive editor selection does not override a focused answer row. The common history records quick-mode confirmations, not sheet copy or autosave. History opened by Alt+Up retains its separate Enter-for-insertion context. Do not inherit quick-mode clearing, hiding or confirmation undo resets. Other row keys, result placement and native focus still need design or verification. Round 21 introduces displayed financial ROI percentages. Their clipboard payload is a separate pending round-22 decision; existing unitless numeric-copy examples do not settle copying 30%, 30 or 0.3. No-payback and undefined ROI diagnostics are not ready answers.",
       "location": "Expanded-sheet copying section of application help; not a new permanent control in the editor.",
       "elementType": "help_paragraph",
       "placeholders": {
@@ -2125,6 +2125,132 @@
       "placeholders": {
         "name": "The referenced saved definition name, preserving its user-written spelling and case; the stable identity is not translated or displayed as a substitute."
       }
+    },
+    "help.finance.ratesRule": {
+      "text": "The convenient monthly forms use an annual nominal rate and a number of months: 12% annually means 1% for each calculation month. The general forms take a rate per period and a number of periods. Enter rates as ordinary expressions such as 12% or 0.12; the number 12 is not automatically interpreted as 12%. A zero rate is valid. An effective annual rate is not silently treated as a nominal rate, and financial months do not introduce calendar arithmetic.",
+      "meaning": "Explains accepted rate and period conventions for the two financial calculation forms.",
+      "context": "Accepted in round 21, point 1. This is a mathematical input convention, not a claim about every real-world quoted rate. The period-specific rate is the normalized working value used by the model. Function identifiers, signatures, input bounds and dedicated effective/nominal conversion functions remain pending in round 22. Do not introduce m as a month unit or modify the metre/minute grammar.",
+      "location": "Financial help section covering rates and calculation periods.",
+      "elementType": "help_paragraph"
+    },
+    "help.finance.loanRule": {
+      "text": "A loan is fully repaid through equal periodic payments at a constant rate. Payments are at the end of each period by default; the beginning can be specified explicitly. Enter the loan amount as a positive amount; the returned payment is a positive amount too. Separate calculations provide the payment, total repayments and overpayment, which is total repayments minus the loan principal. At a zero rate, the payment is the loan amount divided by the number of payments. Fees and contract-specific rules are not added automatically.",
+      "meaning": "Explains the accepted fully amortizing loan model and positive user-facing monetary magnitudes.",
+      "context": "Accepted in round 21, point 2. Source equations and numerical references are in research/financial-models.md; their spreadsheet cashflow sign convention does not become the application input convention. Separate financial metrics are not competing interpretations in a lazy result row. Overpayment retains its mathematical sign for any allowed inputs producing a negative difference. Exact names, timing tokens and remaining bounds are pending in round 22.",
+      "location": "Financial help section describing loans.",
+      "elementType": "help_paragraph"
+    },
+    "help.finance.savingsRule": {
+      "text": "Calculate savings from an initial amount, a constant rate and an equal contribution each period. The contribution is optional and defaults to zero; the initial amount may also be zero. Contributions occur at the end of the period by default, with the beginning available explicitly. Separate calculations return the accumulated amount and interest earned: the total minus the initial amount and all your contributions. At a zero rate, the total is simply the initial amount plus all contributions.",
+      "meaning": "Explains regular-contribution savings and separates growth from contributed money.",
+      "context": "Accepted in round 21, point 3. Initial and contributed amounts are nonnegative magnitudes. Use the selected period consistently, preserve the separate monthly and general rate conventions, and avoid calendar-date assumptions. The exact optional argument order and timing notation are still proposals; this help does not register a call syntax.",
+      "location": "Financial help section describing savings and compound growth.",
+      "elementType": "help_paragraph"
+    },
+    "help.finance.roiRule": {
+      "text": "Provide the total invested, including costs, and the total returned, including returned capital and additional receipts. Profit is returned money minus invested money. ROI is profit divided by investment, shown as a percentage for the whole period. Investing 100000 and receiving 130000 gives a profit of 30000 and ROI of 30%. Losses and negative ROI are valid, with no automatic annualization. ROI is undefined at zero investment; profit can still be calculated separately. Costs already included in investment are not subtracted again.",
+      "meaning": "Explains whole-period profit and ROI with aggregated investment and return inputs.",
+      "context": "Accepted in round 21, point 4. Returned money includes returned principal so the original investment is subtracted once. This model does not time-weight individual cash flows or annualize the result. Zero investment yields no ready ROI percentage. The clipboard representation of a displayed percentage and exact result-percent propagation are explicitly pending in round 22; do not silently register copying 30, 30% or 0.3 from this text.",
+      "location": "Financial help section describing profit and return on investment.",
+      "elementType": "help_paragraph"
+    },
+    "help.finance.paybackRule": {
+      "text": "Use the initial investment and a constant net cash inflow per period. Net cash flow is cash received minus cash paid. One calculation estimates a fractional payback time for cash arriving evenly within each period; another returns the number of complete periods when the entire payment arrives only at period end. An investment of 100000 with 30000 per period gives 10/3 periods or 4 complete periods, respectively. A positive investment with zero or negative net inflow does not pay back and has no ready numeric answer.",
+      "meaning": "Explains the two explicit simple-payback models and the no-payback state.",
+      "context": "Accepted in round 21, point 5. The two metrics have explicitly chosen meanings, not unexplained alternative results from unit ambiguity. Use net cash flow rather than assuming accounting profit is equivalent. A no-payback message is a diagnostic and not a successful numeric or logical result for clipboard copy. Names, zero-investment behavior and other bounds are pending in round 22.",
+      "location": "Financial help section describing simple payback.",
+      "elementType": "help_paragraph"
+    },
+    "help.finance.precisionRule": {
+      "text": "Financial calculations use the same 30 significant digits and normal result display as other calculations. Each accrual or payment is not secretly rounded to cents. Use round(...; 2) explicitly when you want to round the final expression to two decimal places. Total repayments and earned interest are calculated from working values, not rounded text on screen. This does not create a contract-specific payment schedule with rounding at every step.",
+      "meaning": "Explains shared precision and explicit final rounding in financial models.",
+      "context": "Accepted in round 21, point 6. Preserve the existing display precision and reduced-opacity fractional tail; no hidden financial display or per-payment cent rounding is introduced. round is an already accepted mathematical function, while the ellipsis denotes a documentation placeholder rather than literal parser syntax. Source reference simulations illustrate that per-step rounding differs; they do not define a bank contract. Numerical algorithms, libraries and performance remain technical work.",
+      "location": "Financial accuracy and rounding section of application help.",
+      "elementType": "help_paragraph"
+    },
+    "help.finance.conditionsRule": {
+      "text": "Monetary inputs are amounts in one currency. Exchange rates, taxes, fees and rules of a particular bank are not inserted automatically. Include the expenses and conditions you need through explicit expressions, your own functions or a calculation sheet.",
+      "meaning": "Explains the boundary between built-in financial models and user-supplied conditions.",
+      "context": "Accepted in round 21, point 7. This is product behavior, not financial advice or a new warning flow. No live currency data or bank integration is implied. Preserve user-defined calculations and the separately accepted physical-unit conversion features. Calendar arithmetic remains outside scope under the earlier language decision.",
+      "location": "Financial model scope section of application help.",
+      "elementType": "help_paragraph"
+    },
+    "completion.finance.loanPayment.description": {
+      "text": "Equal periodic loan payment.",
+      "meaning": "Describes the regular positive payment amount for a fully repaid loan.",
+      "context": "English source text for the financial model accepted in round 21. Function identifiers, localized aliases and concrete signatures remain unapproved round-22 proposals; this description does not register an identifier. Bind it to the appropriate approved monthly or periodic signature only after naming is settled. Financial metrics are separate calculations, not interpretation captions in the result row.",
+      "location": "After the financial function signature in its future completion row, separated by a gap; use the approved same-size lighter and translucent description styling. No extra result caption is introduced.",
+      "elementType": "description"
+    },
+    "completion.finance.loanTotal.description": {
+      "text": "Total of all loan payments.",
+      "meaning": "Describes total repayments calculated from working payment values.",
+      "context": "English source text for the financial model accepted in round 21. Function identifiers, localized aliases and concrete signatures remain unapproved round-22 proposals; this description does not register an identifier. Bind it to the appropriate approved monthly or periodic signature only after naming is settled. Financial metrics are separate calculations, not interpretation captions in the result row.",
+      "location": "After the financial function signature in its future completion row, separated by a gap; use the approved same-size lighter and translucent description styling. No extra result caption is introduced.",
+      "elementType": "description"
+    },
+    "completion.finance.loanOverpayment.description": {
+      "text": "Total repayments minus the loan principal.",
+      "meaning": "Describes overpayment as the signed difference from principal.",
+      "context": "English source text for the financial model accepted in round 21. Function identifiers, localized aliases and concrete signatures remain unapproved round-22 proposals; this description does not register an identifier. Bind it to the appropriate approved monthly or periodic signature only after naming is settled. Financial metrics are separate calculations, not interpretation captions in the result row.",
+      "location": "After the financial function signature in its future completion row, separated by a gap; use the approved same-size lighter and translucent description styling. No extra result caption is introduced.",
+      "elementType": "description"
+    },
+    "completion.finance.savingsTotal.description": {
+      "text": "Accumulated amount including your contributions.",
+      "meaning": "Describes accumulated savings from an initial amount and periodic contributions.",
+      "context": "English source text for the financial model accepted in round 21. Function identifiers, localized aliases and concrete signatures remain unapproved round-22 proposals; this description does not register an identifier. Bind it to the appropriate approved monthly or periodic signature only after naming is settled. Financial metrics are separate calculations, not interpretation captions in the result row.",
+      "location": "After the financial function signature in its future completion row, separated by a gap; use the approved same-size lighter and translucent description styling. No extra result caption is introduced.",
+      "elementType": "description"
+    },
+    "completion.finance.savingsInterest.description": {
+      "text": "Accumulated amount minus your initial sum and contributions.",
+      "meaning": "Describes monetary interest earned rather than the gross balance.",
+      "context": "English source text for the financial model accepted in round 21. Function identifiers, localized aliases and concrete signatures remain unapproved round-22 proposals; this description does not register an identifier. Bind it to the appropriate approved monthly or periodic signature only after naming is settled. Financial metrics are separate calculations, not interpretation captions in the result row.",
+      "location": "After the financial function signature in its future completion row, separated by a gap; use the approved same-size lighter and translucent description styling. No extra result caption is introduced.",
+      "elementType": "description"
+    },
+    "completion.finance.profit.description": {
+      "text": "Total returned minus total invested, including costs.",
+      "meaning": "Describes monetary profit from the agreed aggregated inputs.",
+      "context": "English source text for the financial model accepted in round 21. Function identifiers, localized aliases and concrete signatures remain unapproved round-22 proposals; this description does not register an identifier. Bind it to the appropriate approved monthly or periodic signature only after naming is settled. Financial metrics are separate calculations, not interpretation captions in the result row.",
+      "location": "After the financial function signature in its future completion row, separated by a gap; use the approved same-size lighter and translucent description styling. No extra result caption is introduced.",
+      "elementType": "description"
+    },
+    "completion.finance.roi.description": {
+      "text": "Profit as a percentage of investment for the whole period.",
+      "meaning": "Describes whole-period ROI without automatic annualization.",
+      "context": "English source text for the financial model accepted in round 21. Function identifiers, localized aliases and concrete signatures remain unapproved round-22 proposals; this description does not register an identifier. Bind it to the appropriate approved monthly or periodic signature only after naming is settled. Financial metrics are separate calculations, not interpretation captions in the result row.",
+      "location": "After the financial function signature in its future completion row, separated by a gap; use the approved same-size lighter and translucent description styling. No extra result caption is introduced.",
+      "elementType": "description"
+    },
+    "completion.finance.paybackEstimate.description": {
+      "text": "Fractional payback estimate for an even net cash inflow.",
+      "meaning": "Describes estimated payback with within-period cash arrival.",
+      "context": "English source text for the financial model accepted in round 21. Function identifiers, localized aliases and concrete signatures remain unapproved round-22 proposals; this description does not register an identifier. Bind it to the appropriate approved monthly or periodic signature only after naming is settled. Financial metrics are separate calculations, not interpretation captions in the result row.",
+      "location": "After the financial function signature in its future completion row, separated by a gap; use the approved same-size lighter and translucent description styling. No extra result caption is introduced.",
+      "elementType": "description"
+    },
+    "completion.finance.paybackWholePeriods.description": {
+      "text": "Complete periods until period-end cash receipts cover investment.",
+      "meaning": "Describes discrete end-of-period payback rather than interpolation.",
+      "context": "English source text for the financial model accepted in round 21. Function identifiers, localized aliases and concrete signatures remain unapproved round-22 proposals; this description does not register an identifier. Bind it to the appropriate approved monthly or periodic signature only after naming is settled. Financial metrics are separate calculations, not interpretation captions in the result row.",
+      "location": "After the financial function signature in its future completion row, separated by a gap; use the approved same-size lighter and translucent description styling. No extra result caption is introduced.",
+      "elementType": "description"
+    },
+    "finance.notRepaid": {
+      "text": "Does not pay back",
+      "meaning": "Reports that a positive investment cannot be recovered by the supplied nonpositive constant net cash flow.",
+      "context": "Accepted in round 21, point 5. Use when initial investment is positive and constant net inflow is zero or negative. There is no ready numeric answer to copy; do not return a negative period count or treat this diagnostic as a logical Yes/No result. Zero-investment behavior remains a round-22 proposal.",
+      "location": "Diagnostic area for the affected financial expression or sheet line.",
+      "elementType": "error_message"
+    },
+    "finance.roi.zeroInvestment": {
+      "text": "ROI is undefined when investment is zero.",
+      "meaning": "Explains why the agreed ROI ratio has no result at zero investment.",
+      "context": "Accepted in round 21, point 4. Do not expose a stale or made-up percent result. Profit is a separate difference calculation and is not blocked solely by this ROI condition. Function aliases and additional input bounds remain pending.",
+      "location": "Diagnostic area for the affected ROI expression or sheet line.",
+      "elementType": "error_message"
     }
   }
 }
