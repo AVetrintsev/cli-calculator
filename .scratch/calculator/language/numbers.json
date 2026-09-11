@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "status": "specification",
   "sourceDecision": "../issues/04-expression-language.md",
-  "acceptedThrough": "round 26; earlier accepted numeric and percentage-copy rules remain applicable",
+  "acceptedThrough": "round 27: typed numeric behavior, approximate-zero interactions and percentage-left addition; remaining special operations pending round 28",
   "domain": "real numbers",
   "input": {
     "maximumSignificantDigits": 30,
@@ -43,7 +43,21 @@
       "approximatelyZeroMessageKey": "result.approximateZero",
       "approximatelyZeroWorkingValue": "retain the original nonzero working value for downstream calculations",
       "calendarTimeRoundingChanged": false,
-      "copyConfirmationAndSuffixPolicy": "pending round 27; do not infer it from the display-only correction"
+      "readyResult": true,
+      "copy": "0; omit approximation sign, units and percent sign",
+      "confirmation": "ordinary quick confirmation; save true working value and shown approximation; clear/start new input only after success",
+      "modifiedConfirmation": "ordinary quick confirmation-and-hide after success",
+      "suffix": "retain the ordinary unit or percentage suffix in display",
+      "groupWithExactZero": false,
+      "groupIdenticalApproximateEntries": "existing display grouping with all latent typed values retained",
+      "selectionCopy": "literal selected text",
+      "copyScopes": [
+        "quick results",
+        "sheet results",
+        "focused results",
+        "historical results",
+        "confirmation"
+      ]
     }
   },
   "percentages": {
@@ -52,16 +66,27 @@
     "ordinaryFractionAutomaticallyBecomesRate": false,
     "ratePlusOrMinusRate": "add or subtract rates; preserve percentage kind",
     "numberPlusOrMinusRightHandRate": "relative increase or decrease",
-    "multiplyOrDivideWithNumbersOrRates": "calculate with numeric fractions; return ordinary number without percentage kind",
+    "multiplyOrDivideWithNumbersOrRates": "special rule when both operands are ordinary numbers or percentages: calculate with numeric fractions and return an ordinary number without percentage kind",
     "directStoredRate": "preserve percentage kind when storing or passing by name",
     "financeRateOutputs": "remain percentage values",
     "copy": "divide displayed coefficient exactly by 100; no hidden digits or another rounding",
-    "changedExample": "200 + 10% * 2 = 200.2; write 200 + (10 * 2)% for 240"
+    "changedExample": "200 + 10% * 2 = 200.2; write 200 + (10 * 2)% for 240",
+    "leftHandRatePlusOrMinusOrdinaryNumber": "operate on the numerical fraction and return an ordinary number; 10% + 200 = 200.1; 10% - 200 = -199.9",
+    "overridePriority": "an applicable percentage-specific operation takes precedence over the other operand type handler; retain original left/right operand order"
   },
   "unresolved": [
-    "Approximately-zero copy/confirmation, suffixes and distinction from exact-zero display.",
-    "Percentage handling by remaining math functions, powers and unary operations.",
-    "Mixed addition/subtraction with a percentage on the left and an ordinary number on the right."
+    "Whether round/floor/ceil override the inherited reference-number behavior for displayed coefficients.",
+    "Root dimensional rules and percentage power/root overrides.",
+    "Addition/subtraction of measured quantities with ordinary numbers, and quantity/percentage combinations.",
+    "min/max selection preservation and domain/result rules for logarithmic and trigonometric functions."
   ],
-  "implementationDecisions": "../issues/09-shared-core-and-shells.md"
+  "implementationDecisions": "../issues/09-shared-core-and-shells.md",
+  "typedValueContract": "typed-values.md",
+  "typedNumericBehavior": {
+    "base": "numeric types inherit common operations on a reference number",
+    "defaultResult": "same type with transformed reference number and retained presentation context",
+    "abs": "type preserving; abs(-1cm) = 1cm and abs(-50%) = 50%",
+    "typeSpecificRules": "can constrain applicability or override combined operation and result type",
+    "explicitEarlierOverrides": "remain applicable; in particular ordinary-number/percentage multiplication and division from round 26"
+  }
 }
