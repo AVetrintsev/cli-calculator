@@ -43,5 +43,5 @@
     "help.precedence.spacingRule",
     "help.precedence.definitionRule"
   ],
-  "acceptedThrough": "expression-language round 21 and contextual-units round 9; pasted formula text uses the same superscript formatting, one undo restores the whole paste, and selected formula text copies visible superscripts; result-copy serialization and other boundaries remain open"
+  "acceptedThrough": "expression-language round 21, contextual-units round 9 and copying round 1: quick result copy preserves displayed text and rounding; grouped-result eligibility, multiple-answer shortcut behavior and other boundaries remain open"
 }

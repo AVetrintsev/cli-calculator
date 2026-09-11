@@ -28,14 +28,14 @@
     "result.boolean.true": {
       "text": "Yes",
       "meaning": "Displays a logical result whose value is true.",
-      "context": "Used when the current valid calculation produces a logical value, such as 5 > 3. This is display text; accepted input literals and clipboard serialization are specified separately.",
+      "context": "Used when the current valid calculation produces a logical value, such as 5 > 3. This is display text; accepted input literals remain separate. Quick result copy preserves the displayed localized text.",
       "location": "The active calculation result, directly below quick input or in the result area associated with an expression in a calculation sheet.",
       "elementType": "result_value"
     },
     "result.boolean.false": {
       "text": "No",
       "meaning": "Displays a logical result whose value is false.",
-      "context": "Used when the current valid calculation produces a logical value, such as 5 < 3. This is a valid result, not an error or a missing result. Accepted input literals and clipboard serialization are specified separately.",
+      "context": "Used when the current valid calculation produces a logical value, such as 5 < 3. This is a valid result, not an error or a missing result. Accepted input literals remain separate. Quick result copy preserves the displayed localized text.",
       "location": "The active calculation result, directly below quick input or in the result area associated with an expression in a calculation sheet.",
       "elementType": "result_value"
     },
@@ -70,28 +70,28 @@
     "completion.unit.squareMetre.description": {
       "text": "square metre",
       "meaning": "Identifies a square metre as a unit of area.",
-      "context": "Shown when this area or volume unit is offered as a completion. Tab inserts the displayed superscript unit symbol. Contextual-units round 8 extends shorthand 2/3 formatting to every known length symbol, including explicit length aliases, but only to whole symbols; a longer name prefix must not be rewritten. Backspace deletes the exponent and formatting adds no separate undo step. m2/m3 never denote minutes. A caret raises a whole quantity and is not an equivalent completion spelling. Pasted formula text follows the same formatting and has one undo for the entire paste; selected formula text is copied with visible ²/³ characters. Result-copy formatting remains open.",
+      "context": "Shown when this area or volume unit is offered as a completion. Tab inserts the displayed superscript unit symbol. Contextual-units round 8 extends shorthand 2/3 formatting to every known length symbol, including explicit length aliases, but only to whole symbols; a longer name prefix must not be rewritten. Backspace deletes the exponent and formatting adds no separate undo step. m2/m3 never denote minutes. A caret raises a whole quantity and is not an equivalent completion spelling. Pasted formula text follows the same formatting and has one undo for the entire paste; selected formula text is copied with visible ²/³ characters. Quick result copy preserves displayed text, including superscripts and rounding; other copy commands remain open.",
       "location": "Immediately after the unit spelling in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
       "elementType": "description"
     },
     "completion.unit.cubicMetre.description": {
       "text": "cubic metre",
       "meaning": "Identifies a cubic metre as a unit of volume.",
-      "context": "Shown when this area or volume unit is offered as a completion. Tab inserts the displayed superscript unit symbol. Contextual-units round 8 extends shorthand 2/3 formatting to every known length symbol, including explicit length aliases, but only to whole symbols; a longer name prefix must not be rewritten. Backspace deletes the exponent and formatting adds no separate undo step. m2/m3 never denote minutes. A caret raises a whole quantity and is not an equivalent completion spelling. Pasted formula text follows the same formatting and has one undo for the entire paste; selected formula text is copied with visible ²/³ characters. Result-copy formatting remains open.",
+      "context": "Shown when this area or volume unit is offered as a completion. Tab inserts the displayed superscript unit symbol. Contextual-units round 8 extends shorthand 2/3 formatting to every known length symbol, including explicit length aliases, but only to whole symbols; a longer name prefix must not be rewritten. Backspace deletes the exponent and formatting adds no separate undo step. m2/m3 never denote minutes. A caret raises a whole quantity and is not an equivalent completion spelling. Pasted formula text follows the same formatting and has one undo for the entire paste; selected formula text is copied with visible ²/³ characters. Quick result copy preserves displayed text, including superscripts and rounding; other copy commands remain open.",
       "location": "Immediately after the unit spelling in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
       "elementType": "description"
     },
     "completion.unit.squareCentimetre.description": {
       "text": "square centimetre",
       "meaning": "Identifies a square centimetre as a unit of area.",
-      "context": "Shown when this area or volume unit is offered as a completion. Tab inserts the displayed superscript unit symbol. Contextual-units round 8 extends shorthand 2/3 formatting to every known length symbol, including explicit length aliases, but only to whole symbols; a longer name prefix must not be rewritten. Backspace deletes the exponent and formatting adds no separate undo step. m2/m3 never denote minutes. A caret raises a whole quantity and is not an equivalent completion spelling. Pasted formula text follows the same formatting and has one undo for the entire paste; selected formula text is copied with visible ²/³ characters. Result-copy formatting remains open.",
+      "context": "Shown when this area or volume unit is offered as a completion. Tab inserts the displayed superscript unit symbol. Contextual-units round 8 extends shorthand 2/3 formatting to every known length symbol, including explicit length aliases, but only to whole symbols; a longer name prefix must not be rewritten. Backspace deletes the exponent and formatting adds no separate undo step. m2/m3 never denote minutes. A caret raises a whole quantity and is not an equivalent completion spelling. Pasted formula text follows the same formatting and has one undo for the entire paste; selected formula text is copied with visible ²/³ characters. Quick result copy preserves displayed text, including superscripts and rounding; other copy commands remain open.",
       "location": "Immediately after the unit spelling in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
       "elementType": "description"
     },
     "completion.unit.cubicCentimetre.description": {
       "text": "cubic centimetre",
       "meaning": "Identifies a cubic centimetre as a unit of volume.",
-      "context": "Shown when this area or volume unit is offered as a completion. Tab inserts the displayed superscript unit symbol. Contextual-units round 8 extends shorthand 2/3 formatting to every known length symbol, including explicit length aliases, but only to whole symbols; a longer name prefix must not be rewritten. Backspace deletes the exponent and formatting adds no separate undo step. m2/m3 never denote minutes. A caret raises a whole quantity and is not an equivalent completion spelling. Pasted formula text follows the same formatting and has one undo for the entire paste; selected formula text is copied with visible ²/³ characters. Result-copy formatting remains open.",
+      "context": "Shown when this area or volume unit is offered as a completion. Tab inserts the displayed superscript unit symbol. Contextual-units round 8 extends shorthand 2/3 formatting to every known length symbol, including explicit length aliases, but only to whole symbols; a longer name prefix must not be rewritten. Backspace deletes the exponent and formatting adds no separate undo step. m2/m3 never denote minutes. A caret raises a whole quantity and is not an equivalent completion spelling. Pasted formula text follows the same formatting and has one undo for the entire paste; selected formula text is copied with visible ²/³ characters. Quick result copy preserves displayed text, including superscripts and rounding; other copy commands remain open.",
       "location": "Immediately after the unit spelling in the same suggestion row, separated by a gap. Same font size, lighter weight and reduced opacity, without column or right-edge alignment.",
       "elementType": "description"
     },
@@ -140,14 +140,14 @@
     "copy.result": {
       "text": "Copy result",
       "meaning": "Copies the targeted valid calculation result.",
-      "context": "The user requested Ctrl+C in the formula editor when no text is selected and the current formula has a ready unambiguous result, plus copying a result by clicking it. A text selection uses ordinary text copy. Clicking a distinct result targets that entry, not the first answer. Do not copy a stale or missing result. macOS mapping, post-copy behavior, serialization and the definition of ambiguity for visually grouped results remain open; no hidden interpretation is selected by this label.",
+      "context": "Accepted quick-copy actions: Ctrl+C on Windows or Cmd+C on macOS in the formula editor when no text is selected and the current formula has a ready unambiguous result; clicking a result targets that visible entry. A text selection uses ordinary text copy. Copy the displayed result text with its displayed rounding, all shown digits, units, signs, numeral-system prefixes and grouping, not hidden working precision. After success, keep the window, formula and cursor, return focus to input after a click, and do not create a history entry. Do not copy a stale or missing result. Ambiguity for visually grouped results and keyboard behavior for multiple distinct answers remain open; copying display text does not select a hidden interpretation.",
       "location": "Copy action for the current or clicked result. Quick input is in scope; exact targeting in calculation sheets and history remains to be specified.",
       "elementType": "command_label"
     },
     "copy.success": {
       "text": "Result copied",
       "meaning": "Confirms that the clipboard write succeeded.",
-      "context": "Feedback only after a result has actually been written to the clipboard successfully, including the accepted shortcut and click copy actions. It must not claim that a formula selection was copied as a result. Exact presentation and post-copy window behavior remain open.",
+      "context": "Feedback only after a result has actually been written to the clipboard successfully. Quick copy leaves the calculator open, preserves input and cursor, restores input focus after a click and creates no history entry. It must not claim that a formula selection was copied as a result. Exact feedback presentation remains open.",
       "location": "Brief feedback near the active result; live region for assistive technology.",
       "elementType": "status_message"
     },
@@ -556,7 +556,7 @@
     "settings.shortcuts.copy": {
       "text": "Copy result",
       "meaning": "Labels the combination used to copy a result.",
-      "context": "Existing candidate setting for the result-copy combination. The user has requested Ctrl+C without text selection for a ready unambiguous result; platform mapping and whether this specific shortcut can be reconfigured remain open. Do not add a new enable/disable switch merely because the user called quick copy an option.",
+      "context": "Existing candidate setting for the result-copy combination. Accepted quick-copy bindings are Ctrl+C on Windows and Cmd+C on macOS, without text selection and for a ready unambiguous result. Whether this specific shortcut can be reconfigured remains open. The word option in the user request does not approve a new enable/disable switch.",
       "location": "Label next to the copy shortcut control.",
       "elementType": "field_label"
     },
@@ -587,21 +587,21 @@
     "settings.copyBehavior.label": {
       "text": "After copying",
       "meaning": "Labels the preferred window behavior after a successful copy.",
-      "context": "Draft setting pending agreement on the copying flow.",
+      "context": "Candidate setting for other confirmation/copy commands whose behavior is still open. Accepted quick Ctrl+C/Cmd+C and click copy keep the calculator open and preserve input, without adding history. This draft setting must not silently override that accepted flow; configurable post-copy behavior for other commands is not yet approved.",
       "location": "Label next to the post-copy behavior control.",
       "elementType": "field_label"
     },
     "settings.copyBehavior.keep": {
       "text": "Keep calculator open",
       "meaning": "Leaves the calculator visible after copying.",
-      "context": "Draft choice if post-copy window behavior is configurable.",
+      "context": "Candidate setting for other confirmation/copy commands whose behavior is still open. Accepted quick Ctrl+C/Cmd+C and click copy keep the calculator open and preserve input, without adding history. This draft setting must not silently override that accepted flow; configurable post-copy behavior for other commands is not yet approved.",
       "location": "Option in the post-copy behavior control.",
       "elementType": "select_option"
     },
     "settings.copyBehavior.hide": {
       "text": "Hide calculator",
       "meaning": "Dismisses the calculator after copying succeeds.",
-      "context": "Draft choice if post-copy window behavior is configurable.",
+      "context": "Candidate setting for other confirmation/copy commands whose behavior is still open. Accepted quick Ctrl+C/Cmd+C and click copy keep the calculator open and preserve input, without adding history. This draft setting must not silently override that accepted flow; configurable post-copy behavior for other commands is not yet approved.",
       "location": "Option in the post-copy behavior control.",
       "elementType": "select_option"
     },
@@ -1291,14 +1291,14 @@
     "help.precedence.unitPowersHeading": {
       "text": "## Unit powers and quantity powers",
       "meaning": "Introduces the distinction between a superscript unit and exponentiation of a complete quantity.",
-      "context": "Operator-help heading for known length-unit shorthand, quantity powers, whole-symbol formatting boundaries, Backspace and undo through contextual-units round 9, including pasted-text formatting and visible formula text on the clipboard. Result-copy formatting remains open.",
+      "context": "Operator-help heading for known length-unit shorthand, quantity powers, whole-symbol formatting boundaries, Backspace and undo through contextual-units round 9, including pasted-text formatting and visible formula text on the clipboard. Quick result copy preserves displayed text under copying round 1; other copy commands remain open.",
       "location": "Operator-precedence help page, fragment unitPowersHeading. Preserve mathematical notation when translating prose.",
       "elementType": "help_heading"
     },
     "help.precedence.unitPowersRule": {
-      "text": "A final 2 or 3 on a complete known length-unit symbol automatically displays as a superscript: cm2 becomes cm², мм3 becomes мм³, ft2 becomes ft² and metre2 becomes metre². The same rule applies to explicit length aliases and to the Latin baseline plus one active locale. m2/m3 and м2/м3 always mean square/cubic metres, never minutes. Do not format a prefix of a longer name: m20 and m2rate remain unchanged; continuing the word removes the superscript formatting. Backspace immediately after m² deletes only the exponent, leaving m. Undo restores the preceding user input without an extra step for automatic formatting. Pasted formula text receives the same formatting as typed text: 2cm2 + 3cm2 displays as 2cm² + 3cm². One undo restores the state before the entire paste. Copying selected formula text puts the visible text on the clipboard, including actual ²/³ characters. This is separate from result-copy formatting, which is still being specified. The caret ^ raises the entire quantity to a power: 2m2 denotes two square metres; 2m^2 leaves the supported answer 4m², discarding the squared-minutes interpretation. Unit support is checked after final cancellation. Shorthand autoformatting is not extended to time, mass or other dimensions.",
+      "text": "A final 2 or 3 on a complete known length-unit symbol automatically displays as a superscript: cm2 becomes cm², мм3 becomes мм³, ft2 becomes ft² and metre2 becomes metre². The same rule applies to explicit length aliases and to the Latin baseline plus one active locale. m2/m3 and м2/м3 always mean square/cubic metres, never minutes. Do not format a prefix of a longer name: m20 and m2rate remain unchanged; continuing the word removes the superscript formatting. Backspace immediately after m² deletes only the exponent, leaving m. Undo restores the preceding user input without an extra step for automatic formatting. Pasted formula text receives the same formatting as typed text: 2cm2 + 3cm2 displays as 2cm² + 3cm². One undo restores the state before the entire paste. Copying selected formula text puts the visible text on the clipboard, including actual ²/³ characters. Quick result copy also preserves its displayed text, including superscripts and displayed rounding, without changing the working value. The caret ^ raises the entire quantity to a power: 2m2 denotes two square metres; 2m^2 leaves the supported answer 4m², discarding the squared-minutes interpretation. Unit support is checked after final cancellation. Shorthand autoformatting is not extended to time, mass or other dimensions.",
       "meaning": "Explains square/cube shorthand for all known length symbols, its whole-symbol boundary and editing behavior, while distinguishing quantity exponentiation.",
-      "context": "Accepted through contextual-units round 9. Known length symbols include explicit metre/метр aliases and follow Latin-plus-one-active-locale availability. Formatting is based on a complete unit symbol, not a substring replacement inside an arbitrary name. The display rule does not approve the semantic parsing of m20 or choose a storage format. Round 9 approves identical formatting for pasted formula text, one undo for the entire paste and visible superscript characters when copying selected formula text. Backspace deletes the exponent and formatting adds no separate undo step. The metre/minute ambiguity is absent from square/cube unit shorthand. Result-copy formatting, other editing boundaries, stored-name conflicts and other branch-error policies remain open.",
+      "context": "Accepted through contextual-units round 9. Known length symbols include explicit metre/метр aliases and follow Latin-plus-one-active-locale availability. Formatting is based on a complete unit symbol, not a substring replacement inside an arbitrary name. The display rule does not approve the semantic parsing of m20 or choose a storage format. Round 9 approves identical formatting for pasted formula text, one undo for the entire paste and visible superscript characters when copying selected formula text. Backspace deletes the exponent and formatting adds no separate undo step. The metre/minute ambiguity is absent from square/cube unit shorthand. Copying round 1 also preserves displayed text for quick result copy, without changing working precision. Other copy commands, editing boundaries, stored-name conflicts and branch-error policies remain open.",
       "location": "Operator-precedence help page, fragment unitPowersRule. Preserve mathematical notation when translating prose.",
       "elementType": "help_paragraph"
     },
@@ -1333,7 +1333,7 @@
     "result.alternatives.label": {
       "text": "Possible results",
       "meaning": "Names the collection of valid answers for different interpretations of one expression.",
-      "context": "Accessible label for the approved horizontal row of results. Identical-looking formatted answers appear once; interpretation captions are excluded. Overflow scrolls horizontally without wrapping or vertical expansion. Clicking a result is an accepted copy action targeting that visible entry. Shortcut copy requires a ready unambiguous result without text selection; grouped-entry ambiguity, serialization, focus, ordering and screen-reader details remain open.",
+      "context": "Accessible label for the approved horizontal row of results. Identical-looking formatted answers appear once, without interpretation captions. Overflow scrolls horizontally without wrapping or expansion. Clicking an entry copies its displayed text. Ctrl+C on Windows / Cmd+C on macOS require a ready unambiguous result without text selection. Quick copy preserves the open window and input, restores input focus after a click and adds no history. Grouped-entry ambiguity, multiple-answer shortcut behavior, result ordering and other keyboard/screen-reader details remain open.",
       "location": "Single horizontal scrollable result row beneath the fixed input, containing values and unit symbols without interpretation captions.",
       "elementType": "accessible_name"
     },
@@ -1394,9 +1394,9 @@
       "elementType": "error_message"
     },
     "help.copy.quickRule": {
-      "text": "With no text selected, press {shortcut} to copy the current unambiguous result. With text selected, the same shortcut copies that selection. Click a result to copy it.",
+      "text": "With no text selected, press {shortcut} to copy the current unambiguous result. With text selected, the same shortcut copies that selection. Click a result to copy it. Quick copy uses the displayed text, including rounding, all shown digits, units and numeral-system notation. The calculator stays open, your formula and cursor are preserved, and focus returns to input after a click. Quick copy does not add a history entry.",
       "meaning": "Explains when the copy shortcut copies the calculation result rather than selected formula text, and describes copying a clicked result.",
-      "context": "The shortcut-without-selection and click actions were explicitly requested by the user. A result must be ready and current. Selected formula text copies its visible ²/³ characters. Supply the approved platform shortcut; Windows Ctrl+C is accepted and macOS mapping remains pending. Result serialization, post-copy behavior and ambiguity of visually grouped answers remain open. This fragment does not imply a new visible caption beneath each answer.",
+      "context": "Accepted through copying round 1. Supply Ctrl+C on Windows and Cmd+C on macOS. A result must be ready and current. Formula selection copies visible text with actual ²/³ characters. Quick result copy likewise uses displayed text, including grouping and rounded trailing digits, rather than hidden precision; styling is not clipboard text. Working values and underlying interpretations are preserved. Eligibility for visually grouped results and shortcut behavior with multiple distinct answers remain open. No new result caption is implied.",
       "location": "Copying section of application help. The help entry point and any compact in-editor hint remain separate interface decisions.",
       "elementType": "help_paragraph",
       "placeholders": {
