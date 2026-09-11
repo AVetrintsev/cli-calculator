@@ -43,5 +43,5 @@
     "help.precedence.spacingRule",
     "help.precedence.definitionRule"
   ],
-  "acceptedThrough": "expression-language round 21 and contextual-units round 7; compound durations form one value for outer operators, incomplete trailing components have a blank result, and a following quantity of another dimension requires an operator; other errors, copy selection and remaining grammar are open"
+  "acceptedThrough": "expression-language round 21 and contextual-units round 8; square/cube shorthand formatting covers all known length symbols and explicit aliases, only whole symbols, with agreed Backspace and undo behavior; formula paste/copy, other errors and remaining grammar are open"
 }
