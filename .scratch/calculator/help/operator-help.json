@@ -43,5 +43,5 @@
     "help.precedence.spacingRule",
     "help.precedence.definitionRule"
   ],
-  "acceptedThrough": "expression-language round 21 and contextual-units round 5; min implies one minute without a coefficient for a single expression, incomplete and missing arguments are distinguished, min/max require two arguments; other errors, copy selection and remaining grammar are open"
+  "acceptedThrough": "expression-language round 21 and contextual-units round 6; duration components may be reordered and repeated, all-m sequences retain duration-sum and length-product readings; other errors, copy selection and remaining grammar are open"
 }
