@@ -237,21 +237,21 @@
     "history.search.placeholder": {
       "text": "Search history",
       "meaning": "Invites a search among past calculations.",
-      "context": "Available if history search is included in the final interaction design.",
+      "context": "Search was accepted in copying round 9. Ctrl+F on Windows / Cmd+F on macOS in active quick mode opens history search over saved formulas and results. Preserve the current formula and its cursor and do not move its input field. Searching must not recalculate historical records. Text matching and navigation remain open.",
       "location": "Search input inside the history region.",
       "elementType": "input_placeholder"
     },
     "history.search.accessibleName": {
       "text": "Search calculation history",
       "meaning": "Names the history search input.",
-      "context": "Read when the history search field receives focus.",
+      "context": "Read when the history search input receives focus. The accepted quick-mode search targets saved formulas and historical results, not the live recalculation. Search focus must preserve the formula draft and cursor for later return; exact navigation is still to be selected.",
       "location": "Accessible name of the history search input.",
       "elementType": "accessible_name"
     },
     "history.noMatches": {
       "text": "No matching calculations",
       "meaning": "Explains why a nonempty history search displays no entries.",
-      "context": "Shown when the search returns no matches.",
+      "context": "Shown when history search finds no matching saved formulas or results. Do not use this as a calculation error or recalculate records to search them. Exact filtering and empty-query behavior remain open.",
       "location": "History results region.",
       "elementType": "empty_state"
     },
@@ -276,21 +276,21 @@
     "history.delete": {
       "text": "Delete calculation",
       "meaning": "Removes one selected history entry.",
-      "context": "Available in history management; undo behavior is undecided.",
+      "context": "Accepted in copying round 9: an explicit history action deletes one particular record without a confirmation dialog and provides history.undo. Identical records from separate confirmations are distinct targets. Constants, functions, sheets and templates are preserved. This does not bind Delete in the formula editor to record deletion. Action access, undo duration and scope, and persistence failure behavior remain open.",
       "location": "Actions associated with a history entry.",
       "elementType": "command_label"
     },
     "history.clear": {
       "text": "Clear history",
       "meaning": "Starts clearing past calculation entries.",
-      "context": "Available in history management.",
+      "context": "Accepted in copying round 9: starts a separate confirmation before clearing the complete calculation history. Opening this action is not consent to deletion. Constants, functions, sheets and templates are preserved. Undo for whole-history clearing remains undecided.",
       "location": "History actions menu.",
       "elementType": "command_label"
     },
     "history.clear.title": {
       "text": "Clear calculation history?",
-      "meaning": "Identifies a proposed confirmation for clearing history.",
-      "context": "Draft text for a confirmation if that flow is selected.",
+      "meaning": "Asks the user to confirm clearing the calculation history.",
+      "context": "Confirmation flow accepted in copying round 9; exact wording is editorial. Shown before clearing the complete calculation history, never for deleting a single record. Do not imply that clearing is irreversible or undoable until recovery semantics are selected.",
       "location": "Title of the history clearing dialog.",
       "elementType": "dialog_title"
     },
@@ -1474,6 +1474,44 @@
       "meaning": "Explains the history row, its saved choice emphasis and access to long content.",
       "context": "Accepted in copying round 8. All saved displayed answers are shown after the existing grouping of identical full formatted answers, retaining hidden interpretations. Interpretation captions remain absent. A single displayed answer needs no additional choice emphasis. Bold emphasis must preserve the existing dim fractional tail. Saved choice is distinct from current keyboard focus. Exact visual styling and accessibility remain subject to prototype verification.",
       "location": "History section of application help, next to help.history.recordRule. Documentation only; no new history control is introduced.",
+      "elementType": "help_paragraph"
+    },
+    "history.undo": {
+      "text": "Undo",
+      "meaning": "Restores a history entry removed by the history deletion action.",
+      "context": "Accepted in copying round 9 for deletion of one specific history record. Restoring history is distinct from undoing formula text edits. Undo duration, multiple-step scope, availability after clearing all history and persistence across restart remain decisions in round 10. The exact control placement is still to be verified.",
+      "location": "History management actions or deletion feedback; final placement is pending and must preserve the fixed formula input.",
+      "elementType": "command_label"
+    },
+    "history.clear.description": {
+      "text": "This will clear your calculation history. Your constants, functions, sheets and templates will be kept.",
+      "meaning": "Explains the scope of clearing history and the other data that will be preserved.",
+      "context": "Editorial text for the whole-history confirmation accepted in copying round 9. Shown with history.clear.title before the user confirms. This makes no claim about undo, permanence or recovery after restart; those details remain open.",
+      "location": "Body of the calculation-history clearing confirmation dialog.",
+      "elementType": "description"
+    },
+    "history.clear.confirm": {
+      "text": "Clear history",
+      "meaning": "Confirms the pending request to clear the entire calculation history.",
+      "context": "Primary confirmation action in the history-clearing dialog accepted in copying round 9. The user must explicitly activate it before clearing history; common.cancel dismisses the pending action. Does not delete constants, functions, sheets or templates. Exact focus and failure behavior remain to be designed.",
+      "location": "Confirmation action in the calculation-history clearing dialog.",
+      "elementType": "button"
+    },
+    "help.history.searchRule": {
+      "text": "In quick mode, press {shortcut} to search history by formula or saved result. Your current formula and cursor position are preserved, and the formula input stays in place. Search uses saved results without recalculating them.",
+      "meaning": "Explains opening history search while preserving the current formula draft.",
+      "context": "Accepted in copying round 9. Default is Ctrl+F on Windows and Cmd+F on macOS inside active quick mode. This is not the global calculator invocation shortcut and does not set the expanded-editor search behavior. Text matching, found-entry navigation and search field placement remain open.",
+      "location": "History section of application help, alongside history viewing and recall instructions.",
+      "elementType": "help_paragraph",
+      "placeholders": {
+        "shortcut": "The history-search shortcut in platform display form; accepted defaults are Ctrl+F on Windows and Cmd+F on macOS in quick mode."
+      }
+    },
+    "help.history.manageRule": {
+      "text": "Deleting one history entry requires no confirmation and offers Undo. Clearing the entire history requires confirmation. Both actions keep your constants, functions, sheets and templates.",
+      "meaning": "Explains the difference between deleting a history record and clearing the complete history.",
+      "context": "Accepted in copying round 9. Deletion targets a specific record, not every matching formula or result. Does not assign Delete in the formula editor to history management. Undo duration, multiple deletions, recovery after whole-history clearing, control access and error behavior remain separate decisions.",
+      "location": "History management section of application help.",
       "elementType": "help_paragraph"
     }
   }
