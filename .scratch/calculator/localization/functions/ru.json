@@ -1,0 +1,20 @@
+{
+  "finance.loanPayment.monthly": "платеж",
+  "finance.loanTotal.monthly": "выплаты",
+  "finance.loanOverpayment.monthly": "переплата",
+  "finance.savingsTotal.monthly": "накопления",
+  "finance.savingsInterest.monthly": "проценты",
+  "finance.profit": "прибыль",
+  "finance.roi": "доходность",
+  "finance.paybackEstimate": "окупаемость",
+  "finance.paybackWholePeriods": "окупаемость_полная",
+  "finance.loanPayment.periodic": "платеж_период",
+  "finance.loanTotal.periodic": "выплаты_период",
+  "finance.loanOverpayment.periodic": "переплата_период",
+  "finance.savingsTotal.periodic": "накопления_период",
+  "finance.savingsInterest.periodic": "проценты_период",
+  "finance.effectiveRate": "эффективная",
+  "finance.nominalRate": "номинальная",
+  "finance.timing.end": "конец",
+  "finance.timing.start": "начало"
+}

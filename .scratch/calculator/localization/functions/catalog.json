@@ -1,0 +1,134 @@
+{
+  "schemaVersion": 1,
+  "sourceLanguage": "en",
+  "status": "specification",
+  "coverage": "Sixteen approved financial function names and two finance timing symbols from round 22. This is a specification catalog, not an implemented parser registry. Future locales add one local spelling alongside the always-active Latin baseline. General timing-value behavior and long-percentage copy precision remain open.",
+  "symbols": {
+    "finance.loanPayment.monthly": {
+      "text": "payment",
+      "meaning": "The equal monthly loan payment.",
+      "context": "Identifier approved in round 22. The Latin name is always accepted; only the active interface locale adds its local name. Case-sensitive names are not inferred from a unit suffix. The positional signature and model binding are specified in ../../language/financial-functions.json. No additional abbreviations or spreadsheet aliases are registered.",
+      "location": "Function-name positions in formulas, inline completion and function help. The completion signature follows the name in the same font and size; its description follows after a gap in lighter, reduced-opacity text of the same size.",
+      "elementType": "function_name"
+    },
+    "finance.loanTotal.monthly": {
+      "text": "totalpay",
+      "meaning": "The total of all monthly loan payments.",
+      "context": "Identifier approved in round 22. The Latin name is always accepted; only the active interface locale adds its local name. Case-sensitive names are not inferred from a unit suffix. The positional signature and model binding are specified in ../../language/financial-functions.json. No additional abbreviations or spreadsheet aliases are registered.",
+      "location": "Function-name positions in formulas, inline completion and function help. The completion signature follows the name in the same font and size; its description follows after a gap in lighter, reduced-opacity text of the same size.",
+      "elementType": "function_name"
+    },
+    "finance.loanOverpayment.monthly": {
+      "text": "overpay",
+      "meaning": "Total monthly repayments minus the loan principal.",
+      "context": "Identifier approved in round 22. The Latin name is always accepted; only the active interface locale adds its local name. Case-sensitive names are not inferred from a unit suffix. The positional signature and model binding are specified in ../../language/financial-functions.json. No additional abbreviations or spreadsheet aliases are registered.",
+      "location": "Function-name positions in formulas, inline completion and function help. The completion signature follows the name in the same font and size; its description follows after a gap in lighter, reduced-opacity text of the same size.",
+      "elementType": "function_name"
+    },
+    "finance.savingsTotal.monthly": {
+      "text": "savings",
+      "meaning": "The final balance of monthly savings with regular contributions.",
+      "context": "Identifier approved in round 22. The Latin name is always accepted; only the active interface locale adds its local name. Case-sensitive names are not inferred from a unit suffix. The positional signature and model binding are specified in ../../language/financial-functions.json. No additional abbreviations or spreadsheet aliases are registered.",
+      "location": "Function-name positions in formulas, inline completion and function help. The completion signature follows the name in the same font and size; its description follows after a gap in lighter, reduced-opacity text of the same size.",
+      "elementType": "function_name"
+    },
+    "finance.savingsInterest.monthly": {
+      "text": "interest",
+      "meaning": "The monetary growth of monthly savings after subtracting all contributions.",
+      "context": "Identifier approved in round 22. The Latin name is always accepted; only the active interface locale adds its local name. Case-sensitive names are not inferred from a unit suffix. The positional signature and model binding are specified in ../../language/financial-functions.json. No additional abbreviations or spreadsheet aliases are registered.",
+      "location": "Function-name positions in formulas, inline completion and function help. The completion signature follows the name in the same font and size; its description follows after a gap in lighter, reduced-opacity text of the same size.",
+      "elementType": "function_name"
+    },
+    "finance.profit": {
+      "text": "profit",
+      "meaning": "Total returned money minus total invested money.",
+      "context": "Identifier approved in round 22. The Latin name is always accepted; only the active interface locale adds its local name. Case-sensitive names are not inferred from a unit suffix. The positional signature and model binding are specified in ../../language/financial-functions.json. No additional abbreviations or spreadsheet aliases are registered.",
+      "location": "Function-name positions in formulas, inline completion and function help. The completion signature follows the name in the same font and size; its description follows after a gap in lighter, reduced-opacity text of the same size.",
+      "elementType": "function_name"
+    },
+    "finance.roi": {
+      "text": "roi",
+      "meaning": "Whole-period return on investment, expressed as a percentage.",
+      "context": "Identifier approved in round 22. The Latin name is always accepted; only the active interface locale adds its local name. Case-sensitive names are not inferred from a unit suffix. The positional signature and model binding are specified in ../../language/financial-functions.json. No additional abbreviations or spreadsheet aliases are registered.",
+      "location": "Function-name positions in formulas, inline completion and function help. The completion signature follows the name in the same font and size; its description follows after a gap in lighter, reduced-opacity text of the same size.",
+      "elementType": "function_name"
+    },
+    "finance.paybackEstimate": {
+      "text": "payback",
+      "meaning": "The fractional payback estimate for evenly arriving cash within each period.",
+      "context": "Identifier approved in round 22. The Latin name is always accepted; only the active interface locale adds its local name. Case-sensitive names are not inferred from a unit suffix. The positional signature and model binding are specified in ../../language/financial-functions.json. No additional abbreviations or spreadsheet aliases are registered.",
+      "location": "Function-name positions in formulas, inline completion and function help. The completion signature follows the name in the same font and size; its description follows after a gap in lighter, reduced-opacity text of the same size.",
+      "elementType": "function_name"
+    },
+    "finance.paybackWholePeriods": {
+      "text": "payback_full",
+      "meaning": "The whole-period payback count when cash arrives only at period end.",
+      "context": "Identifier approved in round 22. The Latin name is always accepted; only the active interface locale adds its local name. Case-sensitive names are not inferred from a unit suffix. The positional signature and model binding are specified in ../../language/financial-functions.json. No additional abbreviations or spreadsheet aliases are registered.",
+      "location": "Function-name positions in formulas, inline completion and function help. The completion signature follows the name in the same font and size; its description follows after a gap in lighter, reduced-opacity text of the same size.",
+      "elementType": "function_name"
+    },
+    "finance.loanPayment.periodic": {
+      "text": "payment_period",
+      "meaning": "The equal loan payment using a rate per calculation period.",
+      "context": "Identifier approved in round 22. The Latin name is always accepted; only the active interface locale adds its local name. Case-sensitive names are not inferred from a unit suffix. The positional signature and model binding are specified in ../../language/financial-functions.json. No additional abbreviations or spreadsheet aliases are registered.",
+      "location": "Function-name positions in formulas, inline completion and function help. The completion signature follows the name in the same font and size; its description follows after a gap in lighter, reduced-opacity text of the same size.",
+      "elementType": "function_name"
+    },
+    "finance.loanTotal.periodic": {
+      "text": "totalpay_period",
+      "meaning": "Total loan repayments using a rate per calculation period.",
+      "context": "Identifier approved in round 22. The Latin name is always accepted; only the active interface locale adds its local name. Case-sensitive names are not inferred from a unit suffix. The positional signature and model binding are specified in ../../language/financial-functions.json. No additional abbreviations or spreadsheet aliases are registered.",
+      "location": "Function-name positions in formulas, inline completion and function help. The completion signature follows the name in the same font and size; its description follows after a gap in lighter, reduced-opacity text of the same size.",
+      "elementType": "function_name"
+    },
+    "finance.loanOverpayment.periodic": {
+      "text": "overpay_period",
+      "meaning": "Total loan repayments minus principal using a rate per calculation period.",
+      "context": "Identifier approved in round 22. The Latin name is always accepted; only the active interface locale adds its local name. Case-sensitive names are not inferred from a unit suffix. The positional signature and model binding are specified in ../../language/financial-functions.json. No additional abbreviations or spreadsheet aliases are registered.",
+      "location": "Function-name positions in formulas, inline completion and function help. The completion signature follows the name in the same font and size; its description follows after a gap in lighter, reduced-opacity text of the same size.",
+      "elementType": "function_name"
+    },
+    "finance.savingsTotal.periodic": {
+      "text": "savings_period",
+      "meaning": "The final savings balance using a rate per calculation period.",
+      "context": "Identifier approved in round 22. The Latin name is always accepted; only the active interface locale adds its local name. Case-sensitive names are not inferred from a unit suffix. The positional signature and model binding are specified in ../../language/financial-functions.json. No additional abbreviations or spreadsheet aliases are registered.",
+      "location": "Function-name positions in formulas, inline completion and function help. The completion signature follows the name in the same font and size; its description follows after a gap in lighter, reduced-opacity text of the same size.",
+      "elementType": "function_name"
+    },
+    "finance.savingsInterest.periodic": {
+      "text": "interest_period",
+      "meaning": "Monetary savings growth using a rate per calculation period.",
+      "context": "Identifier approved in round 22. The Latin name is always accepted; only the active interface locale adds its local name. Case-sensitive names are not inferred from a unit suffix. The positional signature and model binding are specified in ../../language/financial-functions.json. No additional abbreviations or spreadsheet aliases are registered.",
+      "location": "Function-name positions in formulas, inline completion and function help. The completion signature follows the name in the same font and size; its description follows after a gap in lighter, reduced-opacity text of the same size.",
+      "elementType": "function_name"
+    },
+    "finance.effectiveRate": {
+      "text": "effective",
+      "meaning": "The effective annual rate derived from an annual nominal rate and compounding count.",
+      "context": "Identifier approved in round 22. The Latin name is always accepted; only the active interface locale adds its local name. Case-sensitive names are not inferred from a unit suffix. The positional signature and model binding are specified in ../../language/financial-functions.json. No additional abbreviations or spreadsheet aliases are registered.",
+      "location": "Function-name positions in formulas, inline completion and function help. The completion signature follows the name in the same font and size; its description follows after a gap in lighter, reduced-opacity text of the same size.",
+      "elementType": "function_name"
+    },
+    "finance.nominalRate": {
+      "text": "nominal",
+      "meaning": "The annual nominal rate derived from an effective annual rate and compounding count.",
+      "context": "Identifier approved in round 22. The Latin name is always accepted; only the active interface locale adds its local name. Case-sensitive names are not inferred from a unit suffix. The positional signature and model binding are specified in ../../language/financial-functions.json. No additional abbreviations or spreadsheet aliases are registered.",
+      "location": "Function-name positions in formulas, inline completion and function help. The completion signature follows the name in the same font and size; its description follows after a gap in lighter, reduced-opacity text of the same size.",
+      "elementType": "function_name"
+    },
+    "finance.timing.end": {
+      "text": "end",
+      "meaning": "The end of a calculation period for payments or contributions.",
+      "context": "Timing symbol approved in round 22 as the last optional loan or savings argument. Latin is always active and the localized form is active only for that interface locale. End is the default. General typing, binding to variables and use outside the timing argument remain a round-23 proposal; numeric 0/1 aliases are not approved.",
+      "location": "Timing-argument positions in financial calls and the corresponding inline completion rows.",
+      "elementType": "argument_value_symbol"
+    },
+    "finance.timing.start": {
+      "text": "start",
+      "meaning": "The beginning of a calculation period for payments or contributions.",
+      "context": "Timing symbol approved in round 22 as the last optional loan or savings argument. Latin is always active and the localized form is active only for that interface locale. End is the default. General typing, binding to variables and use outside the timing argument remain a round-23 proposal; numeric 0/1 aliases are not approved.",
+      "location": "Timing-argument positions in financial calls and the corresponding inline completion rows.",
+      "elementType": "argument_value_symbol"
+    }
+  }
+}

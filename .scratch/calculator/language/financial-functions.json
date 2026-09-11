@@ -1,0 +1,330 @@
+{
+  "schemaVersion": 1,
+  "status": "specification",
+  "sourceDecision": "../issues/12-financial-calculations.md",
+  "sourceFormulas": "../research/financial-models.md",
+  "notationCatalog": "../localization/functions/catalog.json",
+  "argumentSeparator": ";",
+  "argumentPassing": "positional",
+  "signatureHelp": {
+    "optionalMarker": "?",
+    "markerIsInputSyntax": false,
+    "parameterLabelsAreInserted": false
+  },
+  "commonRules": [
+    "Monetary inputs are dimensionless amounts in the same currency.",
+    "Rates use ordinary percentage/fraction expressions; bare 12 is not inferred to mean 12%.",
+    "General real-number, 30-significant-digit, magnitude and computation limits remain applicable.",
+    "No implicit rounding of period counts or per-payment rounding to cents.",
+    "A timing argument after omitted savings contribution requires an explicit zero contribution."
+  ],
+  "unresolved": [
+    "General timing-value typing, variable binding and use outside a finance timing argument.",
+    "Precision source and formatting for copying long rounded percentage results.",
+    "Uniform display policy for standalone percentage literals versus financial percentage outputs."
+  ],
+  "timingSymbols": [
+    "finance.timing.end",
+    "finance.timing.start"
+  ],
+  "signatureProfiles": {
+    "loanMonthly": {
+      "minArguments": 3,
+      "maxArguments": 4,
+      "rateConvention": "annual-nominal-divided-by-12",
+      "parameters": [
+        {
+          "id": "amount",
+          "labelKey": "finance.parameter.amount",
+          "constraint": "Dimensionless money amount > 0."
+        },
+        {
+          "id": "annualNominalRate",
+          "labelKey": "finance.parameter.annualNominalRate",
+          "constraint": "Dimensionless rate expression; after conversion to the period rate, r > -1."
+        },
+        {
+          "id": "months",
+          "labelKey": "finance.parameter.months",
+          "constraint": "Positive integer."
+        },
+        {
+          "id": "timing",
+          "labelKey": "finance.parameter.timing",
+          "constraint": "One of the two approved finance timing symbols.",
+          "default": {
+            "symbolId": "finance.timing.end"
+          }
+        }
+      ]
+    },
+    "savingsMonthly": {
+      "minArguments": 3,
+      "maxArguments": 5,
+      "rateConvention": "annual-nominal-divided-by-12",
+      "parameters": [
+        {
+          "id": "initialAmount",
+          "labelKey": "finance.parameter.initialAmount",
+          "constraint": "Dimensionless money amount >= 0."
+        },
+        {
+          "id": "annualNominalRate",
+          "labelKey": "finance.parameter.annualNominalRate",
+          "constraint": "Dimensionless rate expression; after conversion to the period rate, r > -1."
+        },
+        {
+          "id": "months",
+          "labelKey": "finance.parameter.months",
+          "constraint": "Nonnegative integer."
+        },
+        {
+          "id": "contribution",
+          "labelKey": "finance.parameter.contribution",
+          "constraint": "Dimensionless money amount >= 0.",
+          "default": {
+            "number": 0
+          }
+        },
+        {
+          "id": "timing",
+          "labelKey": "finance.parameter.timing",
+          "constraint": "One of the two approved finance timing symbols.",
+          "default": {
+            "symbolId": "finance.timing.end"
+          }
+        }
+      ]
+    },
+    "loanPeriodic": {
+      "minArguments": 3,
+      "maxArguments": 4,
+      "rateConvention": "per-period",
+      "parameters": [
+        {
+          "id": "amount",
+          "labelKey": "finance.parameter.amount",
+          "constraint": "Dimensionless money amount > 0."
+        },
+        {
+          "id": "periodRate",
+          "labelKey": "finance.parameter.periodRate",
+          "constraint": "Dimensionless rate expression; after conversion to the period rate, r > -1."
+        },
+        {
+          "id": "periods",
+          "labelKey": "finance.parameter.periods",
+          "constraint": "Positive integer."
+        },
+        {
+          "id": "timing",
+          "labelKey": "finance.parameter.timing",
+          "constraint": "One of the two approved finance timing symbols.",
+          "default": {
+            "symbolId": "finance.timing.end"
+          }
+        }
+      ]
+    },
+    "savingsPeriodic": {
+      "minArguments": 3,
+      "maxArguments": 5,
+      "rateConvention": "per-period",
+      "parameters": [
+        {
+          "id": "initialAmount",
+          "labelKey": "finance.parameter.initialAmount",
+          "constraint": "Dimensionless money amount >= 0."
+        },
+        {
+          "id": "periodRate",
+          "labelKey": "finance.parameter.periodRate",
+          "constraint": "Dimensionless rate expression; after conversion to the period rate, r > -1."
+        },
+        {
+          "id": "periods",
+          "labelKey": "finance.parameter.periods",
+          "constraint": "Nonnegative integer."
+        },
+        {
+          "id": "contribution",
+          "labelKey": "finance.parameter.contribution",
+          "constraint": "Dimensionless money amount >= 0.",
+          "default": {
+            "number": 0
+          }
+        },
+        {
+          "id": "timing",
+          "labelKey": "finance.parameter.timing",
+          "constraint": "One of the two approved finance timing symbols.",
+          "default": {
+            "symbolId": "finance.timing.end"
+          }
+        }
+      ]
+    },
+    "returnTotals": {
+      "minArguments": 2,
+      "maxArguments": 2,
+      "parameters": [
+        {
+          "id": "invested",
+          "labelKey": "finance.parameter.invested",
+          "constraint": "Dimensionless money amount >= 0; roi requires > 0."
+        },
+        {
+          "id": "returned",
+          "labelKey": "finance.parameter.returned",
+          "constraint": "Dimensionless money amount >= 0."
+        }
+      ]
+    },
+    "payback": {
+      "minArguments": 2,
+      "maxArguments": 2,
+      "parameters": [
+        {
+          "id": "invested",
+          "labelKey": "finance.parameter.invested",
+          "constraint": "Dimensionless money amount >= 0."
+        },
+        {
+          "id": "netCashFlow",
+          "labelKey": "finance.parameter.netCashFlow",
+          "constraint": "Dimensionless signed net cash per period; zero investment gives zero periods; otherwise a nonpositive flow gives finance.notRepaid."
+        }
+      ]
+    },
+    "annualRateConversion": {
+      "minArguments": 2,
+      "maxArguments": 2,
+      "parameters": [
+        {
+          "id": "annualRate",
+          "labelKey": "finance.parameter.annualRate",
+          "constraint": "Dimensionless source annual rate; effective requires annualRate / compoundsPerYear > -1; nominal requires annualRate > -1."
+        },
+        {
+          "id": "compoundsPerYear",
+          "labelKey": "finance.parameter.compoundsPerYear",
+          "constraint": "Positive integer; no default."
+        }
+      ]
+    }
+  },
+  "functions": {
+    "finance.loanPayment.monthly": {
+      "nameKey": "finance.loanPayment.monthly",
+      "descriptionKey": "completion.finance.loanPayment.description",
+      "signatureProfile": "loanMonthly",
+      "model": "loanPayment",
+      "resultKind": "number"
+    },
+    "finance.loanTotal.monthly": {
+      "nameKey": "finance.loanTotal.monthly",
+      "descriptionKey": "completion.finance.loanTotal.description",
+      "signatureProfile": "loanMonthly",
+      "model": "loanTotal",
+      "resultKind": "number"
+    },
+    "finance.loanOverpayment.monthly": {
+      "nameKey": "finance.loanOverpayment.monthly",
+      "descriptionKey": "completion.finance.loanOverpayment.description",
+      "signatureProfile": "loanMonthly",
+      "model": "loanOverpayment",
+      "resultKind": "number"
+    },
+    "finance.savingsTotal.monthly": {
+      "nameKey": "finance.savingsTotal.monthly",
+      "descriptionKey": "completion.finance.savingsTotal.description",
+      "signatureProfile": "savingsMonthly",
+      "model": "savingsTotal",
+      "resultKind": "number"
+    },
+    "finance.savingsInterest.monthly": {
+      "nameKey": "finance.savingsInterest.monthly",
+      "descriptionKey": "completion.finance.savingsInterest.description",
+      "signatureProfile": "savingsMonthly",
+      "model": "savingsInterest",
+      "resultKind": "number"
+    },
+    "finance.profit": {
+      "nameKey": "finance.profit",
+      "descriptionKey": "completion.finance.profit.description",
+      "signatureProfile": "returnTotals",
+      "model": "profit",
+      "resultKind": "number"
+    },
+    "finance.roi": {
+      "nameKey": "finance.roi",
+      "descriptionKey": "completion.finance.roi.description",
+      "signatureProfile": "returnTotals",
+      "model": "roi",
+      "resultKind": "percentage"
+    },
+    "finance.paybackEstimate": {
+      "nameKey": "finance.paybackEstimate",
+      "descriptionKey": "completion.finance.paybackEstimate.description",
+      "signatureProfile": "payback",
+      "model": "paybackEstimate",
+      "resultKind": "number"
+    },
+    "finance.paybackWholePeriods": {
+      "nameKey": "finance.paybackWholePeriods",
+      "descriptionKey": "completion.finance.paybackWholePeriods.description",
+      "signatureProfile": "payback",
+      "model": "paybackWholePeriods",
+      "resultKind": "number"
+    },
+    "finance.loanPayment.periodic": {
+      "nameKey": "finance.loanPayment.periodic",
+      "descriptionKey": "completion.finance.loanPayment.description",
+      "signatureProfile": "loanPeriodic",
+      "model": "loanPayment",
+      "resultKind": "number"
+    },
+    "finance.loanTotal.periodic": {
+      "nameKey": "finance.loanTotal.periodic",
+      "descriptionKey": "completion.finance.loanTotal.description",
+      "signatureProfile": "loanPeriodic",
+      "model": "loanTotal",
+      "resultKind": "number"
+    },
+    "finance.loanOverpayment.periodic": {
+      "nameKey": "finance.loanOverpayment.periodic",
+      "descriptionKey": "completion.finance.loanOverpayment.description",
+      "signatureProfile": "loanPeriodic",
+      "model": "loanOverpayment",
+      "resultKind": "number"
+    },
+    "finance.savingsTotal.periodic": {
+      "nameKey": "finance.savingsTotal.periodic",
+      "descriptionKey": "completion.finance.savingsTotal.description",
+      "signatureProfile": "savingsPeriodic",
+      "model": "savingsTotal",
+      "resultKind": "number"
+    },
+    "finance.savingsInterest.periodic": {
+      "nameKey": "finance.savingsInterest.periodic",
+      "descriptionKey": "completion.finance.savingsInterest.description",
+      "signatureProfile": "savingsPeriodic",
+      "model": "savingsInterest",
+      "resultKind": "number"
+    },
+    "finance.effectiveRate": {
+      "nameKey": "finance.effectiveRate",
+      "descriptionKey": "completion.finance.effectiveRate.description",
+      "signatureProfile": "annualRateConversion",
+      "model": "effectiveRate",
+      "resultKind": "percentage"
+    },
+    "finance.nominalRate": {
+      "nameKey": "finance.nominalRate",
+      "descriptionKey": "completion.finance.nominalRate.description",
+      "signatureProfile": "annualRateConversion",
+      "model": "nominalRate",
+      "resultKind": "percentage"
+    }
+  }
+}

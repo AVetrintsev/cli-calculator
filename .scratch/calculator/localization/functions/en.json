@@ -1,0 +1,20 @@
+{
+  "finance.loanPayment.monthly": "payment",
+  "finance.loanTotal.monthly": "totalpay",
+  "finance.loanOverpayment.monthly": "overpay",
+  "finance.savingsTotal.monthly": "savings",
+  "finance.savingsInterest.monthly": "interest",
+  "finance.profit": "profit",
+  "finance.roi": "roi",
+  "finance.paybackEstimate": "payback",
+  "finance.paybackWholePeriods": "payback_full",
+  "finance.loanPayment.periodic": "payment_period",
+  "finance.loanTotal.periodic": "totalpay_period",
+  "finance.loanOverpayment.periodic": "overpay_period",
+  "finance.savingsTotal.periodic": "savings_period",
+  "finance.savingsInterest.periodic": "interest_period",
+  "finance.effectiveRate": "effective",
+  "finance.nominalRate": "nominal",
+  "finance.timing.end": "end",
+  "finance.timing.start": "start"
+}
