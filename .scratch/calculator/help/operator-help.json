@@ -43,5 +43,5 @@
     "help.precedence.spacingRule",
     "help.precedence.definitionRule"
   ],
-  "acceptedThrough": "expression-language round 21 and contextual-units round 8; square/cube shorthand formatting covers all known length symbols and explicit aliases, only whole symbols, with agreed Backspace and undo behavior; formula paste/copy, other errors and remaining grammar are open"
+  "acceptedThrough": "expression-language round 21 and contextual-units round 9; pasted formula text uses the same superscript formatting, one undo restores the whole paste, and selected formula text copies visible superscripts; result-copy serialization and other boundaries remain open"
 }
