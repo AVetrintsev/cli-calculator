@@ -51,7 +51,7 @@ Short duration symbols are w, d, h, m, s and ms. Russian symbols are н, д, ч,
 
 ## Minutes and the min function
 
-The min function takes at least two arguments separated by semicolons. With a numeric coefficient, one complete expression in the following parentheses denotes minutes multiplied by that expression: 2min(2+4) equals 12 minutes. Two or more arguments denote the function: 2 min(2;4) = 2 * min(2;4) = 4, without a unit. Spaces before min do not change the meaning. Count arguments at the current parentheses level: 2min(max(2;4)) has one outer argument and equals 8 minutes. Bare min(...) without a coefficient and incomplete or malformed argument lists are still being specified. The minimum argument count for max has not changed.
+The min function takes at least two arguments separated by semicolons. One complete expression in the following parentheses denotes minutes multiplied by that expression: 2min(2+4) equals 12 minutes. With no coefficient, one minute is implied: min(2+4) = 1min(2+4), or 6 minutes. Two or more arguments denote the function: 2 min(2;4) = 2 * min(2;4) = 4, without a unit. Spaces before min do not change the meaning. Count arguments at the current parentheses level: 2min(max(2;4)) has one outer argument and equals 8 minutes. While 2min(2; is incomplete, the result stays blank. Closing it as 2min(2;) produces a missing-argument error, without reinterpreting the list as minutes. The max function also requires at least two arguments. Other malformed argument lists are still being specified.
 
 ## Unit powers and quantity powers
 

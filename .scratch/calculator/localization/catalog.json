@@ -1354,14 +1354,14 @@
     "help.precedence.minHeading": {
       "text": "## Minutes and the min function",
       "meaning": "Introduces the shared spelling of the minute alias and the minimum function.",
-      "context": "Help for argument-count disambiguation accepted in contextual-units round 4.",
+      "context": "Help for argument-count disambiguation accepted through contextual-units round 5, including the implied coefficient and min/max minimum arity.",
       "location": "After duration notation and before unit powers in operator help.",
       "elementType": "help_heading"
     },
     "help.precedence.minRule": {
-      "text": "The min function takes at least two arguments separated by semicolons. With a numeric coefficient, one complete expression in the following parentheses denotes minutes multiplied by that expression: 2min(2+4) equals 12 minutes. Two or more arguments denote the function: 2 min(2;4) = 2 * min(2;4) = 4, without a unit. Spaces before min do not change the meaning. Count arguments at the current parentheses level: 2min(max(2;4)) has one outer argument and equals 8 minutes. Bare min(...) without a coefficient and incomplete or malformed argument lists are still being specified. The minimum argument count for max has not changed.",
-      "meaning": "Explains how complete coefficient-prefixed min expressions distinguish the minute unit from the minimum function by their outer argument count.",
-      "context": "Accepted in contextual-units round 4, superseding one-argument function min. Nested-call separators do not count as outer arguments. Do not automatically reinterpret an incomplete function list as a complete minute product. Minute result examples express value and dimension, not a new default output spelling. Bare expressions and max arity are separate pending questions.",
+      "text": "The min function takes at least two arguments separated by semicolons. One complete expression in the following parentheses denotes minutes multiplied by that expression: 2min(2+4) equals 12 minutes. With no coefficient, one minute is implied: min(2+4) = 1min(2+4), or 6 minutes. Two or more arguments denote the function: 2 min(2;4) = 2 * min(2;4) = 4, without a unit. Spaces before min do not change the meaning. Count arguments at the current parentheses level: 2min(max(2;4)) has one outer argument and equals 8 minutes. While 2min(2; is incomplete, the result stays blank. Closing it as 2min(2;) produces a missing-argument error, without reinterpreting the list as minutes. The max function also requires at least two arguments. Other malformed argument lists are still being specified.",
+      "meaning": "Explains how min distinguishes the minute unit from the minimum function by its outer argument count, including an implied one-minute coefficient and missing-argument states.",
+      "context": "Accepted through contextual-units round 5, superseding one-argument functions min and max. Nested-call separators do not count as outer arguments. The explicitly accepted incomplete min list has no live result, and the closed list with a missing argument is an error. Do not reinterpret it as a minute product. Minute examples express value and dimension, not a new default output spelling. Other malformed lists remain open; this rule does not automatically allow every unit without a coefficient.",
       "location": "Minutes and min function section of operator help and generated previews.",
       "elementType": "help_paragraph"
     },
@@ -1370,6 +1370,20 @@
       "meaning": "Describes the minimum function and its required minimum argument count.",
       "context": "Shown when suggesting the min function, whose arguments are separated by semicolons. Contextual-units round 4 changes its minimum arity to two. Unit-alias min is a separate interpretation; this entry describes the function.",
       "location": "Immediately after the complete min signature in the same suggestion row, separated by a gap. Use the same font size, lighter weight and reduced opacity, without right-edge alignment.",
+      "elementType": "description"
+    },
+    "error.missingArgument": {
+      "text": "Missing argument",
+      "meaning": "Explains that an argument position in a closed argument list is empty.",
+      "context": "Approved in contextual-units round 5 for a closed list such as 2min(2;). The incomplete 2min(2; keeps the result blank instead. A closed list with a missing argument must not be reinterpreted as a minute quantity. Other malformed lists and diagnostic precedence remain to be specified.",
+      "location": "The calculation diagnostic region associated with the current expression.",
+      "elementType": "error_message"
+    },
+    "completion.function.max.description": {
+      "text": "Largest of two or more values.",
+      "meaning": "Describes the maximum function and its required minimum argument count.",
+      "context": "Shown when suggesting the max function, whose arguments are separated by semicolons. Contextual-units round 5 changes its minimum arity to two. No unit named max is introduced.",
+      "location": "Immediately after the complete max signature in the same suggestion row, separated by a gap. Use the same font size, lighter weight and reduced opacity, without right-edge alignment.",
       "elementType": "description"
     }
   }

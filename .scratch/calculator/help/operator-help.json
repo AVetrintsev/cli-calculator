@@ -43,5 +43,5 @@
     "help.precedence.spacingRule",
     "help.precedence.definitionRule"
   ],
-  "acceptedThrough": "expression-language round 21 and contextual-units round 4; unsupported final units are filtered after cancellation; other errors, copy selection and remaining grammar are open"
+  "acceptedThrough": "expression-language round 21 and contextual-units round 5; min implies one minute without a coefficient for a single expression, incomplete and missing arguments are distinguished, min/max require two arguments; other errors, copy selection and remaining grammar are open"
 }
