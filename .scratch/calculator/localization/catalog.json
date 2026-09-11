@@ -332,7 +332,7 @@
     "sheet.save": {
       "text": "Save sheet",
       "meaning": "Saves the current sheet as a reusable local calculation.",
-      "context": "Available if explicit saving is part of the agreed persistence flow.",
+      "context": "Unassigned candidate label. Named sheets now autosave under round 17, point 6; the accepted flow does not require a manual Save sheet button. Do not treat this catalog entry as approval of an extra control or as permission to autosave global definitions.",
       "location": "Sheet command menu.",
       "elementType": "command_label"
     },
@@ -367,14 +367,14 @@
     "sheet.saved": {
       "text": "Sheet saved",
       "meaning": "Confirms that the sheet was persisted successfully.",
-      "context": "Shown or announced after a successful save.",
+      "context": "Shown or announced only after a sheet has actually been persisted successfully, including the autosave accepted in round 17, point 6. Text may be incomplete or contain calculation errors and still be saved. This feedback does not confirm a calculation, add a history entry or save a global definition. Exact quiet status presentation and timing remain interface decisions.",
       "location": "Sheet feedback area.",
       "elementType": "status_message"
     },
     "sheet.saveError": {
       "text": "Could not save the sheet",
       "meaning": "Reports failure to persist the calculation sheet.",
-      "context": "Shown when a save attempt fails.",
+      "context": "Reports failure of a sheet persistence attempt, including accepted automatic saving. A calculation error is not a save failure: incomplete and erroneous sheet text is still eligible for autosave. Do not claim successful persistence or apply this message to saving a global definition. Exact retry, recovery and feedback presentation remain separate work.",
       "location": "Sheet feedback area.",
       "elementType": "error_message"
     },
@@ -1596,7 +1596,7 @@
     "help.history.extendedShortcutRule": {
       "text": "In expanded mode, press {shortcut} with either modifier key to open history while keeping your sheet unchanged. Up Arrow and Down Arrow choose a record; Left Arrow and Right Arrow choose its saved answer. Start at the latest record and its answer chosen at confirmation; when you change records, select that record’s confirmation choice. Navigation stops at the ends and scrolls the selected item into view. Press {copyShortcut} to copy the saved answer without recalculation and keep focus in history. Enter closes history and inserts the formula at your previous cursor, replacing selected text, as one ordinary edit. The sheet recalculates without confirming or adding history. Escape or {shortcut} again closes history without insertion and restores the previous cursor. Empty history provides nothing to select or insert. Ordinary arrows retain text-editor behavior while editing.",
       "meaning": "Explains opening, navigating, copying and inserting from history while preserving the expanded sheet until insertion.",
-      "context": "Alt+Up with either physical modifier was accepted in round 16; the complete interaction was accepted in round 17, point 2. Use platform Alt/Option naming and Ctrl+C on Windows or Cmd+C on macOS. Opening transfers focus to history while retaining sheet text and cursor/selection. Preserve saved record values and confirmation choices; navigation focus is not a stored-choice mutation. Use the existing numeric displayed text without units and localized logical text for clipboard copy; copying retains history focus and does not recalculate. Enter inserts the saved formula text at the retained cursor or replaces the retained selection in one ordinary edit, closes history, returns editor focus and triggers normal sheet recalculation without confirming or recording. An insertion producing incomplete or invalid input follows ordinary evaluation rules and does not reuse stale answers. Escape or repeated Alt+Up closes without insertion. Empty history cannot target a nonexistent record. This is a separate context from quick console recall, history search and completion navigation. Native focus, placement and accessibility remain to be verified. This does not approve per-line result display, sheet autosave, local shadowing of global constants, or copying a newly calculated sheet result.",
+      "context": "Alt+Up with either physical modifier was accepted in round 16; the complete interaction was accepted in round 17, point 2. Use platform Alt/Option naming and Ctrl+C on Windows or Cmd+C on macOS. Opening transfers focus to history while retaining sheet text and cursor/selection. Preserve saved record values and confirmation choices; navigation focus is not a stored-choice mutation. Use the existing numeric displayed text without units and localized logical text for clipboard copy; copying retains history focus and does not recalculate. Enter inserts the saved formula text at the retained cursor or replaces the retained selection in one ordinary edit, closes history, returns editor focus and triggers normal sheet recalculation without confirming or recording. An insertion producing incomplete or invalid input follows ordinary evaluation rules and does not reuse stale answers. Escape or repeated Alt+Up closes without insertion. Empty history cannot target a nonexistent record. This is a separate context from quick console recall, history search and completion navigation. Native focus, placement and accessibility remain to be verified. Per-line results, sheet autosave and local shadowing of global constants were accepted separately in points 4-6; see the sheet help fragments. Copying a newly calculated sheet result is still a separate round-18 proposal.",
       "location": "Expanded-mode keyboard help, alongside the history-opening action. The final help entry point and history placement remain interface work.",
       "elementType": "help_paragraph",
       "placeholders": {
@@ -1607,14 +1607,14 @@
     "help.sheet.dependenciesRule": {
       "text": "In a calculation sheet, define each local variable once. Expressions may reference definitions farther down the sheet: total = price * quantity can precede price = 100 and quantity = 3 and still gives 300. Editing a definition recalculates its dependent expressions. Defining the same local name again is an error. Circular dependencies block the expressions in the cycle and those that depend on them; independent expressions still calculate. Multiline user-function bodies keep their sequential execution rules.",
       "meaning": "Explains the accepted dependency model for sheet variables and its scope relative to function bodies.",
-      "context": "Accepted in round 17, point 3. One sheet-local definition per name, forward references permitted, dependency-driven recalculation and explicit cycle handling. Reject duplicate local definitions rather than silently choosing first or last. Do not mark nonparticipating downstream expressions as themselves cyclic; they are blocked by a required value. Example identifiers may be localized in explanatory prose and do not create reserved names. This does not approve proposed points 4-6: per-line result UI, local shadowing of a globally saved constant, or named-sheet autosave. Global definition storage, name resolution and function dependencies remain their own domain contracts within the shared calculation core.",
+      "context": "Accepted in round 17, point 3. One sheet-local definition per name, forward references permitted, dependency-driven recalculation and explicit cycle handling. Reject duplicate local definitions rather than silently choosing first or last. Do not mark nonparticipating downstream expressions as themselves cyclic; they are blocked by a required value. Example identifiers may be localized in explanatory prose and do not create reserved names. Points 4-6 were subsequently accepted for sheets: see help.sheet.resultsRule, help.sheet.scopeRule and help.sheet.autosaveRule. These are separate from sequential function bodies and explicit global-definition saving. Global definition storage, name resolution and function dependencies remain their own domain contracts within the shared calculation core.",
       "location": "Calculation-sheet language section of application help, distinct from the sequential user-function body explanation.",
       "elementType": "help_paragraph"
     },
     "sheet.duplicateVariable": {
       "text": "Variable {name} is defined more than once in this sheet.",
       "meaning": "Reports a duplicate local variable definition in a calculation sheet.",
-      "context": "Editorial wording for the duplicate-definition error accepted in round 17, point 3. Use when a sheet contains more than one local definition of the same name under the accepted case-sensitive naming rules. Do not reinterpret the duplicate as a sequential reassignment. This is not a rule rejecting a same-named global constant; sheet/global shadowing remains proposed in point 5. It does not govern editing or saving a global definition or assignment inside a sequential function body.",
+      "context": "Editorial wording for the duplicate-definition error accepted in round 17, point 3. Use when a sheet contains more than one local definition of the same name under the accepted case-sensitive naming rules. Do not reinterpret the duplicate as a sequential reassignment. This is not a rule rejecting a same-named global constant; point 5 now accepts sheet-local shadowing of a saved constant without changing that constant. Conflicts with function names remain a separate pending decision. It does not govern editing or saving a global definition or assignment inside a sequential function body.",
       "location": "Diagnostic associated with duplicate definitions in the calculation-sheet editor; exact highlighting and accessible announcement remain interface work.",
       "elementType": "error_message",
       "placeholders": {
@@ -1627,6 +1627,27 @@
       "context": "Editorial wording for an expression downstream of a cyclic sheet definition under the model accepted in round 17, point 3. The expression is blocked but need not itself participate in the cycle; do not falsely identify it as a cycle participant. Independent expressions continue calculating. This entry does not decide propagation for every other mathematical or parsing error, layout for per-line results, or global-function dependency semantics.",
       "location": "Diagnostic associated with a sheet expression blocked by a required cyclic dependency; exact presentation remains interface work.",
       "elementType": "error_message"
+    },
+    "help.sheet.resultsRule": {
+      "text": "Each completed expression or assignment in a calculation sheet shows its own result. For example, price = 100 shows 100 and price * 3 shows 300. Blank lines and comments have no result. If an expression has several valid answers, show them all using the existing grouping, ordering and horizontal-scrolling rules.",
+      "meaning": "Explains results for each calculable sheet expression or assignment.",
+      "context": "Accepted in round 17, point 4 after scope clarification. This applies to expanded sheets, not intermediate statements inside a saved function body. Preserve all underlying meanings and working values when displayed answers are grouped. A completed but invalid expression must not expose a stale ready answer. Exact placement, font treatment and copy commands for sheet results remain interface decisions or round-18 proposals; this paragraph does not silently approve a right-hand result column or a copy shortcut.",
+      "location": "Expanded-sheet result section of application help, near the sheet dependency explanation. The visual placement of per-expression results still requires prototype review.",
+      "elementType": "help_paragraph"
+    },
+    "help.sheet.scopeRule": {
+      "text": "Local variables belong to their calculation sheet. They do not become saved definitions in quick mode or other sheets. A local variable takes precedence over a saved constant with the same name inside that sheet without changing the saved constant. If the global price is 50 and a sheet defines price = 100, that sheet uses 100 while quick mode still uses 50. Built-in names remain protected.",
+      "meaning": "Explains sheet-local variable scope and shadowing of a saved user constant.",
+      "context": "Accepted in round 17, point 5 after scope clarification. Global saved constants are not overwritten by sheet editing or autosave. Existing built-in identifier protection remains unchanged. Example names may be localized in help prose without changing users’ identifiers. This does not decide which environment a called saved function uses, collisions with saved function names, or global constant/function management; those questions remain explicit in round 18.",
+      "location": "Expanded-sheet variable section of application help, distinct from the saved-definition library help.",
+      "elementType": "help_paragraph"
+    },
+    "help.sheet.autosaveRule": {
+      "text": "You can keep several named calculation sheets. Their text is saved automatically on this computer, including unfinished or erroneous expressions. Autosaving does not add calculation-history entries. Reopening a sheet restores its text and calculates it again using the current saved constants and functions. Saving a template and saving a global constant or function remain separate actions.",
+      "meaning": "Explains local autosave of named sheet documents and recalculation on reopening.",
+      "context": "Accepted in round 17, point 6 after scope clarification. Save sheet text independently of calculation success; the data model must distinguish a persisted erroneous draft from a failed persistence operation. Reopening does not present an old cached answer as a newly evaluated result. This behavior does not autosave or publish global definition edits and does not choose template update semantics. Exact storage format, management controls, persistence timing, retry and crash recovery remain architecture or product decisions; do not imply verified durability guarantees from this help paragraph.",
+      "location": "Sheet persistence section of application help, alongside named-sheet management. This explains automatic saving and does not introduce a manual Save sheet button.",
+      "elementType": "help_paragraph"
     }
   }
 }
