@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "status": "specification",
+  "sourceDecision": "../issues/04-expression-language.md",
+  "acceptedThrough": "round 26; earlier accepted numeric and percentage-copy rules remain applicable",
+  "domain": "real numbers",
+  "input": {
+    "maximumSignificantDigits": 30,
+    "tooManySignificantDigits": "diagnostic; no silent truncation",
+    "decimalSeparators": [
+      ".",
+      ","
+    ]
+  },
+  "workingPrecision": {
+    "significantDigits": 30,
+    "rounding": "nearest; exact ties away from zero",
+    "stage": "computed fractional result of each operation; subsequent operations use that working value",
+    "exactRepresentableDecimalOperations": "preserve the exact value when it fits the working precision",
+    "guardDigits": "permitted internally for numerical algorithms without changing the working result contract",
+    "displayRoundingChangesWorkingValue": false,
+    "implicitRoundingToCents": false
+  },
+  "integerMagnitude": {
+    "maximumAbsoluteValue": "999999999999999999999999999999",
+    "appliesToAllBases": true,
+    "overflow": "diagnostic; no wrapping, truncation or saturation"
+  },
+  "display": {
+    "ordinaryFractionalPlaces": 10,
+    "rounding": "nearest; exact ties away from zero",
+    "padTrailingZeros": false,
+    "scientificNotation": false,
+    "recurringDecimalNotation": false,
+    "fractionalDigitsAtNormalOpacity": 2,
+    "laterFractionalDigits": "dimmed",
+    "smallNonzero": {
+      "trigger": "rounding the shown numeric coefficient to 10 fractional places would give zero",
+      "targetSignificantDigits": 3,
+      "maximumFractionalPlaces": 30,
+      "roundingStage": "round the working coefficient directly to the required display places within the cap; do not round it to three significant digits and then round it again",
+      "whenEvenMaximumPlacesRoundToZero": "show approximately zero instead of a too-small diagnostic",
+      "approximatelyZeroMessageKey": "result.approximateZero",
+      "approximatelyZeroWorkingValue": "retain the original nonzero working value for downstream calculations",
+      "calendarTimeRoundingChanged": false,
+      "copyConfirmationAndSuffixPolicy": "pending round 27; do not infer it from the display-only correction"
+    }
+  },
+  "percentages": {
+    "numericMeaning": "displayed rate coefficient divided by 100",
+    "directRateDisplay": "retain percent sign",
+    "ordinaryFractionAutomaticallyBecomesRate": false,
+    "ratePlusOrMinusRate": "add or subtract rates; preserve percentage kind",
+    "numberPlusOrMinusRightHandRate": "relative increase or decrease",
+    "multiplyOrDivideWithNumbersOrRates": "calculate with numeric fractions; return ordinary number without percentage kind",
+    "directStoredRate": "preserve percentage kind when storing or passing by name",
+    "financeRateOutputs": "remain percentage values",
+    "copy": "divide displayed coefficient exactly by 100; no hidden digits or another rounding",
+    "changedExample": "200 + 10% * 2 = 200.2; write 200 + (10 * 2)% for 240"
+  },
+  "unresolved": [
+    "Approximately-zero copy/confirmation, suffixes and distinction from exact-zero display.",
+    "Percentage handling by remaining math functions, powers and unary operations.",
+    "Mixed addition/subtraction with a percentage on the left and an ordinary number on the right."
+  ],
+  "implementationDecisions": "../issues/09-shared-core-and-shells.md"
+}

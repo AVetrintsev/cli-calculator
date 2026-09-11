@@ -217,10 +217,22 @@
     "display": "descending components; group complete 12 months into years; omit zeros; explicit signs for opposing parts",
     "copy": "whole displayed calendar period including units and both components",
     "explicitTargetFormat": "retain supported target by the existing conversion rule",
-    "conversionToFixedDuration": "requires a reference date"
+    "conversionToFixedDuration": "requires a reference date",
+    "comparison": {
+      "sourceDecision": "../issues/04-expression-language.md",
+      "acceptedRound": 26,
+      "equality": "compare normalized total months and fixed duration components",
+      "inequality": "negation of component equality under ordinary lazy-value comparison rules",
+      "pureCalendarOrdering": "compare month totals",
+      "fixedDurationOrdering": "compare duration lengths",
+      "mixedPeriodOrCalendarVsFixedOrdering": "requires a supplied reference date; otherwise a brief diagnostic",
+      "referenceDate": "apply each period to the same supplied date, then compare the resulting dated values",
+      "monthEqualsThirtyDays": false
+    }
   },
   "relatedOpenDecisions": {
-    "generalValueOrderingAndNumericPrecision": "../issues/04-expression-language.md",
-    "parserStorageAndPlatformClockImplementation": "../issues/09-shared-core-and-shells.md"
-  }
+    "parserStorageAndPlatformClockImplementation": "../issues/09-shared-core-and-shells.md",
+    "approximatelyZeroAndRemainingPercentageRules": "../issues/04-expression-language.md"
+  },
+  "numericContract": "numbers.json"
 }

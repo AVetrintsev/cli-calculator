@@ -323,5 +323,6 @@
       "resultKind": "percentage"
     }
   },
-  "timingValueContract": "value-semantics.md"
+  "timingValueContract": "value-semantics.md",
+  "numericContract": "numbers.json"
 }
