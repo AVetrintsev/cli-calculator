@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "status": "specification",
+  "sourceDecision": "../issues/08-settings-and-accessibility.md",
+  "acceptedRound": 32,
+  "management": {
+    "entryPoints": [
+      "context menu on empty palette background",
+      "Windows tray icon",
+      "macOS menu-bar icon"
+    ],
+    "commands": [
+      "settings",
+      "help",
+      "quit"
+    ],
+    "textContextMenu": "preserve standard editing menu",
+    "permanentButtonToolbar": false
+  },
+  "shortcuts": {
+    "defaults": {
+      "invoke": {
+        "windows": "Alt+Space",
+        "macos": "Option+Space"
+      },
+      "toggleExpanded": {
+        "windows": "Ctrl+Shift+Enter",
+        "macos": "Cmd+Shift+Enter"
+      },
+      "settings": {
+        "windows": "Ctrl+,",
+        "macos": "Cmd+,"
+      },
+      "expandedHistory": {
+        "windows": "Alt+Up",
+        "macos": "Option+Up"
+      },
+      "completionDescription": "F1"
+    },
+    "remappable": "application commands and global invocation",
+    "protected": [
+      "standard copy with existing contextual result-copy rules",
+      "paste",
+      "cut",
+      "undo"
+    ],
+    "conflict": "keep previous working assignment; tray/menu-bar access remains available if no working assignment",
+    "nativeValidation": "../issues/11-platform-prototype.md"
+  },
+  "modeTransitions": {
+    "expand": "place quick draft in the first line of a new sheet",
+    "returnToQuick": "preserve the sheet and restore the preceding quick draft",
+    "historyShortcut": "unchanged"
+  },
+  "autostart": {
+    "default": true,
+    "showPaletteOnAutomaticLaunch": false,
+    "canDisable": true,
+    "actualOsPermission": "respect and report actual system registration/permission; do not assume the requested setting succeeded"
+  },
+  "appearance": {
+    "themeChoices": [
+      "system",
+      "light",
+      "dark"
+    ],
+    "defaultTheme": "system",
+    "interfaceScaleAdjustable": true,
+    "dimmingCanBeDisabled": true,
+    "dimmingDefault": true,
+    "specificFontColorsAndOpacity": "pending visual prototype"
+  },
+  "localization": {
+    "initialLocale": "system language if its translation is available, otherwise en",
+    "missingLocale": "English only; do not activate an unavailable local notation dictionary",
+    "missingMessage": "English source text only for that message",
+    "numberFormat": "independent setting, system default",
+    "switch": "immediate interface update; recognized built-in semantic symbols adapt",
+    "preserveOnSwitch": [
+      "user-defined names",
+      "comments",
+      "unrecognized/incomplete fragments"
+    ],
+    "unrecognizedRemainder": "leave visible and apply ordinary input diagnostics; do not guess a translation",
+    "inputNotations": "Latin baseline plus only the resolved active interface locale"
+  },
+  "completion": {
+    "match": "name prefix, case insensitive",
+    "insertedCase": "exact declared spelling",
+    "ordering": [
+      "available local names",
+      "user global definitions",
+      "built-ins"
+    ],
+    "withinGroup": "stable alphabetical order",
+    "semanticFilteringFirst": true,
+    "midTokenTab": "replace the whole current identifier, not just the prefix before the caret",
+    "functionParentheses": "preserve existing parentheses and arguments; add a pair only when absent",
+    "fullDescription": [
+      "F1 for selected suggestion; general help otherwise",
+      "pointer hover"
+    ],
+    "escapeDescription": "restore prior focus",
+    "visibleRowsMaximum": 7,
+    "insufficientSpace": "fewer visible rows with scrolling and stationary input",
+    "extremeScreenEdge": "pending prototype"
+  },
+  "accessibility": {
+    "diagnostic": "brief, near expression, no input displacement",
+    "nonColorStateCue": true,
+    "visibleFocus": true,
+    "screenReader": [
+      "complete answer on focus",
+      "errors",
+      "copy outcome"
+    ],
+    "announceEveryNowTick": false,
+    "reducedMotion": "follow system preference"
+  },
+  "unresolved": [
+    "visual geometry for sheets, library and definition editor",
+    "extreme completion edges and scaled layouts",
+    "specific typography/color/opacity choices",
+    "native and assistive-technology verification"
+  ]
+}

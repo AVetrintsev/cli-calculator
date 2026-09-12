@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "sourceLanguage": "en",
   "status": "draft",
-  "coverage": "Candidate text for identified calculator surfaces. Accepted through round 31: expression-scale ranking and scope, unit-target grammar, context-sensitive prefix continuations including outer/incomplete context and conversion targets, and mon replacing the former month spelling. Open interface decisions still control final wording and placement.",
+  "coverage": "Candidate text for identified calculator surfaces. Accepted through round 32: management entries, default/remappable commands, autostart, theme and scale controls, English fallback, completion matching/insertion, description commands and accessibility behavior. Exact geometry and styling await the general UI prototype; native integration is not implemented.",
   "messages": {
     "quick.expression.placeholder": {
       "text": "Type a calculation",
@@ -49,7 +49,7 @@
     "completion.showDescription": {
       "text": "Show description",
       "meaning": "Opens the complete description of the selected suggestion when the inline text is shortened.",
-      "context": "Available for a selected suggestion with a description. The complete text must be accessible by keyboard as well as pointer hover; the exact shortcut and presentation are still being specified. User-authored descriptions remain in their original language.",
+      "context": "F1 opens the full description of the selected suggestion; without a selection it opens general help. Pointer hover also exposes the full text. Escape restores the prior focus. User-authored descriptions remain in their original language; exact geometry is subject to the visual prototype.",
       "location": "Command or keyboard help associated with the selected suggestion. The exact control placement belongs to the full interface prototype.",
       "elementType": "command_label"
     },
@@ -112,7 +112,7 @@
     "quick.sheet.open": {
       "text": "Open calculation sheet",
       "meaning": "Switches to a calculation with variables and multiple expressions.",
-      "context": "Used by a separate mode-entry command with a modifier; its exact shortcut is undecided. A new sheet starts with the current expression at the same screen position and expands downward. A previously hidden sheet remains available without losing its contents.",
+      "context": "Ctrl+Shift+Enter on Windows or Cmd+Shift+Enter on macOS opens a new sheet with the quick draft on its first line at the same screen position, expanding downward. Returning preserves the sheet and restores the preceding quick draft. Native shortcut registration still requires validation.",
       "location": "Quick input command menu.",
       "elementType": "command_label"
     },
@@ -479,7 +479,7 @@
     "settings.open": {
       "text": "Open settings",
       "meaning": "Opens application preferences.",
-      "context": "Available through the application command menu or tray/menu bar entry.",
+      "context": "Available through the application command menu or tray/menu bar entry. Round 32 accepts this behavior; see interface/settings.json for defaults, platform commands and scope. Visual placement remains subject to the general prototype.",
       "location": "Application actions menu; not permanent quick-input chrome.",
       "elementType": "command_label"
     },
@@ -514,14 +514,14 @@
     "settings.theme.system": {
       "text": "Follow system",
       "meaning": "Makes appearance follow the operating system preference.",
-      "context": "Draft option pending agreement on system-theme support.",
+      "context": "Accepted in round 32 and selected by default. The application follows the operating system light/dark preference; exact colors remain subject to the visual prototype.",
       "location": "Option in the theme control.",
       "elementType": "select_option"
     },
     "settings.language.label": {
       "text": "Interface language",
       "meaning": "Labels the language used for application text.",
-      "context": "Shown in language preferences; it does not label mathematical syntax.",
+      "context": "Accepted in round 32. Choose the system language when its translation is available, otherwise English only. Missing individual messages use English. Number formatting is configured independently. Changes apply immediately; recognized built-in semantic symbols adapt, while user names, comments and incomplete fragments are preserved. Only the Latin baseline and resolved active locale supply input aliases.",
       "location": "Label next to the interface language control.",
       "elementType": "field_label"
     },
@@ -556,7 +556,7 @@
     "settings.shortcuts.copy": {
       "text": "Copy result",
       "meaning": "Labels the combination used to copy a result.",
-      "context": "Existing candidate setting for the result-copy combination. Accepted quick-copy bindings are Ctrl+C on Windows and Cmd+C on macOS, without text selection and for a single ready displayed result entry. With multiple displayed entries, the shortcut preserves the clipboard and prompts the user to choose. Whether this specific shortcut can be reconfigured remains open. The word option in the user request does not approve a new enable/disable switch.",
+      "context": "An informational label for the accepted standard copy shortcut and its contextual result-copy behavior. Round 32 protects standard copy/paste/cut/undo; this entry is not a freely remappable shortcut control.",
       "location": "Label next to the copy shortcut control.",
       "elementType": "field_label"
     },
@@ -570,7 +570,7 @@
     "settings.shortcuts.unavailable": {
       "text": "This shortcut is unavailable. Choose another.",
       "meaning": "Reports that the proposed keyboard combination could not be accepted.",
-      "context": "Shown after failed registration or validation; the exact cause may be unknown.",
+      "context": "Shown after failed registration or validation; the exact cause may be unknown. Keep the previous working assignment. If no working assignment exists, preserve access through the Windows tray or macOS menu-bar icon.",
       "location": "Feedback below the shortcut recorder.",
       "elementType": "error_message"
     },
@@ -608,7 +608,7 @@
     "settings.autostart.label": {
       "text": "Start when I sign in",
       "meaning": "Labels automatic background startup after user login.",
-      "context": "Draft setting pending agreement on application startup.",
+      "context": "Accepted in round 32, enabled by default and user-disableable. Automatic login startup keeps the palette hidden. The native shell must respect and report the actual operating-system registration and permission state.",
       "location": "Label next to the autostart control.",
       "elementType": "field_label"
     },
@@ -2764,6 +2764,90 @@
       "meaning": "Explains prefix continuations filtered by local and outer type constraints, conservative incomplete-context behavior and compatible conversion targets.",
       "context": "Accepted rounds 30–31; see language/unit-input.json. Reuse the existing lazy constraints through operations and parentheses without guessing a single interpretation. The ellipsis illustrates unfinished input, not syntax. The seven-row inline layout, prefix dimming, descriptions, Tab and arrow handling remain unchanged. Calendar month is mon/мес under the separate symbol catalog. General sorting and editing in the middle of a word remain interface decisions.",
       "location": "Unit suggestions section of application help.",
+      "elementType": "help_paragraph"
+    },
+    "app.menu": {
+      "text": "Application menu",
+      "meaning": "Names the application management menu.",
+      "context": "Opened from blank palette background or the native tray/menu-bar icon; text editing retains its own context menu.",
+      "location": "Palette background context menu and native icon menu.",
+      "elementType": "menu_label"
+    },
+    "help.open": {
+      "text": "Help",
+      "meaning": "Opens general application help.",
+      "context": "Accepted round 32; also reached by F1 when no suggestion is selected.",
+      "location": "Application menu and keyboard help entry.",
+      "elementType": "menu_item"
+    },
+    "mode.toggleExpanded": {
+      "text": "Expand or return",
+      "meaning": "Switches between the quick draft and an expanded calculation sheet.",
+      "context": "Default Ctrl+Shift+Enter on Windows, Cmd+Shift+Enter on macOS. Preserve the sheet and prior quick draft.",
+      "location": "Command list and shortcut settings.",
+      "elementType": "command_label"
+    },
+    "settings.scale.label": {
+      "text": "Interface size",
+      "meaning": "Labels the interface scale control.",
+      "context": "Accepted adjustable UI scale; precise range/steps await the prototype.",
+      "location": "Appearance section of settings.",
+      "elementType": "setting_label"
+    },
+    "settings.dimming.label": {
+      "text": "Dim secondary text",
+      "meaning": "Controls the accepted secondary/prefix/fraction text dimming for readability.",
+      "context": "Enabled by default; can be disabled. Existing semantics and shown digits do not change.",
+      "location": "Appearance section of settings.",
+      "elementType": "toggle_label"
+    },
+    "settings.numberFormat.label": {
+      "text": "Number format",
+      "meaning": "Labels the independent numeric-locale choice.",
+      "context": "Defaults to system number format and is not inferred solely from the interface language.",
+      "location": "Language and number-format section of settings.",
+      "elementType": "setting_label"
+    },
+    "settings.systemDefault": {
+      "text": "System default",
+      "meaning": "Names an operating-system-derived default.",
+      "context": "Used for language or number format; unavailable interface language resolves to English only.",
+      "location": "System-default option in settings.",
+      "elementType": "select_option"
+    },
+    "settings.language.englishFallback": {
+      "text": "English is used when a translation is unavailable.",
+      "meaning": "Explains the English-only fallback for unavailable translation.",
+      "context": "An unavailable locale does not activate its local input spellings; a missing individual message uses the English source text.",
+      "location": "Language setting description.",
+      "elementType": "setting_description"
+    },
+    "settings.shortcuts.standardEditing": {
+      "text": "Standard editing shortcuts keep their usual behavior.",
+      "meaning": "Explains the protected copy/paste/cut/undo commands.",
+      "context": "Preserve accepted contextual result-copy behavior; do not turn Ctrl/Cmd+C into a freely reassigned application-only shortcut.",
+      "location": "Keyboard shortcut settings.",
+      "elementType": "setting_description"
+    },
+    "help.interface.managementRule": {
+      "text": "Open the application menu from the empty palette background or its tray/menu-bar icon. Use Ctrl+, on Windows or Cmd+, on Mac for settings. Right-clicking text keeps the editing menu.",
+      "meaning": "Explains accepted access to management without a permanent toolbar.",
+      "context": "Accepted round 32; native behavior still requires platform validation.",
+      "location": "Management section of application help.",
+      "elementType": "help_paragraph"
+    },
+    "help.interface.modeRule": {
+      "text": "Use Ctrl+Shift+Enter on Windows or Cmd+Shift+Enter on Mac to expand or return. Expanding starts a new sheet with the quick expression on its first line. Returning preserves the sheet and restores your previous quick draft.",
+      "meaning": "Explains mode switching and draft preservation.",
+      "context": "Accepted round 32; this command is distinct from confirmation/copy shortcuts and the accepted expanded-history Alt+Up command.",
+      "location": "Modes section of application help.",
+      "elementType": "help_paragraph"
+    },
+    "help.completion.insertionRule": {
+      "text": "Suggestions match the beginning of a name without regard to case, then insert its declared spelling. Compatible local names come first, followed by your global definitions and built-ins; each group uses stable alphabetical order. Tab replaces the whole current identifier. Existing function parentheses and arguments are preserved. F1 opens the selected suggestion’s full description, or general help when no suggestion is selected. Escape restores focus.",
+      "meaning": "Explains accepted suggestion matching, ordering, insertion and help.",
+      "context": "Accepted round 32. Apply the existing unit/type context filter first. Do not duplicate an existing suffix or function parentheses.",
+      "location": "Completion section of application help.",
       "elementType": "help_paragraph"
     }
   }
