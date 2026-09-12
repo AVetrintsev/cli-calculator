@@ -402,5 +402,14 @@
   "common.rename": "Переименовать",
   "common.duplicate": "Создать копию",
   "data.restore.historyAndSettings": "История и настройки",
-  "library.newTemplate": "Шаблон"
+  "library.newTemplate": "Шаблон",
+  "updates.check": "Проверить обновления",
+  "updates.checking": "Проверка обновлений…",
+  "updates.available": "Доступно обновление",
+  "updates.install": "Обновить",
+  "updates.upToDate": "Установлена последняя версия",
+  "updates.checkFailed": "Не удалось проверить обновления",
+  "settings.updates.label": "Проверка обновлений",
+  "settings.updates.automatic": "Автоматически",
+  "settings.updates.manual": "Вручную"
 }

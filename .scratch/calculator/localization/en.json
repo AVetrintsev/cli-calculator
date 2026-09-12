@@ -402,5 +402,14 @@
   "common.rename": "Rename",
   "common.duplicate": "Duplicate",
   "data.restore.historyAndSettings": "History and settings",
-  "library.newTemplate": "Template"
+  "library.newTemplate": "Template",
+  "updates.check": "Check for updates",
+  "updates.checking": "Checking for updates…",
+  "updates.available": "Update available",
+  "updates.install": "Update",
+  "updates.upToDate": "You’re up to date",
+  "updates.checkFailed": "Couldn’t check for updates",
+  "settings.updates.label": "Update checks",
+  "settings.updates.automatic": "Automatic",
+  "settings.updates.manual": "Manual"
 }

@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "status": "specification",
+  "sourceDecision": "../issues/10-delivery-and-acceptance.md",
+  "acceptedRound": 35,
+  "audience": {
+    "independentPublicInstallation": true,
+    "accountRequiredInCalculator": false,
+    "pricingAndSourceLicense": "not selected by this decision"
+  },
+  "compatibility": {
+    "windows": {
+      "os": "Windows 11",
+      "confirmedAppArchitectures": [
+        "x64"
+      ],
+      "x86AppBuild": "clarification pending; user requested 64/32(86)",
+      "nativeArm64AppBuild": "not accepted after the user replaced the proposed architecture list",
+      "osArchitectureFact": "Windows 11 is 64-bit only; x86 apps can run through the OS compatibility subsystem"
+    },
+    "macos": {
+      "minimumMajorVersion": 14,
+      "minimumName": "Sonoma",
+      "architectures": [
+        "x86_64",
+        "arm64"
+      ],
+      "basis": "retained part of the proposal; the user changed the Windows portion only",
+      "hardwareBoundary": "Mac models compatible with each supported macOS version"
+    }
+  },
+  "installation": {
+    "channel": "direct download from website or release page",
+    "windows": {
+      "scope": "current user",
+      "administratorRequired": false,
+      "exactPackageFormat": "architecture decision"
+    },
+    "macos": {
+      "downloadFormat": "dmg",
+      "payload": "app",
+      "placement": "Applications; user-owned application location when privileges require it",
+      "developerId": true,
+      "notarization": true
+    },
+    "signedDistributionRequired": true,
+    "storeChannelRequired": false
+  },
+  "updates": {
+    "checkDefault": "automatic",
+    "manualCheckAvailable": true,
+    "manualOnlySelectable": true,
+    "availabilityIndicator": "quiet application-menu entry",
+    "installationTrigger": "explicit user command",
+    "beforeInstall": "persist user data successfully",
+    "afterInstall": "restore working state",
+    "networkFailure": "offline calculation remains available; no recurring modal interruptions",
+    "installationMechanism": "architecture decision; not implemented"
+  },
+  "uninstallation": {
+    "preserve": [
+      "sheets",
+      "templates",
+      "userConstants",
+      "userFunctions",
+      "history",
+      "settings",
+      "backups"
+    ],
+    "reinstallation": "reuse preserved data",
+    "dataDeletion": "separate from uninstalling the application"
+  },
+  "messageKeys": [
+    "updates.check",
+    "updates.checking",
+    "updates.available",
+    "updates.install",
+    "updates.upToDate",
+    "updates.checkFailed",
+    "settings.updates.label",
+    "settings.updates.automatic",
+    "settings.updates.manual"
+  ],
+  "verificationBoundary": "No installer, certificate enrollment, payment, update service or native compatibility test is performed by this specification contract."
+}

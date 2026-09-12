@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "sourceLanguage": "en",
   "status": "draft",
-  "coverage": "Candidate text for identified calculator surfaces. Accepted through round 32: management entries, default/remappable commands, autostart, theme and scale controls, English fallback, completion matching/insertion, description commands and accessibility behavior. Exact geometry and styling await the general UI prototype; native integration is not implemented.",
+  "coverage": "Specification text for identified calculator surfaces. Interface behavior through round 32 and revised workspace/service screens through round 34 are accepted. Round 35 accepts public installation, update-check controls and explicit update actions, and data preservation after uninstall. Windows x86 build support is pending clarification. Native integration and package-owned installer text remain architecture work.",
   "messages": {
     "quick.expression.placeholder": {
       "text": "Type a calculation",
@@ -2905,6 +2905,69 @@
       "context": "The plus-button menu in the floating library. Uses the accepted template-creation flow; does not change local variable scope.",
       "location": "Create menu opened by the library plus icon.",
       "elementType": "menu_item"
+    },
+    "updates.check": {
+      "text": "Check for updates",
+      "meaning": "Starts a manual check for a newer application version.",
+      "context": "Accepted delivery behavior in round 35. Available in both automatic and manual-only check modes; a check does not authorize installation.",
+      "location": "Application actions menu.",
+      "elementType": "command_label"
+    },
+    "updates.checking": {
+      "text": "Checking for updates…",
+      "meaning": "Indicates that an update check is in progress.",
+      "context": "Accepted delivery behavior in round 35. Feedback for an explicitly requested check; automatic checks remain unobtrusive. This is not calculation progress.",
+      "location": "Update status in the application menu or update surface.",
+      "elementType": "status_message"
+    },
+    "updates.available": {
+      "text": "Update available",
+      "meaning": "Indicates that a newer application version can be installed.",
+      "context": "Accepted delivery behavior in round 35. Shown after a successful check finds an available release; installation still requires the user command.",
+      "location": "Quiet update entry or indicator in the application menu.",
+      "elementType": "status_message"
+    },
+    "updates.install": {
+      "text": "Update",
+      "meaning": "Starts the user-requested application update.",
+      "context": "Accepted delivery behavior in round 35. Available when an update is ready to be requested. User data must be saved before installation; working state is restored afterward. The installer mechanism remains architecture work.",
+      "location": "Application update action.",
+      "elementType": "command_label"
+    },
+    "updates.upToDate": {
+      "text": "You’re up to date",
+      "meaning": "Reports that no newer version was found.",
+      "context": "Accepted delivery behavior in round 35. Shown after a successful manual update check; automatic checks do not repeatedly interrupt the user.",
+      "location": "Update status feedback.",
+      "elementType": "status_message"
+    },
+    "updates.checkFailed": {
+      "text": "Couldn’t check for updates",
+      "meaning": "Reports a failed attempt to discover a newer version.",
+      "context": "Accepted delivery behavior in round 35. Used for a failed manual check or retained quiet status; failures do not disable offline calculation or create recurring modal interruptions. The manual check command permits another attempt.",
+      "location": "Update status feedback.",
+      "elementType": "status_message"
+    },
+    "settings.updates.label": {
+      "text": "Update checks",
+      "meaning": "Labels the choice of automatic or manual-only update checks.",
+      "context": "Accepted delivery behavior in round 35. Automatic checking is the accepted default; either mode keeps installation under the user’s control.",
+      "location": "Application settings, update-check choice.",
+      "elementType": "field_label"
+    },
+    "settings.updates.automatic": {
+      "text": "Automatic",
+      "meaning": "Selects background checks for new application versions.",
+      "context": "Accepted delivery behavior in round 35. Default update-check mode; the app reports availability without installing automatically.",
+      "location": "Automatic option of the update-check setting.",
+      "elementType": "select_option"
+    },
+    "settings.updates.manual": {
+      "text": "Manual",
+      "meaning": "Restricts update discovery to explicit check commands.",
+      "context": "Accepted delivery behavior in round 35. Selected by users who want checks to run only on request; the manual menu command remains available.",
+      "location": "Manual option of the update-check setting.",
+      "elementType": "select_option"
     }
   }
 }
