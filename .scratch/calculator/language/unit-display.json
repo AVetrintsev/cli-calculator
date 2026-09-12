@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "status": "specification",
+  "sourceDecision": "../issues/04-expression-language.md",
+  "acceptedRound": 28,
+  "automaticScaleSelection": true,
+  "scope": "representation of a measured numeric result after its typed operation; not restricted to floor",
+  "acceptedExample": {
+    "expression": "floor(1234mm)",
+    "referenceInputInMetres": "1.234",
+    "referenceResultInMetres": "1",
+    "displayedResult": "1m",
+    "copiedResult": "1"
+  },
+  "preserve": "working value, dimensional type and semantic context",
+  "canChange": "display unit scale and its corresponding displayed numeric coefficient",
+  "referenceNumberRounding": "independent of chosen output scale",
+  "explicitConversionTarget": "existing explicit target-unit choice has precedence over automatic choice; no automatic rescaling away from a requested target",
+  "explicitTargetExample": "floor(1234mm) to mm displays 1000mm",
+  "displayPipeline": [
+    "typed calculation and applicable reference-number operations",
+    "explicit target or automatic unit-scale choice",
+    "format the coefficient in that unit under the existing decimal and approximate-zero rules",
+    "group identical displayed answers under existing rules"
+  ],
+  "copy": "existing rule: displayed numeric coefficient only for an ordinary measured quantity; shown 1m copies 1, not an earlier input-scale coefficient",
+  "lazyAlternatives": "retain typed alternatives and choose display for each before grouping; do not change unit inference merely to obtain a convenient scale",
+  "history": "existing immutable working values and displayed answers remain authoritative; copying history does not recalculate or rerun a new live scale decision",
+  "locale": "existing Latin/local unit notation and explicit target-spelling rules remain applicable",
+  "unresolved": [
+    "Automatic candidate scale ladders, coefficient thresholds and boundary/zero behavior.",
+    "Display-family choice for metric/nonmetric mixtures and information-unit prefix families.",
+    "Fixed-duration and derived-unit result scales, including denominators."
+  ]
+}

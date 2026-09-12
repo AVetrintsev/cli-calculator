@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "status": "specification",
   "sourceDecision": "../issues/04-expression-language.md",
-  "acceptedThrough": "round 27: typed numeric behavior, approximate-zero interactions and percentage-left addition; remaining special operations pending round 28",
+  "acceptedThrough": "round 28: typed operation rules accepted; automatic result scaling added by user, detailed display policies pending round 29",
   "domain": "real numbers",
   "input": {
     "maximumSignificantDigits": 30,
@@ -75,18 +75,64 @@
     "overridePriority": "an applicable percentage-specific operation takes precedence over the other operand type handler; retain original left/right operand order"
   },
   "unresolved": [
-    "Whether round/floor/ceil override the inherited reference-number behavior for displayed coefficients.",
-    "Root dimensional rules and percentage power/root overrides.",
-    "Addition/subtraction of measured quantities with ordinary numbers, and quantity/percentage combinations.",
-    "min/max selection preservation and domain/result rules for logarithmic and trigonometric functions."
+    "Detailed automatic unit-display scale policies are pending round 29; see unit-display.json."
   ],
   "implementationDecisions": "../issues/09-shared-core-and-shells.md",
   "typedValueContract": "typed-values.md",
   "typedNumericBehavior": {
     "base": "numeric types inherit common operations on a reference number",
-    "defaultResult": "same type with transformed reference number and retained presentation context",
+    "defaultResult": "same type with transformed reference number; preserve semantic/presentation context while allowing automatic output unit-scale selection",
     "abs": "type preserving; abs(-1cm) = 1cm and abs(-50%) = 50%",
     "typeSpecificRules": "can constrain applicability or override combined operation and result type",
-    "explicitEarlierOverrides": "remain applicable; in particular ordinary-number/percentage multiplication and division from round 26"
+    "explicitEarlierOverrides": "remain applicable; in particular ordinary-number/percentage multiplication and division from round 26",
+    "roundFloorCeil": "operate on the reference number; preserve type; final unit scale may be chosen automatically"
+  },
+  "unitDisplayContract": "unit-display.json",
+  "functionRules": {
+    "sourceDecision": "../issues/04-expression-language.md",
+    "acceptedRound": 28,
+    "roundFloorCeil": {
+      "input": "typed numerical value when its type permits the operation",
+      "operand": "reference number, not displayed coefficient",
+      "result": "same type",
+      "finalDisplay": "automatic scale selection unless an explicit target representation applies",
+      "percentExample": "round(12.345%; 2) = 12%",
+      "lengthExample": "floor(1234mm) = 1m",
+      "explicitRoundingToZero": "exact typed zero, not approximate zero"
+    },
+    "powersAndRoots": {
+      "measuredQuantities": "special dimensional operations; apply supported-final-unit constraints after allowed simplification",
+      "squareRootOfArea": "sqrt(4m²) = 2m",
+      "standaloneSquareRootOfLength": "no supported final unit",
+      "percentageResult": "ordinary number calculated from the fraction; (50%)^2 = 0.25; sqrt(25%) = 0.5"
+    },
+    "minMax": {
+      "input": "compatible quantities compared by reference numbers",
+      "result": "selected typed value and context; final output scaling still applies",
+      "equalValues": "first argument",
+      "examples": [
+        "min(5cm; 1m) selects length 5cm",
+        "min(50%; 0.6) = 50%"
+      ],
+      "incompatibleValues": "diagnostic; do not discard types to compare"
+    },
+    "logarithmsAndTrigonometry": {
+      "input": "ordinary numbers and numerical fractions of percentages; previously supported explicit angles for trigonometry",
+      "disallowed": "length, area, mass and fixed duration are not made valid by unwrapping the number",
+      "result": "ordinary number except the already approved angular inverse-trigonometric result",
+      "examples": [
+        "ln(100%) = 0",
+        "sin(1cm) is invalid"
+      ],
+      "existingFunctionDomainsAndDegreeDefault": "unchanged"
+    },
+    "directIfOrNameReturn": "preserve selected type and working value"
+  },
+  "measuredQuantityCombinations": {
+    "additionSubtractionWithBareNumber": "reject rather than guess the missing unit",
+    "multiplyByPercentageEitherOrder": "scale the measurement and preserve its dimensional type",
+    "rightHandPercentageInAdditionSubtraction": "relative change of the measurement",
+    "leftHandPercentagePlusOrMinusMeasurement": "reject; do not silently make the fraction a measurement",
+    "specialCalendarAndTemperatureRules": "not expanded by these general examples"
   }
 }
