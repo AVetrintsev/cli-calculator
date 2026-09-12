@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "status": "specification",
   "sourceDecision": "../issues/16-contextual-units.md",
-  "acceptedRound": 30,
+  "acceptedRound": 31,
   "unitTargets": {
     "shape": "unit atom, optionally followed by / and a second unit atom; only already supported final dimensions",
     "atoms": "registered units and the accepted square/cubic length forms",
@@ -45,7 +45,7 @@
         "m³"
       ]
     },
-    "filter": "operation-sensitive compatibility in the available local nested-expression context",
+    "filter": "operation-sensitive compatibility in the local expression and constraints propagated through outer parentheses and operations",
     "lengthAdditionExample": {
       "inputAtCaret": "1cm + 2m|",
       "incompatibleCompletions": [
@@ -58,12 +58,19 @@
     },
     "typingVsPresence": "the mere presence of a length does not rule out a time divisor; apply operation/type rules",
     "durationAddition": "the previously accepted addition of durations remains valid",
-    "locale": "Latin baseline plus only the active interface locale; no new aliases are registered by this partial completion decision",
+    "locale": "Latin baseline plus only the active interface locale; calendar month is mon/мес, with no former short spelling alias",
     "layoutAndKeys": "existing seven-row inline layout, prefix dimming, descriptions, Tab and arrow-key precedence remain applicable",
-    "unresolved": [
-      "Completion use of outer-expression constraints, conservative filtering when context is incomplete, and compatible conversion targets across latent alternatives.",
-      "Reconcile the user mon example with the previously accepted mo/мес calendar-month notation."
-    ],
-    "generalSearchAndOrderOwner": "../issues/08-settings-and-accessibility.md"
+    "unresolved": [],
+    "generalSearchAndOrderOwner": "../issues/08-settings-and-accessibility.md",
+    "outerContextExample": "1cm + (2m… * 3) suggests compatible length continuations; ellipsis indicates unfinished input, not formula syntax",
+    "incompleteContext": "retain every prefix continuation that cannot yet be ruled out; do not prematurely select one latent unit interpretation",
+    "conversionTargets": {
+      "eligibility": "compatible with at least one still-valid interpretation of the source value",
+      "example": "after 1m to, cm and s are possible targets; selecting a target adds that unit constraint",
+      "deduplication": "do not duplicate identical inserted spellings",
+      "insertion": "insert visible spelling without a hidden type selection"
+    },
+    "monthSymbolKey": "calendar.unit.month",
+    "monthSymbolCatalog": "../localization/calendar/catalog.json"
   }
 }

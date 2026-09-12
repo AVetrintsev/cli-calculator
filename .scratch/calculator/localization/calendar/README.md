@@ -1,8 +1,8 @@
 # Calendar names and patterns
 
-[catalog.json](catalog.json) supplies English text, meaning, execution context, location and element type. It separates `patterns` from `symbols`; the adjacent [en.json](en.json) and [ru.json](ru.json) contain the combined flat key set. These are specification materials from accepted rounds 24–25, not a runtime parser.
+[catalog.json](catalog.json) supplies English text, meaning, execution context, location and element type. It separates `patterns` from `symbols`; the adjacent [en.json](en.json) and [ru.json](ru.json) contain the combined flat key set. These are specification materials from accepted rounds 24–25 and the round-31 month-symbol replacement, not a runtime parser.
 
-The English baseline is always active. Russian adds DD.MM.YYYY, мес and год only when ru is active. Calendar months are mo/мес and years y/год. They are separate from the fixed physical-unit catalog: one year is twelve months, but a month has no constant factor in seconds. m/м remain metre/minute and г remains gram. Do not generate extra declensions or aliases. Future locale names must pass the same collision checks as other built-in symbols.
+The English baseline is always active. Russian adds DD.MM.YYYY, мес and год only when ru is active. Calendar months are mon/мес and years y/год. Round 31 replaces the earlier Latin month spelling outright; it is not a supported alias. The stable calendar.unit.month key is unchanged. They are separate from the fixed physical-unit catalog: one year is twelve months, but a month has no constant factor in seconds. m/м remain metre/minute and г remains gram. Do not generate extra declensions or aliases. Future locale names must pass the same collision checks as other built-in symbols.
 
 YYYY-MM-DD and DD.MM.YYYY contain fixed Y/M/D pattern metacharacters, with four year digits and two month/day digits. Output remains YYYY-MM-DD in every locale; years are 0001–9999. Future patterns require grammar validation.
 

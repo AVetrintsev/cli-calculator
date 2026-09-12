@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "sourceLanguage": "en",
   "status": "draft",
-  "coverage": "Candidate text for identified calculator surfaces. Accepted through round 30: expression-scale ranking and scope, unit-conversion target grammar, and operation-sensitive local unit-prefix continuations. Outer/incomplete completion context and the proposed mon spelling await round 31. Open interface decisions still control final wording and placement.",
+  "coverage": "Candidate text for identified calculator surfaces. Accepted through round 31: expression-scale ranking and scope, unit-target grammar, context-sensitive prefix continuations including outer/incomplete context and conversion targets, and mon replacing the former month spelling. Open interface decisions still control final wording and placement.",
   "messages": {
     "quick.expression.placeholder": {
       "text": "Type a calculation",
@@ -2519,9 +2519,9 @@
       "elementType": "help_paragraph"
     },
     "help.calendar.monthsRule": {
-      "text": "Calendar months and years are separate from fixed-duration units. If the target month lacks the original day, use its last day: 31 January 2026 plus one month is 28 February 2026, and 29 February 2024 plus one year is 28 February 2025. Explicit additions run in order: adding one month twice from 31 January gives 28 March, while adding two months at once gives 31 March. A month cannot become a fixed number of days without a starting date. Write months as mo and years as y; Russian also accepts мес and год. For example, 2026-01-31 + 1mo + 1mo gives 2026-03-28, while 2026-01-31 + 2mo gives 2026-03-31.",
+      "text": "Calendar months and years are separate from fixed-duration units. If the target month lacks the original day, use its last day: 31 January 2026 plus one month is 28 February 2026, and 29 February 2024 plus one year is 28 February 2025. Explicit additions run in order: adding one month twice from 31 January gives 28 March, while adding two months at once gives 31 March. A month cannot become a fixed number of days without a starting date. Write months as mon and years as y; Russian also accepts мес and год. For example, 2026-01-31 + 1mon + 1mon gives 2026-03-28, while 2026-01-31 + 2mon gives 2026-03-31.",
       "meaning": "Explains accepted calendar-month/year arithmetic and non-equivalence of sequential additions.",
-      "context": "Rounds 24–25. Calendar names mo/мес and y/год are approved, with Latin baseline plus the active locale. Aggregate calendar months within one compound period before one clamped shift, then apply the fixed part. Explicit addition operators remain sequential. Fractional months are permitted in intermediate periods but must total an integer at date application. m/м, г and financial period counts are unchanged.",
+      "context": "Rounds 24–25. Calendar names mon/мес and y/год are approved, with Latin baseline plus the active locale. Aggregate calendar months within one compound period before one clamped shift, then apply the fixed part. Explicit addition operators remain sequential. Fractional months are permitted in intermediate periods but must total an integer at date application. m/м, г and financial period counts are unchanged. Round 31 explicitly replaces the prior Latin month spelling with mon while retaining Russian мес and the stable calendar.unit.month identity; the previous spelling is not kept as an alias.",
       "location": "Calendar expressions section of help; completion and diagnostic placement retain their shared interaction rules.",
       "elementType": "help_paragraph"
     },
@@ -2561,14 +2561,14 @@
       "elementType": "help_heading"
     },
     "help.precedence.calendarLiteralsRule": {
-      "text": "A complete 2026-10-09 is one date value. Write 2026 - 10 - 09 to subtract numbers. Russian also accepts 09.10.2026 as a date. A nonexistent complete date is an error, and an incomplete date has no ready result. Time such as 14:30 and date-time such as 2026-10-09 14:30 are also whole values. These token rules do not change the priority of ::, to or arithmetic operators. An offset suffix belongs to the value: 2026-10-09 14:30+03:00. UTC+01:00 is one conversion target. A carried clock such as 01:30Z (+1d) is one value, not multiplication by parentheses. Adjacent calendar components such as 1mo1d also form one period; its months are applied once, then its fixed duration. Separate + operators still apply sequentially.",
+      "text": "A complete 2026-10-09 is one date value. Write 2026 - 10 - 09 to subtract numbers. Russian also accepts 09.10.2026 as a date. A nonexistent complete date is an error, and an incomplete date has no ready result. Time such as 14:30 and date-time such as 2026-10-09 14:30 are also whole values. These token rules do not change the priority of ::, to or arithmetic operators. An offset suffix belongs to the value: 2026-10-09 14:30+03:00. UTC+01:00 is one conversion target. A carried clock such as 01:30Z (+1d) is one value, not multiplication by parentheses. Adjacent calendar components such as 1mon1d also form one period; its months are applied once, then its fixed duration. Separate + operators still apply sequentially.",
       "meaning": "Explains how whole calendar literals coexist with unchanged operator precedence.",
       "context": "Rounds 24–25. Whole date/time values include accepted fixed-offset suffixes and explicit carried-clock notation. Adjacent calendar-period components also form a whole value. The sign inside an offset suffix or UTC±HH:mm target is part of that construct. This does not change ::/to priority. Parser recovery from incomplete input remains technical grammar work.",
       "location": "Operator-precedence help under the date/time literal heading.",
       "elementType": "help_paragraph"
     },
     "help.calendar.periodRule": {
-      "text": "Combine calendar and fixed units in one period: 1y2mo3d. Its years and months are combined and applied once, then its fixed duration. Repeating or reordering components inside the same period does not change it. 2026-01-30 + 1mo1d gives 2026-03-01. Store periods by name, add or subtract compatible components, and multiply or divide the whole period by a number. Fractional months may be intermediate values, but the total must be a whole number when applied to a date: 0.5y is 6mo; 0.5mo is not guessed to mean 15d.",
+      "text": "Combine calendar and fixed units in one period: 1y2mon3d. Its years and months are combined and applied once, then its fixed duration. Repeating or reordering components inside the same period does not change it. 2026-01-30 + 1mon1d gives 2026-03-01. Store periods by name, add or subtract compatible components, and multiply or divide the whole period by a number. Fractional months may be intermediate values, but the total must be a whole number when applied to a date: 0.5y is 6mon; 0.5mon is not guessed to mean 15d.",
       "meaning": "Explains normalization, application order and scalar arithmetic of compound calendar periods.",
       "context": "Accepted round 25. See language/calendar.json and the calendar locale catalogs. This is help text specifying behavior, not evidence of an implemented parser or time engine.",
       "location": "Calendar expressions section of application help.",
@@ -2632,8 +2632,8 @@
     },
     "completion.calendar.month.description": {
       "text": "Calendar month",
-      "meaning": "Description of the calendar-month symbol mo and its active local spelling.",
-      "context": "Accepted round 25 symbols. Offer only in compatible calendar unit or conversion-target positions using the common completion rules; no new global constant or alias. Latin and active locale spellings are supplied by calendar/catalog.json.",
+      "meaning": "Description of the calendar-month symbol mon and its active local spelling.",
+      "context": "Calendar month uses mon in the always-active Latin baseline and мес in the active Russian locale, as explicitly replaced in round 31. Resolve the spelling from calendar/catalog.json and the active locale dictionary. Suggest only prefix continuations and targets compatible with the current local/outer or still-incomplete context. This is a calendar unit, not a fixed number of seconds or a global constant; no former spelling alias is retained.",
       "location": "Inline completion row immediately after the inserted spelling with a gap, at the same font size and reduced weight/opacity; at most seven rows.",
       "elementType": "completion_description"
     },
@@ -2680,7 +2680,7 @@
       "elementType": "accessible_label"
     },
     "help.calendar.periodComparisonRule": {
-      "text": "Calendar periods are equal when their normalized month totals and fixed-duration parts are equal: 1y == 12mo is true, 1mo == 30d is false, and (1mo + 3d) == (1mo + 72h) is true. Order pure months or years by their month totals and fixed durations by their lengths. Ordering a mixed period, or a calendar period against a fixed duration, needs a starting date. Apply both to that date, then compare the results; do not assume a month is 30 days.",
+      "text": "Calendar periods are equal when their normalized month totals and fixed-duration parts are equal: 1y == 12mon is true, 1mon == 30d is false, and (1mon + 3d) == (1mon + 72h) is true. Order pure months or years by their month totals and fixed durations by their lengths. Ordering a mixed period, or a calendar period against a fixed duration, needs a starting date. Apply both to that date, then compare the results; do not assume a month is 30 days.",
       "meaning": "Explains component equality and reference-date requirements for calendar-period ordering.",
       "context": "Round 26, point 4. Equality and inequality compare normalized components without a reference date. Ordering means <, >, <= or >=. Pure calendar or pure fixed values can be ordered within their own family. The existing calendar.dateRequired diagnostic covers missing reference dates. Date/date-time comparisons are unchanged.",
       "location": "Calendar expressions section of application help.",
@@ -2760,9 +2760,9 @@
       }
     },
     "help.completion.unitContextRule": {
-      "text": "Unit suggestions continue the letters you have typed and respect the operation in the local expression. After m, square and cubic metre completions appear as m² and m³ when those units fit. In 1cm + 2m…, time, area and volume do not fit the length being added. A time divisor may still fit a length calculation; the operation determines compatibility.",
-      "meaning": "Explains prefix continuations and operation-sensitive filtering of local unit suggestions.",
-      "context": "Direct user correction in round 30 item 4. Existing seven-row inline layout, prefix dimming, descriptions, Tab and arrow handling remain unchanged. The ellipsis illustrates unfinished input, not new formula syntax. Do not show every example regardless of context. Outer/incomplete-context filtering and ambiguous conversion-target candidates await round 31; mon is not yet a registered alias.",
+      "text": "Unit suggestions continue the letters you have typed and respect the operation and constraints from surrounding parentheses. After m, square and cubic metre completions appear as m² and m³ when those units fit. In 1cm + 2m…, time, area and volume do not fit the length being added. The same length constraint applies inside 1cm + (2m… * 3). A time divisor may still fit a length calculation. If context is incomplete, keep all prefix continuations that cannot yet be ruled out. After to or ::, offer targets compatible with at least one valid interpretation: after 1m to, cm and s are possible. Selecting a target adds its constraint. Insert the visible spelling without a hidden type choice, and do not duplicate identical inserted spellings.",
+      "meaning": "Explains prefix continuations filtered by local and outer type constraints, conservative incomplete-context behavior and compatible conversion targets.",
+      "context": "Accepted rounds 30–31; see language/unit-input.json. Reuse the existing lazy constraints through operations and parentheses without guessing a single interpretation. The ellipsis illustrates unfinished input, not syntax. The seven-row inline layout, prefix dimming, descriptions, Tab and arrow handling remain unchanged. Calendar month is mon/мес under the separate symbol catalog. General sorting and editing in the middle of a word remain interface decisions.",
       "location": "Unit suggestions section of application help.",
       "elementType": "help_paragraph"
     }

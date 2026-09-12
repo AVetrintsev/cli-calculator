@@ -28,9 +28,9 @@
   },
   "symbols": {
     "calendar.unit.month": {
-      "text": "mo",
+      "text": "mon",
       "meaning": "A calendar month, whose day length depends on a starting date.",
-      "context": "Round 25. Latin baseline always active, with only the active interface locale adding a spelling. Protected unit names. These are calendar units, not fixed seconds factors. m/м remain metre/minute and г remains gram. No additional declensions or aliases. Store stable semantic identities when changing locale.",
+      "context": "Round 31 replaces the former Latin month spelling with mon, not an additional alias. The Latin baseline is always active; only the active interface locale adds its spelling, such as Russian мес. Protected calendar-unit name; no fixed seconds factor. m/м remain metre/minute and г remains gram. No additional declensions or aliases. The stable semantic identity calendar.unit.month is unchanged.",
       "location": "Calendar-period unit positions in formulas, conversion targets, inline completion and result formatting. Names use the common completion alignment and description style.",
       "elementType": "calendar_unit_symbol"
     },

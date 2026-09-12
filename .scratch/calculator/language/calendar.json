@@ -134,7 +134,8 @@
   "unresolved": [],
   "acceptedRounds": [
     24,
-    25
+    25,
+    31
   ],
   "fixedOffsets": {
     "catalog": "../localization/calendar/catalog.json",
@@ -228,6 +229,12 @@
       "mixedPeriodOrCalendarVsFixedOrdering": "requires a supplied reference date; otherwise a brief diagnostic",
       "referenceDate": "apply each period to the same supplied date, then compare the resulting dated values",
       "monthEqualsThirtyDays": false
+    },
+    "monthNotationDecision": {
+      "sourceDecision": "../issues/16-contextual-units.md",
+      "acceptedRound": 31,
+      "unitKey": "calendar.unit.month",
+      "change": "Replace the former Latin spelling with mon; do not retain the former spelling as a built-in unit alias. Russian мес and the semantic unit identity are unchanged."
     }
   },
   "relatedOpenDecisions": {
