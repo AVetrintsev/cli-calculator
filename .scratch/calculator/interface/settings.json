@@ -68,7 +68,7 @@
     "interfaceScaleAdjustable": true,
     "dimmingCanBeDisabled": true,
     "dimmingDefault": true,
-    "specificFontColorsAndOpacity": "Light-sheet appearance accepted in round 33. Round 34 replaces the rejected blue dark palette with neutral graphite-black surfaces based on VS Code Dark+; revised tokens are in workspace.json."
+    "specificFontColorsAndOpacity": "Light-sheet appearance accepted in round 33. The complete revised round 34 screens and neutral graphite-black Dark+ palette are accepted; exact adapted tokens are in workspace.json."
   },
   "localization": {
     "initialLocale": "system language if its translation is available, otherwise en",
@@ -118,11 +118,11 @@
     "reducedMotion": "follow system preference"
   },
   "unresolved": [
-    "definition editor and settings presentation beyond accepted light-sheet styling",
+    "verification of definition editor and settings states beyond the accepted prototype fixtures",
     "extreme completion edges and scaled layouts",
-    "review of the revised graphite palette, if further changes are requested",
     "native and assistive-technology verification"
   ],
   "acceptedVisualRound": 34,
-  "workspace": "workspace.json"
+  "workspace": "workspace.json",
+  "acceptedVisualRevision": "e152bab"
 }

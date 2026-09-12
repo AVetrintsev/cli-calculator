@@ -46,5 +46,7 @@
     ],
     "explanatoryParagraphVisible": false
   },
-  "scope": "Prototype edits and wording implement the user correction. No real import, restoration, OS clipboard or production storage behavior is performed."
+  "scope": "Prototype edits and wording implement the user correction. No real import, restoration, OS clipboard or production storage behavior is performed.",
+  "reviewStatus": "accepted",
+  "acceptedPrototypeRevision": "e152bab"
 }

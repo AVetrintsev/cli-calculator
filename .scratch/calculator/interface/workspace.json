@@ -59,7 +59,7 @@
   "correctedInRound": 34,
   "serviceViews": "service-views.json",
   "darkAppearance": {
-    "status": "requested direction applied in revised prototype",
+    "status": "accepted",
     "direction": "neutral graphite-black surfaces without a blue cast; based on VS Code Dark+",
     "page": "#141414",
     "surface": "#1e1e1e",
@@ -76,6 +76,8 @@
       "https://github.com/microsoft/vscode/blob/main/extensions/theme-defaults/themes/dark_plus.json"
     ],
     "sourceConsultedOn": "2026-09-12",
-    "adaptation": "Neutral surfaces and number/operator colors draw on the official themes; calculator roles are adapted. This is not an exact reproduction of all VS Code UI tokens."
-  }
+    "adaptation": "Neutral surfaces and number/operator colors draw on the official themes; calculator roles are adapted. This is not an exact reproduction of all VS Code UI tokens.",
+    "acceptedRound": 34
+  },
+  "acceptedServiceRevision": "e152bab"
 }
