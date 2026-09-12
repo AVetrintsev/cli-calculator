@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "sourceLanguage": "en",
   "status": "draft",
-  "coverage": "Specification text for identified calculator surfaces. Interface behavior through round 32 and revised workspace/service screens through round 34 are accepted. Round 35 accepts public installation, update-check controls and explicit update actions, and data preservation after uninstall. The Windows compatibility clarification is accepted: one Windows 11 x64 build. Native integration and package-owned installer text remain architecture work.",
+  "coverage": "Specification text for identified calculator surfaces. Interface behavior through round 32 and revised workspace/service screens through round 34 are accepted. Round 35 accepts direct public installation, user-controlled update installation and retained data after uninstall; Windows 11 uses one x64 build. Round 36 accepts performance budgets and the complexity diagnostic/help. Native integration, measurements and package-owned installer text remain engineering work.",
   "messages": {
     "quick.expression.placeholder": {
       "text": "Type a calculation",
@@ -2968,6 +2968,20 @@
       "context": "Accepted delivery behavior in round 35. Selected by users who want checks to run only on request; the manual menu command remains available.",
       "location": "Manual option of the update-check setting.",
       "elementType": "select_option"
+    },
+    "error.calculationTooComplex": {
+      "text": "Calculation too complex",
+      "meaning": "Indicates that the permitted work or execution budget for the current recalculation was exceeded.",
+      "context": "Accepted in round 36 with a 200 ms recalculation deadline. Diagnose unfinished affected expressions while preserving editable input and complete independent results. Never present an incomplete subset of lazy meanings as a complete answer. Superseded requests do not overwrite newer input.",
+      "location": "Brief diagnostic beside the affected expression, using the existing error placement and accessible announcement.",
+      "elementType": "error_message"
+    },
+    "help.calculation.complexityRule": {
+      "text": "A recalculation has a 200 ms execution budget, including dependencies and alternative meanings. If it is too complex, simplify the expression or its dependencies. Your input and completed independent results remain available.",
+      "meaning": "Explains the accepted short-calculation limit and how a user can respond to a complexity diagnostic.",
+      "context": "Accepted in round 36. General help supplements the brief diagnostic without introducing a long-running calculation or manual-cancel mode. This is application help content, not a claim of measured performance.",
+      "location": "Calculation help, section explaining limits and complexity errors.",
+      "elementType": "help_paragraph"
     }
   }
 }

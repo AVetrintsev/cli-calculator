@@ -411,5 +411,7 @@
   "updates.checkFailed": "Couldn’t check for updates",
   "settings.updates.label": "Update checks",
   "settings.updates.automatic": "Automatic",
-  "settings.updates.manual": "Manual"
+  "settings.updates.manual": "Manual",
+  "error.calculationTooComplex": "Calculation too complex",
+  "help.calculation.complexityRule": "A recalculation has a 200 ms execution budget, including dependencies and alternative meanings. If it is too complex, simplify the expression or its dependencies. Your input and completed independent results remain available."
 }

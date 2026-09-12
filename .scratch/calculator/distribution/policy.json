@@ -82,5 +82,6 @@
     "settings.updates.automatic",
     "settings.updates.manual"
   ],
-  "verificationBoundary": "No installer, certificate enrollment, payment, update service or native compatibility test is performed by this specification contract."
+  "verificationBoundary": "No installer, certificate enrollment, payment, update service or native compatibility test is performed by this specification contract.",
+  "performance": "performance.json"
 }

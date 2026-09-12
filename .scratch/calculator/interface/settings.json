@@ -117,12 +117,13 @@
     "announceEveryNowTick": false,
     "reducedMotion": "follow system preference"
   },
-  "unresolved": [
+  "acceptedVisualRound": 34,
+  "workspace": "workspace.json",
+  "acceptedVisualRevision": "e152bab",
+  "verificationOutstanding": [
     "verification of definition editor and settings states beyond the accepted prototype fixtures",
     "extreme completion edges and scaled layouts",
     "native and assistive-technology verification"
   ],
-  "acceptedVisualRound": 34,
-  "workspace": "workspace.json",
-  "acceptedVisualRevision": "e152bab"
+  "decisionStatus": "product and visual choices accepted; remaining items are engineering verification"
 }

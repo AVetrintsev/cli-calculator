@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "status": "proposal",
-  "accepted": false,
+  "status": "specification",
+  "accepted": true,
   "round": 36,
   "sourceDecision": "../issues/10-delivery-and-acceptance.md",
   "referenceClass": {
@@ -17,14 +17,6 @@
     "largeHistorySearchMs": 200,
     "openSavedDocumentMs": 200,
     "ordinaryActiveSheetRecalculationMs": 200
-  },
-  "deadlineProposal": {
-    "elapsedMs": 200,
-    "scope": "one evaluation request for the current expression or affected active-sheet region, including parse, dependencies and lazy meanings",
-    "onExceeded": "terminate that request and show a concise complexity diagnostic for unfinished affected expressions; preserve editable input and already-complete independent results",
-    "resultCompleteness": "a ready expression result includes all valid meanings; deadline does not authorize a truncated subset presented as complete",
-    "staleRequest": "superseded work must not replace or diagnose the newer input",
-    "enforcementMechanism": "architecture decision; deterministic work limits and the elapsed-time guard must be designed together"
   },
   "testWorkload": {
     "historyEntries": 100000,
@@ -47,7 +39,8 @@
     "meaning": "acceptance budgets, not permission to delete data or terminate the app to meet a quota",
     "idleHiddenMemoryMB": 150,
     "typicalOpenSheetMemoryMB": 250,
-    "memoryUnit": "MB = 1,000,000 bytes"
+    "memoryUnit": "MB = 1,000,000 bytes",
+    "idleCpuLimitIsExclusive": true
   },
   "measurementProtocol": {
     "build": "installed release build",
@@ -62,7 +55,9 @@
       "platform memory-counter mapping",
       "reproducible fixture corpus",
       "full watchdog and error attribution design"
-    ]
+    ],
+    "correctnessGate": "Reference workloads must produce the expected complete results. A fast error, skipped expression or incomplete set of meanings is not a successful latency sample.",
+    "status": "engineering protocol outline; exact devices, fixtures and platform counters remain to be fixed"
   },
   "alreadyAcceptedBoundaries": {
     "workingSignificantDigits": 30,
@@ -84,7 +79,17 @@
     "method": "read-only registry and .NET ComputerInfo by the research agent; no network discovery",
     "observationDate": "2026-09-12",
     "performanceMeasured": false,
-    "baselineCaution": "this 32-GiB development machine does not by itself validate the proposed 8-GiB reference class"
+    "baselineCaution": "this 32-GiB development machine does not by itself validate the accepted 8-GiB reference class"
   },
-  "verificationBoundary": "All numerical performance and resource targets are pending user review. No production calculator benchmark or native compatibility test has been run."
+  "verificationBoundary": "Round 36 performance and resource targets are accepted. No production calculator benchmark or native compatibility test has been run; exact protocol details still require engineering work.",
+  "acceptedRound": 36,
+  "deadline": {
+    "elapsedMs": 200,
+    "scope": "one evaluation request for the current expression or affected active-sheet region, including parse, dependencies and lazy meanings",
+    "onExceeded": "terminate that request and show a concise complexity diagnostic for unfinished affected expressions; preserve editable input and already-complete independent results",
+    "resultCompleteness": "a ready expression result includes all valid meanings; deadline does not authorize a truncated subset presented as complete",
+    "staleRequest": "superseded work must not replace or diagnose the newer input",
+    "enforcementMechanism": "architecture decision; deterministic work limits and the elapsed-time guard must be designed together",
+    "diagnosticKey": "error.calculationTooComplex"
+  }
 }

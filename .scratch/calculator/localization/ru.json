@@ -411,5 +411,7 @@
   "updates.checkFailed": "Не удалось проверить обновления",
   "settings.updates.label": "Проверка обновлений",
   "settings.updates.automatic": "Автоматически",
-  "settings.updates.manual": "Вручную"
+  "settings.updates.manual": "Вручную",
+  "error.calculationTooComplex": "Слишком сложный расчёт",
+  "help.calculation.complexityRule": "Пересчёт ограничен 200 мс, включая зависимости и возможные трактовки. Если расчёт слишком сложный, упростите выражение или его зависимости. Введённый текст и готовые независимые результаты остаются доступными."
 }
