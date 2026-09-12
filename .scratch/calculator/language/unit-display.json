@@ -2,15 +2,26 @@
   "schemaVersion": 1,
   "status": "specification",
   "sourceDecision": "../issues/04-expression-language.md",
-  "acceptedRound": 28,
+  "acceptedRound": 29,
   "automaticScaleSelection": true,
-  "scope": "representation of a measured numeric result after its typed operation; not restricted to floor",
+  "scope": "Result representation after typed computation. Single-scale and mixed-scale expression rules supersede unrestricted automatic ladder selection.",
   "acceptedExample": {
-    "expression": "floor(1234mm)",
-    "referenceInputInMetres": "1.234",
-    "referenceResultInMetres": "1",
-    "displayedResult": "1m",
-    "copiedResult": "1"
+    "sameScale": {
+      "expression": "1m + 1m",
+      "displayedResult": "2m",
+      "copiedResult": "2"
+    },
+    "mixedScales": {
+      "expression": "1m + 100mm",
+      "displayedResult": "1100mm",
+      "copiedResult": "1100"
+    },
+    "explicitTarget": {
+      "expression": "1m + 100mm to m",
+      "displayedResult": "1.1m",
+      "copiedResult": "1.1"
+    },
+    "notation": "Ungrouped Latin examples with decimal dot are semantic examples, not an override of locale, spacing or grouping rules."
   },
   "preserve": "working value, dimensional type and semantic context",
   "canChange": "display unit scale and its corresponding displayed numeric coefficient",
@@ -19,17 +30,335 @@
   "explicitTargetExample": "floor(1234mm) to mm displays 1000mm",
   "displayPipeline": [
     "typed calculation and applicable reference-number operations",
-    "explicit target or automatic unit-scale choice",
+    "explicit target, or scale selected under the latest expression-context rules; unresolved general policies must not be treated as defaults",
     "format the coefficient in that unit under the existing decimal and approximate-zero rules",
     "group identical displayed answers under existing rules"
   ],
-  "copy": "existing rule: displayed numeric coefficient only for an ordinary measured quantity; shown 1m copies 1, not an earlier input-scale coefficient",
+  "copy": "Displayed coefficient only for an ordinary measured quantity, including fixed duration. In the accepted examples 2m copies 2, 1100mm copies 1100 and 1.1m copies 1.1 before locale/grouping formatting. Percentage and calendar exceptions remain applicable.",
   "lazyAlternatives": "retain typed alternatives and choose display for each before grouping; do not change unit inference merely to obtain a convenient scale",
   "history": "existing immutable working values and displayed answers remain authoritative; copying history does not recalculate or rerun a new live scale decision",
   "locale": "existing Latin/local unit notation and explicit target-spelling rules remain applicable",
   "unresolved": [
-    "Automatic candidate scale ladders, coefficient thresholds and boundary/zero behavior.",
-    "Display-family choice for metric/nonmetric mixtures and information-unit prefix families.",
-    "Fixed-duration and derived-unit result scales, including denominators."
-  ]
+    "General adequate-scale ranking among multiple user-supplied scales, including mixed families and repeated use of values.",
+    "Reconciliation of preserved input scales with floor/round, fixed-duration and derived-numerator examples; the role of full ladders when scale context is absent."
+  ],
+  "latestDecision": "User amendment after round 29 limits result-scale choice to scales supplied in the expression; explicit conversion still wins.",
+  "scaleSourceRules": {
+    "explicitTarget": "Use the requested target for the expression it covers under existing operator precedence.",
+    "singleScale": "Preserve the scale explicitly used by the user when it was not mixed with another scale.",
+    "mixedScales": "Choose among scales participating in the expression; 1m + 100mm must display 1100mm.",
+    "generalMixedScaleRanking": "Pending round 30; do not infer a universal ranking from the accepted example alone.",
+    "effectOnInference": "Do not choose a latent metre/minute interpretation merely to obtain a preferred display scale."
+  },
+  "previousAutomaticPolicy": {
+    "status": "Initially accepted in round 29, then superseded wherever it conflicts with the user amendment. These ladders are not an active unrestricted candidate pool.",
+    "unitSymbolCatalog": "../localization/units/catalog.json",
+    "ladders": {
+      "metricLength": [
+        {
+          "unitId": "length.nanometre",
+          "power": 1
+        },
+        {
+          "unitId": "length.micrometre",
+          "power": 1
+        },
+        {
+          "unitId": "length.millimetre",
+          "power": 1
+        },
+        {
+          "unitId": "length.centimetre",
+          "power": 1
+        },
+        {
+          "unitId": "length.metre",
+          "power": 1
+        },
+        {
+          "unitId": "length.kilometre",
+          "power": 1
+        }
+      ],
+      "metricMass": [
+        {
+          "unitId": "mass.microgram",
+          "power": 1
+        },
+        {
+          "unitId": "mass.milligram",
+          "power": 1
+        },
+        {
+          "unitId": "mass.gram",
+          "power": 1
+        },
+        {
+          "unitId": "mass.kilogram",
+          "power": 1
+        },
+        {
+          "unitId": "mass.tonne",
+          "power": 1
+        }
+      ],
+      "metricArea": [
+        {
+          "unitId": "length.millimetre",
+          "power": 2
+        },
+        {
+          "unitId": "length.centimetre",
+          "power": 2
+        },
+        {
+          "unitId": "length.metre",
+          "power": 2
+        },
+        {
+          "unitId": "area.hectare",
+          "power": 1
+        },
+        {
+          "unitId": "length.kilometre",
+          "power": 2
+        }
+      ],
+      "metricVolume": [
+        {
+          "unitId": "length.millimetre",
+          "power": 3
+        },
+        {
+          "unitId": "volume.millilitre",
+          "power": 1
+        },
+        {
+          "unitId": "volume.litre",
+          "power": 1
+        },
+        {
+          "unitId": "length.metre",
+          "power": 3
+        }
+      ],
+      "nonmetricLength": [
+        {
+          "unitId": "length.inch",
+          "power": 1
+        },
+        {
+          "unitId": "length.foot",
+          "power": 1
+        },
+        {
+          "unitId": "length.yard",
+          "power": 1
+        },
+        {
+          "unitId": "length.mile",
+          "power": 1
+        }
+      ],
+      "nonmetricMass": [
+        {
+          "unitId": "mass.ounce",
+          "power": 1
+        },
+        {
+          "unitId": "mass.pound",
+          "power": 1
+        }
+      ],
+      "nonmetricArea": [
+        {
+          "unitId": "length.inch",
+          "power": 2
+        },
+        {
+          "unitId": "length.foot",
+          "power": 2
+        },
+        {
+          "unitId": "length.yard",
+          "power": 2
+        },
+        {
+          "unitId": "area.acre",
+          "power": 1
+        },
+        {
+          "unitId": "length.mile",
+          "power": 2
+        }
+      ],
+      "nonmetricVolume": [
+        {
+          "unitId": "length.inch",
+          "power": 3
+        },
+        {
+          "unitId": "length.foot",
+          "power": 3
+        },
+        {
+          "unitId": "length.yard",
+          "power": 3
+        },
+        {
+          "unitId": "length.mile",
+          "power": 3
+        }
+      ],
+      "usGallon": [
+        {
+          "unitId": "volume.gallon_us",
+          "power": 1
+        }
+      ],
+      "ukGallon": [
+        {
+          "unitId": "volume.gallon_uk",
+          "power": 1
+        }
+      ],
+      "fixedDuration": [
+        {
+          "unitId": "time.millisecond",
+          "power": 1
+        },
+        {
+          "unitId": "time.second",
+          "power": 1
+        },
+        {
+          "unitId": "time.minute",
+          "power": 1
+        },
+        {
+          "unitId": "time.hour",
+          "power": 1
+        },
+        {
+          "unitId": "time.day",
+          "power": 1
+        },
+        {
+          "unitId": "time.week",
+          "power": 1
+        }
+      ],
+      "decimalBits": [
+        {
+          "unitId": "information.bit",
+          "power": 1
+        },
+        {
+          "unitId": "information.kilobit",
+          "power": 1
+        },
+        {
+          "unitId": "information.megabit",
+          "power": 1
+        },
+        {
+          "unitId": "information.gigabit",
+          "power": 1
+        },
+        {
+          "unitId": "information.terabit",
+          "power": 1
+        }
+      ],
+      "decimalBytes": [
+        {
+          "unitId": "information.byte",
+          "power": 1
+        },
+        {
+          "unitId": "information.kilobyte",
+          "power": 1
+        },
+        {
+          "unitId": "information.megabyte",
+          "power": 1
+        },
+        {
+          "unitId": "information.gigabyte",
+          "power": 1
+        },
+        {
+          "unitId": "information.terabyte",
+          "power": 1
+        }
+      ],
+      "binaryBits": [
+        {
+          "unitId": "information.bit",
+          "power": 1
+        },
+        {
+          "unitId": "information.kibibit",
+          "power": 1
+        },
+        {
+          "unitId": "information.mebibit",
+          "power": 1
+        },
+        {
+          "unitId": "information.gibibit",
+          "power": 1
+        },
+        {
+          "unitId": "information.tebibit",
+          "power": 1
+        }
+      ],
+      "binaryBytes": [
+        {
+          "unitId": "information.byte",
+          "power": 1
+        },
+        {
+          "unitId": "information.kibibyte",
+          "power": 1
+        },
+        {
+          "unitId": "information.mebibyte",
+          "power": 1
+        },
+        {
+          "unitId": "information.gibibyte",
+          "power": 1
+        },
+        {
+          "unitId": "information.tebibyte",
+          "power": 1
+        }
+      ]
+    },
+    "ranking": "Largest scale with absolute coefficient at least 1, smallest scale below the ladder, no hard 1000 upper cap.",
+    "mixedPhysicalFamilies": "Metric output for mixed metric/nonmetric or US/UK gallon families.",
+    "informationFamilies": "Preserve bit/byte and decimal/binary family; use first participating measurement when mixed; bare b/B are decimal; no context defaults to decimal bytes.",
+    "noFamilyContext": "Metric output, or decimal bytes for information.",
+    "durationExamplesNowUnderReview": [
+      "90s => 1.5m",
+      "1h30m => 1.5h"
+    ],
+    "referenceRoundingExampleNowUnderReview": "floor(1234mm) => 1m",
+    "derivedNumeratorExampleNowUnderReview": "1500m/s => 1.5km/s",
+    "postRoundingPromotion": "Reformat from the working value if display rounding reaches the next scale; the new candidate constraint cannot be bypassed.",
+    "followUp": "../issues/16-contextual-units.md"
+  },
+  "zero": "Exact zero preserves the unit of the expression semantic context, or the type base unit without context. Never depend on previous displayed answers or history.",
+  "derivedDenominator": {
+    "preserve": "Result denominator context; first participating measurement when denominator units are mixed; selected-value context for min/max.",
+    "withoutContext": {
+      "speed": "time.second",
+      "informationPerTime": "time.second",
+      "pace": "length.metre"
+    },
+    "numeratorScale": "Subject to the latest expression-scale constraint; generalized treatment is pending round 30."
+  },
+  "separateFormats": "Temperature, angles, percentages and calendar values retain their separately accepted formats. A calendar period with nonzero months retains compound output and full-unit copying."
 }

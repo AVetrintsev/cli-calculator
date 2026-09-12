@@ -56,3 +56,5 @@ After an explicit conversion with `::` or `to`, the result uses the target symbo
 Extend the catalog and all complete locale files together when more units are selected. Interface messages continue to use the separate parent-directory catalog and language files. User-defined names and comments are not translated through the unit-symbol dictionaries.
 
 Product decision: [Expression language and calculation rules](../../issues/04-expression-language.md).
+
+After round 29, the user limits result-scale selection to scales supplied in the expression, with explicit conversion taking precedence. The [display contract](../../language/unit-display.json) stores semantic unit references separately from translations and marks the earlier unrestricted ladders as superseded where they conflict. No input aliases are added or removed: dm remains a valid input, um/ug keep the accepted Latin spelling, and m/м still has contextual metre/minute meanings. General scale ranking and completion proposals await the next interview round.

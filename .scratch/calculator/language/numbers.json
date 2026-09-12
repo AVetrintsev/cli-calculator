@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "status": "specification",
   "sourceDecision": "../issues/04-expression-language.md",
-  "acceptedThrough": "round 28: typed operation rules accepted; automatic result scaling added by user, detailed display policies pending round 29",
+  "acceptedThrough": "round 29 and the subsequent expression-scale amendment; general scale selection is pending round 30",
   "domain": "real numbers",
   "input": {
     "maximumSignificantDigits": 30,
@@ -75,13 +75,13 @@
     "overridePriority": "an applicable percentage-specific operation takes precedence over the other operand type handler; retain original left/right operand order"
   },
   "unresolved": [
-    "Detailed automatic unit-display scale policies are pending round 29; see unit-display.json."
+    "Result-scale reconciliation after the user amendment following round 29; see unit-display.json and round 30 in ../issues/16-contextual-units.md."
   ],
   "implementationDecisions": "../issues/09-shared-core-and-shells.md",
   "typedValueContract": "typed-values.md",
   "typedNumericBehavior": {
     "base": "numeric types inherit common operations on a reference number",
-    "defaultResult": "same type with transformed reference number; preserve semantic/presentation context while allowing automatic output unit-scale selection",
+    "defaultResult": "Same type with transformed reference number; preserve semantic/presentation context. Final scale follows unit-display.json, including the latest user-supplied-scale constraint.",
     "abs": "type preserving; abs(-1cm) = 1cm and abs(-50%) = 50%",
     "typeSpecificRules": "can constrain applicability or override combined operation and result type",
     "explicitEarlierOverrides": "remain applicable; in particular ordinary-number/percentage multiplication and division from round 26",
@@ -95,9 +95,9 @@
       "input": "typed numerical value when its type permits the operation",
       "operand": "reference number, not displayed coefficient",
       "result": "same type",
-      "finalDisplay": "automatic scale selection unless an explicit target representation applies",
+      "finalDisplay": "Follow unit-display.json, including the latest expression-scale constraint and the pending reconciliation of the earlier floor example.",
       "percentExample": "round(12.345%; 2) = 12%",
-      "lengthExample": "floor(1234mm) = 1m",
+      "lengthExample": "floor(1234mm) has reference result 1 metre. Whether its display remains 1000mm under the latest scale rule is pending round 30; the earlier 1m display is under review.",
       "explicitRoundingToZero": "exact typed zero, not approximate zero"
     },
     "powersAndRoots": {
