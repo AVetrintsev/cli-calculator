@@ -20,7 +20,19 @@
     ],
     "invocation": "Ctrl+K / Cmd+K",
     "resultAndLibraryLayoutsIndependent": true,
-    "underlyingSheetGeometry": "preserved while the library is open"
+    "underlyingSheetGeometry": "preserved while the library is open",
+    "createControl": {
+      "icon": "plus",
+      "labelVisible": false,
+      "message": "library.create"
+    },
+    "itemControl": {
+      "icon": "more-horizontal",
+      "labelVisible": false,
+      "message": "library.itemActions",
+      "allActionsInsideMenu": true,
+      "persistentActionStrip": false
+    }
   },
   "lightAppearance": {
     "accepted": true,
@@ -43,5 +55,27 @@
     "adjustableInterfaceSize": true,
     "dimmingCanBeDisabled": true
   },
-  "verificationBoundary": "Visual selection does not certify native focus, screen-reader behavior, actual clipboard or computation. Constrained long expressions/results and zero-room completion retain their pending verification requirements."
+  "verificationBoundary": "Visual selection does not certify native focus, screen-reader behavior, actual clipboard or computation. Constrained long expressions/results and zero-room completion retain their pending verification requirements.",
+  "correctedInRound": 34,
+  "serviceViews": "service-views.json",
+  "darkAppearance": {
+    "status": "requested direction applied in revised prototype",
+    "direction": "neutral graphite-black surfaces without a blue cast; based on VS Code Dark+",
+    "page": "#141414",
+    "surface": "#1e1e1e",
+    "ink": "#d4d4d4",
+    "muted": "#a6a6a6",
+    "line": "#3c3c3c",
+    "wash": "#2a2a2a",
+    "number": "#b5cea8",
+    "operator": "#c586c0",
+    "result": "#b5cea8",
+    "error": "#f48771",
+    "sources": [
+      "https://github.com/microsoft/vscode/blob/main/extensions/theme-defaults/themes/dark_vs.json",
+      "https://github.com/microsoft/vscode/blob/main/extensions/theme-defaults/themes/dark_plus.json"
+    ],
+    "sourceConsultedOn": "2026-09-12",
+    "adaptation": "Neutral surfaces and number/operator colors draw on the official themes; calculator roles are adapted. This is not an exact reproduction of all VS Code UI tokens."
+  }
 }

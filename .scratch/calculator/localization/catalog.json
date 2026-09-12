@@ -725,7 +725,7 @@
       "elementType": "button"
     },
     "common.retry": {
-      "text": "Try again",
+      "text": "Retry",
       "meaning": "Repeats a failed user action.",
       "context": "Available next to a recoverable error when retry is supported. Round 20 accepts retry after a failed sheet write, while preserving editable text and the last successfully saved state; this does not turn calculation errors into storage failures.",
       "location": "Action in an error feedback region.",
@@ -1928,7 +1928,7 @@
       "elementType": "description"
     },
     "data.import.preview": {
-      "text": "Import preview",
+      "text": "Import",
       "meaning": "Names the view of changes before applying a portable import.",
       "context": "Editorial text for the import preview accepted in round 19. Show actual inspected package contents and object comparisons, not guesses. Validate package integrity before any change; conflicts preserve existing objects and coherent imported references. Round 20 accepts an unchecked-by-default Apply settings option for common preferences present in the package.",
       "location": "Heading or group label within the import preview; precise layout remains interface work.",
@@ -1949,8 +1949,8 @@
       "elementType": "section_heading"
     },
     "data.import.conflicts": {
-      "text": "Conflicting versions",
-      "meaning": "Names differing versions requiring separately named imported copies.",
+      "text": "Separate copies",
+      "meaning": "Labels conflicting imported objects that will be added as separate copies.",
       "context": "Editorial text for the import preview accepted in round 19. Show actual inspected package contents and object comparisons, not guesses. Validate package integrity before any change; conflicts preserve existing objects and coherent imported references. Round 20 accepts an unchecked-by-default Apply settings option for common preferences present in the package.",
       "location": "Heading or group label within the import preview; precise layout remains interface work.",
       "elementType": "section_heading"
@@ -1977,7 +1977,7 @@
       "elementType": "command_label"
     },
     "data.restore.preview": {
-      "text": "Restore preview",
+      "text": "Restore",
       "meaning": "Names the view of changes before explicit backup restoration.",
       "context": "Round 19 accepts local backups and explicit restore with preview, separate from ordinary startup. Round 20 accepts a full local snapshot including history and settings. Explicit restore returns the chosen state after preview and only after a successful backup of the current state. This label does not authorize silently restoring history, replacing data or performing a restore without the user action.",
       "location": "Heading of the backup restore preview.",
@@ -2028,9 +2028,9 @@
     "templates.parameters.invalid": {
       "text": "Complete or correct this parameter.",
       "meaning": "Explains why a parameter prevents completing the template launch.",
-      "context": "Editorial wording for round 20 parameter validation. Pair with the relevant ordinary expression diagnostic when there is an actual error. Do not label a valid ambiguous result as invalid or invent a mathematical error for incomplete input.",
-      "location": "Feedback associated with the affected template parameter field.",
-      "elementType": "validation_message"
+      "context": "A required parameter is empty, incomplete or invalid. In the compact launch form, mark the field invalid and announce this message to assistive technology; do not allocate a visible explanation row. Disable creation until the required inputs are valid. Round 34 accepts required markers and optional in-field placeholders.",
+      "location": "Accessible error associated with the invalid compact parameter field; no visible paragraph below the field.",
+      "elementType": "accessible_error"
     },
     "data.import.applySettings": {
       "text": "Apply settings",
@@ -2075,7 +2075,7 @@
       "elementType": "status_message"
     },
     "data.unsaved.exitTitle": {
-      "text": "Unsaved changes",
+      "text": "Not saved",
       "meaning": "Names the exit decision when text could not be saved.",
       "context": "Accepted in round 20 for full application exit with unsaved edits after storage failure. Ordinary hiding does not trigger this exit choice.",
       "location": "Title of the unsaved-text exit prompt.",
@@ -2084,12 +2084,12 @@
     "data.unsaved.exitDescription": {
       "text": "Save your text to a separate file, or exit without saving these changes.",
       "meaning": "Explains the accepted choices for retaining or explicitly discarding unsaved text on exit.",
-      "context": "Accepted in round 20 after a failed write. Do not imply a successful main-store save or exit automatically while the user is choosing. The file-saving flow and failures require technical design.",
-      "location": "Body of the unsaved-text exit prompt.",
-      "elementType": "description"
+      "context": "Accepted in round 20 after a failed write. Do not imply a successful main-store save or exit automatically while the user is choosing. The file-saving flow and failures require technical design. Round 34 removes this explanatory paragraph from the visible exit view; the object name and explicit action labels convey the choices. Retain for accessible description or help only.",
+      "location": "Accessible description or help for unsaved changes; not a visible paragraph in the compact exit view.",
+      "elementType": "accessible_description"
     },
     "data.unsaved.saveText": {
-      "text": "Save text to file",
+      "text": "Save text…",
       "meaning": "Names separate text saving offered when application storage has failed.",
       "context": "Accepted in round 20: preserve the editable text separately before the user leaves. This action is not a successful structured export, publication of a global draft, or a guarantee that the chosen destination is writable.",
       "location": "Action in the unsaved-text exit prompt.",
@@ -2849,6 +2849,62 @@
       "context": "Accepted round 32. Apply the existing unit/type context filter first. Do not duplicate an existing suffix or function parentheses.",
       "location": "Completion section of application help.",
       "elementType": "help_paragraph"
+    },
+    "library.create": {
+      "text": "Create",
+      "meaning": "Accessible name and hover label for the plus icon.",
+      "context": "Opens a menu for creating a sheet, template, user constant or user function. The visible control is only a plus icon. Accepted presentation correction in round 34.",
+      "location": "Top-right of the floating library.",
+      "elementType": "icon_button"
+    },
+    "library.itemActions": {
+      "text": "Actions",
+      "meaning": "Accessible name and hover label for the ellipsis icon.",
+      "context": "Opens all permitted actions for that saved item. No action strip or separate usage button remains on its row. Accepted presentation correction in round 34.",
+      "location": "Trailing button on each saved-item row.",
+      "elementType": "icon_button"
+    },
+    "library.usages": {
+      "text": "Usages",
+      "meaning": "Opens the list of objects that reference the definition.",
+      "context": "Appears in the definition action menu, including when references prevent deletion. Accepted presentation correction in round 34.",
+      "location": "Definition action menu.",
+      "elementType": "menu_item"
+    },
+    "common.open": {
+      "text": "Open",
+      "meaning": "Opens the selected saved object.",
+      "context": "Sheet and definition actions; templates retain their launch command. Accepted presentation correction in round 34.",
+      "location": "Saved-item action menu.",
+      "elementType": "menu_item"
+    },
+    "common.rename": {
+      "text": "Rename",
+      "meaning": "Renames the selected saved object.",
+      "context": "Uses the active item as the target; the label does not repeat its type. Accepted presentation correction in round 34.",
+      "location": "Saved-item action menu.",
+      "elementType": "menu_item"
+    },
+    "common.duplicate": {
+      "text": "Duplicate",
+      "meaning": "Creates an independent copy of the selected sheet or template.",
+      "context": "Only shown for object types whose duplication is supported by the accepted data contract. Accepted presentation correction in round 34.",
+      "location": "Saved-item action menu.",
+      "elementType": "menu_item"
+    },
+    "data.restore.historyAndSettings": {
+      "text": "History and settings",
+      "meaning": "Identifies history and settings among the data affected by full snapshot restoration.",
+      "context": "Compact restore preview; omitting long explanatory text must not hide the scope of the restore. Accepted presentation correction in round 34.",
+      "location": "Changed-data group in the restore preview.",
+      "elementType": "list_item"
+    },
+    "library.newTemplate": {
+      "text": "Template",
+      "meaning": "Names creating a template from a calculation sheet.",
+      "context": "The plus-button menu in the floating library. Uses the accepted template-creation flow; does not change local variable scope.",
+      "location": "Create menu opened by the library plus icon.",
+      "elementType": "menu_item"
     }
   }
 }

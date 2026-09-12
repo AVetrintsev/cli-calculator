@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "status": "specification",
+  "sourceDecision": "../issues/08-settings-and-accessibility.md",
+  "acceptedCorrectionRound": 34,
+  "library": {
+    "create": "plus icon button opens the creation menu",
+    "itemActions": "horizontal ellipsis button on each row opens all permitted item actions",
+    "buttonTextVisible": false,
+    "accessibleNames": [
+      "library.create",
+      "library.itemActions"
+    ],
+    "menuOpensOnActivation": true,
+    "keyboard": "button activation opens; Up/Down navigate; Escape closes and restores the originating button focus"
+  },
+  "templateCreation": {
+    "presentation": "previous first screenshot accepted; variable selection and defaults unchanged"
+  },
+  "templateLaunch": {
+    "layout": "one parameter per row, name left and field right",
+    "requiredIndicator": "asterisk",
+    "requiredAttribute": true,
+    "hints": "in-field placeholder at most; no explanatory paragraphs or dedicated error line",
+    "invalid": "red field state; accessible error remains associated with the field",
+    "creation": "disabled until required inputs are complete and valid"
+  },
+  "transfer": {
+    "presentation": "essential headings, affected objects and explicit action labels",
+    "import": "additions, existing objects, separate conflict copies and settings checkbox",
+    "restore": "additions, changes and removals; affected history/settings remain visible",
+    "removedVisibleProse": [
+      "generic transfer explanations",
+      "internal backup mechanics",
+      "duplicate instructions about action buttons"
+    ],
+    "backupSemantics": "mandatory pre-restore snapshot and error handling remain unchanged"
+  },
+  "unsaved": {
+    "visible": "brief heading, affected document name and action buttons",
+    "actions": [
+      "cancel",
+      "retry",
+      "save text to file",
+      "exit without saving"
+    ],
+    "explanatoryParagraphVisible": false
+  },
+  "scope": "Prototype edits and wording implement the user correction. No real import, restoration, OS clipboard or production storage behavior is performed."
+}
