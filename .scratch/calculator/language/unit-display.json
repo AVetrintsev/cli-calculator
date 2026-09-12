@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "status": "specification",
-  "sourceDecision": "../issues/04-expression-language.md",
-  "acceptedRound": 29,
+  "sourceDecision": "../issues/16-contextual-units.md",
+  "acceptedRound": 30,
   "automaticScaleSelection": true,
-  "scope": "Result representation after typed computation. Single-scale and mixed-scale expression rules supersede unrestricted automatic ladder selection.",
+  "scope": "Result representation after typed computation. Preserve a sole expression scale, rank multiple participating scales, and use full automatic ladders only without inherited scale context.",
   "acceptedExample": {
     "sameScale": {
       "expression": "1m + 1m",
@@ -21,7 +21,32 @@
       "displayedResult": "1.1m",
       "copiedResult": "1.1"
     },
-    "notation": "Ungrouped Latin examples with decimal dot are semantic examples, not an override of locale, spacing or grouping rules."
+    "notation": "Latin examples describe semantic coefficients; normal decimal grouping, unit spacing and locale rules apply in the product. The long-integral example explicitly shows accepted three-digit grouping.",
+    "integralTie": {
+      "expression": "1m + 1000mm",
+      "displayedResult": "2m",
+      "copiedResult": "2"
+    },
+    "longIntegral": {
+      "expression": "1km + 1mm",
+      "displayedResult": "1 000 001mm",
+      "copiedResult": "1 000 001"
+    },
+    "referenceRounding": {
+      "expression": "floor(1234mm)",
+      "displayedResult": "1000mm",
+      "copiedResult": "1000"
+    },
+    "fixedDuration": {
+      "expression": "90s",
+      "displayedResult": "90s",
+      "copiedResult": "90"
+    },
+    "speedNumerator": {
+      "expression": "1500m/s",
+      "displayedResult": "1500m/s",
+      "copiedResult": "1500"
+    }
   },
   "preserve": "working value, dimensional type and semantic context",
   "canChange": "display unit scale and its corresponding displayed numeric coefficient",
@@ -30,7 +55,7 @@
   "explicitTargetExample": "floor(1234mm) to mm displays 1000mm",
   "displayPipeline": [
     "typed calculation and applicable reference-number operations",
-    "explicit target, or scale selected under the latest expression-context rules; unresolved general policies must not be treated as defaults",
+    "explicit target, else preserve a single context scale or rank multiple context scales, else choose from the applicable fallback ladder",
     "format the coefficient in that unit under the existing decimal and approximate-zero rules",
     "group identical displayed answers under existing rules"
   ],
@@ -38,20 +63,49 @@
   "lazyAlternatives": "retain typed alternatives and choose display for each before grouping; do not change unit inference merely to obtain a convenient scale",
   "history": "existing immutable working values and displayed answers remain authoritative; copying history does not recalculate or rerun a new live scale decision",
   "locale": "existing Latin/local unit notation and explicit target-spelling rules remain applicable",
-  "unresolved": [
-    "General adequate-scale ranking among multiple user-supplied scales, including mixed families and repeated use of values.",
-    "Reconciliation of preserved input scales with floor/round, fixed-duration and derived-numerator examples; the role of full ladders when scale context is absent."
-  ],
-  "latestDecision": "User amendment after round 29 limits result-scale choice to scales supplied in the expression; explicit conversion still wins.",
+  "unresolved": [],
+  "latestDecision": "Round 30 accepts ranking by fractional-place count among expression scales and applies it across numerical measurements, functions, fixed durations and derived numerators.",
   "scaleSourceRules": {
     "explicitTarget": "Use the requested target for the expression it covers under existing operator precedence.",
     "singleScale": "Preserve the scale explicitly used by the user when it was not mixed with another scale.",
     "mixedScales": "Choose among scales participating in the expression; 1m + 100mm must display 1100mm.",
-    "generalMixedScaleRanking": "Pending round 30; do not infer a universal ranking from the accepted example alone.",
+    "generalMixedScaleRanking": {
+      "coefficientPrecision": "working precision before screen formatting",
+      "primary": "fewest decimal fractional places, ignoring insignificant trailing zeros",
+      "tieBreak": "largest unit scale",
+      "integerVersusShortText": "an integer coefficient wins even when its full decimal text is longer",
+      "mixedFamilies": "retain all participating compatible scales; do not force metric output or restrict to the first information family",
+      "newCandidates": "do not introduce units that were not part of the scale context"
+    },
     "effectOnInference": "Do not choose a latent metre/minute interpretation merely to obtain a preferred display scale."
   },
-  "previousAutomaticPolicy": {
-    "status": "Initially accepted in round 29, then superseded wherever it conflicts with the user amendment. These ladders are not an active unrestricted candidate pool.",
+  "zero": "Exact zero preserves the unit of the expression semantic context, or the type base unit without context. Never depend on previous displayed answers or history.",
+  "derivedDenominator": {
+    "preserve": "Result denominator context; first participating measurement when denominator units are mixed; selected-value context for min/max.",
+    "withoutContext": {
+      "speed": "time.second",
+      "informationPerTime": "time.second",
+      "pace": "length.metre"
+    },
+    "numeratorScale": "Apply the same expression-scale rule to the numerator while preserving the accepted denominator context."
+  },
+  "separateFormats": "Temperature, angles, percentages and calendar values retain their separately accepted formats. A calendar period with nonzero months retains compound output and full-unit copying.",
+  "scaleContext": {
+    "scope": [
+      "ordinary measurements",
+      "information",
+      "fixed durations",
+      "speed numerator",
+      "pace numerator",
+      "information-per-time numerator"
+    ],
+    "namesAndFunctions": "carry the value scale context through names and function results",
+    "minMax": "context of the selected argument, not the union of all compared arguments",
+    "noContext": "use fallbackWithoutScaleContext",
+    "implementationOwner": "../issues/09-shared-core-and-shells.md"
+  },
+  "fallbackWithoutScaleContext": {
+    "status": "accepted round 29; round 30 limits activation to results without inherited scale context",
     "unitSymbolCatalog": "../localization/units/catalog.json",
     "ladders": {
       "metricLength": [
@@ -338,27 +392,9 @@
       ]
     },
     "ranking": "Largest scale with absolute coefficient at least 1, smallest scale below the ladder, no hard 1000 upper cap.",
-    "mixedPhysicalFamilies": "Metric output for mixed metric/nonmetric or US/UK gallon families.",
-    "informationFamilies": "Preserve bit/byte and decimal/binary family; use first participating measurement when mixed; bare b/B are decimal; no context defaults to decimal bytes.",
-    "noFamilyContext": "Metric output, or decimal bytes for information.",
-    "durationExamplesNowUnderReview": [
-      "90s => 1.5m",
-      "1h30m => 1.5h"
-    ],
-    "referenceRoundingExampleNowUnderReview": "floor(1234mm) => 1m",
-    "derivedNumeratorExampleNowUnderReview": "1500m/s => 1.5km/s",
-    "postRoundingPromotion": "Reformat from the working value if display rounding reaches the next scale; the new candidate constraint cannot be bypassed.",
-    "followUp": "../issues/16-contextual-units.md"
-  },
-  "zero": "Exact zero preserves the unit of the expression semantic context, or the type base unit without context. Never depend on previous displayed answers or history.",
-  "derivedDenominator": {
-    "preserve": "Result denominator context; first participating measurement when denominator units are mixed; selected-value context for min/max.",
-    "withoutContext": {
-      "speed": "time.second",
-      "informationPerTime": "time.second",
-      "pace": "length.metre"
-    },
-    "numeratorScale": "Subject to the latest expression-scale constraint; generalized treatment is pending round 30."
-  },
-  "separateFormats": "Temperature, angles, percentages and calendar values retain their separately accepted formats. A calendar period with nonzero months retains compound output and full-unit copying."
+    "family": "use compatible family context if present; otherwise metric output, or decimal bytes for information",
+    "bareInformationUnits": "b and B have decimal prefix-family context",
+    "belowMinimum": "use the smallest scale with a fractional coefficient and existing tiny-number/approximately-zero rules",
+    "postRoundingPromotion": "if display rounding reaches the next ladder scale, reformat from the working value in that scale; never round the stored working magnitude"
+  }
 }

@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "status": "specification",
   "sourceDecision": "../issues/04-expression-language.md",
-  "acceptedThrough": "round 29 and the subsequent expression-scale amendment; general scale selection is pending round 30",
+  "acceptedThrough": "round 30: expression-scale ranking and its application to typed numerical values are accepted",
   "domain": "real numbers",
   "input": {
     "maximumSignificantDigits": 30,
@@ -74,9 +74,7 @@
     "leftHandRatePlusOrMinusOrdinaryNumber": "operate on the numerical fraction and return an ordinary number; 10% + 200 = 200.1; 10% - 200 = -199.9",
     "overridePriority": "an applicable percentage-specific operation takes precedence over the other operand type handler; retain original left/right operand order"
   },
-  "unresolved": [
-    "Result-scale reconciliation after the user amendment following round 29; see unit-display.json and round 30 in ../issues/16-contextual-units.md."
-  ],
+  "unresolved": [],
   "implementationDecisions": "../issues/09-shared-core-and-shells.md",
   "typedValueContract": "typed-values.md",
   "typedNumericBehavior": {
@@ -85,7 +83,7 @@
     "abs": "type preserving; abs(-1cm) = 1cm and abs(-50%) = 50%",
     "typeSpecificRules": "can constrain applicability or override combined operation and result type",
     "explicitEarlierOverrides": "remain applicable; in particular ordinary-number/percentage multiplication and division from round 26",
-    "roundFloorCeil": "operate on the reference number; preserve type; final unit scale may be chosen automatically"
+    "roundFloorCeil": "operate on the reference number and preserve type and scale context; choose display under unit-display.json"
   },
   "unitDisplayContract": "unit-display.json",
   "functionRules": {
@@ -95,9 +93,9 @@
       "input": "typed numerical value when its type permits the operation",
       "operand": "reference number, not displayed coefficient",
       "result": "same type",
-      "finalDisplay": "Follow unit-display.json, including the latest expression-scale constraint and the pending reconciliation of the earlier floor example.",
+      "finalDisplay": "Use the inherited expression-scale context unless there is an explicit target; see unit-display.json.",
       "percentExample": "round(12.345%; 2) = 12%",
-      "lengthExample": "floor(1234mm) has reference result 1 metre. Whether its display remains 1000mm under the latest scale rule is pending round 30; the earlier 1m display is under review.",
+      "lengthExample": "floor(1234mm) has reference result 1 metre and displays 1000mm; a sole mm scale is preserved.",
       "explicitRoundingToZero": "exact typed zero, not approximate zero"
     },
     "powersAndRoots": {

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "status": "specification",
+  "sourceDecision": "../issues/16-contextual-units.md",
+  "acceptedRound": 30,
+  "unitTargets": {
+    "shape": "unit atom, optionally followed by / and a second unit atom; only already supported final dimensions",
+    "atoms": "registered units and the accepted square/cubic length forms",
+    "lengthPowers": {
+      "acceptedExamples": [
+        "cm2",
+        "cm²",
+        "cm3",
+        "cm³"
+      ],
+      "autoformat": "existing complete-token suffix 2/3 rule",
+      "caretSpelling": "not an alternative target-unit spelling; suggest the corresponding superscript form",
+      "diagnosticKey": "expression.invalidTargetUnitPower"
+    },
+    "ratioExamples": [
+      "m/s",
+      "km/h",
+      "MB/s"
+    ],
+    "wholeTargetExample": "36km/h to m/s = 10m/s",
+    "continuedArithmetic": [
+      "(36km/h to m/s) * 2",
+      "(36km/h)::m/s * 2"
+    ],
+    "arithmeticInsideTarget": "no numerical factors or addition/multiplication expressions inside the target",
+    "nextConversion": "to or :: starts the next step of the existing left-to-right conversion chain",
+    "precedence": "unchanged; spaces do not change precedence",
+    "otherTargetKinds": "existing numeral-system and calendar/UTC rules remain separate and unchanged"
+  },
+  "unitCompletion": {
+    "candidateForm": "continuations of the typed unit prefix, not merely a repeated exact m entry with two meanings",
+    "powerExamples": {
+      "typedPrefix": "m",
+      "candidateSourceForms": [
+        "m2",
+        "m3"
+      ],
+      "candidateDisplayedForms": [
+        "m²",
+        "m³"
+      ]
+    },
+    "filter": "operation-sensitive compatibility in the available local nested-expression context",
+    "lengthAdditionExample": {
+      "inputAtCaret": "1cm + 2m|",
+      "incompatibleCompletions": [
+        "minute",
+        "month",
+        "square metre",
+        "cubic metre"
+      ],
+      "meaning": "complete a length addend; | marks the caret and is not formula syntax"
+    },
+    "typingVsPresence": "the mere presence of a length does not rule out a time divisor; apply operation/type rules",
+    "durationAddition": "the previously accepted addition of durations remains valid",
+    "locale": "Latin baseline plus only the active interface locale; no new aliases are registered by this partial completion decision",
+    "layoutAndKeys": "existing seven-row inline layout, prefix dimming, descriptions, Tab and arrow-key precedence remain applicable",
+    "unresolved": [
+      "Completion use of outer-expression constraints, conservative filtering when context is incomplete, and compatible conversion targets across latent alternatives.",
+      "Reconcile the user mon example with the previously accepted mo/мес calendar-month notation."
+    ],
+    "generalSearchAndOrderOwner": "../issues/08-settings-and-accessibility.md"
+  }
+}
