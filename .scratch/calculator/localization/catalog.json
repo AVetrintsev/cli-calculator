@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "sourceLanguage": "en",
   "status": "draft",
-  "coverage": "Specification text for identified calculator surfaces. Interface behavior through round 32 and revised workspace/service screens through round 34 are accepted. Round 35 accepts public installation, update-check controls and explicit update actions, and data preservation after uninstall. Windows x86 build support is pending clarification. Native integration and package-owned installer text remain architecture work.",
+  "coverage": "Specification text for identified calculator surfaces. Interface behavior through round 32 and revised workspace/service screens through round 34 are accepted. Round 35 accepts public installation, update-check controls and explicit update actions, and data preservation after uninstall. The Windows compatibility clarification is accepted: one Windows 11 x64 build. Native integration and package-owned installer text remain architecture work.",
   "messages": {
     "quick.expression.placeholder": {
       "text": "Type a calculation",

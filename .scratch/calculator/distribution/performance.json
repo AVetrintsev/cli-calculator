@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "status": "proposal",
+  "accepted": false,
+  "round": 36,
+  "sourceDecision": "../issues/10-delivery-and-acceptance.md",
+  "referenceClass": {
+    "memoryGiB": 8,
+    "storage": "SSD",
+    "cpuAndExactOsModels": "to be fixed in the native measurement protocol before any pass claim; use a representative supported laptop class"
+  },
+  "latencyTargets": {
+    "percentile": 95,
+    "warmInvokeMs": 100,
+    "ordinaryQuickRecalculationMs": 50,
+    "coldStartupReadyMs": 2000,
+    "largeHistorySearchMs": 200,
+    "openSavedDocumentMs": 200,
+    "ordinaryActiveSheetRecalculationMs": 200
+  },
+  "deadlineProposal": {
+    "elapsedMs": 200,
+    "scope": "one evaluation request for the current expression or affected active-sheet region, including parse, dependencies and lazy meanings",
+    "onExceeded": "terminate that request and show a concise complexity diagnostic for unfinished affected expressions; preserve editable input and already-complete independent results",
+    "resultCompleteness": "a ready expression result includes all valid meanings; deadline does not authorize a truncated subset presented as complete",
+    "staleRequest": "superseded work must not replace or diagnose the newer input",
+    "enforcementMechanism": "architecture decision; deterministic work limits and the elapsed-time guard must be designed together"
+  },
+  "testWorkload": {
+    "historyEntries": 100000,
+    "savedSheetsAndTemplatesTotal": 1000,
+    "publishedDefinitions": 1000,
+    "activeSheetLines": 200,
+    "expressionMix": [
+      "arithmetic",
+      "percentages",
+      "unit conversions and lazy meanings",
+      "calendar",
+      "financial functions",
+      "user definitions"
+    ],
+    "fixtureDetail": "exact expressions, dependency shapes and data seeds must be fixed before measurement"
+  },
+  "resourceTargets": {
+    "idleCpuPercentOfOneLogicalCore": 1,
+    "include": "all calculator-owned shell, core and helper/renderer processes; use a documented platform memory metric consistently",
+    "meaning": "acceptance budgets, not permission to delete data or terminate the app to meet a quota",
+    "idleHiddenMemoryMB": 150,
+    "typicalOpenSheetMemoryMB": 250,
+    "memoryUnit": "MB = 1,000,000 bytes"
+  },
+  "measurementProtocol": {
+    "build": "installed release build",
+    "foregroundLoad": "ordinary idle desktop, without debugger or concurrent compilation",
+    "warmInvoke": "palette starts hidden with app resident; finish when input is visibly ready and focused",
+    "ordinaryRecalculation": "latest edit to current ready answer paint, including dispatch and rendering",
+    "coldStartup": "application process start to normal input readiness; user-controlled OS security and first-run permission dialogs measured separately",
+    "sampling": "at least 100 runs for interactive latency, 20 for cold start; record all values and p95, not only the best run",
+    "resources": "steady idle over 60 seconds after startup tasks, and settled representative active sheet; document aggregation to avoid counting unrelated processes",
+    "unknowns": [
+      "exact reference machine models and OS builds",
+      "platform memory-counter mapping",
+      "reproducible fixture corpus",
+      "full watchdog and error attribution design"
+    ]
+  },
+  "alreadyAcceptedBoundaries": {
+    "workingSignificantDigits": 30,
+    "historyAutomaticRetentionCap": false,
+    "historySearchScope": "entire stored history",
+    "manualLongCalculationWaitMode": false,
+    "silentAlternativeTruncation": false
+  },
+  "availableEnvironmentFact": {
+    "cpu": "Intel Core i7-11700K",
+    "logicalProcessors": 16,
+    "visibleMemoryBytes": 34207752192,
+    "osRelease": "25H2",
+    "osBuild": "26200.9445",
+    "architecture": "x64",
+    "registryProductName": "Windows 10 Pro",
+    "osNameNote": "registry ProductName differs from the release/build; preserve the observed facts rather than claim a tested OS name",
+    "connectedMacEnvironmentListed": false,
+    "method": "read-only registry and .NET ComputerInfo by the research agent; no network discovery",
+    "observationDate": "2026-09-12",
+    "performanceMeasured": false,
+    "baselineCaution": "this 32-GiB development machine does not by itself validate the proposed 8-GiB reference class"
+  },
+  "verificationBoundary": "All numerical performance and resource targets are pending user review. No production calculator benchmark or native compatibility test has been run."
+}

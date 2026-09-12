@@ -14,9 +14,10 @@
       "confirmedAppArchitectures": [
         "x64"
       ],
-      "x86AppBuild": "clarification pending; user requested 64/32(86)",
-      "nativeArm64AppBuild": "not accepted after the user replaced the proposed architecture list",
-      "osArchitectureFact": "Windows 11 is 64-bit only; x86 apps can run through the OS compatibility subsystem"
+      "x86AppBuild": "not required; the user accepted one x64 build in the round-35 clarification",
+      "nativeArm64AppBuild": "not included in the accepted native build targets",
+      "osArchitectureFact": "Windows 11 is 64-bit only; x86 apps can run through the OS compatibility subsystem",
+      "decisionStatus": "accepted: Windows 11, x64 build only"
     },
     "macos": {
       "minimumMajorVersion": 14,
@@ -25,7 +26,7 @@
         "x86_64",
         "arm64"
       ],
-      "basis": "retained part of the proposal; the user changed the Windows portion only",
+      "basis": "unchanged part of round 35, restated alongside the accepted Windows clarification",
       "hardwareBoundary": "Mac models compatible with each supported macOS version"
     }
   },
