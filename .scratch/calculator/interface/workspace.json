@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "status": "specification",
+  "acceptedRound": 33,
+  "sourceDecision": "../issues/08-settings-and-accessibility.md",
+  "sheet": {
+    "resultLayout": "separate right-hand column",
+    "sourceVariant": "B",
+    "oneResultAreaPerExpression": true,
+    "quickResultLayout": "unchanged: one horizontal row with dividers",
+    "multipleResults": "retain the accepted per-expression horizontal answer row and its selection/copy semantics"
+  },
+  "library": {
+    "layout": "floating over the sheet",
+    "sourceVariant": "A",
+    "groups": [
+      "sheets",
+      "templates",
+      "user constants and functions"
+    ],
+    "invocation": "Ctrl+K / Cmd+K",
+    "resultAndLibraryLayoutsIndependent": true,
+    "underlyingSheetGeometry": "preserved while the library is open"
+  },
+  "lightAppearance": {
+    "accepted": true,
+    "scope": "shared light-sheet typography, colors, spacing and secondary-text dimming shown in round 33",
+    "prototypeSourceCommit": "40bd0d1",
+    "formulaFontStack": [
+      "Consolas",
+      "SFMono-Regular",
+      "Menlo",
+      "monospace"
+    ],
+    "desktopFormulaSizePxAt100Percent": 20,
+    "page": "#e9edf2",
+    "surface": "#fcfdff",
+    "ink": "#263441",
+    "number": "#386b91",
+    "operator": "#855f96",
+    "result": "#387c83",
+    "muted": "#657382",
+    "adjustableInterfaceSize": true,
+    "dimmingCanBeDisabled": true
+  },
+  "verificationBoundary": "Visual selection does not certify native focus, screen-reader behavior, actual clipboard or computation. Constrained long expressions/results and zero-room completion retain their pending verification requirements."
+}

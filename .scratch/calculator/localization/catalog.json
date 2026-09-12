@@ -1833,56 +1833,56 @@
       "text": "Library",
       "meaning": "Names the shared saved-object catalog.",
       "context": "Editorial wording for the shared library accepted in round 19. The catalog search spans sheet, template and saved-definition names, plus definition descriptions from # comments. User names and descriptions are not translated. Geometry and remaining focus details are not fixed by this wording.",
-      "location": "Heading of the shared library.",
+      "location": "Heading of the shared library In the floating library over the calculation sheet, selected in round 33.",
       "elementType": "section_heading"
     },
     "library.search.placeholder": {
       "text": "Search sheets, templates and definitions",
       "meaning": "Invites a search across saved object types.",
       "context": "Editorial wording for the shared library accepted in round 19. The catalog search spans sheet, template and saved-definition names, plus definition descriptions from # comments. User names and descriptions are not translated. Geometry and remaining focus details are not fixed by this wording.",
-      "location": "Inside the shared library search input.",
+      "location": "Inside the shared library search input In the floating library over the calculation sheet, selected in round 33.",
       "elementType": "input_placeholder"
     },
     "library.search.accessibleName": {
       "text": "Search saved calculations and definitions",
       "meaning": "Names the shared search input for assistive technology.",
       "context": "Editorial wording for the shared library accepted in round 19. The catalog search spans sheet, template and saved-definition names, plus definition descriptions from # comments. User names and descriptions are not translated. Geometry and remaining focus details are not fixed by this wording.",
-      "location": "Accessible name of the library search input.",
+      "location": "Accessible name of the library search input In the floating library over the calculation sheet, selected in round 33.",
       "elementType": "accessible_name"
     },
     "library.empty": {
       "text": "No saved items yet",
       "meaning": "Explains that all saved-object groups are empty.",
       "context": "Editorial wording for the shared library accepted in round 19. The catalog search spans sheet, template and saved-definition names, plus definition descriptions from # comments. User names and descriptions are not translated. Geometry and remaining focus details are not fixed by this wording.",
-      "location": "Empty shared library.",
+      "location": "Empty shared library In the floating library over the calculation sheet, selected in round 33.",
       "elementType": "empty_state"
     },
     "library.noMatches": {
       "text": "No matching items",
       "meaning": "Explains an empty result for the current catalog query.",
       "context": "Editorial wording for the shared library accepted in round 19. The catalog search spans sheet, template and saved-definition names, plus definition descriptions from # comments. User names and descriptions are not translated. Geometry and remaining focus details are not fixed by this wording.",
-      "location": "Library search results area.",
+      "location": "Library search results area In the floating library over the calculation sheet, selected in round 33.",
       "elementType": "empty_state"
     },
     "library.group.sheets": {
       "text": "Sheets",
       "meaning": "Names the calculation-sheet result group.",
       "context": "Editorial wording for the shared library accepted in round 19. The catalog search spans sheet, template and saved-definition names, plus definition descriptions from # comments. User names and descriptions are not translated. Geometry and remaining focus details are not fixed by this wording.",
-      "location": "Group heading in library results.",
+      "location": "Group heading in library results In the floating library over the calculation sheet, selected in round 33.",
       "elementType": "section_heading"
     },
     "library.group.templates": {
       "text": "Templates",
       "meaning": "Names the template result group.",
       "context": "Editorial wording for the shared library accepted in round 19. The catalog search spans sheet, template and saved-definition names, plus definition descriptions from # comments. User names and descriptions are not translated. Geometry and remaining focus details are not fixed by this wording.",
-      "location": "Group heading in library results.",
+      "location": "Group heading in library results In the floating library over the calculation sheet, selected in round 33.",
       "elementType": "section_heading"
     },
     "library.group.definitions": {
       "text": "Constants and functions",
       "meaning": "Names the saved-definition result group.",
       "context": "Editorial wording for the shared library accepted in round 19. The catalog search spans sheet, template and saved-definition names, plus definition descriptions from # comments. User names and descriptions are not translated. Geometry and remaining focus details are not fixed by this wording.",
-      "location": "Group heading in library results.",
+      "location": "Group heading in library results In the floating library over the calculation sheet, selected in round 33.",
       "elementType": "section_heading"
     },
     "documents.undo": {

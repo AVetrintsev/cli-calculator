@@ -68,7 +68,7 @@
     "interfaceScaleAdjustable": true,
     "dimmingCanBeDisabled": true,
     "dimmingDefault": true,
-    "specificFontColorsAndOpacity": "pending visual prototype"
+    "specificFontColorsAndOpacity": "Shared light-sheet typography, color roles, spacing and dimming accepted in round 33; see workspace.json. Dark palette and native accessibility remain to be verified."
   },
   "localization": {
     "initialLocale": "system language if its translation is available, otherwise en",
@@ -118,9 +118,11 @@
     "reducedMotion": "follow system preference"
   },
   "unresolved": [
-    "visual geometry for sheets, library and definition editor",
+    "definition editor and settings presentation beyond accepted light-sheet styling",
     "extreme completion edges and scaled layouts",
-    "specific typography/color/opacity choices",
+    "dark appearance review",
     "native and assistive-technology verification"
-  ]
+  ],
+  "acceptedVisualRound": 33,
+  "workspace": "workspace.json"
 }
