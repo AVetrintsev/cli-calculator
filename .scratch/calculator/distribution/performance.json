@@ -91,5 +91,18 @@
     "staleRequest": "superseded work must not replace or diagnose the newer input",
     "enforcementMechanism": "architecture decision; deterministic work limits and the elapsed-time guard must be designed together",
     "diagnosticKey": "error.calculationTooComplex"
+  },
+  "userReportedMac": {
+    "model": "MacBook Air",
+    "chip": "Apple M3",
+    "architecture": "arm64",
+    "source": "user response in round 37, 2026-09-13",
+    "osDescriptionVerbatim": "ос там предпоследнего поколения самая свежая версия",
+    "exactOsVersion": null,
+    "memoryBytes": null,
+    "connectedToThisWindowsSession": false,
+    "nativeRunCompleted": false,
+    "performanceMeasured": false,
+    "scope": "candidate device for the first Apple-silicon test, not evidence for Intel, minimum macOS 14, or the 8-GiB performance class"
   }
 }
