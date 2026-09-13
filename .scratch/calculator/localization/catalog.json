@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "sourceLanguage": "en",
   "status": "draft",
-  "coverage": "Specification text for identified calculator surfaces. Interface behavior through round 32 and revised workspace/service screens through round 34 are accepted. Round 35 accepts direct public installation, user-controlled update installation and retained data after uninstall; Windows 11 uses one x64 build. Round 36 accepts performance budgets and the complexity diagnostic/help. Native integration, measurements and package-owned installer text remain engineering work.",
+  "coverage": "Specification text for identified calculator surfaces. Interface behavior through round 32 and revised workspace/service screens through round 34 are accepted. Round 35 accepts direct public installation, user-controlled update installation and retained data after uninstall; Windows 11 uses one x64 build. Round 36 accepts performance budgets and the complexity diagnostic/help. Native integration, measurements and package-owned installer text remain engineering work. Round 37 accepts the minimum nonzero working magnitude and its separate diagnostic/help.",
   "messages": {
     "quick.expression.placeholder": {
       "text": "Type a calculation",
@@ -2659,9 +2659,9 @@
       "elementType": "help_paragraph"
     },
     "help.numeric.smallValueRule": {
-      "text": "If ten fractional places would turn a nonzero answer into zero, extend its ordinary decimal form to three significant digits, but no more than 30 fractional places. Do not add unnecessary zeros or switch to scientific notation. For example, 0.000000000012345 displays 0.0000000000123. If even this limit rounds it to zero, show ≈ 0. The working value remains nonzero, so later calculations can still use it. Fractional digits after the second remain dimmed. An answer shown as ≈ 0 is ready to copy and copies 0; any unit or percent sign stays only in its display. Its working value remains nonzero.",
+      "text": "If ten fractional places would turn a nonzero answer into zero, extend its ordinary decimal form to three significant digits, but no more than 30 fractional places. Do not add unnecessary zeros or switch to scientific notation. For example, 0.000000000012345 displays 0.0000000000123. If even this limit rounds it to zero, show ≈ 0. The working value remains nonzero, so later calculations can still use it. Fractional digits after the second remain dimmed. An answer shown as ≈ 0 is ready to copy and copies 0; any unit or percent sign stays only in its display. Its working value remains nonzero. This display rule applies only within the supported working-number range.",
       "meaning": "Explains the approved bounded small-number display and approximate-zero correction.",
-      "context": "Rounds 26–27. Extend small nonzero coefficients to three significant digits within 30 fractional places. Calendar millisecond formatting is separate; retain the nonzero working value and type for downstream calculations. Round 27 accepts approximately zero as a ready result. Copy 0 without the approximation marker, unit or percent sign. Keep the unit/percentage suffix in the displayed answer. Ordinary quick confirmation saves the true nonzero typed working value and displayed approximation, and clears or hides only after success. Sheets retain sheet-copy behavior. Exact zero and approximate zero are distinct display entries; identical approximate entries group while retaining every latent value. Multiple visible entries still require choosing. Selected source text remains literal.",
+      "context": "Rounds 26–27. Extend small nonzero coefficients to three significant digits within 30 fractional places. Calendar millisecond formatting is separate; retain the nonzero working value and type for downstream calculations. Round 27 accepts approximately zero as a ready result. Copy 0 without the approximation marker, unit or percent sign. Keep the unit/percentage suffix in the displayed answer. Ordinary quick confirmation saves the true nonzero typed working value and displayed approximation, and clears or hides only after success. Sheets retain sheet-copy behavior. Exact zero and approximate zero are distinct display entries; identical approximate entries group while retaining every latent value. Multiple visible entries still require choosing. Selected source text remains literal. Round 37 adds a separate minimum working magnitude; diagnose a value outside that range before formatting.",
       "location": "Numeric expressions and result-formatting section of application help.",
       "elementType": "help_paragraph"
     },
@@ -2981,6 +2981,20 @@
       "meaning": "Explains the accepted short-calculation limit and how a user can respond to a complexity diagnostic.",
       "context": "Accepted in round 36. General help supplements the brief diagnostic without introducing a long-running calculation or manual-cancel mode. This is application help content, not a claim of measured performance.",
       "location": "Calculation help, section explaining limits and complexity errors.",
+      "elementType": "help_paragraph"
+    },
+    "error.numberTooSmall": {
+      "text": "Number too small",
+      "meaning": "Indicates a nonzero working reference number below the supported minimum magnitude.",
+      "context": "Accepted in round 37. The inclusive nonzero lower magnitude is 10^(-1000). Check input without rounding and computed working values after required working rounding, before display. Do not publish zero or an approximately-zero answer for this error.",
+      "location": "Brief diagnostic beside the affected expression, with the normal accessible error announcement.",
+      "elementType": "error_message"
+    },
+    "help.numeric.lowerMagnitudeRule": {
+      "text": "The smallest nonzero working magnitude is 10^(-1000), inclusive. A smaller nonzero value produces Number too small. Values within this range may display as approximately zero while remaining nonzero in later calculations: 10^(-50) * 10^25 * 10^25 = 1. Zero is allowed separately. Working precision remains 30 significant digits.",
+      "meaning": "Distinguishes the finite working-number range from the short approximately-zero display.",
+      "context": "Accepted in round 37. The bound applies to the reference number of a typed value, equally on all platforms. It does not authorize thousand-digit display, a lower input precision, or silent underflow to zero.",
+      "location": "Numeric help beside working precision and small-value display rules.",
       "elementType": "help_paragraph"
     }
   }

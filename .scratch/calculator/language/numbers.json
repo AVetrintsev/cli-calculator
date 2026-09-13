@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "status": "specification",
   "sourceDecision": "../issues/04-expression-language.md",
-  "acceptedThrough": "round 30: expression-scale ranking and its application to typed numerical values are accepted",
+  "acceptedThrough": "round 37: expression-scale rules and the minimum nonzero working magnitude are accepted",
   "domain": "real numbers",
   "input": {
     "maximumSignificantDigits": 30,
@@ -39,7 +39,7 @@
       "targetSignificantDigits": 3,
       "maximumFractionalPlaces": 30,
       "roundingStage": "round the working coefficient directly to the required display places within the cap; do not round it to three significant digits and then round it again",
-      "whenEvenMaximumPlacesRoundToZero": "show approximately zero instead of a too-small diagnostic",
+      "whenEvenMaximumPlacesRoundToZero": "show approximately zero for a nonzero working value within the supported magnitude range; a below-range value is diagnosed before display",
       "approximatelyZeroMessageKey": "result.approximateZero",
       "approximatelyZeroWorkingValue": "retain the original nonzero working value for downstream calculations",
       "calendarTimeRoundingChanged": false,
@@ -132,5 +132,37 @@
     "rightHandPercentageInAdditionSubtraction": "relative change of the measurement",
     "leftHandPercentagePlusOrMinusMeasurement": "reject; do not silently make the fraction a measurement",
     "specialCalendarAndTemperatureRules": "not expanded by these general examples"
+  },
+  "lowerMagnitude": {
+    "sourceDecision": "../issues/24-small-number-range.md",
+    "acceptedRound": 37,
+    "minimumNonzeroAbsoluteValue": {
+      "coefficient": "1",
+      "decimalExponent": -1000
+    },
+    "inclusive": true,
+    "exactZeroAllowed": true,
+    "appliesTo": "typed working reference number; all platforms",
+    "literalCheck": "exact parsed literal, without input rounding",
+    "computedValueCheck": "after required 30-significant-digit working rounding, before display formatting",
+    "belowMinimum": "diagnostic; no ready answer and no saturation to zero",
+    "diagnosticKey": "error.numberTooSmall",
+    "internalNumericalAlgorithms": "guard intermediates may be smaller when accuracy and the execution budget remain satisfied; not published working values",
+    "explicitRoundingToZero": "an actual zero produced by the requested round/floor/ceil remains exact zero",
+    "completeness": "a technical inability to finish a potentially valid meaning must not be disguised as dimensional incompatibility",
+    "examples": [
+      {
+        "expression": "10^(-1000)",
+        "outcome": "valid nonzero working value; displays approximately zero"
+      },
+      {
+        "expression": "10^(-1001)",
+        "outcome": "number-too-small diagnostic"
+      },
+      {
+        "expression": "10^(-50) * 10^25 * 10^25",
+        "outcome": "1"
+      }
+    ]
   }
 }
