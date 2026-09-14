@@ -422,5 +422,7 @@
   "settings.systemIcon.hideWhenClosed": "Скрывать значок при закрытом калькуляторе",
   "settings.systemIcon.label": "Системный значок",
   "settings.systemIcon.always": "Показывать всегда",
-  "settings.systemIcon.whenOpen": "Только при открытом калькуляторе"
+  "settings.systemIcon.whenOpen": "Только при открытом калькуляторе",
+  "error.calculationFailed": "Не удалось выполнить расчёт",
+  "help.calculation.failureRule": "После внутреннего сбоя калькулятор перезапускает вычислительную часть, сохраняя введённый текст и открытый лист. Упавший расчёт автоматически не повторяется. Измените выражение, чтобы начать новую попытку."
 }

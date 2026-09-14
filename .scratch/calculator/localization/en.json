@@ -422,5 +422,7 @@
   "settings.systemIcon.hideWhenClosed": "Hide icon when calculator is closed",
   "settings.systemIcon.label": "System icon",
   "settings.systemIcon.always": "Always show",
-  "settings.systemIcon.whenOpen": "Only while calculator is open"
+  "settings.systemIcon.whenOpen": "Only while calculator is open",
+  "error.calculationFailed": "Could not calculate",
+  "help.calculation.failureRule": "After an internal failure, the calculator restarts its calculation engine and keeps your input and open sheet. The failed calculation is not retried automatically. Edit the expression to start a new attempt."
 }

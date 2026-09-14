@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "sourceLanguage": "en",
   "status": "draft",
-  "coverage": "Specification text for identified calculator surfaces. Interface behavior through round 32 and revised workspace/service screens through round 34 are accepted. Round 35 accepts direct public installation, user-controlled update installation and retained data after uninstall; Windows 11 uses one x64 build. Round 36 accepts performance budgets and the complexity diagnostic/help. Native integration, measurements and package-owned installer text remain engineering work. Round 37 accepts the minimum nonzero working magnitude and its separate diagnostic/help. Round 38 adds scale calibration with an explicit saved default, conditional system-icon visibility, and separate content-sized history layout. Round 39 rebases the compact size to 100%; calibration range is 50–300 to retain migrated settings.",
+  "coverage": "Specification text for identified calculator surfaces. Interface behavior through round 32 and revised workspace/service screens through round 34 are accepted. Round 35 accepts direct public installation, user-controlled update installation and retained data after uninstall; Windows 11 uses one x64 build. Round 36 accepts performance budgets and the complexity diagnostic/help. Native integration, measurements and package-owned installer text remain engineering work. Round 37 accepts the minimum nonzero working magnitude and its separate diagnostic/help. Round 38 adds scale calibration with an explicit saved default, conditional system-icon visibility, and separate content-sized history layout. Round 39 rebases the compact size to 100%; calibration range is 50–300 to retain migrated settings. Point 41.1 accepts recovery from an internal calculation failure without automatically replaying the failed calculation; its diagnostic and help are included. Points 41.2–41.3 about damaged storage and incompatible data versions remain pending.",
   "messages": {
     "quick.expression.placeholder": {
       "text": "Type a calculation",
@@ -3045,6 +3045,20 @@
       "context": "The window’s own menus/settings count as the same open session, avoiding disappearance while using the icon menu.",
       "location": "System-icon visibility selector.",
       "elementType": "select_option"
+    },
+    "error.calculationFailed": {
+      "text": "Could not calculate",
+      "meaning": "Reports an internal failure of computation while the calculator retains the editable input and open sheet.",
+      "context": "Accepted in point 41.1. Shown for an internal computation failure or failure to start its isolated process. Restore computation without automatically replaying the failed request; a new edit starts a new attempt. Do not use this message for syntax, mathematical-domain, numeric-range or execution-budget errors. A failure from an obsolete request must not overwrite newer input or results.",
+      "location": "Brief diagnostic beside the affected expression, using the existing error placement and accessible announcement.",
+      "elementType": "error_message"
+    },
+    "help.calculation.failureRule": {
+      "text": "After an internal failure, the calculator restarts its calculation engine and keeps your input and open sheet. The failed calculation is not retried automatically. Edit the expression to start a new attempt.",
+      "meaning": "Explains what remains available after a calculation failure and how to start another attempt.",
+      "context": "Accepted in point 41.1. Automatic recovery applies only to the calculation engine, not a full application restart or storage restoration. Clock ticks and internal notifications must not repeatedly launch the failed calculation. This help does not introduce a retry button or a long-running calculation mode.",
+      "location": "Calculation help, section explaining internal failures and recovery.",
+      "elementType": "help_paragraph"
     }
   }
 }
