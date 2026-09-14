@@ -156,7 +156,18 @@
         "suggestion order",
         "keyboard command meanings"
       ],
-      "verification": "accepted from a bounded WPF layout comparison; real native popup placement, scaled multi-monitor layouts, focus, IME and assistive technology remain to be verified"
+      "verification": "variant A accepted from a bounded comparison; real Windows Popup geometry subsequently passed on one 96-DPI monitor at five application scales. macOS, mixed-DPI/multi-monitor placement, real popup interaction, IME and assistive technology remain to be verified. A separate user smoke test passed Windows palette invocation, immediate input, copy and focus return",
+      "windowsGeometryObservation": {
+        "prototypeRevision": "a5d8dbf",
+        "scenariosPassed": 20,
+        "scenariosTotal": 20,
+        "applicationScalePercent": [50, 100, 150, 200, 300],
+        "monitorDpi": 96,
+        "monitorWorkAreaPixels": [2560, 1392],
+        "verified": "separate popup HWND outside the editor HWND, work-area bounds, zero/one/three/seven-row cases, stationary editor/window and programmatic scrolling to the first and last suggestions",
+        "source": "../issues/11-platform-prototype.md",
+        "scope": "throwaway geometry probe; not product implementation, desktop input testing or a macOS result"
+      }
     }
   },
   "accessibility": {
@@ -176,7 +187,7 @@
   "acceptedVisualRevision": "e152bab",
   "verificationOutstanding": [
     "verification of definition editor and settings states beyond the accepted prototype fixtures",
-    "native implementation of accepted completion edge placement and scaled layouts",
+    "macOS completion placement, small screens, mixed-DPI and multi-monitor layouts",
     "native and assistive-technology verification"
   ],
   "decisionStatus": "The compact 100% baseline, calibration, conditional icon and subtle history dividers are accepted by the user in revision 23fa299. Round 40 accepts completion-edge variant A from comparison revision 731dc97: only the list moves; complete native verification remains outstanding.",
