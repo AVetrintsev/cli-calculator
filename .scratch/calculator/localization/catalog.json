@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "sourceLanguage": "en",
   "status": "draft",
-  "coverage": "Specification text for identified calculator surfaces. Interface behavior through round 32 and revised workspace/service screens through round 34 are accepted. Round 35 accepts direct public installation, user-controlled update installation and retained data after uninstall; Windows 11 uses one x64 build. Round 36 accepts performance budgets and the complexity diagnostic/help. Native integration, measurements and package-owned installer text remain engineering work. Round 37 accepts the minimum nonzero working magnitude and its separate diagnostic/help. Round 38 adds scale calibration with an explicit saved default, conditional system-icon visibility, and separate content-sized history layout. Round 39 rebases the compact size to 100%; calibration range is 50–300 to retain migrated settings. Point 41.1 accepts recovery from an internal calculation failure without automatically replaying the failed calculation; its diagnostic and help are included. Points 41.2–41.3 about damaged storage and incompatible data versions remain pending.",
+  "coverage": "Specification text for identified calculator surfaces. Interface behavior through round 32 and revised workspace/service screens through round 34 are accepted. Round 35 accepts direct public installation, user-controlled update installation and retained data after uninstall; Windows 11 uses one x64 build. Round 36 accepts performance budgets and the complexity diagnostic/help. Native integration, measurements and package-owned installer text remain engineering work. Round 37 accepts the minimum nonzero working magnitude and its separate diagnostic/help. Round 38 adds scale calibration with an explicit saved default, conditional system-icon visibility, and separate content-sized history layout. Round 39 rebases the compact size to 100%; calibration range is 50–300 to retain migrated settings. Point 41.1 accepts recovery from an internal calculation failure without automatically replaying the failed calculation; its diagnostic and help are included. Points 41.2–41.3 accept explicit recovery from damaged storage, preservation of original files, protected format updates and refusal to rewrite newer data with an older app; their copy and help are included.",
   "messages": {
     "quick.expression.placeholder": {
       "text": "Type a calculation",
@@ -1823,9 +1823,9 @@
       "elementType": "help_paragraph"
     },
     "help.data.backupRule": {
-      "text": "The calculator keeps full local snapshots of data and settings, including history, when data change at most once a day, and also before import or restore. It retains the latest ten copies. Restoring a chosen backup explicitly returns that saved state after a preview and a successful backup of your current state. Ordinary startup does not bring back deleted history. The ten-backup limit does not limit your main calculation history.",
+      "text": "The calculator keeps full local snapshots of data and settings, including history, when data change at most once a day, and also before import or restore. It retains the latest ten copies. If current data can be read, restoring a chosen backup explicitly returns that saved state after a preview and a successful backup of your current state. Damaged-data recovery first preserves the original files separately. Ordinary startup does not bring back deleted history. The ten-backup limit does not limit your main calculation history.",
       "meaning": "Explains accepted local backup timing, retention and explicit restore access.",
-      "context": "Accepted in round 19, point 7. Round 20 accepts a full local snapshot including history and settings, restored as the chosen state after preview and a successful backup of the current state. This is distinct from history-free transfer and import conflict merging. See help.data.restoreRule. Exact daily scheduling, disk failures, integrity checking and recovery are technical work. This describes the future calculator; it does not create a Codex automation or claim an existing backup service. A pre-restore backup is an additional accepted trigger under round 20; failure to save it blocks restoration. Snapshot integrity, rotation and actual restore failures still need technical design.",
+      "context": "Accepted in round 19, point 7. Round 20 accepts a full local snapshot including history and settings, restored as the chosen state after preview and a successful backup of the current state. This is distinct from history-free transfer and import conflict merging. See help.data.restoreRule. Exact daily scheduling, disk failures, integrity checking and recovery are technical work. This describes the future calculator; it does not create a Codex automation or claim an existing backup service. A pre-restore backup is an additional accepted trigger under round 20; failure to save it blocks restoration. Snapshot integrity, rotation and actual restore failures still need technical design. Point 41.2 adds a distinct damaged-source recovery flow: preserve the original file set instead of pretending to create a healthy backup of unreadable data; show inspected backup contents without an invented comparison. See help.data.recoveryRule.",
       "location": "Local backup section of data-management help.",
       "elementType": "help_paragraph"
     },
@@ -1979,7 +1979,7 @@
     "data.restore.preview": {
       "text": "Restore",
       "meaning": "Names the view of changes before explicit backup restoration.",
-      "context": "Round 19 accepts local backups and explicit restore with preview, separate from ordinary startup. Round 20 accepts a full local snapshot including history and settings. Explicit restore returns the chosen state after preview and only after a successful backup of the current state. This label does not authorize silently restoring history, replacing data or performing a restore without the user action.",
+      "context": "Round 19 accepts local backups and explicit restore with preview, separate from ordinary startup. Round 20 accepts a full local snapshot including history and settings. Explicit restore returns the chosen state after preview and only after a successful backup of the current state. This label does not authorize silently restoring history, replacing data or performing a restore without the user action. Point 41.2 adds a distinct damaged-source recovery flow: preserve the original file set instead of pretending to create a healthy backup of unreadable data; show inspected backup contents without an invented comparison. See help.data.recoveryRule.",
       "location": "Heading of the backup restore preview.",
       "elementType": "section_heading"
     },
@@ -1998,9 +1998,9 @@
       "elementType": "help_paragraph"
     },
     "help.data.restoreRule": {
-      "text": "A local backup contains the full saved data and settings, including history. Restoring it returns the chosen state: the preview shows additions, changes and current items that will disappear. Before applying it, the calculator must successfully back up your current state. If that backup cannot be saved, restoration does not start. This explicit restore can bring back the history in the chosen snapshot; ordinary startup does not. Portable export still excludes history, and import keeps its separate conflict-copy rules.",
+      "text": "A local backup contains the full saved data and settings, including history. When current data can be read, restoring it returns the chosen state: the preview shows additions, changes and current items that will disappear. Before applying it, the calculator must successfully back up your current state. If that backup cannot be saved, restoration does not start. This explicit restore can bring back the history in the chosen snapshot; ordinary startup does not. Portable export still excludes history, and import keeps its separate conflict-copy rules.",
       "meaning": "Explains full-state restoration and its mandatory successful current-state backup.",
-      "context": "Accepted in round 20, point 3. Keep the last-ten-copy policy with the additional pre-restore trigger. Restoration is explicitly user-selected and previewed, not automatic merging or ordinary startup recovery. Snapshot format, compatibility, integrity, handling a failure during actual restore, open editor synchronization and safe retention of the selected snapshot remain technical design work. This text states intended behavior, not completed runtime verification.",
+      "context": "Accepted in round 20, point 3. Keep the last-ten-copy policy with the additional pre-restore trigger. Restoration is explicitly user-selected and previewed, not automatic merging or ordinary startup recovery. Snapshot format, compatibility, integrity, handling a failure during actual restore, open editor synchronization and safe retention of the selected snapshot remain technical design work. This text states intended behavior, not completed runtime verification. Point 41.2 adds a distinct damaged-source recovery flow: preserve the original file set instead of pretending to create a healthy backup of unreadable data; show inspected backup contents without an invented comparison. See help.data.recoveryRule.",
       "location": "Backup restore section of application help, alongside the restore preview.",
       "elementType": "help_paragraph"
     },
@@ -2063,7 +2063,7 @@
     "data.restore.backupError": {
       "text": "Could not back up the current state. Restore has not started.",
       "meaning": "Explains why restoration is blocked when its prerequisite backup fails.",
-      "context": "Accepted in round 20, point 3: do not begin restoring the selected snapshot unless the current-state backup succeeds. Existing state must not be presented as already restored. Detailed storage diagnostics remain technical work.",
+      "context": "Accepted in round 20, point 3: do not begin restoring the selected snapshot unless the current-state backup succeeds. Existing state must not be presented as already restored. Detailed storage diagnostics remain technical work. Point 41.2 adds a distinct damaged-source recovery flow: preserve the original file set instead of pretending to create a healthy backup of unreadable data; show inspected backup contents without an invented comparison. See help.data.recoveryRule.",
       "location": "Error feedback associated with the backup restore action.",
       "elementType": "error_message"
     },
@@ -3058,6 +3058,111 @@
       "meaning": "Explains what remains available after a calculation failure and how to start another attempt.",
       "context": "Accepted in point 41.1. Automatic recovery applies only to the calculation engine, not a full application restart or storage restoration. Clock ticks and internal notifications must not repeatedly launch the failed calculation. This help does not introduce a retry button or a long-running calculation mode.",
       "location": "Calculation help, section explaining internal failures and recovery.",
+      "elementType": "help_paragraph"
+    },
+    "data.recovery.title": {
+      "text": "Recover data",
+      "meaning": "Names the recovery screen for damaged saved data.",
+      "context": "Shown when the main data store is confirmed damaged; a temporary lock, access error or unsupported newer schema is a separate failure.",
+      "location": "Title of the compact recovery window.",
+      "elementType": "dialog_title"
+    },
+    "data.recovery.damaged": {
+      "text": "Saved data could not be read",
+      "meaning": "Explains why normal saved data are unavailable.",
+      "context": "Accepted in point 41.2. The recovery screen offers valid backups and explicit empty-state creation; it does not silently restore or reset data.",
+      "location": "Brief status below the recovery title.",
+      "elementType": "status_message"
+    },
+    "data.recovery.backupDate": {
+      "text": "Date",
+      "meaning": "Labels the creation date of a candidate backup.",
+      "context": "Dates use the selected locale; do not invent a backup date when its metadata are unavailable.",
+      "location": "Date column of the available-backup list.",
+      "elementType": "field_label"
+    },
+    "data.recovery.contents": {
+      "text": "Contents",
+      "meaning": "Labels the contents of an inspected backup.",
+      "context": "Describe the actual inspected snapshot, including available saved objects, history and settings. Reuse existing item labels and localized counts.",
+      "location": "Backup list or selected-backup details in recovery.",
+      "elementType": "field_label"
+    },
+    "data.recovery.noBackups": {
+      "text": "No usable backups",
+      "meaning": "States that no available backup passed the checks required for recovery.",
+      "context": "Accepted in point 41.2. This does not trigger creation of empty data; that requires the separate explicit action.",
+      "location": "Empty state in the recovery backup list.",
+      "elementType": "empty_state"
+    },
+    "data.recovery.originalsPreserved": {
+      "text": "Original files saved separately",
+      "meaning": "Confirms preservation of the original files before replacement.",
+      "context": "Show only after actual successful preservation. A preserved damaged file set is evidence for recovery, not a validated healthy backup.",
+      "location": "Recovery status after protecting original files.",
+      "elementType": "status_message"
+    },
+    "data.recovery.comparisonUnavailable": {
+      "text": "Comparison unavailable",
+      "meaning": "Explains that an accurate comparison with the damaged current state cannot be shown.",
+      "context": "Accepted in point 41.2. Show backup contents without invented additions, changes or deletions when the original state cannot be read.",
+      "location": "Selected-backup preview in damaged-data recovery.",
+      "elementType": "status_message"
+    },
+    "data.recovery.startEmpty": {
+      "text": "Start with empty data",
+      "meaning": "Offers the explicit choice to create new empty storage.",
+      "context": "Accepted in point 41.2. Never the automatic result of a missing backup or failed restore. Preserve original files successfully before applying this action.",
+      "location": "Secondary action in the recovery window.",
+      "elementType": "button"
+    },
+    "data.recovery.preserveError": {
+      "text": "Could not preserve the original files. Data unchanged.",
+      "meaning": "Reports that recovery or empty-state creation cannot proceed safely.",
+      "context": "The protected original-file set could not be saved. Do not overwrite, truncate or remove the original files or claim that recovery finished.",
+      "location": "Error beside the chosen recovery action.",
+      "elementType": "error_message"
+    },
+    "data.recovery.restoreError": {
+      "text": "Could not restore this backup",
+      "meaning": "Reports a failed recovery attempt using the selected backup.",
+      "context": "Keep preserved original files and the source backup. A failed attempt does not automatically switch to an empty store.",
+      "location": "Error associated with the selected backup in recovery.",
+      "elementType": "error_message"
+    },
+    "data.version.tooNew": {
+      "text": "Update the app to open this data",
+      "meaning": "Explains that saved data use a format newer than this app supports.",
+      "context": "Accepted in point 41.3. The older app must not rewrite the newer store. An update remains a user-controlled installation under the delivery policy.",
+      "location": "Compatibility screen shown instead of opening unsupported saved data for writing.",
+      "elementType": "status_message"
+    },
+    "data.version.migrationFailed": {
+      "text": "Could not update the data format",
+      "meaning": "Reports an unsuccessful change to the stored-data structure.",
+      "context": "Accepted in point 41.3. Preserve the original state and protective backup. Do not report successful migration or open partially changed data as ready.",
+      "location": "Error in the data-format update screen.",
+      "elementType": "error_message"
+    },
+    "data.version.returnHelp": {
+      "text": "How to return to a compatible version",
+      "meaning": "Opens instructions for returning to a program version compatible with the preserved data.",
+      "context": "Accepted in point 41.3. This action shows guidance; it does not silently download, install or downgrade data. Exact distribution mechanics are specified in the delivery decision.",
+      "location": "Recovery guidance action after an unsuccessful data-format update.",
+      "elementType": "command_label"
+    },
+    "help.data.recoveryRule": {
+      "text": "If saved data are damaged, choose an available backup by its date and contents, or explicitly start with empty data. The calculator preserves the original files separately before replacement. When the current state cannot be read, its differences from a backup cannot be shown accurately. If the original files cannot be preserved, recovery does not replace them.",
+      "meaning": "Explains explicit damaged-data recovery and its preservation requirement.",
+      "context": "Accepted in point 41.2. Ordinary restoration of readable data keeps the separate mandatory healthy current-state backup. A preserved damaged source is not presented as a healthy snapshot.",
+      "location": "Data help, damaged-data recovery section.",
+      "elementType": "help_paragraph"
+    },
+    "help.data.versionRule": {
+      "text": "Before changing the data format, the calculator saves a protective backup. If the change fails, the original data remain available and the app shows how to return to a compatible version. An older app asks you to update before opening newer data and does not rewrite them.",
+      "meaning": "Explains protection during format changes and newer-data compatibility.",
+      "context": "Accepted in point 41.3. This does not authorize automatic application installation or destructive data downgrades.",
+      "location": "Data help, compatibility and application-update section.",
       "elementType": "help_paragraph"
     }
   }
