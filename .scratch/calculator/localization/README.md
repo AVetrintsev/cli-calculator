@@ -129,3 +129,6 @@ Round 35 accepts public direct installation, automatic or manual update checks, 
 
 
 Round 37 accepts the inclusive minimum nonzero working magnitude 10^(-1000). The number-too-small diagnostic and the range explanation have English metadata with en/ru values. Existing small-value help now explicitly applies only inside the working range; approximately-zero display still retains a nonzero working value.
+
+
+Round 38 adds explicit saving of appearance calibration and optional system-icon hiding outside an open calculator session. New labels retain English meaning/context/location/element-type metadata and matching en/ru text. The native probe uses a subset of the same catalog.

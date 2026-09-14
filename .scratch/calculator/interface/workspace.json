@@ -44,7 +44,7 @@
       "Menlo",
       "monospace"
     ],
-    "desktopFormulaSizePxAt100Percent": 20,
+    "desktopFormulaSizePxAt100Percent": 22,
     "page": "#e9edf2",
     "surface": "#fcfdff",
     "ink": "#263441",
@@ -53,7 +53,8 @@
     "result": "#387c83",
     "muted": "#657382",
     "adjustableInterfaceSize": true,
-    "dimmingCanBeDisabled": true
+    "dimmingCanBeDisabled": true,
+    "typographyCorrectionRound": 38
   },
   "verificationBoundary": "Visual selection does not certify native focus, screen-reader behavior, actual clipboard or computation. Constrained long expressions/results and zero-room completion retain their pending verification requirements.",
   "correctedInRound": 34,
@@ -79,5 +80,37 @@
     "adaptation": "Neutral surfaces and number/operator colors draw on the official themes; calculator roles are adapted. This is not an exact reproduction of all VS Code UI tokens.",
     "acceptedRound": 34
   },
-  "acceptedServiceRevision": "e152bab"
+  "acceptedServiceRevision": "e152bab",
+  "paletteCalibration": {
+    "sourceRound": 38,
+    "defaultScalePercent": 70,
+    "nativeFontReferenceLogicalUnits": 22,
+    "initialFormulaLogicalUnits": 15.4,
+    "sameMetricsAcrossPlatforms": true,
+    "pixelIdenticalSystemFontRendering": false,
+    "nativeFonts": {
+      "windows": "Consolas",
+      "macos": "system monospaced"
+    },
+    "scaledGeometry": [
+      "width",
+      "content heights",
+      "spacing",
+      "corner radii"
+    ],
+    "historySurface": "separate from the permanently bounded input/result panel"
+  },
+  "quickHistory": {
+    "sourceRound": 38,
+    "placement": "above main input/result panel",
+    "height": "actual remaining visible rows plus padding; capped by available work area, then scroll",
+    "emptyRemainder": "no empty extension or reserved height",
+    "consumeBehavior": "Up removes each recalled entry from the remaining rows above input; top of history descends, Down restores it",
+    "mainPanelScreenBounds": "fixed while history changes; input/result border does not stretch or move",
+    "separationLogicalUnitsAt100Percent": 8,
+    "darkSurface": "#292929",
+    "darkSurfaceOpacity": 0.92,
+    "hasSeparateBackground": true,
+    "geometryStatus": "direct user requirements accepted; exact revised render is provided for feedback"
+  }
 }

@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "sourceLanguage": "en",
   "status": "draft",
-  "coverage": "Specification text for identified calculator surfaces. Interface behavior through round 32 and revised workspace/service screens through round 34 are accepted. Round 35 accepts direct public installation, user-controlled update installation and retained data after uninstall; Windows 11 uses one x64 build. Round 36 accepts performance budgets and the complexity diagnostic/help. Native integration, measurements and package-owned installer text remain engineering work. Round 37 accepts the minimum nonzero working magnitude and its separate diagnostic/help.",
+  "coverage": "Specification text for identified calculator surfaces. Interface behavior through round 32 and revised workspace/service screens through round 34 are accepted. Round 35 accepts direct public installation, user-controlled update installation and retained data after uninstall; Windows 11 uses one x64 build. Round 36 accepts performance budgets and the complexity diagnostic/help. Native integration, measurements and package-owned installer text remain engineering work. Round 37 accepts the minimum nonzero working magnitude and its separate diagnostic/help. Round 38 adds scale calibration with an explicit saved default, conditional system-icon visibility, and separate content-sized history layout.",
   "messages": {
     "quick.expression.placeholder": {
       "text": "Type a calculation",
@@ -2996,6 +2996,55 @@
       "context": "Accepted in round 37. The bound applies to the reference number of a typed value, equally on all platforms. It does not authorize thousand-digit display, a lower input precision, or silent underflow to zero.",
       "location": "Numeric help beside working precision and small-value display rules.",
       "elementType": "help_paragraph"
+    },
+    "settings.scale.saveDefault": {
+      "text": "Save as default",
+      "meaning": "Saves the current appearance calibration as the default for subsequent launches.",
+      "context": "The scale is previewed immediately; persistence is requested explicitly with this action.",
+      "location": "Appearance calibration panel, beneath the compact controls.",
+      "elementType": "button"
+    },
+    "settings.scale.defaultSaved": {
+      "text": "Saved",
+      "meaning": "Confirms that the default appearance settings were written successfully.",
+      "context": "Replace the save-button caption only after successful persistence; preserve the editable settings on failure.",
+      "location": "Save-default button, as concise completion feedback.",
+      "elementType": "button_status"
+    },
+    "settings.scale.rangeError": {
+      "text": "Enter 50–200%",
+      "meaning": "Explains the accepted input range of the prototype scale control.",
+      "context": "Shown accessibly or as a tooltip when the calibration value is invalid; mark the field invalid without adding a permanent explanation paragraph.",
+      "location": "Scale input in the appearance panel.",
+      "elementType": "validation_message"
+    },
+    "settings.systemIcon.hideWhenClosed": {
+      "text": "Hide icon when calculator is closed",
+      "meaning": "Keeps the tray/menu-bar icon out of the system area while the calculator palette is hidden.",
+      "context": "Selected by default in round 38 at the user’s request. The icon remains available during an open palette session, including its own menus and settings; ordinary app launch must remain an entry point.",
+      "location": "System-icon setting and the icon’s own menu.",
+      "elementType": "checkbox_label"
+    },
+    "settings.systemIcon.label": {
+      "text": "System icon",
+      "meaning": "Names the visibility setting for the Windows tray or macOS menu-bar icon.",
+      "context": "Use with always-visible and visible-during-open-session choices; hiding the icon does not quit the app.",
+      "location": "Appearance or general settings.",
+      "elementType": "field_label"
+    },
+    "settings.systemIcon.always": {
+      "text": "Always show",
+      "meaning": "Keeps the system icon visible while the calculator runs.",
+      "context": "Alternative to the user-preferred conditional visibility.",
+      "location": "System-icon visibility selector.",
+      "elementType": "select_option"
+    },
+    "settings.systemIcon.whenOpen": {
+      "text": "Only while calculator is open",
+      "meaning": "Shows the icon during an open calculator session and hides it with the palette.",
+      "context": "The window’s own menus/settings count as the same open session, avoiding disappearance while using the icon menu.",
+      "location": "System-icon visibility selector.",
+      "elementType": "select_option"
     }
   }
 }
