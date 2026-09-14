@@ -161,5 +161,7 @@
     "extreme completion edges and scaled layouts",
     "native and assistive-technology verification"
   ],
-  "decisionStatus": "Product and visual requirements accepted through the user’s round-39 correction: compact size is the 100% baseline, with subtle history dividers. Updated native evidence belongs to the platform prototype; full native verification remains outstanding. Native prototype revision: 23fa299."
+  "decisionStatus": "The compact 100% baseline, calibration, conditional icon and subtle history dividers are accepted by the user in revision 23fa299. The extreme completion-edge exception is proposed in round 40 and awaits a user choice; complete native verification remains outstanding.",
+  "acceptedNativeAppearanceRevision": "23fa299",
+  "acceptedNativeAppearanceRound": 39
 }

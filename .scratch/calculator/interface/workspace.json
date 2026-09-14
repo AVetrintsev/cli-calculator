@@ -99,7 +99,8 @@
       "corner radii"
     ],
     "historySurface": "separate from the permanently bounded input/result panel",
-    "baselineMeaning": "same physical layout as the previous revision at 70%; compact layout becomes the reference"
+    "baselineMeaning": "same physical layout as the previous revision at 70%; compact layout becomes the reference",
+    "acceptedNativeAppearanceRevision": "23fa299"
   },
   "quickHistory": {
     "sourceRound": 39,
@@ -112,7 +113,7 @@
     "darkSurface": "#292929",
     "darkSurfaceOpacity": 0.92,
     "hasSeparateBackground": true,
-    "geometryStatus": "user correction accepted; native evidence attached to platform prototype",
+    "geometryStatus": "Revised appearance accepted by the user in round 39; Windows geometry and persistence recorded; full cross-platform native validation remains outstanding.",
     "rowSeparator": {
       "placement": "between adjacent history entries only, at the text content edges",
       "darkColor": "#ffffff",

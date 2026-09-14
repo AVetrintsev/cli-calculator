@@ -72,3 +72,8 @@ Windows: C# / WPF. macOS: Swift / AppKit, окно NSPanel и системный
 ## Поправка шкалы без увеличения интерфейса — раунд 39
 
 В ревизии `23fa299` компактный размер принят за 100%; добавлена едва заметная линия между записями. [Свидетельства](C:/Users/vetrintsev/.codex/visualizations/2026/09/10/01a08a29-3083-7091-8d85-c955198837d6/native-palette/.scratch/calculator/prototypes/native-palette/observations/r39-verification.json) показывают прежние геометрию и пиксельную отрисовку Windows, кроме самой линии; проверено чтение/сохранение новой шкалы и преобразование предыдущих настроек. [Пакет M3](C:/Users/vetrintsev/.codex/visualizations/2026/09/10/01a08a29-3083-7091-8d85-c955198837d6/native-palette/.scratch/calculator/prototypes/native-palette/downloads/NativePaletteProbe-M3-r39.zip) обновлён. Реальная проверка текущей Mac-ревизии и оставшаяся платформенная матрица не завершены.
+
+
+## Следующий конкретный выбор — подсказки у края
+
+Показанное оформление 100% с разделителями принято. В раунде 40 подготовлено [сравнение A/B](C:/Users/vetrintsev/.codex/visualizations/2026/09/10/01a08a29-3083-7091-8d85-c955198837d6/native-palette/.scratch/calculator/prototypes/native-palette/COMPLETION-EDGES.md): переносить список в свободную сторону или автоматически прокручивать текст под него. Выбор пока ожидается в [Проверка вызова и фокуса на обеих ОС](../issues/11-platform-prototype.md); макеты не являются новым подтверждением системного фокуса или Mac-запуска. До ответа прежнее обычное расположение и оставшиеся сценарии проверки сохраняются.
