@@ -139,7 +139,25 @@
     "escapeDescription": "restore prior focus",
     "visibleRowsMaximum": 7,
     "insufficientSpace": "fewer visible rows with scrolling and stationary input",
-    "extremeScreenEdge": "pending prototype"
+    "extremeScreenEdge": "accepted variant A: move only the suggestion list; preserve the visible text, caret, editor viewport and main window",
+    "edgePlacement": {
+      "acceptedRound": 40,
+      "sourceDecision": "../issues/11-platform-prototype.md",
+      "prototypeRevision": "731dc97",
+      "variant": "A",
+      "ordinaryPlacement": "below the current word, aligned with its beginning",
+      "atLeastOneCompleteRowBelow": "remain below with up to seven complete visible rows and scrolling for the rest",
+      "noCompleteRowBelow": "open above; this is the only condition for the bottom-edge exception",
+      "insufficientWidthOnRight": "shift only the list left as needed to fit the work area",
+      "preserve": [
+        "visible text and caret position",
+        "editor scroll position",
+        "main window position",
+        "suggestion order",
+        "keyboard command meanings"
+      ],
+      "verification": "accepted from a bounded WPF layout comparison; real native popup placement, scaled multi-monitor layouts, focus, IME and assistive technology remain to be verified"
+    }
   },
   "accessibility": {
     "diagnostic": "brief, near expression, no input displacement",
@@ -158,10 +176,10 @@
   "acceptedVisualRevision": "e152bab",
   "verificationOutstanding": [
     "verification of definition editor and settings states beyond the accepted prototype fixtures",
-    "extreme completion edges and scaled layouts",
+    "native implementation of accepted completion edge placement and scaled layouts",
     "native and assistive-technology verification"
   ],
-  "decisionStatus": "The compact 100% baseline, calibration, conditional icon and subtle history dividers are accepted by the user in revision 23fa299. The extreme completion-edge exception is proposed in round 40 and awaits a user choice; complete native verification remains outstanding.",
+  "decisionStatus": "The compact 100% baseline, calibration, conditional icon and subtle history dividers are accepted by the user in revision 23fa299. Round 40 accepts completion-edge variant A from comparison revision 731dc97: only the list moves; complete native verification remains outstanding.",
   "acceptedNativeAppearanceRevision": "23fa299",
   "acceptedNativeAppearanceRound": 39
 }
