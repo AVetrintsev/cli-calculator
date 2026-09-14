@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "sourceLanguage": "en",
   "status": "draft",
-  "coverage": "Specification text for identified calculator surfaces. Interface behavior through round 32 and revised workspace/service screens through round 34 are accepted. Round 35 accepts direct public installation, user-controlled update installation and retained data after uninstall; Windows 11 uses one x64 build. Round 36 accepts performance budgets and the complexity diagnostic/help. Native integration, measurements and package-owned installer text remain engineering work. Round 37 accepts the minimum nonzero working magnitude and its separate diagnostic/help. Round 38 adds scale calibration with an explicit saved default, conditional system-icon visibility, and separate content-sized history layout.",
+  "coverage": "Specification text for identified calculator surfaces. Interface behavior through round 32 and revised workspace/service screens through round 34 are accepted. Round 35 accepts direct public installation, user-controlled update installation and retained data after uninstall; Windows 11 uses one x64 build. Round 36 accepts performance budgets and the complexity diagnostic/help. Native integration, measurements and package-owned installer text remain engineering work. Round 37 accepts the minimum nonzero working magnitude and its separate diagnostic/help. Round 38 adds scale calibration with an explicit saved default, conditional system-icon visibility, and separate content-sized history layout. Round 39 rebases the compact size to 100%; calibration range is 50–300 to retain migrated settings.",
   "messages": {
     "quick.expression.placeholder": {
       "text": "Type a calculation",
@@ -3012,9 +3012,9 @@
       "elementType": "button_status"
     },
     "settings.scale.rangeError": {
-      "text": "Enter 50–200%",
-      "meaning": "Explains the accepted input range of the prototype scale control.",
-      "context": "Shown accessibly or as a tooltip when the calibration value is invalid; mark the field invalid without adding a permanent explanation paragraph.",
+      "text": "Enter 50–300%",
+      "meaning": "Explains the valid calibration range on the compact 100-percent scale.",
+      "context": "Shown for a scale value outside 50–300 percent; the larger upper bound accommodates previously saved scales after rebasing.",
       "location": "Scale input in the appearance panel.",
       "elementType": "validation_message"
     },

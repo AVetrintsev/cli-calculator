@@ -418,7 +418,7 @@
   "help.numeric.lowerMagnitudeRule": "The smallest nonzero working magnitude is 10^(-1000), inclusive. A smaller nonzero value produces Number too small. Values within this range may display as approximately zero while remaining nonzero in later calculations: 10^(-50) * 10^25 * 10^25 = 1. Zero is allowed separately. Working precision remains 30 significant digits.",
   "settings.scale.saveDefault": "Save as default",
   "settings.scale.defaultSaved": "Saved",
-  "settings.scale.rangeError": "Enter 50–200%",
+  "settings.scale.rangeError": "Enter 50–300%",
   "settings.systemIcon.hideWhenClosed": "Hide icon when calculator is closed",
   "settings.systemIcon.label": "System icon",
   "settings.systemIcon.always": "Always show",

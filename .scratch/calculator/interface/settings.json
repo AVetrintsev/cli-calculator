@@ -82,9 +82,9 @@
     "dimmingDefault": true,
     "specificFontColorsAndOpacity": "Light-sheet appearance accepted in round 33. The complete revised round 34 screens and neutral graphite-black Dark+ palette are accepted; exact adapted tokens are in workspace.json.",
     "calibration": {
-      "sourceRound": 38,
-      "defaultPercent": 70,
-      "referenceFormulaSize": 22,
+      "sourceRound": 39,
+      "defaultPercent": 100,
+      "referenceFormulaSize": 15.4,
       "initialFormulaSize": 15.4,
       "scope": "calculator content typography and geometry, shared across quick input, history and other working surfaces; settings controls keep a legible minimum size",
       "livePreview": true,
@@ -92,10 +92,18 @@
       "persistedDefault": "used on subsequent launches; settings are portable only through the existing explicit settings-import choice",
       "prototypeControlRangePercent": [
         50,
-        200
+        300
       ],
       "prototypeControlStepPercent": 1,
-      "factoryDefaultChange": "30% smaller than the native test’s 22-unit text"
+      "factoryDefaultChange": "The compact layout previously labelled 70% is now the 100% baseline, without enlarging the interface.",
+      "legacyPrototypeProfileMigration": {
+        "fromSchema": 1,
+        "toSchema": 2,
+        "percentage": "old percent * 100 / 70, rounded to the nearest whole percent to match the control step",
+        "defaultExample": "70 -> 100",
+        "rangeRationale": "50–300 accommodates the entire previously saved 50–200 range after rebasing",
+        "savedIconPreference": "preserve"
+      }
     }
   },
   "localization": {
@@ -153,5 +161,5 @@
     "extreme completion edges and scaled layouts",
     "native and assistive-technology verification"
   ],
-  "decisionStatus": "Product and visual requirements accepted through the user’s round-38 corrections; updated native renders supplied in prototype revision 7c41e6c. Platform verification, including the revised Mac build, remains outstanding."
+  "decisionStatus": "Product and visual requirements accepted through the user’s round-39 correction: compact size is the 100% baseline, with subtle history dividers. Updated native evidence belongs to the platform prototype; full native verification remains outstanding. Native prototype revision: 23fa299."
 }

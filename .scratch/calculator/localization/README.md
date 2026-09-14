@@ -132,3 +132,6 @@ Round 37 accepts the inclusive minimum nonzero working magnitude 10^(-1000). The
 
 
 Round 38 adds explicit saving of appearance calibration and optional system-icon hiding outside an open calculator session. New labels retain English meaning/context/location/element-type metadata and matching en/ru text. The native probe uses a subset of the same catalog.
+
+
+Поправка раунда 39: компактный вид становится базовыми 100%. Сообщение диапазона калибровки и его английские метаданные обновлены до 50–300%, чтобы вместить прежние сохранения после пересчёта шкалы. Разделитель истории — декоративный элемент без новой надписи.
