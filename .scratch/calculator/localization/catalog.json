@@ -2972,14 +2972,14 @@
     "error.calculationTooComplex": {
       "text": "Calculation too complex",
       "meaning": "Indicates that the permitted work or execution budget for the current recalculation was exceeded.",
-      "context": "Accepted in round 36 with a 200 ms recalculation deadline. Diagnose unfinished affected expressions while preserving editable input and complete independent results. Never present an incomplete subset of lazy meanings as a complete answer. Superseded requests do not overwrite newer input.",
+      "context": "Accepted in round 36 and amended in round 42 to a 500 ms recalculation deadline. Cancel expired requests and diagnose unfinished affected expressions while preserving editable input and complete independent results. Show ready answers immediately; never wait for the deadline on purpose. Never present an incomplete subset of lazy meanings as a complete answer. Superseded requests do not overwrite newer input.",
       "location": "Brief diagnostic beside the affected expression, using the existing error placement and accessible announcement.",
       "elementType": "error_message"
     },
     "help.calculation.complexityRule": {
-      "text": "A recalculation has a 200 ms execution budget, including dependencies and alternative meanings. If it is too complex, simplify the expression or its dependencies. Your input and completed independent results remain available.",
+      "text": "A recalculation has up to 500 ms, including dependencies and alternative meanings. Ready answers appear immediately. If time runs out, the calculation is cancelled and any late answer is ignored. Simplify the expression or its dependencies and try again. Your input and completed independent results remain available.",
       "meaning": "Explains the accepted short-calculation limit and how a user can respond to a complexity diagnostic.",
-      "context": "Accepted in round 36. General help supplements the brief diagnostic without introducing a long-running calculation or manual-cancel mode. This is application help content, not a claim of measured performance.",
+      "context": "Accepted in round 36 and amended in round 42: 500 ms is the limit for the calculation itself, not a delay before showing the answer or a separate message-display target. General help supplements the brief diagnostic without introducing a long-running calculation or manual-cancel mode. This is application help content, not a claim of measured performance.",
       "location": "Calculation help, section explaining limits and complexity errors.",
       "elementType": "help_paragraph"
     },

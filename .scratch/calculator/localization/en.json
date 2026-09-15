@@ -413,7 +413,7 @@
   "settings.updates.automatic": "Automatic",
   "settings.updates.manual": "Manual",
   "error.calculationTooComplex": "Calculation too complex",
-  "help.calculation.complexityRule": "A recalculation has a 200 ms execution budget, including dependencies and alternative meanings. If it is too complex, simplify the expression or its dependencies. Your input and completed independent results remain available.",
+  "help.calculation.complexityRule": "A recalculation has up to 500 ms, including dependencies and alternative meanings. Ready answers appear immediately. If time runs out, the calculation is cancelled and any late answer is ignored. Simplify the expression or its dependencies and try again. Your input and completed independent results remain available.",
   "error.numberTooSmall": "Number too small",
   "help.numeric.lowerMagnitudeRule": "The smallest nonzero working magnitude is 10^(-1000), inclusive. A smaller nonzero value produces Number too small. Values within this range may display as approximately zero while remaining nonzero in later calculations: 10^(-50) * 10^25 * 10^25 = 1. Zero is allowed separately. Working precision remains 30 significant digits.",
   "settings.scale.saveDefault": "Save as default",

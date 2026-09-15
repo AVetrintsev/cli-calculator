@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "status": "specification",
   "accepted": true,
-  "round": 36,
+  "round": 42,
   "sourceDecision": "../issues/10-delivery-and-acceptance.md",
   "referenceClass": {
     "memoryGiB": 8,
@@ -47,14 +47,15 @@
     "foregroundLoad": "ordinary idle desktop, without debugger or concurrent compilation",
     "warmInvoke": "palette starts hidden with app resident; finish when input is visibly ready and focused",
     "ordinaryRecalculation": "latest edit to current ready answer paint, including dispatch and rendering",
+    "evaluationDeadline": "monotonic elapsed time from the current committed edit, including snapshot dispatch, parsing, dependencies and all lazy meanings; check again before applying a result",
+    "complexityDiagnostic": "after logical cancellation, deliver at the first UI opportunity without intentional delay or blocking on worker exit; record actual cancellation, paint and OS-confirmed exit separately",
     "coldStartup": "application process start to normal input readiness; user-controlled OS security and first-run permission dialogs measured separately",
     "sampling": "at least 100 runs for interactive latency, 20 for cold start; record all values and p95, not only the best run",
     "resources": "steady idle over 60 seconds after startup tasks, and settled representative active sheet; document aggregation to avoid counting unrelated processes",
     "unknowns": [
       "exact reference machine models and OS builds",
       "platform memory-counter mapping",
-      "reproducible fixture corpus",
-      "full watchdog and error attribution design"
+      "reproducible fixture corpus"
     ],
     "correctnessGate": "Reference workloads must produce the expected complete results. A fast error, skipped expression or incomplete set of meanings is not a successful latency sample.",
     "status": "engineering protocol outline; exact devices, fixtures and platform counters remain to be fixed"
@@ -81,15 +82,22 @@
     "performanceMeasured": false,
     "baselineCaution": "this 32-GiB development machine does not by itself validate the accepted 8-GiB reference class"
   },
-  "verificationBoundary": "Round 36 performance and resource targets are accepted. No production calculator benchmark or native compatibility test has been run; exact protocol details still require engineering work.",
-  "acceptedRound": 36,
+  "verificationBoundary": "Round 36 latency and resource targets remain accepted. Round 42 changes the evaluation deadline to 500 ms, not a separate error-display delay. Limited native prototypes have been observed, but no production benchmark or complete compatibility acceptance has been run.",
+  "acceptedRound": 42,
   "deadline": {
-    "elapsedMs": 200,
+    "elapsedMs": 500,
+    "acceptedRound": 42,
+    "sourceDecision": "../issues/09-shared-core-and-shells.md",
     "scope": "one evaluation request for the current expression or affected active-sheet region, including parse, dependencies and lazy meanings",
-    "onExceeded": "terminate that request and show a concise complexity diagnostic for unfinished affected expressions; preserve editable input and already-complete independent results",
+    "expiryComparison": "elapsed >= elapsedMs",
+    "readyResult": "publish an eligible complete result immediately; never wait for the deadline on purpose",
+    "onExceeded": "logically cancel the request, initiate worker termination and show a concise complexity diagnostic for unfinished affected expressions; preserve editable input and already-complete independent results",
     "resultCompleteness": "a ready expression result includes all valid meanings; deadline does not authorize a truncated subset presented as complete",
     "staleRequest": "superseded work must not replace or diagnose the newer input",
-    "enforcementMechanism": "architecture decision; deterministic work limits and the elapsed-time guard must be designed together",
+    "enforcementMechanism": "shared session checks a monotonic deadline independently of timer delivery and again before result application; an independent watchdog requests native termination, ownership is retained until OS-confirmed exit; deterministic work limits supplement elapsed time",
+    "lateResult": "a cancelled or expired request cannot become ready even if its result arrives later; restarting the worker does not reset that request's deadline",
+    "separateNumericDiagnosticDisplayDeadline": false,
+    "physicalBoundary": "500 ms is result admission, not a hard guarantee of OS process exit or physical paint at exactly 500 ms",
     "diagnosticKey": "error.calculationTooComplex"
   },
   "userReportedMac": {
