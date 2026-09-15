@@ -19,7 +19,7 @@ Blocked by: 29, 30, 31
 
 ## Базовый Mac-прогон прошёл; исправления редактора ждут повторной проверки
 
-Текущий пакет: [calculator-mac-complete.zip](C:/Users/vetrintsev/.codex/visualizations/2026/09/10/01a08a29-3083-7091-8d85-c955198837d6/mac-architecture/.scratch/calculator/prototypes/mac-architecture/calculator-mac-complete.zip), коммит `9cf2cda3a300666b19213efd66a5c38d72043e0b`, 97 437 байт, SHA256 `F120DBAE3350E0F23D4AD2664E6E1D8021F58B54F6F826E0D9F8039BCE145D55`. Проверены все 17 обязательных файлов, LF скриптов, наличие новых проверок и отсутствие runtime/кэшей/пользовательских отчётов. Распаковать целиком в новую папку и запустить её START-MAC.command; переносить отдельные файлы не требуется.
+Текущий пакет: [calculator-mac-complete.zip](C:/Users/vetrintsev/.codex/visualizations/2026/09/10/01a08a29-3083-7091-8d85-c955198837d6/mac-architecture/.scratch/calculator/prototypes/mac-architecture/calculator-mac-complete.zip), коммит `9cf2cda3a300666b19213efd66a5c38d72043e0b`, 97 437 байт, SHA256 `62460C40CA7667AE26C3A4797C99A71B9D1D8D07818B28342338AF2658ABA137`. Проверены все 17 обязательных файлов, LF скриптов, наличие новых проверок и отсутствие runtime/кэшей/пользовательских отчётов. Распаковать целиком в новую папку и запустить её START-MAC.command; переносить отдельные файлы не требуется.
 
 Ниже сохранена история подготовки. Последний фактический Mac-результат и оставшиеся проверки описаны в конце вопроса.
 
