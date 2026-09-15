@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "sourceLanguage": "en",
   "status": "draft",
-  "coverage": "Specification text for identified calculator surfaces. Interface behavior through round 32 and revised workspace/service screens through round 34 are accepted. Round 35 accepts direct public installation, user-controlled update installation and retained data after uninstall; Windows 11 uses one x64 build. Round 36 accepts performance budgets and the complexity diagnostic/help. Native integration, measurements and package-owned installer text remain engineering work. Round 37 accepts the minimum nonzero working magnitude and its separate diagnostic/help. Round 38 adds scale calibration with an explicit saved default, conditional system-icon visibility, and separate content-sized history layout. Round 39 rebases the compact size to 100%; calibration range is 50–300 to retain migrated settings. Point 41.1 accepts recovery from an internal calculation failure without automatically replaying the failed calculation; its diagnostic and help are included. Points 41.2–41.3 accept explicit recovery from damaged storage, preservation of original files, protected format updates and refusal to rewrite newer data with an older app; their copy and help are included.",
+  "coverage": "Specification text for identified calculator surfaces. Interface behavior through round 32 and revised workspace/service screens through round 34 are accepted. Round 35 accepts direct public installation, user-controlled update installation and retained data after uninstall; Windows 11 uses one x64 build. Round 36 accepts performance budgets and the complexity diagnostic/help. Native integration, measurements and package-owned installer text remain engineering work. Round 37 accepts the minimum nonzero working magnitude and its separate diagnostic/help. Round 38 adds scale calibration with an explicit saved default, conditional system-icon visibility, and separate content-sized history layout. Round 39 rebases the compact size to 100%; calibration range is 50–300 to retain migrated settings. Point 41.1 accepts recovery from an internal calculation failure without automatically replaying the failed calculation; its diagnostic and help are included. Points 41.2–41.3 accept explicit recovery from damaged storage, preservation of original files, protected format updates and refusal to rewrite newer data with an older app; their copy and help are included. Round 42 changes the calculation deadline itself to 500 ms; ready results are never intentionally delayed. Native delivery adds update preparation, verified cancellation, failures and repair help using the already accepted manual-install policy; system-owned installer text is not duplicated.",
   "messages": {
     "quick.expression.placeholder": {
       "text": "Type a calculation",
@@ -3163,6 +3163,90 @@
       "meaning": "Explains protection during format changes and newer-data compatibility.",
       "context": "Accepted in point 41.3. This does not authorize automatic application installation or destructive data downgrades.",
       "location": "Data help, compatibility and application-update section.",
+      "elementType": "help_paragraph"
+    },
+    "updates.preparing": {
+      "text": "Preparing update…",
+      "meaning": "Indicates that current data and working state are being durably saved before update permission is granted.",
+      "context": "After the explicit install command, before the installer can become armed. Editing is paused only while preparing or applying this user-requested update.",
+      "location": "Update status in the existing menu or explicitly opened update view.",
+      "elementType": "status_message"
+    },
+    "updates.downloading": {
+      "text": "Downloading update…",
+      "meaning": "Indicates that the selected update is being downloaded.",
+      "context": "Only after the explicit install command and successful preparation; no automatic installation is implied.",
+      "location": "Update status in the existing menu or explicitly opened update view.",
+      "elementType": "status_message"
+    },
+    "updates.installing": {
+      "text": "Installing update…",
+      "meaning": "Indicates that installation has been handed to the platform update mechanism.",
+      "context": "Show only when that stage is actually reached; operating-system installer dialogs retain their own system text.",
+      "location": "Existing update status, where the application still owns a visible surface.",
+      "elementType": "status_message"
+    },
+    "updates.cancel": {
+      "text": "Cancel update",
+      "meaning": "Requests cancellation of this pending installation.",
+      "context": "Available only while the platform adapter can disarm the pending update. Resume editing after cancellation is confirmed; dismissal is not cancellation.",
+      "location": "Action in the explicitly opened update view or its menu.",
+      "elementType": "button"
+    },
+    "updates.saveFailed": {
+      "text": "Could not save changes. The update was not started.",
+      "meaning": "Explains that an unsuccessful save prevented update preparation from granting installation permission.",
+      "context": "Preserve the current editable text and existing application. No installer handoff has occurred.",
+      "location": "Brief update diagnostic near the user-requested action.",
+      "elementType": "error_message"
+    },
+    "updates.preparationFailed": {
+      "text": "Could not prepare the update. Try again.",
+      "meaning": "Reports an unsuccessful protective backup or worker shutdown before installer handoff.",
+      "context": "No installation permission has been granted; retain data and allow the existing recovery or retry flow.",
+      "location": "Brief update diagnostic near the user-requested action.",
+      "elementType": "error_message"
+    },
+    "updates.downloadFailed": {
+      "text": "Could not download the update. Try again.",
+      "meaning": "Reports a failed download without treating the installed application as unusable.",
+      "context": "Disarm any pending installer state before returning to editing. Offline calculation remains available.",
+      "location": "Brief update diagnostic in the explicitly opened update view.",
+      "elementType": "error_message"
+    },
+    "updates.validationFailed": {
+      "text": "The update could not be verified.",
+      "meaning": "Reports that signature, identity, architecture, compatibility or integrity verification rejected the update.",
+      "context": "Do not install or offer a bypass. Preserve the current application and user data.",
+      "location": "Brief update diagnostic in the explicitly opened update view.",
+      "elementType": "error_message"
+    },
+    "updates.installFailed": {
+      "text": "Could not install the update.",
+      "meaning": "Reports a failed platform installation when the application still has a working surface to show it.",
+      "context": "Do not claim universal rollback. If the app cannot run, recovery instructions belong to the release page or system installer instead.",
+      "location": "Existing update view, only if a functioning application can display the error.",
+      "elementType": "error_message"
+    },
+    "updates.downloadInstaller": {
+      "text": "Download installer",
+      "meaning": "Opens the configured official release location for a complete signed compatible installer.",
+      "context": "Explicit recovery action after an update failure; reinstalling the program must preserve the personal data directory.",
+      "location": "Recovery action in a functioning update view or application help.",
+      "elementType": "button"
+    },
+    "updates.locationUnavailable": {
+      "text": "Move the app to a writable folder before updating.",
+      "meaning": "Explains that the current application location prevents replacement.",
+      "context": "Shown after a manual update attempt from a read-only disk image or other non-writable location on macOS. A user-owned application location remains supported.",
+      "location": "Brief update diagnostic.",
+      "elementType": "error_message"
+    },
+    "help.updates.rule": {
+      "text": "Update checks follow your settings and show availability in the menu. Installation starts only when you request it and after your changes are saved. Your work is restored when the updated app next opens. If installation fails, a complete signed installer can repair the app without deleting your data. Restoring an older data backup is a separate action.",
+      "meaning": "Explains manual installation, saved-state restoration and the difference between repairing the app and restoring data.",
+      "context": "Implements the accepted round-35 policy and the selected native delivery mechanisms. It does not promise automatic binary rollback or request a new product preference.",
+      "location": "Application help, updates and recovery section.",
       "elementType": "help_paragraph"
     }
   }

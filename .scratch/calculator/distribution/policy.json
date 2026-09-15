@@ -35,11 +35,13 @@
     "windows": {
       "scope": "current user",
       "administratorRequired": false,
-      "exactPackageFormat": "architecture decision"
+      "exactPackageFormat": "signed MSIX; primary .appinstaller association through system App Installer; complete MSIX available for repair/offline installation",
+      "runtime": "self-contained .NET and required native dependencies included; no development tools required on the user machine",
+      "dataPreservation": "stable external user data directory explicitly excluded from MSIX app-data virtualization; validate actual retention after uninstall"
     },
     "macos": {
       "downloadFormat": "dmg",
-      "payload": "app",
+      "payload": "universal app with x86_64 and arm64 slices in every bundled native component",
       "placement": "Applications; user-owned application location when privileges require it",
       "developerId": true,
       "notarization": true
@@ -54,9 +56,12 @@
     "availabilityIndicator": "quiet application-menu entry",
     "installationTrigger": "explicit user command",
     "beforeInstall": "persist user data successfully",
-    "afterInstall": "restore working state",
+    "afterInstall": "request platform relaunch; restore persisted working state on the next successful start, including manual start if the OS does not relaunch",
     "networkFailure": "offline calculation remains available; no recurring modal interruptions",
-    "installationMechanism": "architecture decision; not implemented"
+    "installationMechanism": "Windows: system MSIX/App Installer after the save barrier; macOS: Sparkle 2 with an app-owned quiet UI adapter and save barrier before the first Install permission",
+    "installationFailure": "do not assume universal binary rollback; offer the complete signed compatible installer for repair/reinstallation while preserving the personal data directory",
+    "cancelPending": "resume editing only after the adapter confirms the pending installer is disarmed; dismissing a prompt is not enough",
+    "dataMigration": "owned by shared storage after the new app starts; protected snapshot, atomic migration and refusal to rewrite a newer schema remain required"
   },
   "uninstallation": {
     "preserve": [
@@ -80,8 +85,23 @@
     "updates.checkFailed",
     "settings.updates.label",
     "settings.updates.automatic",
-    "settings.updates.manual"
+    "settings.updates.manual",
+    "updates.preparing",
+    "updates.downloading",
+    "updates.installing",
+    "updates.cancel",
+    "updates.saveFailed",
+    "updates.preparationFailed",
+    "updates.downloadFailed",
+    "updates.validationFailed",
+    "updates.installFailed",
+    "updates.downloadInstaller",
+    "updates.locationUnavailable",
+    "help.updates.rule"
   ],
-  "verificationBoundary": "No installer, certificate enrollment, payment, update service or native compatibility test is performed by this specification contract.",
-  "performance": "performance.json"
+  "verificationBoundary": "Accepted product policy and selected technical delivery mechanisms. No production installer, publisher enrollment, payment, update service, signed-package trial or complete compatibility acceptance has been performed.",
+  "performance": "performance.json",
+  "technicalDecision": "../issues/33-native-delivery-mechanisms.md",
+  "technicalContract": "delivery.md",
+  "acceptance": "acceptance.md"
 }

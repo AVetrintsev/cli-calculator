@@ -237,9 +237,9 @@
       "change": "Replace the former Latin spelling with mon; do not retain the former spelling as a built-in unit alias. Russian мес and the semantic unit identity are unchanged."
     }
   },
-  "relatedOpenDecisions": {
+  "numericContract": "numbers.json",
+  "relatedDecisions": {
     "parserStorageAndPlatformClockImplementation": "../issues/09-shared-core-and-shells.md",
     "approximatelyZeroAndRemainingPercentageRules": "../issues/04-expression-language.md"
-  },
-  "numericContract": "numbers.json"
+  }
 }

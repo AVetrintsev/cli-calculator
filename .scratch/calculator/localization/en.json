@@ -439,5 +439,17 @@
   "data.version.migrationFailed": "Could not update the data format",
   "data.version.returnHelp": "How to return to a compatible version",
   "help.data.recoveryRule": "If saved data are damaged, choose an available backup by its date and contents, or explicitly start with empty data. The calculator preserves the original files separately before replacement. When the current state cannot be read, its differences from a backup cannot be shown accurately. If the original files cannot be preserved, recovery does not replace them.",
-  "help.data.versionRule": "Before changing the data format, the calculator saves a protective backup. If the change fails, the original data remain available and the app shows how to return to a compatible version. An older app asks you to update before opening newer data and does not rewrite them."
+  "help.data.versionRule": "Before changing the data format, the calculator saves a protective backup. If the change fails, the original data remain available and the app shows how to return to a compatible version. An older app asks you to update before opening newer data and does not rewrite them.",
+  "updates.preparing": "Preparing update…",
+  "updates.downloading": "Downloading update…",
+  "updates.installing": "Installing update…",
+  "updates.cancel": "Cancel update",
+  "updates.saveFailed": "Could not save changes. The update was not started.",
+  "updates.preparationFailed": "Could not prepare the update. Try again.",
+  "updates.downloadFailed": "Could not download the update. Try again.",
+  "updates.validationFailed": "The update could not be verified.",
+  "updates.installFailed": "Could not install the update.",
+  "updates.downloadInstaller": "Download installer",
+  "updates.locationUnavailable": "Move the app to a writable folder before updating.",
+  "help.updates.rule": "Update checks follow your settings and show availability in the menu. Installation starts only when you request it and after your changes are saved. Your work is restored when the updated app next opens. If installation fails, a complete signed installer can repair the app without deleting your data. Restoring an older data backup is a separate action."
 }
