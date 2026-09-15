@@ -3,6 +3,19 @@
   "status": "specification",
   "sourceDecision": "../issues/16-contextual-units.md",
   "acceptedRound": 31,
+  "sourcePresentation": {
+    "clarificationSource": "../issues/32-mac-core-and-editor-probe.md",
+    "clarificationDate": "2026-09-15",
+    "coefficientColorRole": "number",
+    "unitColorRole": "unit",
+    "shortUnitExponentColorRole": "unit; the suffix belongs to the complete unit token",
+    "example": "In 2m2 displayed as 2m², m and ² have the same unit color; the leading 2 has the number color",
+    "explicitPower": "In 2m^2, the right operand 2 remains a number",
+    "sourcePreservation": "automatic exponent styling does not alter the source text or add an undo action",
+    "undoTyping": "undo the latest committed input or deletion, not the entire series of typing",
+    "undoPaste": "one paste, including multiple lines, is one undo action",
+    "composition": "intermediate composition updates are not separate committed inputs"
+  },
   "unitTargets": {
     "shape": "unit atom, optionally followed by / and a second unit atom; only already supported final dimensions",
     "atoms": "registered units and the accepted square/cubic length forms",
